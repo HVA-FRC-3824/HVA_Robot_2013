@@ -10,7 +10,7 @@ Children:
   - Name: Drivetrain
     Base: Subsystem
     Children:
-    - Name: Drivetrain
+    - Name: Holonomic
       Base: Robot Drive 4
       Children:
       - Name: Front Right
@@ -644,6 +644,6 @@ Properties:
     validators: null, value: 3824}
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
-  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\YoungAsus\NetBeansProjects',
+  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Administrator\NetBeansProjects',
     extension: null, folder: true, name: Java Project Directory, validators: null,
     value: 'C:\Users\Administrator\NetBeansProjects'}
