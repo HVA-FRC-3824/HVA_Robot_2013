@@ -48,4 +48,3 @@ float Drivetrain::GetRearDistance()
 {
 	return ultrasonicRear->GetValue() * UNITS_TO_INCHES;
 }
-

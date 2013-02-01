@@ -31,3 +31,20 @@ void Drivetrain::InitDefaultCommand() {
 }
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
+void Drivetrain::HolonomicDrive(Joystick *joystick) 
+{
+	// Simply passes Joystick *joystick to the drivetrain to control the robot.
+	holonomic->HolonomicDrive(joystick->GetMagnitude(), joystick->GetDirectionDegrees(), joystick->GetThrottle());
+}
+void Drivetrain::HolonomicDrive(float magnitude, float direction, float rotation)
+{
+	holonomic->HolonomicDrive(magnitude, 360 - direction, rotation);
+}
+float Drivetrain::GetFrontDistance()
+{
+	return ultrasonicFront->GetValue() * UNITS_TO_INCHES;
+}
+float Drivetrain::GetRearDistance()
+{
+	return ultrasonicRear->GetValue() * UNITS_TO_INCHES;
+}

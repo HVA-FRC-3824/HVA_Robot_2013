@@ -21,17 +21,34 @@ void GotoWall::Initialize() {
 }
 // Called repeatedly when this Command is scheduled to run
 void GotoWall::Execute() {
-	
+   
+   Robot::drivetrain->HolonomicDrive(DRIVING_POWER, DRIVING_DIRECTION, DRIVING_ROTATION);
+   
+   
 }
 // Make this return true when this Command no longer needs to run execute()
-bool GotoWall::IsFinished() {
-	return false;
+bool GotoWall::IsFinished() 
+{
+   // Gets the distance to the wall in inches.
+   range = Robot::drivetrain->GetFrontDistance();
+   
+   if(range < STOPPING_DISTANCE) // STOPPING_DISTANCE = 10.0 inches
+   {
+      // if the distance to the wall is less than the distance set in header file,
+      // isFinished() will return true and go to End() method.
+      return true;
+   }
+   else
+   {
+      return false;
+   }
 }
 // Called once after isFinished returns true
 void GotoWall::End() {
-	
+   Robot::drivetrain->holonomic->StopMotor();
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void GotoWall::Interrupted() {
+void GotoWall::Interrupted() 
+{
 }

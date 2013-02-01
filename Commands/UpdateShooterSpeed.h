@@ -9,8 +9,8 @@
 // it from being updated in th future.
 
 
-#ifndef GO_TO_WALL_H
-#define GO_TO_WALL_H
+#ifndef UPDATE_SHOOTER_SPEED_H
+#define UPDATE_SHOOTER_SPEED_H
 
 
 #include "Commands/Subsystem.h"
@@ -21,15 +21,14 @@
  *
  * @author ExampleAuthor
  */
-class GotoWall: public Command {
+class UpdateShooterSpeed: public Command {
 public:
-	GotoWall();
+	UpdateShooterSpeed();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
-	float range;
 };
 
 #endif
