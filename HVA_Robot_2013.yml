@@ -215,7 +215,7 @@ Children:
           name: Input Module (Digital)
           validators: [DigitalChannel]
           value: '1'
-    - Name: Shooter Talon 1
+    - Name: Shooter Talon
       Base: Speed Controller
       Children: []
       Properties:
@@ -237,28 +237,6 @@ Children:
           name: Output Channel (PWM)
           validators: *id005
           value: '5'
-    - Name: Shooter Talon 2
-      Base: Speed Controller
-      Children: []
-      Properties:
-        Output Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id001
-          default: '1'
-          name: Output Module (Digital)
-          validators: *id002
-          value: '1'
-        Type: !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id003
-          default: Victor
-          name: Type
-          validators: null
-          value: Talon
-        Output Channel (PWM): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id004
-          default: '1'
-          name: Output Channel (PWM)
-          validators: *id005
-          value: '6'
     - Name: Pusher Stop Switch
       Base: Digital Input
       Children: []
@@ -285,7 +263,7 @@ Children:
           default: '1'
           name: Output Module (Digital)
           validators: *id002
-          value: '2'
+          value: '1'
         Type: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id003
           default: Victor
@@ -297,7 +275,7 @@ Children:
           default: '1'
           name: Output Channel (PWM)
           validators: *id005
-          value: '1'
+          value: '9'
     - Name: Angle Adjust Potentiometer
       Base: Potentiometer
       Children: []
@@ -374,7 +352,7 @@ Children:
           default: '1'
           name: Output Channel (PWM)
           validators: *id005
-          value: '7'
+          value: '6'
     - Name: Climber Belt System
       Base: Spike
       Children: []
@@ -406,7 +384,7 @@ Children:
           default: '1'
           name: Output Channel (PWM)
           validators: &id021 [PWMOutput]
-          value: '9'
+          value: '7'
     - Name: Disk Stopper 2
       Base: Servo
       Children: []
@@ -422,7 +400,7 @@ Children:
           default: '1'
           name: Output Channel (PWM)
           validators: *id021
-          value: '10'
+          value: '8'
     - Name: Tipper Pump
       Base: Compressor
       Children: []
@@ -455,28 +433,6 @@ Children:
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: Climb}
-  - Name: Pickup
-    Base: Subsystem
-    Children:
-    - Name: Pickup Motor
-      Base: Spike
-      Children: []
-      Properties:
-        Output Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id014
-          default: '1'
-          name: Output Module (Digital)
-          validators: *id015
-          value: '1'
-        Output Channel (Relay): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id016
-          default: '1'
-          name: Output Channel (Relay)
-          validators: *id017
-          value: '3'
-    Properties:
-      Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Default Command, type: Command, validators: null, value: None}
   Properties: {}
 - Name: Operator Interface
   Base: OI
@@ -581,7 +537,7 @@ Children:
     Children: []
     Properties:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Requires, type: Subsystem, validators: null, value: Pickup}
+        name: Requires, type: Subsystem, validators: null, value: None}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
   - Name: Climb
