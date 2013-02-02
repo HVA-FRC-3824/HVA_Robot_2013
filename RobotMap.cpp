@@ -55,6 +55,8 @@ void RobotMap::init() {
         drivetrainHolonomic->SetExpiration(0.1);
         drivetrainHolonomic->SetSensitivity(0.5);
         drivetrainHolonomic->SetMaxOutput(1.0);
+        drivetrainHolonomic->SetInvertedMotor(RobotDrive::kFrontRightMotor, true);
+        drivetrainHolonomic->SetInvertedMotor(RobotDrive::kRearRightMotor, true);
 	drivetrainUltrasonicFront = new AnalogChannel(1, 1);
 	lw->AddSensor("Drivetrain", "Ultrasonic Front", drivetrainUltrasonicFront);
 	
