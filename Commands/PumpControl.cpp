@@ -21,7 +21,7 @@ void PumpControl::Initialize() {
 }
 // Called repeatedly when this Command is scheduled to run
 void PumpControl::Execute() {
-//   SmartDashboard::PutBoolean("Compressor: ", Robot::pump->compressor->GetPressureSwitchValue());
+   SmartDashboard::PutBoolean("Compressor: ",  Robot::pump->compressorPump->GetPressureSwitchValue());
 }
 // Make this return true when this Command no longer needs to run execute()
 bool PumpControl::IsFinished() {
