@@ -117,19 +117,15 @@ CommandBasedRobotTemplate/$(MODE_DIR)/% : LIBPATH =
 CommandBasedRobotTemplate/$(MODE_DIR)/% : LIBS = 
 CommandBasedRobotTemplate/$(MODE_DIR)/% : OBJ_DIR := CommandBasedRobotTemplate/$(MODE_DIR)
 
-CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/AlignwithTower.o : $(PRJ_ROOT_DIR)/Commands/AlignwithTower.cpp $(FORCE_FILE_BUILD)
-	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
-
-
 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/AutonomousCommand.o : $(PRJ_ROOT_DIR)/Commands/AutonomousCommand.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/CalculateDistance.o : $(PRJ_ROOT_DIR)/Commands/CalculateDistance.cpp $(FORCE_FILE_BUILD)
+CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ClimberExtended.o : $(PRJ_ROOT_DIR)/Commands/ClimberExtended.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/Climb.o : $(PRJ_ROOT_DIR)/Commands/Climb.cpp $(FORCE_FILE_BUILD)
+CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ClimberRetract.o : $(PRJ_ROOT_DIR)/Commands/ClimberRetract.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
@@ -141,15 +137,11 @@ CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/GotoWall.o
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/PickupDisk.o : $(PRJ_ROOT_DIR)/Commands/PickupDisk.cpp $(FORCE_FILE_BUILD)
-	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
-
-
 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/PumpControl.o : $(PRJ_ROOT_DIR)/Commands/PumpControl.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/PushDisk.o : $(PRJ_ROOT_DIR)/Commands/PushDisk.cpp $(FORCE_FILE_BUILD)
+CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/SetShooterAngle.o : $(PRJ_ROOT_DIR)/Commands/SetShooterAngle.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
@@ -157,15 +149,7 @@ CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ShootDisk.
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/TeleoperatedCommand.o : $(PRJ_ROOT_DIR)/Commands/TeleoperatedCommand.cpp $(FORCE_FILE_BUILD)
-	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
-
-
-CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/TipRobot.o : $(PRJ_ROOT_DIR)/Commands/TipRobot.cpp $(FORCE_FILE_BUILD)
-	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
-
-
-CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/UpdateShooterSpeed.o : $(PRJ_ROOT_DIR)/Commands/UpdateShooterSpeed.cpp $(FORCE_FILE_BUILD)
+CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/Teleoperated.o : $(PRJ_ROOT_DIR)/Commands/Teleoperated.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
@@ -185,6 +169,10 @@ CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Climber.
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
+CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ClimberTipper.o : $(PRJ_ROOT_DIR)/Subsystems/ClimberTipper.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Drivetrain.o : $(PRJ_ROOT_DIR)/Subsystems/Drivetrain.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
@@ -197,31 +185,38 @@ CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Pump.o :
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Shooter.o : $(PRJ_ROOT_DIR)/Subsystems/Shooter.cpp $(FORCE_FILE_BUILD)
+CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterAngleAdjust.o : $(PRJ_ROOT_DIR)/Subsystems/ShooterAngleAdjust.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-OBJECTS_CommandBasedRobotTemplate = CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/AlignwithTower.o \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/AutonomousCommand.o \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/CalculateDistance.o \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/Climb.o \
+CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterPusher.o : $(PRJ_ROOT_DIR)/Subsystems/ShooterPusher.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterWheel.o : $(PRJ_ROOT_DIR)/Subsystems/ShooterWheel.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+OBJECTS_CommandBasedRobotTemplate = CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/AutonomousCommand.o \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ClimberExtended.o \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ClimberRetract.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/DisplayShooterSpeed.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/GotoWall.o \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/PickupDisk.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/PumpControl.o \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/PushDisk.o \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/SetShooterAngle.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ShootDisk.o \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/TeleoperatedCommand.o \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/TipRobot.o \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/UpdateShooterSpeed.o \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/Teleoperated.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/OI.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Robot.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/RobotMap.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Climber.o \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ClimberTipper.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Drivetrain.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/FrisbeeTransport.o \
 	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Pump.o \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Shooter.o
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterAngleAdjust.o \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterPusher.o \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterWheel.o
 
 CommandBasedRobotTemplate/$(MODE_DIR)/CommandBasedRobotTemplate.out : $(OBJECTS_CommandBasedRobotTemplate)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@";rm -f "$@";nmppc $(OBJECTS_CommandBasedRobotTemplate) $(IDE_LIBRARIES) | tclsh $(WIND_BASE)/host/resource/hutils/tcl/munch.tcl -c ppc > $(OBJ_DIR)/ctdt.c; $(TOOL_PATH)ccppc $(DEBUGFLAGS_Linker) $(CC_ARCH_SPEC) -fdollars-in-identifiers -Wall $(ADDED_CFLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES)  -o $(OBJ_DIR)/ctdt.o -c $(OBJ_DIR)/ctdt.c; $(TOOL_PATH)ccppc -r -nostdlib -Wl,-X -T $(WIND_BASE)/target/h/tool/gnu/ldscripts/link.OUT -o "$@" $(OBJ_DIR)/ctdt.o $(OBJECTS_CommandBasedRobotTemplate) $(IDE_LIBRARIES) $(LIBPATH) $(LIBS)  $(ADDED_LIBPATH) $(ADDED_LIBS) && if [ "$(EXPAND_DBG)" = "1" ]; then plink "$@";fi
@@ -266,19 +261,15 @@ CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/% : LIBPATH =
 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/% : LIBS = 
 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/% : OBJ_DIR := CommandBassedRobotTemplate_partialImage/$(MODE_DIR)
 
-CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/AlignwithTower.o : $(PRJ_ROOT_DIR)/Commands/AlignwithTower.cpp $(FORCE_FILE_BUILD)
-	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
-
-
 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/AutonomousCommand.o : $(PRJ_ROOT_DIR)/Commands/AutonomousCommand.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/CalculateDistance.o : $(PRJ_ROOT_DIR)/Commands/CalculateDistance.cpp $(FORCE_FILE_BUILD)
+CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ClimberExtended.o : $(PRJ_ROOT_DIR)/Commands/ClimberExtended.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/Climb.o : $(PRJ_ROOT_DIR)/Commands/Climb.cpp $(FORCE_FILE_BUILD)
+CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ClimberRetract.o : $(PRJ_ROOT_DIR)/Commands/ClimberRetract.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
@@ -290,15 +281,11 @@ CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Comma
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/PickupDisk.o : $(PRJ_ROOT_DIR)/Commands/PickupDisk.cpp $(FORCE_FILE_BUILD)
-	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
-
-
 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/PumpControl.o : $(PRJ_ROOT_DIR)/Commands/PumpControl.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/PushDisk.o : $(PRJ_ROOT_DIR)/Commands/PushDisk.cpp $(FORCE_FILE_BUILD)
+CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/SetShooterAngle.o : $(PRJ_ROOT_DIR)/Commands/SetShooterAngle.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
@@ -306,15 +293,7 @@ CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Comma
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/TeleoperatedCommand.o : $(PRJ_ROOT_DIR)/Commands/TeleoperatedCommand.cpp $(FORCE_FILE_BUILD)
-	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
-
-
-CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/TipRobot.o : $(PRJ_ROOT_DIR)/Commands/TipRobot.cpp $(FORCE_FILE_BUILD)
-	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
-
-
-CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/UpdateShooterSpeed.o : $(PRJ_ROOT_DIR)/Commands/UpdateShooterSpeed.cpp $(FORCE_FILE_BUILD)
+CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/Teleoperated.o : $(PRJ_ROOT_DIR)/Commands/Teleoperated.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
@@ -334,6 +313,10 @@ CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsy
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
+CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ClimberTipper.o : $(PRJ_ROOT_DIR)/Subsystems/ClimberTipper.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Drivetrain.o : $(PRJ_ROOT_DIR)/Subsystems/Drivetrain.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
@@ -346,31 +329,38 @@ CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsy
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Shooter.o : $(PRJ_ROOT_DIR)/Subsystems/Shooter.cpp $(FORCE_FILE_BUILD)
+CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterAngleAdjust.o : $(PRJ_ROOT_DIR)/Subsystems/ShooterAngleAdjust.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
-OBJECTS_CommandBassedRobotTemplate_partialImage = CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/AlignwithTower.o \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/AutonomousCommand.o \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/CalculateDistance.o \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/Climb.o \
+CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterPusher.o : $(PRJ_ROOT_DIR)/Subsystems/ShooterPusher.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterWheel.o : $(PRJ_ROOT_DIR)/Subsystems/ShooterWheel.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
+OBJECTS_CommandBassedRobotTemplate_partialImage = CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/AutonomousCommand.o \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ClimberExtended.o \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ClimberRetract.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/DisplayShooterSpeed.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/GotoWall.o \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/PickupDisk.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/PumpControl.o \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/PushDisk.o \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/SetShooterAngle.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ShootDisk.o \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/TeleoperatedCommand.o \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/TipRobot.o \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/UpdateShooterSpeed.o \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/Teleoperated.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/OI.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Robot.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/RobotMap.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Climber.o \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ClimberTipper.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Drivetrain.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/FrisbeeTransport.o \
 	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Pump.o \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Shooter.o
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterAngleAdjust.o \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterPusher.o \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterWheel.o
 
 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/CommandBassedRobotTemplate_partialImage.o : $(OBJECTS_CommandBassedRobotTemplate_partialImage)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc -r -nostdlib -Wl,-X  -o "$@" $(OBJECTS_CommandBassedRobotTemplate_partialImage) $(LIBPATH) $(LIBS) $(ADDED_LIBPATH) $(ADDED_LIBS)  && if [ "$(EXPAND_DBG)" = "1" ]; then plink "$@";fi
@@ -384,20 +374,20 @@ CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/CommandBassedRobotTemplate_p
 
 force : 
 
-DEP_FILES := CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/AlignwithTower.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/AutonomousCommand.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/CalculateDistance.d \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/Climb.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/DisplayShooterSpeed.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/GotoWall.d \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/PickupDisk.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/PumpControl.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/PushDisk.d \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ShootDisk.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/TeleoperatedCommand.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/TipRobot.d \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/UpdateShooterSpeed.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/OI.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Robot.d \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/RobotMap.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Climber.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Drivetrain.d \
-	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/FrisbeeTransport.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Pump.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Shooter.d \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/AlignwithTower.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/AutonomousCommand.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/CalculateDistance.d \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/Climb.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/DisplayShooterSpeed.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/GotoWall.d \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/PickupDisk.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/PumpControl.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/PushDisk.d \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ShootDisk.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/TeleoperatedCommand.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/TipRobot.d \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/UpdateShooterSpeed.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/OI.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Robot.d \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/RobotMap.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Climber.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Drivetrain.d \
-	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/FrisbeeTransport.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Pump.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Shooter.d
+DEP_FILES := CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/AutonomousCommand.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ClimberExtended.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ClimberRetract.d \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/DisplayShooterSpeed.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/GotoWall.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/PumpControl.d \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/SetShooterAngle.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ShootDisk.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/Teleoperated.d \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/OI.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Robot.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/RobotMap.d \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Climber.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ClimberTipper.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Drivetrain.d \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/FrisbeeTransport.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Pump.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterAngleAdjust.d \
+	 CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterPusher.d CommandBasedRobotTemplate/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterWheel.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/AutonomousCommand.d \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ClimberExtended.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ClimberRetract.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/DisplayShooterSpeed.d \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/GotoWall.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/PumpControl.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/SetShooterAngle.d \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ShootDisk.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/Teleoperated.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/OI.d \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Robot.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/RobotMap.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Climber.d \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ClimberTipper.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Drivetrain.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/FrisbeeTransport.d \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Pump.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterAngleAdjust.d CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterPusher.d \
+	 CommandBassedRobotTemplate_partialImage/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterWheel.d
 -include $(DEP_FILES)
 
 

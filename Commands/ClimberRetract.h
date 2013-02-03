@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-#ifndef TIP_ROBOT_H
-#define TIP_ROBOT_H
-
+#ifndef CLIMBER_RETRACT_H
+#define CLIMBER_RETRACT_H
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -21,9 +19,10 @@
  *
  * @author ExampleAuthor
  */
-class TipRobot: public Command {
+class ClimberRetract: public Command
+{
 public:
-	TipRobot();
+	ClimberRetract();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

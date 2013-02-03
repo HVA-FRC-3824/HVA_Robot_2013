@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
 #ifndef SHOOT_DISK_H
 #define SHOOT_DISK_H
-
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -21,7 +19,8 @@
  *
  * @author ExampleAuthor
  */
-class ShootDisk: public Command {
+class ShootDisk: public Command 
+{
 public:
 	ShootDisk();
 	virtual void Initialize();

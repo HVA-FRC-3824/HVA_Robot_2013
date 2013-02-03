@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
 #ifndef GO_TO_WALL_H
 #define GO_TO_WALL_H
-
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -21,7 +19,8 @@
  *
  * @author ExampleAuthor
  */
-class GotoWall: public Command {
+class GotoWall: public Command
+{
 public:
 	GotoWall();
 	virtual void Initialize();

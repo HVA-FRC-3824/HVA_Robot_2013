@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
 #ifndef DISPLAY_SHOOTER_SPEED_H
 #define DISPLAY_SHOOTER_SPEED_H
-
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -21,7 +19,8 @@
  *
  * @author ExampleAuthor
  */
-class DisplayShooterSpeed: public Command {
+class DisplayShooterSpeed: public Command 
+{
 public:
 	DisplayShooterSpeed();
 	virtual void Initialize();

@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-#ifndef UPDATE_SHOOTER_SPEED_H
-#define UPDATE_SHOOTER_SPEED_H
-
+#ifndef TELEOPERATED_H
+#define TELEOPERATED_H
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -21,9 +19,10 @@
  *
  * @author ExampleAuthor
  */
-class UpdateShooterSpeed: public Command {
+class Teleoperated: public Command 
+{
 public:
-	UpdateShooterSpeed();
+	Teleoperated();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

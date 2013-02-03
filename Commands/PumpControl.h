@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
 #ifndef PUMP_CONTROL_H
 #define PUMP_CONTROL_H
-
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -21,7 +19,8 @@
  *
  * @author ExampleAuthor
  */
-class PumpControl: public Command {
+class PumpControl: public Command 
+{
 public:
 	PumpControl();
 	virtual void Initialize();

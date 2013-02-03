@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-#ifndef ALIGN_WITH_TOWER_H
-#define ALIGN_WITH_TOWER_H
-
+#ifndef CLIMBER_EXTENDED_H
+#define CLIMBER_EXTENDED_H
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -21,9 +19,10 @@
  *
  * @author ExampleAuthor
  */
-class AlignwithTower: public Command {
+class ClimberExtended: public Command 
+{
 public:
-	AlignwithTower();
+	ClimberExtended();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
