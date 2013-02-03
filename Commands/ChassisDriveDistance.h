@@ -9,8 +9,8 @@
 // it from being updated in th future.
 
 
-#ifndef AUTONOMOUS_DO_NOTHING_H
-#define AUTONOMOUS_DO_NOTHING_H
+#ifndef CHASSIS_DRIVE_DISTANCE_H
+#define CHASSIS_DRIVE_DISTANCE_H
 
 
 #include "Commands/Subsystem.h"
@@ -21,10 +21,10 @@
  *
  * @author ExampleAuthor
  */
-class AutonomousDoNothing: public Command 
+class ChassisDriveDistance: public Command 
 {
 public:
-	AutonomousDoNothing();
+	ChassisDriveDistance();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

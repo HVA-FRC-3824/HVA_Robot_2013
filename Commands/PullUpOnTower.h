@@ -8,26 +8,22 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef PUMP_CONTROL_H
-#define PUMP_CONTROL_H
 
-#include "Commands/Subsystem.h"
-#include "../Robot.h"
+
+#ifndef PULL_UP_ON_TOWER_H
+#define PULL_UP_ON_TOWER_H
+
+#include "Commands/CommandGroup.h"
 
 /**
  *
  *
  * @author ExampleAuthor
  */
-class PumpControl: public Command 
+class PullUpOnTower: public CommandGroup 
 {
-public:
-	PumpControl();
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
+public:	
+	PullUpOnTower();
 };
 
 #endif

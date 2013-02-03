@@ -17,6 +17,7 @@ SpeedController* RobotMap::drivetrainRearLeft = NULL;
 RobotDrive* RobotMap::drivetrainHolonomic = NULL;
 AnalogChannel* RobotMap::drivetrainUltrasonicFront = NULL;
 AnalogChannel* RobotMap::drivetrainUltrasonicRear = NULL;
+Gyro* RobotMap::drivetrainGyro = NULL;
 SpeedController* RobotMap::shooterWheelMotor = NULL;
 GearTooth* RobotMap::shooterWheelEncoder = NULL;
 Relay* RobotMap::shooterPusherMotor = NULL;
@@ -59,12 +60,15 @@ void RobotMap::init()
         drivetrainHolonomic->SetMaxOutput(1.0);
         drivetrainHolonomic->SetInvertedMotor(RobotDrive::kFrontRightMotor, true);
         drivetrainHolonomic->SetInvertedMotor(RobotDrive::kRearRightMotor, true);
-	drivetrainUltrasonicFront = new AnalogChannel(1, 1);
+	drivetrainUltrasonicFront = new AnalogChannel(1, 3);
 	lw->AddSensor("Drivetrain", "Ultrasonic Front", drivetrainUltrasonicFront);
 	
-	drivetrainUltrasonicRear = new AnalogChannel(1, 2);
+	drivetrainUltrasonicRear = new AnalogChannel(1, 4);
 	lw->AddSensor("Drivetrain", "Ultrasonic Rear", drivetrainUltrasonicRear);
 	
+	drivetrainGyro = new Gyro(1, 1);
+	lw->AddSensor("Drivetrain", "Gyro", drivetrainGyro);
+	drivetrainGyro->SetSensitivity(0.007);
 	shooterWheelMotor = new Talon(1, 5);
 	lw->AddActuator("Shooter Wheel", "Motor", (Talon*) shooterWheelMotor);
 	
@@ -80,13 +84,13 @@ void RobotMap::init()
 	shooterAngleAdjustMotor = new Victor(1, 9);
 	lw->AddActuator("Shooter Angle Adjust", "Motor", (Victor*) shooterAngleAdjustMotor);
 	
-	shooterAngleAdjustPotentiometer = new AnalogChannel(1, 3);
+	shooterAngleAdjustPotentiometer = new AnalogChannel(1, 5);
 	lw->AddSensor("Shooter Angle Adjust", "Potentiometer", shooterAngleAdjustPotentiometer);
 	
-	shooterAngleAdjustLimitSwitchHigh = new DigitalInput(1, 5);
+	shooterAngleAdjustLimitSwitchHigh = new DigitalInput(1, 3);
 	lw->AddSensor("Shooter Angle Adjust", "Limit Switch High", shooterAngleAdjustLimitSwitchHigh);
 	
-	shooterAngleAdjustLimitSwitchLow = new DigitalInput(1, 6);
+	shooterAngleAdjustLimitSwitchLow = new DigitalInput(1, 4);
 	lw->AddSensor("Shooter Angle Adjust", "Limit Switch Low", shooterAngleAdjustLimitSwitchLow);
 	
 	frisbeeTransportMotor = new Relay(1, 3);
@@ -104,10 +108,10 @@ void RobotMap::init()
 	climberMotor = new Talon(1, 6);
 	lw->AddActuator("Climber", "Motor", (Talon*) climberMotor);
 	
-	climberEngaged1 = new DigitalInput(1, 4);
+	climberEngaged1 = new DigitalInput(1, 5);
 	lw->AddSensor("Climber", "Engaged 1", climberEngaged1);
 	
-	climberEngaged2 = new DigitalInput(1, 7);
+	climberEngaged2 = new DigitalInput(1, 6);
 	lw->AddSensor("Climber", "Engaged 2", climberEngaged2);
 	
 	pumpCompressorPump = new Compressor(1, 8, 1, 2);

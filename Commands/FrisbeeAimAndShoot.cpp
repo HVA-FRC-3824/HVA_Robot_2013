@@ -10,9 +10,9 @@
 
 
 
-#include "AutonomousShootfromCenter.h"
+#include "FrisbeeAimAndShoot.h"
 
-AutonomousShootfromCenter::AutonomousShootfromCenter() 
+FrisbeeAimAndShoot::FrisbeeAimAndShoot()
 {
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());

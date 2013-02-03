@@ -8,27 +8,22 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef GO_TO_WALL_H
-#define GO_TO_WALL_H
 
-#include "Commands/Subsystem.h"
-#include "../Robot.h"
+
+#ifndef AUTONOMOUS_SHOOT_FROM_LEFT_H
+#define AUTONOMOUS_SHOOT_FROM_LEFT_H
+
+#include "Commands/CommandGroup.h"
 
 /**
  *
  *
  * @author ExampleAuthor
  */
-class GotoWall: public Command
+class AutonomousShootfromLeft: public CommandGroup 
 {
-public:
-	GotoWall();
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
-	float range;
+public:	
+	AutonomousShootfromLeft();
 };
 
 #endif

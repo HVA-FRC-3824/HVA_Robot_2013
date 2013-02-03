@@ -10,9 +10,9 @@
 
 
 
-#include "AutonomousShootfromCenter.h"
+#include "AutonomousShootfromLeft.h"
 
-AutonomousShootfromCenter::AutonomousShootfromCenter() 
+AutonomousShootfromLeft::AutonomousShootfromLeft() 
 {
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());

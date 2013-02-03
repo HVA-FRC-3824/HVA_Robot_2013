@@ -20,7 +20,8 @@
  *
  * @author ExampleAuthor
  */
-class AutonomousShootfromCenter: public CommandGroup {
+class AutonomousShootfromCenter: public CommandGroup 
+{
 public:	
 	AutonomousShootfromCenter();
 };

@@ -9,8 +9,8 @@
 // it from being updated in th future.
 
 
-#ifndef AUTONOMOUS_DO_NOTHING_H
-#define AUTONOMOUS_DO_NOTHING_H
+#ifndef DISPLAY_PUMP_STATE_H
+#define DISPLAY_PUMP_STATE_H
 
 
 #include "Commands/Subsystem.h"
@@ -21,10 +21,10 @@
  *
  * @author ExampleAuthor
  */
-class AutonomousDoNothing: public Command 
+class DisplayPumpState: public Command 
 {
 public:
-	AutonomousDoNothing();
+	DisplayPumpState();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

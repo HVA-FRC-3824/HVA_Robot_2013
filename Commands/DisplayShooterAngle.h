@@ -8,8 +8,10 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef SHOOT_DISK_H
-#define SHOOT_DISK_H
+
+#ifndef DISPLAY_SHOOTER_ANGLE_H
+#define DISPLAY_SHOOTER_ANGLE_H
+
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -19,10 +21,10 @@
  *
  * @author ExampleAuthor
  */
-class ShootDisk: public Command 
+class DisplayShooterAngle: public Command 
 {
 public:
-	ShootDisk();
+	DisplayShooterAngle();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

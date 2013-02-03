@@ -9,8 +9,8 @@
 // it from being updated in th future.
 
 
-#ifndef AUTONOMOUS_DO_NOTHING_H
-#define AUTONOMOUS_DO_NOTHING_H
+#ifndef CHASSIS_TURN_ANGLE_H
+#define CHASSIS_TURN_ANGLE_H
 
 
 #include "Commands/Subsystem.h"
@@ -21,10 +21,10 @@
  *
  * @author ExampleAuthor
  */
-class AutonomousDoNothing: public Command 
+class ChassisTurnAngle: public Command 
 {
 public:
-	AutonomousDoNothing();
+	ChassisTurnAngle();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

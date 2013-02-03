@@ -9,27 +9,21 @@
 // it from being updated in th future.
 
 
-#ifndef AUTONOMOUS_DO_NOTHING_H
-#define AUTONOMOUS_DO_NOTHING_H
 
+#ifndef FRISBEE_AIM_AND_SHOOT_H
+#define FRISBEE_AIM_AND_SHOOT_H
 
-#include "Commands/Subsystem.h"
-#include "../Robot.h"
+#include "Commands/CommandGroup.h"
 
 /**
  *
  *
  * @author ExampleAuthor
  */
-class AutonomousDoNothing: public Command 
+class FrisbeeAimAndShoot: public CommandGroup 
 {
-public:
-	AutonomousDoNothing();
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
+public:	
+	FrisbeeAimAndShoot();
 };
 
 #endif
