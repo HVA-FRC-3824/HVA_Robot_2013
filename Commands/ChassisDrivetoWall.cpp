@@ -22,19 +22,25 @@ void ChassisDrivetoWall::Initialize()
 	
 }
 // Called repeatedly when this Command is scheduled to run
-void ChassisDrivetoWall::Execute()
-{
+void ChassisDrivetoWall::Execute(){
+	Robot::drivetrain->HolonomicDrive(DRIVE_POWER, DRIVE_DIRECTION, DRIVE_ROTATION); // Starts motors
 	
 }
 // Make this return true when this Command no longer needs to run execute()
 bool ChassisDrivetoWall::IsFinished()
 {
-	return false;
+	distance = Robot::drivetrain->GetFrontDistance();
+		
+		if(distance <= STOPPING_DISTANCE)
+			{
+				printf("Has hit the right distance.\n");
+				return true;
+			}
 }
 // Called once after isFinished returns true
 void ChassisDrivetoWall::End()
 {
-	
+	Robot::drivetrain->holonomic->StopMotor();
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
