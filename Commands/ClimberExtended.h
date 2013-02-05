@@ -13,6 +13,7 @@
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
+#include "Timer.h"
 
 /**
  *
@@ -21,6 +22,9 @@
  */
 class ClimberExtended: public Command 
 {
+private:
+	Timer *timer;
+
 public:
 	ClimberExtended();
 	virtual void Initialize();
