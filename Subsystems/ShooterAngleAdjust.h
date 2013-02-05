@@ -29,5 +29,13 @@ class ShooterAngleAdjust: public PIDSubsystem
 	double ReturnPIDInput();
 	void UsePIDOutput(double output);
 	void InitDefaultCommand();
+	
+	double targeAdjustValue;
+	
+	void setAngleAdjustValue(double value) 
+	{
+		targeAdjustValue = value;
+	}
+	
 };
 #endif
