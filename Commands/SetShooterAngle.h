@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
 #ifndef SET_SHOOTER_ANGLE_H
 #define SET_SHOOTER_ANGLE_H
-
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -21,10 +19,11 @@
  *
  * @author ExampleAuthor
  */
-class SetShooterAngle: public Command
+class SetShooterAngle: public Command 
 {
+   double angleSetPoint;
 public:
-	SetShooterAngle();
+	SetShooterAngle(double setPoint);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

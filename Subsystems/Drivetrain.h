@@ -16,7 +16,7 @@
  *
  * @author ExampleAuthor
  */
-class Drivetrain: public Subsystem 
+class Drivetrain: public Subsystem, public PIDOutput 
 {
 private:
 	// It's desirable that everything possible under private except
@@ -38,5 +38,6 @@ public:
 	void HolonomicDrive(float magnitude, float direction, float rotation);
 	float GetFrontDistance();
 	float GetRearDistance();
+	void PIDWrite(float output);
 };
 #endif

@@ -31,11 +31,13 @@ bool ChassisDrivetoWall::IsFinished()
 {
 	distance = Robot::drivetrain->GetFrontDistance();
 		
-		if(distance <= STOPPING_DISTANCE)
-			{
-				printf("Has hit the right distance.\n");
-				return true;
-			}
+	if(distance <= STOPPING_DISTANCE)
+		{
+			printf("Has hit the right distance.\n");
+			return true;
+		}
+	
+	return false;	      
 }
 // Called once after isFinished returns true
 void ChassisDrivetoWall::End()

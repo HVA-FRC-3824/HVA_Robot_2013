@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
 #ifndef CHASSIS_TURN_ANGLE_H
 #define CHASSIS_TURN_ANGLE_H
-
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -19,12 +17,15 @@
 /**
  *
  *
- * @author ExampleAuthor
+ * @Kevin Dopatka
  */
 class ChassisTurnAngle: public Command 
-{
+{	
+private:
+	float degreesToTurn; 
+	PIDController *PIDcontroller;
 public:
-	ChassisTurnAngle();
+	ChassisTurnAngle(float turnAngle);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

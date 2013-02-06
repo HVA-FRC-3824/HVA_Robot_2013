@@ -39,7 +39,7 @@ public:
 	static Relay* frisbeeTransportMotor;
 	static Servo* frisbeeTransportStopperRight;
 	static Servo* frisbeeTransportStopperLeft;
-	static DoubleSolenoid* climberTipperSoleniod;
+	static DoubleSolenoid* climberTipperSolenoid;
 	static SpeedController* climberMotor;
 	static DigitalInput* climberEngaged1;
 	static DigitalInput* climberEngaged2;

@@ -29,7 +29,7 @@ DigitalInput* RobotMap::shooterAngleAdjustLimitSwitchLow = NULL;
 Relay* RobotMap::frisbeeTransportMotor = NULL;
 Servo* RobotMap::frisbeeTransportStopperRight = NULL;
 Servo* RobotMap::frisbeeTransportStopperLeft = NULL;
-DoubleSolenoid* RobotMap::climberTipperSoleniod = NULL;
+DoubleSolenoid* RobotMap::climberTipperSolenoid = NULL;
 SpeedController* RobotMap::climberMotor = NULL;
 DigitalInput* RobotMap::climberEngaged1 = NULL;
 DigitalInput* RobotMap::climberEngaged2 = NULL;
@@ -102,7 +102,7 @@ void RobotMap::init()
 	frisbeeTransportStopperLeft = new Servo(1, 8);
 	lw->AddActuator("Frisbee Transport", "Stopper Left", frisbeeTransportStopperLeft);
 	
-	climberTipperSoleniod = new DoubleSolenoid(1, 1, 2);      
+	climberTipperSolenoid = new DoubleSolenoid(1, 1, 2);      
 	
 	
 	climberMotor = new Talon(1, 6);

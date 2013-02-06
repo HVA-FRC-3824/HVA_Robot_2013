@@ -23,8 +23,11 @@
  */
 class ChassisDriveDistance: public Command 
 {
+private:
+   float driveDistance;
+   
 public:
-	ChassisDriveDistance();
+	ChassisDriveDistance(float distance);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

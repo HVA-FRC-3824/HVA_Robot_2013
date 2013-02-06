@@ -49,3 +49,7 @@ float Drivetrain::GetRearDistance()
 {
 	return ultrasonicRear->GetValue() * UNITS_TO_INCHES;
 }
+void Drivetrain::PIDWrite(float output)
+{
+   holonomic->HolonomicDrive(0.0, 0.0, output); //This PID only works for rotation
+}
