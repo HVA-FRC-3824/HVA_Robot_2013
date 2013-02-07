@@ -19,7 +19,7 @@
 #include "Commands/ChassisDrivetoWall.h"
 #include "Commands/ChassisTurnAngle.h"
 #include "Commands/ClimbNextLevel.h"
-#include "Commands/ClimberExtended.h"
+#include "Commands/ClimberExtend.h"
 #include "Commands/ClimberRetract.h"
 #include "Commands/DisplayPumpState.h"
 #include "Commands/DisplayShooterAngle.h"
@@ -45,7 +45,7 @@ OI::OI()
 	SmartDashboard::PutData("Autonomous Shoot from Right", new AutonomousShootfromRight());
 	SmartDashboard::PutData("Autonomous Shoot from Left", new AutonomousShootfromLeft());
 	SmartDashboard::PutData("Teleoperated", new Teleoperated());
-	SmartDashboard::PutData("Climber Extended", new ClimberExtended());
+	SmartDashboard::PutData("Climber Extend", new ClimberExtend());
 	SmartDashboard::PutData("Climber Retract", new ClimberRetract());
 	SmartDashboard::PutData("Engage Tower", new EngageTower());
 	SmartDashboard::PutData("Pull Up On Tower", new PullUpOnTower());

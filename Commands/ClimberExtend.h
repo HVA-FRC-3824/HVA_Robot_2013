@@ -8,8 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef CLIMBER_EXTENDED_H
-#define CLIMBER_EXTENDED_H
+#ifndef CLIMBER_EXTEND_H
+#define CLIMBER_EXTEND_H
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -20,13 +20,13 @@
  *
  * @author ExampleAuthor
  */
-class ClimberExtended: public Command 
+class ClimberExtend: public Command 
 {
 private:
 	Timer *timer;
 
 public:
-	ClimberExtended();
+	ClimberExtend();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
