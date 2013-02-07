@@ -9,7 +9,7 @@
 // it from being updated in th future.
 
 
-
+#include "SetShooterAngle.h"
 #include "FrisbeeAimAndShoot.h"
 
 FrisbeeAimAndShoot::FrisbeeAimAndShoot()
@@ -18,7 +18,12 @@ FrisbeeAimAndShoot::FrisbeeAimAndShoot()
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());
 	// these will run in order.
-
+	AddSequential(new SetShooterAngle(FRISBEE_ANGLE_AUTO));
+	
+	// If we decide to do both angle and wheel speed adjustment,
+	// the base code is here, but commented out.
+//	AddSequential(new SetShooterSpeed(FRISBEE_SPEED_AUTO));
+	
 	// To run multiple commands at the same time,
 	// use AddParallel()
 	// e.g. AddParallel(new Command1());

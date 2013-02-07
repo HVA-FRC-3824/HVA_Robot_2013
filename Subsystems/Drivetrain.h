@@ -16,7 +16,7 @@
  *
  * @author ExampleAuthor
  */
-class Drivetrain: public Subsystem, public PIDOutput 
+class Drivetrain: public Subsystem, public PIDOutput, public PIDSource
 {
 private:
 	// It's desirable that everything possible under private except
@@ -39,5 +39,6 @@ public:
 	float GetFrontDistance();
 	float GetRearDistance();
 	void PIDWrite(float output);
+	double PIDGet();
 };
 #endif
