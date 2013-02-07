@@ -26,3 +26,13 @@ void ShooterPusher::InitDefaultCommand()
 }
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
+
+void ShooterPusher::ActivateMotor()
+{
+	int toggle = 1;
+}
+
+void ShooterPusher::DeactivateMotor()
+{
+	int toggle = 0;
+}

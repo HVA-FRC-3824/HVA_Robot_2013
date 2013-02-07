@@ -30,6 +30,8 @@ public:
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
+
+	const float PUSHER_TIMER = 0.5;
 };
 
 #endif
