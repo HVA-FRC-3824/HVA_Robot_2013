@@ -9,11 +9,10 @@
 // it from being updated in th future.
 
 
-#ifndef FRISBEE_SHOOT_H
-#define FRISBEE_SHOOT_H
+#ifndef HOOK_DOWN_H
+#define HOOK_DOWN_H
 
 
-#include "Timer.h"
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
 
@@ -22,14 +21,9 @@
  *
  * @author ExampleAuthor
  */
-class FrisbeeShoot: public Command 
-{
-private:
-	
-	Timer *pusherTimer;
-	
+class HookDown: public Command {
 public:
-	FrisbeeShoot();
+	HookDown();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
