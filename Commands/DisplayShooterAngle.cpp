@@ -8,6 +8,7 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 #include "DisplayShooterAngle.h"
+#include "../Subsystems/ShooterAngleAdjust.h"
 DisplayShooterAngle::DisplayShooterAngle()
 {
 	// Use requires() here to declare subsystem dependencies
@@ -23,7 +24,7 @@ void DisplayShooterAngle::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void DisplayShooterAngle::Execute() 
 {
-	
+	SmartDashboard::PutNumber("Shooter Angle:", Robot::shooterAngleAdjust->potentiometer->GetValue());
 }
 // Make this return true when this Command no longer needs to run execute()
 bool DisplayShooterAngle::IsFinished()
