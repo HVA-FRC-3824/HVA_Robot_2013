@@ -9,21 +9,21 @@
 // it from being updated in th future.
 
 
-#ifndef HOOK_UP_H
-#define HOOK_UP_H
+#ifndef HOOK_ENGAGE_H
+#define HOOK_ENGAGE_H
 
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
 
 /**
- * Moves Hook up until it hits upper limit switch (Engaged 1)
+ *
  *
  * @author ExampleAuthor
  */
-class HookUp: public Command {
+class HookEngage: public Command {
 public:
-	HookUp();
+	HookEngage();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
