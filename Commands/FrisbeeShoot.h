@@ -13,6 +13,7 @@
 #define FRISBEE_SHOOT_H
 
 
+#include "Timer.h"
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
 
@@ -23,6 +24,10 @@
  */
 class FrisbeeShoot: public Command 
 {
+private:
+	
+	Timer *pusherTimer;
+	
 public:
 	FrisbeeShoot();
 	virtual void Initialize();
@@ -30,8 +35,6 @@ public:
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
-
-	const float PUSHER_TIMER = 0.5;
 };
 
 #endif

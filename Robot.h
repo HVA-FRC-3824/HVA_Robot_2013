@@ -35,8 +35,9 @@
 #define DRIVE_POWER					1.0
 #define DRIVE_DIRECTION				0.0
 #define DRIVE_ROTATION				0.0
-#define STOPPING_THRESHOLD			2
-#define TIPPER_EXTEND_RETRACT_TIME 3.0
+#define STOPPING_THRESHOLD			2.0
+#define TIPPER_EXTEND_RETRACT_TIME  3.0
+#define PUSHER_TIMER				0.5
 class Robot : public IterativeRobot 
 {
 public:
