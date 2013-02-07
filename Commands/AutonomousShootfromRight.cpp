@@ -11,6 +11,7 @@
 
 
 #include "AutonomousShootfromRight.h"
+#include "FrisbeeAimAndShoot.h"
 #include "ChassisDriveDistance.h"
 #include "ChassisTurnAngle.h"
 
@@ -43,8 +44,11 @@ AutonomousShootfromRight::AutonomousShootfromRight()
    AddSequential(new ChassisTurnAngle(AUTONOMOUS_TURN_ANGLE)); 
  
    // shoot first Frisbee
+   AddSequential(new FrisbeeAimAndShoot());
    
    // shoot second Frisbee
+   AddSequential(new FrisbeeAimAndShoot());
    
    // shoot third Frisbee
+   AddSequential(new FrisbeeAimAndShoot());
 }

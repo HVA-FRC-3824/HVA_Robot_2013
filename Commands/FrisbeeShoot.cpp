@@ -19,7 +19,7 @@ FrisbeeShoot::FrisbeeShoot()
 // Called just before this Command runs the first time
 void FrisbeeShoot::Initialize() 
 {
-	
+
 }
 // Called repeatedly when this Command is scheduled to run
 void FrisbeeShoot::Execute() 

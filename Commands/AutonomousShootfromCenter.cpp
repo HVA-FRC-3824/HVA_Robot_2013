@@ -11,6 +11,7 @@
 
 
 #include "AutonomousShootfromCenter.h"
+#include "FrisbeeAimAndShoot.h"
 
 AutonomousShootfromCenter::AutonomousShootfromCenter() 
 {
@@ -18,6 +19,10 @@ AutonomousShootfromCenter::AutonomousShootfromCenter()
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());
 	// these will run in order.
+	AddSequential(new FrisbeeAimAndShoot());
+	AddSequential(new FrisbeeAimAndShoot());
+	AddSequential(new FrisbeeAimAndShoot());
+
 
 	// To run multiple commands at the same time,
 	// use AddParallel()

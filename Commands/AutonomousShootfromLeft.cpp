@@ -11,6 +11,12 @@
 
 
 #include "AutonomousShootfromLeft.h"
+#include "FrisbeeAimAndShoot.h"
+#include "ChassisDriveDistance.h"
+#include "ChassisTurnAngle.h"
+
+#define AUTONOMOUS_DRIVE_FORWARD_DISTANCE   10.0
+#define AUTONOMOUS_TURN_ANGLE               15.0
 
 AutonomousShootfromLeft::AutonomousShootfromLeft() 
 {
@@ -30,4 +36,19 @@ AutonomousShootfromLeft::AutonomousShootfromLeft()
 	// e.g. if Command1 requires chassis, and Command2 requires arm,
 	// a CommandGroup containing them would require both the chassis and the
 	// arm.
+	
+	// drive forward
+	   AddSequential(new ChassisDriveDistance(AUTONOMOUS_DRIVE_FORWARD_DISTANCE));
+	   
+	   // turn left 
+	   AddSequential(new ChassisTurnAngle(AUTONOMOUS_TURN_ANGLE)); 
+	 
+	   // shoot first Frisbee
+	   AddSequential(new FrisbeeAimAndShoot());
+	   
+	   // shoot second Frisbee
+	   AddSequential(new FrisbeeAimAndShoot());
+	   
+	   // shoot third Frisbee
+	   AddSequential(new FrisbeeAimAndShoot());
 }
