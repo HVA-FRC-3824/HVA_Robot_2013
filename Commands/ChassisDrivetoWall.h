@@ -23,6 +23,9 @@
  */
 class ChassisDrivetoWall: public Command 
 {
+private:
+	PIDController *PIDcontroller;
+	
 public:
 	ChassisDrivetoWall();
 	virtual void Initialize();

@@ -53,3 +53,7 @@ void Drivetrain::PIDWrite(float output)
 {
    holonomic->HolonomicDrive(0.0, 0.0, output); //This PID only works for rotation
 }
+double Drivetrain::PIDGet()
+{
+	return ultrasonicFront->GetValue() * UNITS_TO_INCHES;
+}
