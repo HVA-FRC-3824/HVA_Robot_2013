@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #include "AutonomousShootfromRight.h"
 #include "FrisbeeAimAndShoot.h"
 #include "ChassisDriveDistance.h"

@@ -8,29 +8,28 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef CHASSIS_DRIVE_DISTANCE_H
-#define CHASSIS_DRIVE_DISTANCE_H
 
-#include "Commands/Subsystem.h"
-#include "../Robot.h"
+
+#ifndef CLIMB_H
+#define CLIMB_H
+
+#include "Commands/CommandGroup.h"
+#include "ClimberExtend.h"
+#include "ClimberRetract.h"
+#include "HookUp.h"
+#include "HookDowntoEngageTop.h"
+#include "HookDowntoLimit.h"
+#include "HookUptoEngage.h"
+
 
 /**
  *
  *
  * @author ExampleAuthor
  */
-class ChassisDriveDistance: public Command 
-{
-private:
-   float driveDistance;
-   
-public:
-	ChassisDriveDistance(float distance);
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
+class Climb: public CommandGroup {
+public:	
+	Climb();
 };
 
 #endif

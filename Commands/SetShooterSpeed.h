@@ -8,24 +8,26 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef CHASSIS_DRIVE_DISTANCE_H
-#define CHASSIS_DRIVE_DISTANCE_H
+
+#ifndef SET_SHOOTER_SPEED_H
+#define SET_SHOOTER_SPEED_H
+
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
+#include "Timer.h"
 
 /**
  *
  *
  * @author ExampleAuthor
  */
-class ChassisDriveDistance: public Command 
-{
+class SetShooterSpeed: public Command {
 private:
-   float driveDistance;
-   
+   Timer *shooterTimer;
+   double shooterSpeed;
 public:
-	ChassisDriveDistance(float distance);
+	SetShooterSpeed(double speed);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

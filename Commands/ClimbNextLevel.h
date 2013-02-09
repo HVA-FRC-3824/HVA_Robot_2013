@@ -14,7 +14,7 @@
 #define CLIMB_NEXT_LEVEL_H
 
 #include "Commands/CommandGroup.h"
-
+#include "HookUp.h"
 /**
  *
  *

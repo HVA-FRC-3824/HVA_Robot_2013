@@ -178,16 +178,16 @@ Children:
       Base: Gyro
       Children: []
       Properties:
-        Sensitivity: !!robotbuilder.data.properties.DoubleProperty {default: 1.25,
+        Sensitivity: !!robotbuilder.data.properties.DoubleProperty {default: 0.007,
           name: Sensitivity, validators: null, value: 0.007}
         Input Module (Analog): !!robotbuilder.data.properties.ChoicesProperty
-          choices: ['1', '2']
+          choices: ['1']
           default: '1'
           name: Input Module (Analog)
           validators: [AnalogInput]
           value: '1'
         Input Channel (Analog): !!robotbuilder.data.properties.ChoicesProperty
-          choices: ['1', '2', '3', '4', '5', '6', '7', '8']
+          choices: ['1', '2']
           default: '1'
           name: Input Channel (Analog)
           validators: [AnalogInput]
@@ -198,7 +198,7 @@ Children:
   - Name: Shooter Wheel
     Base: Subsystem
     Children:
-    - Name: Motor
+    - Name: Motor Front
       Base: Speed Controller
       Children: []
       Properties:
@@ -239,6 +239,28 @@ Children:
           name: Input Module (Digital)
           validators: [DigitalChannel]
           value: '1'
+    - Name: Motor Back
+      Base: Speed Controller
+      Children: []
+      Properties:
+        Output Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id001
+          default: '1'
+          name: Output Module (Digital)
+          validators: *id002
+          value: '1'
+        Type: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id003
+          default: Victor
+          name: Type
+          validators: null
+          value: Talon
+        Output Channel (PWM): !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id004
+          default: '1'
+          name: Output Channel (PWM)
+          validators: *id005
+          value: '10'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: Display Shooter Speed}
@@ -413,38 +435,6 @@ Children:
           name: Output Channel (Relay)
           validators: *id017
           value: '3'
-    - Name: Stopper Right
-      Base: Servo
-      Children: []
-      Properties:
-        Output Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id018 ['1', '2']
-          default: '1'
-          name: Output Module (Digital)
-          validators: &id019 [PWMOutput]
-          value: '1'
-        Output Channel (PWM): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id020 ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
-          default: '1'
-          name: Output Channel (PWM)
-          validators: &id021 [PWMOutput]
-          value: '7'
-    - Name: Stopper Left
-      Base: Servo
-      Children: []
-      Properties:
-        Output Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id018
-          default: '1'
-          name: Output Module (Digital)
-          validators: *id019
-          value: '1'
-        Output Channel (PWM): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id020
-          default: '1'
-          name: Output Channel (PWM)
-          validators: *id021
-          value: '8'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: None}
@@ -539,38 +529,6 @@ Children:
           name: Input Module (Digital)
           validators: *id013
           value: '1'
-    - Name: Moving Arm Engaged
-      Base: Limit Switch
-      Children: []
-      Properties:
-        Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id010
-          default: '1'
-          name: Input Channel (Digital)
-          validators: *id011
-          value: '9'
-        Input Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id012
-          default: '1'
-          name: Input Module (Digital)
-          validators: *id013
-          value: '1'
-    - Name: Static Arm Engaged
-      Base: Limit Switch
-      Children: []
-      Properties:
-        Input Channel (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id010
-          default: '1'
-          name: Input Channel (Digital)
-          validators: *id011
-          value: '7'
-        Input Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id012
-          default: '1'
-          name: Input Module (Digital)
-          validators: *id013
-          value: '1'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: None}
@@ -609,6 +567,28 @@ Children:
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: Display Pump State}
+  - Name: Test Subsystem
+    Base: Subsystem
+    Children:
+    - Name: Test Servo
+      Base: Servo
+      Children: []
+      Properties:
+        Output Module (Digital): !!robotbuilder.data.properties.ChoicesProperty
+          choices: ['1', '2']
+          default: '1'
+          name: Output Module (Digital)
+          validators: [PWMOutput]
+          value: '1'
+        Output Channel (PWM): !!robotbuilder.data.properties.ChoicesProperty
+          choices: ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']
+          default: '1'
+          name: Output Channel (PWM)
+          validators: [PWMOutput]
+          value: '7'
+    Properties:
+      Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Default Command, type: Command, validators: null, value: None}
   Properties: {}
 - Name: Operator Interface
   Base: OI
@@ -759,6 +739,20 @@ Children:
         name: Requires, type: Subsystem, validators: null, value: Shooter Pusher}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
+  - Name: Set Shooter Angle
+    Base: Setpoint Command
+    Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.ComponentSelectionProperty
+        componentName: PID Subsystem
+        default: None
+        name: Requires
+        validators: [TypeDropdownSelected]
+        value: Shooter Angle Adjust
+      Setpoint: !!robotbuilder.data.properties.DoubleProperty {default: 1, name: Setpoint,
+        validators: null, value: 1.0}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: false}
   - Name: Frisbee Aim And Shoot
     Base: Command Group
     Children: []
@@ -789,23 +783,15 @@ Children:
         name: Requires, type: Subsystem, validators: null, value: None}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
-  - Name: Set Shooter Angle
+  - Name: Set Shooter Speed
     Base: Command
     Children: []
     Properties:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Requires, type: Subsystem, validators: null, value: Shooter Angle Adjust}
+        name: Requires, type: Subsystem, validators: null, value: Shooter Wheel}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: false}
-  - Name: Hook Up
-    Base: Command
-    Children: []
-    Properties:
-      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Requires, type: Subsystem, validators: null, value: Climber}
-      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: true}
-  - Name: Hook Down to Engage
+  - Name: Hook Down to Engage Top
     Base: Command
     Children: []
     Properties:
@@ -819,6 +805,44 @@ Children:
     Properties:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: Climber}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+  - Name: Hook Engage
+    Base: Command
+    Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: Climber}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+  - Name: Hook Up
+    Base: Command
+    Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: Climber}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+  - Name: Climb
+    Base: Command Group
+    Children: []
+    Properties:
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+  - Name: Hook Up to Engage
+    Base: Command
+    Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: Climber}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+  - Name: Test SmartDashboard
+    Base: Command
+    Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: Test Subsystem}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
   Properties: {}
@@ -841,6 +865,6 @@ Properties:
     validators: null, value: 3824}
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
-  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Administrator\NetBeansProjects',
+  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\YoungAsus\NetBeansProjects',
     extension: null, folder: true, name: Java Project Directory, validators: null,
     value: 'C:\Users\Administrator\NetBeansProjects'}

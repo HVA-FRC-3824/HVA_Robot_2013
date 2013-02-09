@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #ifndef FRISBEE_AIM_AND_SHOOT_H
 #define FRISBEE_AIM_AND_SHOOT_H
 
@@ -21,7 +19,7 @@
 // The 1.0 is a placeholder. This shall come from image processing 
 // calculations. 					
 
-#define FRISBEE_SPEED_AUTO			1.0
+
 
 #include "Commands/CommandGroup.h"
 

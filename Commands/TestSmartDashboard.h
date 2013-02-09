@@ -8,8 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef CHASSIS_DRIVE_DISTANCE_H
-#define CHASSIS_DRIVE_DISTANCE_H
+#ifndef TEST_SMARTDASHBOARD_H
+#define TEST_SMARTDASHBOARD_H
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -19,13 +19,10 @@
  *
  * @author ExampleAuthor
  */
-class ChassisDriveDistance: public Command 
-{
-private:
-   float driveDistance;
-   
+class TestSmartDashboard: public Command {
 public:
-	ChassisDriveDistance(float distance);
+   SendableChooser *chooser;
+	TestSmartDashboard();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

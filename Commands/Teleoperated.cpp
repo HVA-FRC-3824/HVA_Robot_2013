@@ -24,7 +24,7 @@ void Teleoperated::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void Teleoperated::Execute() 
 {
-	
+	Robot::drivetrain->HolonomicDrive(Robot::oi->getDriveJoystick());
 }
 // Make this return true when this Command no longer needs to run execute()
 bool Teleoperated::IsFinished() 
