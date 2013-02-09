@@ -11,7 +11,10 @@
 
 #ifndef CHASSIS_DRIVE_DISTANCE_H
 #define CHASSIS_DRIVE_DISTANCE_H
-
+#define DRIVING_POWER               0.7
+#define DRIVING_DIRECTION           0.0
+#define DRIVING_ROTATION            0.0  
+#define DRIVE_TIMER                 2.0
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
