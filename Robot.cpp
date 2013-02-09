@@ -27,8 +27,7 @@ OI* Robot::oi = 0;
 void Robot::RobotInit()
 {
    RobotMap::init();
-   chooser = new SendableChooser();
-
+	
    chooser = new SendableChooser();
    chooser->AddDefault("Do Nothing", new AutonomousDoNothing());
    chooser->AddObject("Shoot from Center", new AutonomousShootfromCenter());

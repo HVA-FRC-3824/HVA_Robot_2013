@@ -8,11 +8,14 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
+
 #ifndef CHASSIS_DRIVE_DISTANCE_H
 #define CHASSIS_DRIVE_DISTANCE_H
 
+
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
+#include "Timer.h" 
 
 /**
  *
@@ -23,6 +26,7 @@ class ChassisDriveDistance: public Command
 {
 private:
    float driveDistance;
+   Timer *timer;
    
 public:
 	ChassisDriveDistance(float distance);

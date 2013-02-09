@@ -16,9 +16,6 @@
 
 #define FRISBEE_ANGLE_AUTO			5.0		
 
-// The 1.0 is a placeholder. This shall come from image processing 
-// calculations. 					
-
 
 
 #include "Commands/CommandGroup.h"
