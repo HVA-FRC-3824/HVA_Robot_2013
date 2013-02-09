@@ -18,11 +18,14 @@ ChassisDriveDistance::ChassisDriveDistance(float distance)
 	
 	// get the drive distance
 	driveDistance = distance;
+	timer = new Timer();
 }
 // Called just before this Command runs the first time
 void ChassisDriveDistance::Initialize() 
 {
-	
+	Robot::drivetrain->HolonomicDrive(DRIVING_POWER, DRIVING_DIRECTION, DRIVING_ROTATION);
+	timer->Reset();
+	timer->Start();
 }
 // Called repeatedly when this Command is scheduled to run
 void ChassisDriveDistance::Execute() 
@@ -32,12 +35,15 @@ void ChassisDriveDistance::Execute()
 // Make this return true when this Command no longer needs to run execute()
 bool ChassisDriveDistance::IsFinished() 
 {
+	if (timer->Get() == DRIVE_TIMER)
+		return true;
+	
 	return false;
 }
 // Called once after isFinished returns true
 void ChassisDriveDistance::End() 
 {
-	
+	timer->Stop();
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

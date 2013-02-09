@@ -32,12 +32,10 @@
 #define DRIVING_ROTATION			0.0
 #define TURN_THRESHOLD				5.0
 #define ROTATION_POWER				0.5
-#define DRIVE_POWER					1.0
-#define DRIVE_DIRECTION				0.0
-#define DRIVE_ROTATION				0.0
 #define STOPPING_THRESHOLD			2.0
 #define TIPPER_EXTEND_RETRACT_TIME  3.0
 #define PUSHER_TIMER				0.5
+#define DRIVE_TIMER					2.0
 class Robot : public IterativeRobot 
 {
 public:

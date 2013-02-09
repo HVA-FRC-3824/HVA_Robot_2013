@@ -15,6 +15,7 @@
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
+#include "Timer.h" 
 
 /**
  *
@@ -25,6 +26,7 @@ class ChassisDriveDistance: public Command
 {
 private:
    float driveDistance;
+   Timer *timer;
    
 public:
 	ChassisDriveDistance(float distance);
