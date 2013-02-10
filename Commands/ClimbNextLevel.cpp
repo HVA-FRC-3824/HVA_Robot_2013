@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #include "ClimbNextLevel.h"
 
 ClimbNextLevel::ClimbNextLevel() 
@@ -19,6 +17,7 @@ ClimbNextLevel::ClimbNextLevel()
 	//      AddSequential(new Command2());
 	// these will run in order.
    AddSequential(new HookUp());
+      
 	// To run multiple commands at the same time,
 	// use AddParallel()
 	// e.g. AddParallel(new Command1());

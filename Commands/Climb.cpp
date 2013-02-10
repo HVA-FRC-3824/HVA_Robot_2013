@@ -8,23 +8,22 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #include "Climb.h"
 
-Climb::Climb() {
+Climb::Climb()
+{
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());
 	// these will run in order.
 
-   AddParallel(new ClimberExtend());
-   AddSequential(new HookUptoEngage());
-   AddSequential(new HookDowntoEngageTop());
-   AddSequential(new ClimberRetract());
-   AddSequential(new HookUptoEngage());
-   AddSequential(new HookDowntoEngageTop());
-   AddSequential(new HookUptoEngage());
+//   AddParallel(new ClimberExtend());
+//   AddSequential(new HookUptoEngage());
+//   AddSequential(new HookDowntoEngageTop());
+//   AddSequential(new ClimberRetract());
+//   AddSequential(new HookUptoEngage());
+//   AddSequential(new HookDowntoEngageTop());
+//   AddSequential(new HookUptoEngage());
    
 	// To run multiple commands at the same time,
 	// use AddParallel()

@@ -8,12 +8,10 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #include "EngageTower.h"
 #include "ClimberExtend.h"
 
 EngageTower::EngageTower() 
 {
-	AddSequential(new ClimberExtend());
+   AddSequential(new ClimberExtend());
 }

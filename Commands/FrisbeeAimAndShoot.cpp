@@ -27,7 +27,7 @@ FrisbeeAimAndShoot::FrisbeeAimAndShoot()
 
    
    //AddSequential(new SetShooterAngle(FRISBEE_ANGLE_AUTO));
-//   float shooterSpeed = SmartDashboard::GetNumber("Shooter Voltage:");
-//   AddSequential(new SetShooterSpeed(shooterSpeed));
-//   AddSequential(new FrisbeeShoot());
+   float shooterSpeed = SmartDashboard::GetNumber("Shooter Voltage:");
+   AddSequential(new SetShooterSpeed(shooterSpeed));
+   AddSequential(new FrisbeeShoot());
 }
