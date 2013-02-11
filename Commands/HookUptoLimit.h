@@ -9,8 +9,8 @@
 // it from being updated in th future.
 
 
-#ifndef HOOK_DOWN_TO_ENGAGE_H
-#define HOOK_DOWN_TO_ENGAGE_H
+#ifndef HOOK_UP_TO_LIMIT_H
+#define HOOK_UP_TO_LIMIT_H
 
 
 #include "Commands/Subsystem.h"
@@ -21,9 +21,9 @@
  *
  * @author ExampleAuthor
  */
-class HookDowntoEngage: public Command {
+class HookUptoLimit: public Command {
 public:
-	HookDowntoEngage();
+	HookUptoLimit();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

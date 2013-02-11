@@ -28,16 +28,15 @@ public:
 	static AnalogChannel* drivetrainUltrasonicFront;
 	static AnalogChannel* drivetrainUltrasonicRear;
 	static Gyro* drivetrainGyro;
-	static SpeedController* shooterWheelMotorFront;
+	static SpeedController* shooterWheelMotor;
 	static GearTooth* shooterWheelEncoder;
-	static SpeedController* shooterWheelMotorBack;
+	static SpeedController* shooterWheelVoltageMotor;
 	static Relay* shooterPusherMotor;
 	static DigitalInput* shooterPusherStopSwitch;
 	static SpeedController* shooterAngleAdjustMotor;
 	static AnalogChannel* shooterAngleAdjustPotentiometer;
 	static DigitalInput* shooterAngleAdjustLimitSwitchHigh;
 	static DigitalInput* shooterAngleAdjustLimitSwitchLow;
-	static Relay* frisbeeTransportMotor;
 	static DoubleSolenoid* climberTipperSolenoid;
 	static SpeedController* climberMotor;
 	static DigitalInput* climberLimitUp;

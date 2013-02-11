@@ -31,7 +31,8 @@ void FrisbeeShoot::Execute()
 // Make this return true when this Command no longer needs to run execute()
 bool FrisbeeShoot::IsFinished() 
 {
-	if (pusherTimer->Get() > 0.5)
+   // TODO - Increase time when limit switch is installed
+	if (pusherTimer->Get() > 0.73)
 	{
 		return Robot::shooterPusher->stopSwitch->Get();
 	}

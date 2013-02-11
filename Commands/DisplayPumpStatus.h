@@ -9,21 +9,26 @@
 // it from being updated in th future.
 
 
+#ifndef DISPLAY_PUMP_STATUS_H
+#define DISPLAY_PUMP_STATUS_H
 
-#ifndef PULL_UP_ON_TOWER_H
-#define PULL_UP_ON_TOWER_H
 
-#include "Commands/CommandGroup.h"
+#include "Commands/Subsystem.h"
+#include "../Robot.h"
 
 /**
  *
  *
  * @author ExampleAuthor
  */
-class PullUpOnTower: public CommandGroup 
-{
-public:	
-	PullUpOnTower();
+class DisplayPumpStatus: public Command {
+public:
+	DisplayPumpStatus();
+	virtual void Initialize();
+	virtual void Execute();
+	virtual bool IsFinished();
+	virtual void End();
+	virtual void Interrupted();
 };
 
 #endif

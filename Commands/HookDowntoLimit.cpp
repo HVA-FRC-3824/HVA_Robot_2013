@@ -24,7 +24,8 @@ void HookDowntoLimit::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void HookDowntoLimit::Execute() 
 {
-	
+	// move the hook down
+   Robot::climber->motor->Set(CLIMBER_VOLTAGE_DOWN);
 }
 // Make this return true when this Command no longer needs to run execute()
 bool HookDowntoLimit::IsFinished() 
@@ -40,4 +41,5 @@ void HookDowntoLimit::End()
 // subsystems is scheduled to run
 void HookDowntoLimit::Interrupted()
 {
+   
 }

@@ -8,22 +8,20 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-#ifndef HOOK_UP_H
-#define HOOK_UP_H
-
+#ifndef CLIMB_ABORT_H
+#define CLIMB_ABORT_H
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
 
 /**
- * Moves Hook up until it hits upper limit switch (Engaged 1)
+ *
  *
  * @author ExampleAuthor
  */
-class HookUp: public Command {
+class ClimbAbort: public Command {
 public:
-	HookUp();
+	ClimbAbort();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

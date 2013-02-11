@@ -17,13 +17,11 @@ Climb::Climb()
 	//      AddSequential(new Command2());
 	// these will run in order.
 
-//   AddParallel(new ClimberExtend());
-//   AddSequential(new HookUptoEngage());
-//   AddSequential(new HookDowntoEngageTop());
-//   AddSequential(new ClimberRetract());
-//   AddSequential(new HookUptoEngage());
-//   AddSequential(new HookDowntoEngageTop());
-//   AddSequential(new HookUptoEngage());
+   AddParallel(new ClimberExtend());
+   AddSequential(new HookUptoEngage());
+   AddSequential(new ClimberRetract());
+   AddSequential(new HookUptoEngage());
+   AddSequential(new HookUptoEngage());
    
 	// To run multiple commands at the same time,
 	// use AddParallel()

@@ -23,12 +23,15 @@ void SetShooterSpeed::Initialize()
 {
    shooterTimer->Reset();
    shooterTimer->Start();
+   
+   // TODO - enable when geartooth sensor is available
 	Robot::shooterWheel->SetWheelSpeed(shooterSpeed);
 }
 // Called repeatedly when this Command is scheduled to run
 void SetShooterSpeed::Execute() 
 {
-	
+	 Robot::shooterWheelVoltage->motor->Set
+	    (Robot::oi->getDriveJoystick()->GetAxis( Joystick::kThrottleAxis));
 }
 // Make this return true when this Command no longer needs to run execute()
 bool SetShooterSpeed::IsFinished() 

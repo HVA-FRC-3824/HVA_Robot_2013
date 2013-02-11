@@ -25,6 +25,8 @@ void Teleoperated::Initialize()
 void Teleoperated::Execute() 
 {
 	Robot::drivetrain->HolonomicDrive(Robot::oi->getDriveJoystick());
+   Robot::shooterWheelVoltage->motor->Set
+         (Robot::oi->getShootJoystick()->GetThrottle());
 }
 // Make this return true when this Command no longer needs to run execute()
 bool Teleoperated::IsFinished() 
