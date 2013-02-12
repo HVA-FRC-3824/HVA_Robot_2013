@@ -26,12 +26,16 @@ void SetShooterSpeed::Initialize()
    
    // TODO - enable when geartooth sensor is available
 	Robot::shooterWheel->SetWheelSpeed(shooterSpeed);
+   
+   //Testing without sensor and without PID
+   // Robot::shooterWheelVoltage->motor->Set(shooterSpeed);
 }
 // Called repeatedly when this Command is scheduled to run
 void SetShooterSpeed::Execute() 
 {
+//Testing with Joystick: 
 	 Robot::shooterWheelVoltage->motor->Set
-	    (Robot::oi->getDriveJoystick()->GetAxis( Joystick::kThrottleAxis));
+	    (Robot::oi->getDriveJoystick()->GetAxis(Joystick::kThrottleAxis));
 }
 // Make this return true when this Command no longer needs to run execute()
 bool SetShooterSpeed::IsFinished() 

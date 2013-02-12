@@ -19,7 +19,8 @@
 /**
  *
  *
- * @author ExampleAuthor
+ * @author HVA Robotics Team 3824
+ * What does this do and code needs to be written.
  */
 class HookUptoLimit: public Command {
 public:

@@ -20,7 +20,7 @@ Climb::Climb()
    AddParallel(new ClimberExtend());
    AddSequential(new HookUptoEngage());
    AddSequential(new ClimberRetract());
-   AddSequential(new HookUptoEngage());
+   AddSequential(new HookUptoEngage()); // Not written: DO THIS
    AddSequential(new HookUptoEngage());
    
 	// To run multiple commands at the same time,
