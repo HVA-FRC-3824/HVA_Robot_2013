@@ -23,7 +23,7 @@
 /**
  *
  *
- * @author ExampleAuthor
+ * @author HVA Robotics Team 3824
  */
 class FrisbeeAimAndShoot: public CommandGroup 
 {

@@ -19,7 +19,7 @@
 /**
  *
  *
- * @author ExampleAuthor
+ * @author HVA Robotics Team 3824
  */
 class HookUptoEngage: public Command {
 public:
