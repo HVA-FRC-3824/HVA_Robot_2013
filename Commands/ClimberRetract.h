@@ -16,7 +16,9 @@
 #include "timer.h"
 
 /**
- *
+ * This does the opposite of ClimberExtend. It pulls the Climbing 
+ * Mechanism towards the robot using pneumatic pistons and purely 
+ * mechanical surgical tubing.
  *
  * @author HVA Robotics Team 3824
  */

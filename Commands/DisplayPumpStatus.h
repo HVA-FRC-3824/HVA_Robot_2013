@@ -17,7 +17,7 @@
 #include "../Robot.h"
 
 /**
- *
+ * Display Pump Status on the SmartDashboard as a boolean value.
  *
  * @author HVA Robotics Team 3824
  */

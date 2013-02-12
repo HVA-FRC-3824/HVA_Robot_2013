@@ -16,8 +16,11 @@
 #include "Timer.h"
 
 /**
+ * Starts the Pneumatic Pistons forward so that it pushes the climbing 
+ * mechanism away from the robot.
  * 
- *
+ * It requires the Climber subsystem. 
+ * 
  * @author HVA Robotics Team 3824
  */
 class ClimberExtend: public Command 
