@@ -8,26 +8,23 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef DISPLAY_SHOOTER_SPEED_H
-#define DISPLAY_SHOOTER_SPEED_H
+#ifndef CLIMB_H
+#define CLIMB_H
 
-#include "Commands/Subsystem.h"
-#include "../Robot.h"
+#include "Commands/CommandGroup.h"
+#include "ClimberExtend.h"
+#include "ClimberRetract.h"
+#include "HookDowntoLimit.h"
+#include "HookUptoEngage.h"
 
 /**
  *
  *
  * @author ExampleAuthor
  */
-class DisplayShooterSpeed: public Command 
-{
-public:
-	DisplayShooterSpeed();
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
+class Climb: public CommandGroup {
+public:	
+	Climb();
 };
 
 #endif

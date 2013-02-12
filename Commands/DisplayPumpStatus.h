@@ -9,11 +9,26 @@
 // it from being updated in th future.
 
 
+#ifndef DISPLAY_PUMP_STATUS_H
+#define DISPLAY_PUMP_STATUS_H
 
-#include "EngageTower.h"
-#include "ClimberExtend.h"
 
-EngageTower::EngageTower() 
-{
-	AddSequential(new ClimberExtend());
-}
+#include "Commands/Subsystem.h"
+#include "../Robot.h"
+
+/**
+ *
+ *
+ * @author ExampleAuthor
+ */
+class DisplayPumpStatus: public Command {
+public:
+	DisplayPumpStatus();
+	virtual void Initialize();
+	virtual void Execute();
+	virtual bool IsFinished();
+	virtual void End();
+	virtual void Interrupted();
+};
+
+#endif

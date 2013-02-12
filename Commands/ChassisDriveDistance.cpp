@@ -49,4 +49,5 @@ void ChassisDriveDistance::End()
 // subsystems is scheduled to run
 void ChassisDriveDistance::Interrupted() 
 {
+   End();
 }

@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
 #ifndef FRISBEE_SHOOT_H
 #define FRISBEE_SHOOT_H
-
 
 #include "Timer.h"
 #include "Commands/Subsystem.h"

@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #ifndef AUTONOMOUS_SHOOT_FROM_CENTER_H
 #define AUTONOMOUS_SHOOT_FROM_CENTER_H
 

@@ -20,7 +20,7 @@ ChassisTurnAngle::ChassisTurnAngle(float turnAngle)
 	      SmartDashboard::GetNumber("Chassis Turn P Term:"),
 	      SmartDashboard::GetNumber("Chassis Turn I Term:"), 
 	      SmartDashboard::GetNumber("Chassis Turn D Term:"),
-	      Robot::drivetrain->gyro, Robot::drivetrain);
+	      Robot::drivetrain, Robot::drivetrain);
 	// set the desired turn angle
 	degreesToTurn = turnAngle;
 	

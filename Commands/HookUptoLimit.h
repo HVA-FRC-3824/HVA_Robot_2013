@@ -9,21 +9,22 @@
 // it from being updated in th future.
 
 
-#ifndef HOOK_UP_H
-#define HOOK_UP_H
+#ifndef HOOK_UP_TO_LIMIT_H
+#define HOOK_UP_TO_LIMIT_H
 
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
 
 /**
- * Moves Hook up until it hits upper limit switch (Engaged 1)
  *
- * @author ExampleAuthor
+ *
+ * @author HVA Robotics Team 3824
+ * What does this do and code needs to be written.
  */
-class HookUp: public Command {
+class HookUptoLimit: public Command {
 public:
-	HookUp();
+	HookUptoLimit();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

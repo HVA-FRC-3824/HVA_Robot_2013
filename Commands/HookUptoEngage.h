@@ -9,21 +9,26 @@
 // it from being updated in th future.
 
 
+#ifndef HOOK_UP_TO_ENGAGE_H
+#define HOOK_UP_TO_ENGAGE_H
 
-#ifndef PULL_UP_ON_TOWER_H
-#define PULL_UP_ON_TOWER_H
 
-#include "Commands/CommandGroup.h"
+#include "Commands/Subsystem.h"
+#include "../Robot.h"
 
 /**
  *
  *
  * @author ExampleAuthor
  */
-class PullUpOnTower: public CommandGroup 
-{
-public:	
-	PullUpOnTower();
+class HookUptoEngage: public Command {
+public:
+	HookUptoEngage();
+	virtual void Initialize();
+	virtual void Execute();
+	virtual bool IsFinished();
+	virtual void End();
+	virtual void Interrupted();
 };
 
 #endif

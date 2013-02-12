@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-#ifndef DISPLAY_PUMP_STATE_H
-#define DISPLAY_PUMP_STATE_H
-
+#ifndef CLIMB_ABORT_H
+#define CLIMB_ABORT_H
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -21,10 +19,9 @@
  *
  * @author ExampleAuthor
  */
-class DisplayPumpState: public Command 
-{
+class ClimbAbort: public Command {
 public:
-	DisplayPumpState();
+	ClimbAbort();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

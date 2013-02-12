@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #include "AutonomousShootfromCenter.h"
 #include "FrisbeeAimAndShoot.h"
 
@@ -19,10 +17,6 @@ AutonomousShootfromCenter::AutonomousShootfromCenter()
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());
 	// these will run in order.
-	AddSequential(new FrisbeeAimAndShoot());
-	AddSequential(new FrisbeeAimAndShoot());
-	AddSequential(new FrisbeeAimAndShoot());
-
 
 	// To run multiple commands at the same time,
 	// use AddParallel()
@@ -30,9 +24,7 @@ AutonomousShootfromCenter::AutonomousShootfromCenter()
 	//      AddSequential(new Command2());
 	// Command1 and Command2 will run in parallel.
 
-	// A command group will require all of the subsystems that each member
-	// would require.
-	// e.g. if Command1 requires chassis, and Command2 requires arm,
-	// a CommandGroup containing them would require both the chassis and the
-	// arm.
+   AddSequential(new FrisbeeAimAndShoot());
+   AddSequential(new FrisbeeAimAndShoot());
+   AddSequential(new FrisbeeAimAndShoot());
 }

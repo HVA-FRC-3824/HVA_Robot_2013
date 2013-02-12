@@ -8,33 +8,26 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
 #include "SetShooterAngle.h"
 #include "FrisbeeAimAndShoot.h"
-
+#include "FrisbeeShoot.h"
+#include "SetShooterSpeed.h"
 FrisbeeAimAndShoot::FrisbeeAimAndShoot()
 {
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());
 	// these will run in order.
-	AddSequential(new SetShooterAngle(FRISBEE_ANGLE_AUTO));
-	
-	// If we decide to do both angle and wheel speed adjustment,
-	// the base code is here, but commented out.
-//	AddSequential(new SetShooterSpeed(FRISBEE_SPEED_AUTO));
-	
-	// To run multiple commands at the same time,
-	// use AddParallel()
-	// e.g. AddParallel(new Command1());
-	//      AddSequential(new Command2());
-	// Command1 and Command2 will run in parallel.
+   
+   // To run multiple commands at the same time,
+   // use AddParallel()
+   // e.g. AddParallel(new Command1());
+   //      AddSequential(new Command2());
+   // Command1 and Command2 will run in parallel.
 
-	// A command group will require all of the subsystems that each member
-	// would require.
-	// e.g. if Command1 requires chassis, and Command2 requires arm,
-	// a CommandGroup containing them would require both the chassis and the
-	// arm.
-	
-	
+   
+   //AddSequential(new SetShooterAngle(FRISBEE_ANGLE_AUTO));
+   float shooterSpeed = SmartDashboard::GetNumber("Shooter Voltage:");
+   AddSequential(new SetShooterSpeed(shooterSpeed));
+   AddSequential(new FrisbeeShoot());
 }

@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #include "AutonomousShootfromLeft.h"
 #include "FrisbeeAimAndShoot.h"
 #include "ChassisDriveDistance.h"
@@ -38,17 +36,17 @@ AutonomousShootfromLeft::AutonomousShootfromLeft()
 	// arm.
 	
 	// drive forward
-	   AddSequential(new ChassisDriveDistance(AUTONOMOUS_DRIVE_FORWARD_DISTANCE));
+	AddSequential(new ChassisDriveDistance(AUTONOMOUS_DRIVE_FORWARD_DISTANCE));
 	   
-	   // turn left 
-	   AddSequential(new ChassisTurnAngle(AUTONOMOUS_TURN_ANGLE)); 
+	// turn left 
+	AddSequential(new ChassisTurnAngle(AUTONOMOUS_TURN_ANGLE)); 
 	 
-	   // shoot first Frisbee
-	   AddSequential(new FrisbeeAimAndShoot());
+	// shoot first Frisbee
+	AddSequential(new FrisbeeAimAndShoot());
 	   
-	   // shoot second Frisbee
-	   AddSequential(new FrisbeeAimAndShoot());
+	// shoot second Frisbee
+	AddSequential(new FrisbeeAimAndShoot());
 	   
-	   // shoot third Frisbee
-	   AddSequential(new FrisbeeAimAndShoot());
+	// shoot third Frisbee
+	AddSequential(new FrisbeeAimAndShoot());
 }
