@@ -20,7 +20,7 @@
 /**
  *
  *
- * @author ExampleAuthor
+ * @author HVA Robotics Team 3824
  */
 class Climb: public CommandGroup {
 public:	

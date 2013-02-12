@@ -17,7 +17,7 @@
 /**
  *
  *
- * @author ExampleAuthor
+ * @author HVA Robotics Team 3824
  */
 class ClimbAbort: public Command {
 public:
