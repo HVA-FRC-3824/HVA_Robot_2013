@@ -17,7 +17,7 @@
 #include "../Robot.h"
 
 /**
- *
+ * Guides Robot to the feeder station.
  *
  * @author HVA Robotics Team 3824
  */

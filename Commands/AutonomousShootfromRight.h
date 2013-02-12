@@ -14,7 +14,8 @@
 #include "Commands/CommandGroup.h"
 
 /**
- *
+ * Autonomous Command. Starts at the bottom right corner at the pyramid.
+ * Drives forward, turns left, then fires three disks.
  *
  * @author HVA Robotics Team 3824
  */

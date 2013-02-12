@@ -15,7 +15,7 @@
 #include "../Robot.h"
 
 /**
- *
+ * Does nothing when called. Autonomous.
  *
  * @author HVA Robotics Team 3824
  */

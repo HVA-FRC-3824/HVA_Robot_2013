@@ -24,7 +24,7 @@ void ChassisDrivetoWall::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void ChassisDrivetoWall::Execute() 
 {
-   printf("In ChassisDrivetoWall::Execute()\n");
+//   printf("In ChassisDrivetoWall::Execute()\n");
    Robot::drivetrain->HolonomicDrive(DRIVE_POWER, DRIVE_DIRECTION, DRIVE_ROTATION); // Starts motors 
 }
 // Make this return true when this Command no longer needs to run execute()

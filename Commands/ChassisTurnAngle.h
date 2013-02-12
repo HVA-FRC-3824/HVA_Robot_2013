@@ -15,9 +15,11 @@
 #include "../Robot.h"
 
 /**
- *
- *
- * @Kevin Dopatka
+ * This command uses PID controls to accurately turn a set degrees.
+ * This allows it to be accurate and concise without losing precision 
+ * from loss of voltage.
+ * 
+ * @author HVA Robotics Team 3824
  */
 class ChassisTurnAngle: public Command 
 {	

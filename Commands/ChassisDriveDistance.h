@@ -21,7 +21,7 @@
 #include "Timer.h" 
 
 /**
- *
+ * This command, when called, causes the robot to drive float distance.
  *
  * @author HVA Robotics Team 3824
  */

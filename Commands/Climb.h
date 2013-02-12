@@ -18,8 +18,8 @@
 #include "HookUptoEngage.h"
 
 /**
- *
- *
+ * This is a command group that allows the robot to climb.
+ * 
  * @author HVA Robotics Team 3824
  */
 class Climb: public CommandGroup {

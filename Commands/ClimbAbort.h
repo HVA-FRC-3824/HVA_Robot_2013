@@ -15,7 +15,8 @@
 #include "../Robot.h"
 
 /**
- *
+ * This command stops the climb motor.
+ * This should be called through a joystick button.
  *
  * @author HVA Robotics Team 3824
  */

@@ -14,7 +14,7 @@
 #include "Commands/CommandGroup.h"
 
 /**
- *
+ * Autonomous command that shoots three disks from the center.
  *
  * @author HVA Robotics Team 3824
  */

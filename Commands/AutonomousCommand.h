@@ -15,8 +15,8 @@
 #include "../Robot.h"
 
 /**
- *
- *
+ * Autonomous Command
+ * 
  * @author HVA Robotics Team 3824
  */
 class AutonomousCommand: public Command 
