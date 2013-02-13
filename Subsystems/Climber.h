@@ -12,7 +12,7 @@
 #include "Commands/Subsystem.h"
 #include "WPILib.h"
 /**
- *
+ * This instantiates the climbing subsystem(Yes this does state the obvious @Roland)
  *
  * @author HVA Robotics Team 3824
  */

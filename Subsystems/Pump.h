@@ -12,7 +12,7 @@
 #include "Commands/Subsystem.h"
 #include "WPILib.h"
 /**
- *
+ * This starts the compressor. It does not stop until the robot is killed.
  *
  * @author HVA Robotics Team 3824
  */
