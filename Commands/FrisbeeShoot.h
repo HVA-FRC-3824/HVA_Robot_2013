@@ -23,7 +23,6 @@
 class FrisbeeShoot: public Command 
 {
 private:
-	
 	Timer *pusherTimer;
 	
 public:

@@ -33,10 +33,8 @@ public:
 	static SpeedController* shooterWheelVoltageMotor;
 	static Relay* shooterPusherMotor;
 	static DigitalInput* shooterPusherStopSwitch;
-	static SpeedController* shooterAngleAdjustMotor;
 	static AnalogChannel* shooterAngleAdjustPotentiometer;
-	static DigitalInput* shooterAngleAdjustLimitSwitchHigh;
-	static DigitalInput* shooterAngleAdjustLimitSwitchLow;
+	static SpeedController* shooterAngleAdjustMotor;
 	static DoubleSolenoid* climberTipperSolenoid;
 	static SpeedController* climberMotor;
 	static DigitalInput* climberLimitUp;

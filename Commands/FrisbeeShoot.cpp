@@ -32,7 +32,7 @@ void FrisbeeShoot::Execute()
 bool FrisbeeShoot::IsFinished() 
 {
    // TODO - Increase time when limit switch is installed
-	if (pusherTimer->Get() > 0.73)
+	if (pusherTimer->Get() > PUSHER_TIMER)
 	{
 		return Robot::shooterPusher->stopSwitch->Get();
 	}

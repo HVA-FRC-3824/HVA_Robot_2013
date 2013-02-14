@@ -19,7 +19,6 @@ ChassisDrivetoWall::ChassisDrivetoWall()
 // Called just before this Command runs the first time
 void ChassisDrivetoWall::Initialize() 
 {
-
 }
 // Called repeatedly when this Command is scheduled to run
 void ChassisDrivetoWall::Execute() 
@@ -31,7 +30,6 @@ void ChassisDrivetoWall::Execute()
 bool ChassisDrivetoWall::IsFinished()
 {	
 	distance = Robot::drivetrain->GetFrontDistance();
-
 	if(distance <= STOPPING_DISTANCE)
 		{
 			printf("Has hit the right distance.\n");

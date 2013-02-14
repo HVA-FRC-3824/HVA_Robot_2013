@@ -23,10 +23,8 @@ GearTooth* RobotMap::shooterWheelEncoder = NULL;
 SpeedController* RobotMap::shooterWheelVoltageMotor = NULL;
 Relay* RobotMap::shooterPusherMotor = NULL;
 DigitalInput* RobotMap::shooterPusherStopSwitch = NULL;
-SpeedController* RobotMap::shooterAngleAdjustMotor = NULL;
 AnalogChannel* RobotMap::shooterAngleAdjustPotentiometer = NULL;
-DigitalInput* RobotMap::shooterAngleAdjustLimitSwitchHigh = NULL;
-DigitalInput* RobotMap::shooterAngleAdjustLimitSwitchLow = NULL;
+SpeedController* RobotMap::shooterAngleAdjustMotor = NULL;
 DoubleSolenoid* RobotMap::climberTipperSolenoid = NULL;
 SpeedController* RobotMap::climberMotor = NULL;
 DigitalInput* RobotMap::climberLimitUp = NULL;
@@ -82,17 +80,11 @@ void RobotMap::init()
 	shooterPusherStopSwitch = new DigitalInput(1, 2);
 	lw->AddSensor("Shooter Pusher", "Stop Switch", shooterPusherStopSwitch);
 	
-	shooterAngleAdjustMotor = new Victor(1, 9);
-	lw->AddActuator("Shooter Angle Adjust", "Motor", (Victor*) shooterAngleAdjustMotor);
-	
 	shooterAngleAdjustPotentiometer = new AnalogChannel(1, 5);
 	lw->AddSensor("Shooter Angle Adjust", "Potentiometer", shooterAngleAdjustPotentiometer);
 	
-	shooterAngleAdjustLimitSwitchHigh = new DigitalInput(1, 3);
-	lw->AddSensor("Shooter Angle Adjust", "Limit Switch High", shooterAngleAdjustLimitSwitchHigh);
-	
-	shooterAngleAdjustLimitSwitchLow = new DigitalInput(1, 4);
-	lw->AddSensor("Shooter Angle Adjust", "Limit Switch Low", shooterAngleAdjustLimitSwitchLow);
+	shooterAngleAdjustMotor = new Victor(1, 7);
+	lw->AddActuator("Shooter Angle Adjust", "Motor", (Victor*) shooterAngleAdjustMotor);
 	
 	climberTipperSolenoid = new DoubleSolenoid(1, 1, 2);      
 	

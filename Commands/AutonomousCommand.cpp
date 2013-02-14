@@ -19,7 +19,6 @@ AutonomousCommand::AutonomousCommand()
 // Called just before this Command runs the first time
 void AutonomousCommand::Initialize() 
 {
-
 }
 // Called repeatedly when this Command is scheduled to run
 void AutonomousCommand::Execute() 

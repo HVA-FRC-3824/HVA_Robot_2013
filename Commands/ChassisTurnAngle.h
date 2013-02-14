@@ -13,6 +13,7 @@
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
+#include "Timer.h"
 
 /**
  * This command uses PID controls to accurately turn a set degrees.
@@ -24,10 +25,12 @@
 class ChassisTurnAngle: public Command 
 {	
 private:
-	float degreesToTurn; 
+	double degreesToTurn; 
+   Timer *turnTimer;
 	PIDController *PIDcontroller;
+	
 public:
-	ChassisTurnAngle(float turnAngle);
+	ChassisTurnAngle(double turnAngle);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

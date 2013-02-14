@@ -25,8 +25,11 @@ void Teleoperated::Initialize()
 void Teleoperated::Execute() 
 {
 	Robot::drivetrain->HolonomicDrive(Robot::oi->getDriveJoystick());
-   Robot::shooterWheelVoltage->motor->Set
-         (Robot::oi->getShootJoystick()->GetThrottle());
+   Robot::shooterWheelVoltage->motor->Set(Robot::oi->getShootJoystick()->GetThrottle());
+   
+   SmartDashboard::PutBoolean("Shooter Switch", Robot::shooterPusher->stopSwitch->Get());
+   SmartDashboard::PutBoolean("Climber Up Limit Switch", Robot::climber->limitUp->Get());
+   SmartDashboard::PutBoolean("Climber Down Limit Switch", Robot::climber->limitDown->Get());
 }
 // Make this return true when this Command no longer needs to run execute()
 bool Teleoperated::IsFinished() 
