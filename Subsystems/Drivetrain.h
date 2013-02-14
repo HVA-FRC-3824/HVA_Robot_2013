@@ -13,7 +13,7 @@
 #include "WPILib.h"
 #include "../Robot.h"
 /**
- *
+ * This subsystem activates all driving capibilities and depth perseption.
  *
  * @author HVA Robotics Team 3824
  */
