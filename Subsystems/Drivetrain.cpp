@@ -43,36 +43,34 @@ void Drivetrain::HolonomicDrive(Joystick *joystick)
 }
 void Drivetrain::HolonomicDrive(float magnitude, float direction, float rotation)
 {
+   // drive the robot based on the method parameters
 	holonomic->HolonomicDrive(magnitude, direction, rotation);
 }
 float Drivetrain::GetFrontDistance()
 {
+   // return the front ultrasonic sensor in inches
 	return ultrasonicFront->GetValue() * UNITS_TO_INCHES;
 }
 float Drivetrain::GetRearDistance()
 {
+   // return the rear ultrasonic sensor in inches
 	return ultrasonicRear->GetValue() * UNITS_TO_INCHES;
 }
-float Drivetrain::GetDistance()
+double Drivetrain::PIDGet()
 {
-   return ultrasonicFront->GetValue() * UNITS_TO_INCHES;
+   // return the gyro angle for the PID controller
+   return Robot::drivetrain->gyro->GetAngle();
 }
 void Drivetrain::PIDWrite(float output)
 {
+   // turn the robot based on the PID controller
    holonomic->HolonomicDrive(0.0, 0.0, output); //This PID only works for rotation
-}
-
-//FIXME: ChassisTurnAngle uses this for the accelerometer. 
-//Do we want to use this for DriveToWall? Either replace or have both versions
-double Drivetrain::PIDGet()
-{
-	return ultrasonicFront->GetValue() * UNITS_TO_INCHES;
-}
-//double Drivetrain::TurnSource::PIDGet()
+} 
+//Dead code, but may want to try later when there is time
+//double Drivetrain::DistanceSource::PIDGet()
 //{
-//   return Robot::drivetrain->gyro->GetAngle();
+//	return ultrasonicFront->GetValue() * UNITS_TO_INCHES;
 //}
-//
 //double Drivetrain::DistanceSource::PIDGet()
 //{
 //   return Robot::drivetrain->GetFrontDistance();
