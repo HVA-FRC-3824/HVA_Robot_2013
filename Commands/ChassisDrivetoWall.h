@@ -17,8 +17,14 @@
 #include "../Robot.h"
 
 /**
- * Guides Robot to the feeder station.
+ * 
+ * TODO: this is not the feeder one
+ * Guides Robot to the feeder station.  
  *
+ * TODO: Is this suppose to just drive until it is at the right distance or also automatically
+ * align? If it should also align, it needs to be implemented and renamed in 
+ * Robotbuilder Wall->Feeder
+ * 
  * @author HVA Robotics Team 3824
  */
 class ChassisDrivetoWall: public Command 

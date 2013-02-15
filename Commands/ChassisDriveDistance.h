@@ -14,7 +14,6 @@
 #define DRIVING_POWER               0.7
 #define DRIVING_DIRECTION           0.0
 #define DRIVING_ROTATION            0.0  
-#define DRIVE_TIMER                 2.0
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -22,13 +21,15 @@
 
 /**
  * This command, when called, causes the robot to drive float distance.
+ * 
+ * FIMXE: Rename class into ChassisDriveTime/Duration in Robotbuilder
  *
  * @author HVA Robotics Team 3824
  */
 class ChassisDriveDistance: public Command 
 {
 private:
-   float driveDistance;
+   float driveDuration;
    Timer *timer;
    
 public:

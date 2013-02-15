@@ -27,6 +27,8 @@
  * Pulls a float from the SmartDashboard and inputs it to the 
  * SetShooterSpeed command, which is supposed to set the speed of the wheel
  * to the float shooterSpeed.
+ * 
+ * TODO: Aiming isn't implemented yet.
  *
  * @author HVA Robotics Team 3824
  */

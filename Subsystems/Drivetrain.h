@@ -14,6 +14,7 @@
 #include "../Robot.h"
 /**
  * This subsystem activates all driving capibilities and depth perseption.
+ * The current implementation of the PIDOuput can only be used to rotate the robot.
  *
  * @author HVA Robotics Team 3824
  */

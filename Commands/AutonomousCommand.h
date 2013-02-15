@@ -15,7 +15,7 @@
 #include "../Robot.h"
 
 /**
- * Autonomous Command
+ * Dummy command for robot builder. Does nothing.
  * 
  * @author HVA Robotics Team 3824
  */

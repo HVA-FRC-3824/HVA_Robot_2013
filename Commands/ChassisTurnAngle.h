@@ -20,6 +20,8 @@
  * This allows it to be accurate and concise without losing precision 
  * from loss of voltage.
  * 
+ * PID terms are read from smart dashboard
+ * 
  * @author HVA Robotics Team 3824
  */
 class ChassisTurnAngle: public Command 

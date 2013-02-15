@@ -15,7 +15,7 @@
 #include "../Robot.h"
 
 /**
- *
+ * TODO: Make this SetShooterAngleJoystick and change this to take a angle as argument
  *
  * @author HVA Robotics Team 3824
  */

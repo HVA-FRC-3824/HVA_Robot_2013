@@ -61,6 +61,9 @@ void Drivetrain::PIDWrite(float output)
 {
    holonomic->HolonomicDrive(0.0, 0.0, output); //This PID only works for rotation
 }
+
+//FIXME: ChassisTurnAngle uses this for the accelerometer. 
+//Do we want to use this for DriveToWall? Either replace or have both versions
 double Drivetrain::PIDGet()
 {
 	return ultrasonicFront->GetValue() * UNITS_TO_INCHES;
