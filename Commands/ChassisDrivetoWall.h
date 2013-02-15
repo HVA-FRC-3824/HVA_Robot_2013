@@ -16,14 +16,11 @@
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
 
+//TODO: Add a command which drives to feeder station and aligns to slot.
+
 /**
  * 
- * TODO: this is not the feeder one
- * Guides Robot to the feeder station.  
- *
- * TODO: Is this suppose to just drive until it is at the right distance or also automatically
- * align? If it should also align, it needs to be implemented and renamed in 
- * Robotbuilder Wall->Feeder
+ * Drives to STOPPING_DISTANCE without PID
  * 
  * @author HVA Robotics Team 3824
  */
