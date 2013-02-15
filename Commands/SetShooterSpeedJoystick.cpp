@@ -25,6 +25,8 @@ void SetShooterSpeedJoystick::Execute() {
 	shooterSpeed = (shooterSpeed+1)*2500; //convert from Joystick -1..1 to RPM 0..5000
 	Robot::shooterWheel->PIDcontroller->SetSetpoint(1/(shooterSpeed/60));
 	SmartDashboard::PutNumber("Shooter Period", Robot::shooterWheel->encoder->GetPeriod());
+	SmartDashboard::PutNumber("Shooter speed", shooterSpeed);
+	SmartDashboard::PutNumber("Shooter Speed Output", Robot::shooterWheel->PIDcontroller->Get());
 }
 // Make this return true when this Command no longer needs to run execute()
 bool SetShooterSpeedJoystick::IsFinished() {

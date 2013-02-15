@@ -8,9 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 #include "SetShooterAngle.h"
-#define DEFAULT_P_TERM              -0.01
-#define DEFAULT_I_TERM              -0.000
-#define DEFAULT_D_TERM              -0.0
 #define SHOOTER_ANGLE_THRESHOLD      0.1
 #define SHOOTER_ANGLE_HOME         575.0
 SetShooterAngle::SetShooterAngle() 
@@ -24,19 +21,9 @@ SetShooterAngle::SetShooterAngle()
 // Called just before this Command runs the first time
 void SetShooterAngle::Initialize() 
 {
-   if (Robot::shooterAngleAdjust->PIDcontroller == NULL)
-   {
-      // initialize the PID controller
-      Robot::shooterAngleAdjust->PIDcontroller = new PIDController(
-            DEFAULT_P_TERM, DEFAULT_I_TERM, DEFAULT_D_TERM,
-            Robot::shooterAngleAdjust->potentiometer, Robot::shooterAngleAdjust->motor);
-         
-      // setup the PID controller and enable
-      Robot::shooterAngleAdjust->PIDcontroller->SetSetpoint(SHOOTER_ANGLE_HOME);
-      Robot::shooterAngleAdjust->PIDcontroller->SetAbsoluteTolerance(SHOOTER_ANGLE_THRESHOLD);
-   
-      Robot::shooterAngleAdjust->PIDcontroller->Enable();
-   }
+  // setup the PID controller
+  Robot::shooterAngleAdjust->getPIDController()->SetSetpoint(SHOOTER_ANGLE_HOME);
+  Robot::shooterAngleAdjust->getPIDController()->SetAbsoluteTolerance(SHOOTER_ANGLE_THRESHOLD);
 }
 // Called repeatedly when this Command is scheduled to run
 void SetShooterAngle::Execute() 
@@ -44,18 +31,18 @@ void SetShooterAngle::Execute()
    float angle;
    angle = Robot::oi->getShootJoystick()->GetAxis(Joystick::kYAxis);
    angle = (angle * 75) + 575;
-   Robot::shooterAngleAdjust->PIDcontroller->SetSetpoint(angle);
+   Robot::shooterAngleAdjust->getPIDController()->SetSetpoint(angle);
    
    SmartDashboard::PutNumber("Shooter Angle", angle);
-   SmartDashboard::PutNumber("Shooter Angle Setpoint", Robot::shooterAngleAdjust->PIDcontroller->GetSetpoint());
-   SmartDashboard::PutBoolean("Shooter Angle Enabled", Robot::shooterAngleAdjust->PIDcontroller->IsEnabled());
-   SmartDashboard::PutNumber("Shooter Motor P", Robot::shooterAngleAdjust->PIDcontroller->GetP());
-   SmartDashboard::PutNumber("Shooter Motor I", Robot::shooterAngleAdjust->PIDcontroller->GetI());
-   SmartDashboard::PutNumber("Shooter Motor D", Robot::shooterAngleAdjust->PIDcontroller->GetD());
+   SmartDashboard::PutNumber("Shooter Angle Setpoint", Robot::shooterAngleAdjust->getPIDController()->GetSetpoint());
+   SmartDashboard::PutBoolean("Shooter Angle Enabled", Robot::shooterAngleAdjust->getPIDController()->IsEnabled());
+   SmartDashboard::PutNumber("Shooter Motor P", Robot::shooterAngleAdjust->getPIDController()->GetP());
+   SmartDashboard::PutNumber("Shooter Motor I", Robot::shooterAngleAdjust->getPIDController()->GetI());
+   SmartDashboard::PutNumber("Shooter Motor D", Robot::shooterAngleAdjust->getPIDController()->GetD());
    SmartDashboard::PutNumber("Potentiometer PID", Robot::shooterAngleAdjust->potentiometer->PIDGet());
-   SmartDashboard::PutNumber("Motor PID", Robot::shooterAngleAdjust->PIDcontroller->Get());
-//   SmartDashboard::PutNumber("PID Error", Robot::shooterAngleAdjust->PIDcontroller->GetError());
-//   SmartDashboard::PutBoolean("In range", Robot::shooterAngleAdjust->PIDcontroller->OnTarget());
+   SmartDashboard::PutNumber("Motor PID", Robot::shooterAngleAdjust->getPIDController()->Get());
+//   SmartDashboard::PutNumber("PID Error", Robot::shooterAngleAdjust->getPIDController()->GetError());
+//   SmartDashboard::PutBoolean("In range", Robot::shooterAngleAdjust->getPIDController()->OnTarget());
 }
 // Make this return true when this Command no longer needs to run execute()
 bool SetShooterAngle::IsFinished() 

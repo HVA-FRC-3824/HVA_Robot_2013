@@ -22,7 +22,6 @@ SetShooterSpeed::SetShooterSpeed(double speed)
 void SetShooterSpeed::Initialize() 
 {
 	Robot::shooterWheel->PIDcontroller->SetSetpoint(1/(shooterSpeed/60)); //RPM to Period in s:
-	//TODO: check
 	SmartDashboard::PutNumber("Shooter speed", shooterSpeed);
 }
 // Called repeatedly when this Command is scheduled to run
