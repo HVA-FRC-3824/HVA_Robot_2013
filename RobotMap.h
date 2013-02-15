@@ -28,6 +28,7 @@ public:
 	static AnalogChannel* drivetrainUltrasonicFront;
 	static AnalogChannel* drivetrainUltrasonicRear;
 	static Gyro* drivetrainGyro;
+	static DigitalInput* shooterWheelDigitalInput1;
 	static SpeedController* shooterWheelMotor;
 	static GearTooth* shooterWheelEncoder;
 	static SpeedController* shooterWheelVoltageMotor;

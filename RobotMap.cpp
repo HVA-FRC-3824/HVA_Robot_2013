@@ -18,6 +18,7 @@ RobotDrive* RobotMap::drivetrainHolonomic = NULL;
 AnalogChannel* RobotMap::drivetrainUltrasonicFront = NULL;
 AnalogChannel* RobotMap::drivetrainUltrasonicRear = NULL;
 Gyro* RobotMap::drivetrainGyro = NULL;
+DigitalInput* RobotMap::shooterWheelDigitalInput1 = NULL;
 SpeedController* RobotMap::shooterWheelMotor = NULL;
 GearTooth* RobotMap::shooterWheelEncoder = NULL;
 SpeedController* RobotMap::shooterWheelVoltageMotor = NULL;
@@ -65,10 +66,13 @@ void RobotMap::init()
 	drivetrainGyro = new Gyro(1, 1);
 	lw->AddSensor("Drivetrain", "Gyro", drivetrainGyro);
 	drivetrainGyro->SetSensitivity(0.007);
+	shooterWheelDigitalInput1 = new DigitalInput(1, 1);
+	lw->AddSensor("Shooter Wheel", "Digital Input 1", shooterWheelDigitalInput1);
+	
 	shooterWheelMotor = new Talon(1, 5);
 	lw->AddActuator("Shooter Wheel", "Motor", (Talon*) shooterWheelMotor);
 	
-	shooterWheelEncoder = new GearTooth(1, 1, false);
+	shooterWheelEncoder = new GearTooth(1, 3, false);
 	lw->AddSensor("Shooter Wheel", "Encoder", shooterWheelEncoder);
 	
 	shooterWheelVoltageMotor = new Talon(1, 10);
