@@ -17,8 +17,6 @@
  *
  * @author HVA Robotics Team 3824
  */
-
-
 //Makes a GearTooth a PIDSource
 //would be nicer to subclass but would require changes to auto-generated code
 class PIDGearTooth : public PIDSource
@@ -29,7 +27,6 @@ public:
 	PIDGearTooth(GearTooth* sensor) { gearTooth = sensor; } 
 	virtual double PIDGet() { return gearTooth->GetPeriod() ; }
 };
-
 class ShooterWheel: public Subsystem 
 {
 private:
