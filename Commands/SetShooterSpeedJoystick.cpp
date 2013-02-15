@@ -26,12 +26,15 @@ void SetShooterSpeedJoystick::Initialize() {
 
 // Called repeatedly when this Command is scheduled to run
 void SetShooterSpeedJoystick::Execute() {
-	
+	double shooterSpeed = Robot::oi->getDriveJoystick()->GetAxis(Joystick::kThrottleAxis);
+	shooterSpeed = (shooterSpeed+1)*2500; //convert from Joystick -1..1 to RPM 0..5000
+	Robot::shooterWheel->PIDcontroller->SetSetpoint(1/(shooterSpeed/60));
+	SmartDashboard::PutNumber("Shooter Period", Robot::shooterWheel->encoder->GetPeriod());
 }
 
 // Make this return true when this Command no longer needs to run execute()
 bool SetShooterSpeedJoystick::IsFinished() {
-	return false;
+	return false; //never finishes (always waiting on changed Joystick input)
 }
 
 // Called once after isFinished returns true

@@ -21,6 +21,8 @@ ShooterWheel::ShooterWheel() : Subsystem("ShooterWheel")
 	      SmartDashboard::GetNumber("Shooter Speed I Term:"), 
 	      SmartDashboard::GetNumber("Shooter Speed D Term:"),
 	      pidEncoder, motor);
+	PIDcontroller->Enable();
+	PIDcontroller->SetSetpoint(0);
 }
     
 void ShooterWheel::InitDefaultCommand()
