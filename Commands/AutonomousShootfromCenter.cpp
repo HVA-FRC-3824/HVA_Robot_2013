@@ -27,10 +27,14 @@ AutonomousShootfromCenter::AutonomousShootfromCenter()
 	// Command1 and Command2 will run in parallel.
 
 	// ramp the shooter speed up
-	AddSequential(new SetShooterSpeed(3000));
+	AddParallel(new SetShooterSpeed(3000));
 	
 	// set the shooter angle
-	AddParallel(new SetShooterAngle(585));
+	AddSequential(new SetShooterAngle(585));
+	
+	// wait
+	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT1));
+	//AddSequential(new WaitForChildren(2));
 	
 	// shoot 1st frisbee
     AddSequential(new FrisbeeShoot());
