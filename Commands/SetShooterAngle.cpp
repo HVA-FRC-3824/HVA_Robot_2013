@@ -11,10 +11,8 @@
 #include <math.h>
 #define SHOOTER_ANGLE_THRESHOLD      0.1
 #define SHOOTER_ANGLE_HOME         575.0
-
 #define MAX_VALUE	               712.0
 #define MIN_VALUE 				   420.0
-
 #define THRESHOLD 1.0
 SetShooterAngle::SetShooterAngle(double angle_parameter) 
 {
@@ -46,7 +44,6 @@ void SetShooterAngle::Initialize()
 	   angle = MAX_VALUE;
    if (angle < 505)
 	   angle = MIN_VALUE;
-
    // setup the PID controller
   Robot::shooterAngleAdjust->getPIDController()->SetSetpoint(angle);
   Robot::shooterAngleAdjust->getPIDController()->Enable();
