@@ -38,8 +38,8 @@ void Robot::RobotInit()
    
    // PID values for the shooter
    SmartDashboard::PutNumber("Shooter Angle P Term", 0.01);
-   SmartDashboard::PutNumber("Shooter Angle I Term", 0.001);
-   SmartDashboard::PutNumber("Shooter Angle D Term", 0.0);
+   SmartDashboard::PutNumber("Shooter Angle I Term", 0.002);
+   SmartDashboard::PutNumber("Shooter Angle D Term", 0.01);
    
    SmartDashboard::PutNumber("Shooter Voltage:", 0.0);
    RobotMap::init();
