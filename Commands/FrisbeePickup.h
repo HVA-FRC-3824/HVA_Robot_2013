@@ -22,6 +22,8 @@
  * @author ExampleAuthor
  */
 class FrisbeePickup: public Command {
+private:
+	Timer *timer;
 public:
 	FrisbeePickup();
 	virtual void Initialize();
