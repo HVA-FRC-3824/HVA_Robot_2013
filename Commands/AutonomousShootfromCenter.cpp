@@ -27,10 +27,10 @@ AutonomousShootfromCenter::AutonomousShootfromCenter()
 	// Command1 and Command2 will run in parallel.
 
 	// ramp the shooter speed up
-	AddParallel(new SetShooterSpeed(3000));
+	AddParallel(new SetShooterSpeed(2500));
 	
 	// set the shooter angle
-	AddSequential(new SetShooterAngle(585));
+	//AddSequential(new SetShooterAngle(585));
 	
 	// wait
 	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT1));

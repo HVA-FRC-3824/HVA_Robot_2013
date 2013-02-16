@@ -54,7 +54,7 @@ void ChassisTurnAngle::Execute()
 // Make this return true when this Command no longer needs to run execute()
 bool ChassisTurnAngle::IsFinished() 
 {
-	return fabs(goToGyro - Robot::drivetrain->gyro->PIDGet() < TURN_THRESHOLD || turnTimer->Get() > TURN_TIMEOUT);
+	return fabs(goToGyro - Robot::drivetrain->gyro->PIDGet()) < TURN_THRESHOLD || turnTimer->Get() > TURN_TIMEOUT;
 }
 // Called once after isFinished returns true
 void ChassisTurnAngle::End() 
