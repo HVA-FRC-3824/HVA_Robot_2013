@@ -31,25 +31,34 @@ AutonomousShootfromRight::AutonomousShootfromRight()
 	// e.g. AddParallel(new Command1());
 	//      AddSequential(new Command2());
 	// Command1 and Command2 will run in parallel.
-
-	// A command group will require all of the subsystems that each member
-	// would require.
-	// e.g. if Command1 requires chassis, and Command2 requires arm,
-	// a CommandGroup containing them would require both the chassis and the
-	// arm.
    
-   // drive forward
-   AddSequential(new ChassisDriveDistance(AUTONOMOUS_DRIVE_FORWARD_DISTANCE));
-   
-   // turn left 
-   AddSequential(new ChassisTurnAngle(AUTONOMOUS_TURN_ANGLE)); 
- 
-   // shoot first Frisbee
-   AddSequential(new FrisbeeAimAndShoot());
-   
-   // shoot second Frisbee
-   AddSequential(new FrisbeeAimAndShoot());
-   
-   // shoot third Frisbee
-   AddSequential(new FrisbeeAimAndShoot());
+	// drive forward
+	AddSequential(new ChassisDriveDistance(AUTONOMOUS_DRIVE_FORWARD_DISTANCE));
+	   
+	// turn left 
+	AddSequential(new ChassisTurnAngle(AUTONOMOUS_TURN_ANGLE)); 
+	
+	// ramp the shooter speed up
+	AddSequential(new SetShooterSpeed(3000));
+	
+	// set the shooter angle
+	AddParallel(new SetShooterAngle(585));
+	
+	// wait 
+	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT1));
+	 
+	// shoot first Frisbee
+	AddSequential(new FrisbeeShoot());
+	
+	// wait
+	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT1));
+		   
+	// shoot second Frisbee
+	AddSequential(new FrisbeeShoot());
+		
+	// wait
+	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT2));
+		   
+	// shoot third Frisbee
+	AddSequential(new FrisbeeShoot());
 }
