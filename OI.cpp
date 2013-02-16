@@ -62,7 +62,7 @@ OI::OI()
 	SmartDashboard::PutData("Hook Engage", new HookEngage());
 	SmartDashboard::PutData("Hook Up to Engage", new HookUptoEngage());
 	SmartDashboard::PutData("Hook Up to Limit", new HookUptoLimit());
-	SmartDashboard::PutData("Set Shooter Angle", new SetShooterAngle());
+	SmartDashboard::PutData("Set Shooter Angle", new SetShooterAngle(575.0));
 	SmartDashboard::PutData("Set Shooter Speed Joystick", new SetShooterSpeedJoystick());
 	SmartDashboard::PutData("Teleoperated", new Teleoperated());
 	SmartDashboard::PutData("Set Shooter Angle Joystick", new SetShooterAngleJoystick());

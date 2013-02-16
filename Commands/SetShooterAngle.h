@@ -15,13 +15,16 @@
 #include "../Robot.h"
 
 /**
+ * SetShooterAngle based on argument to constructor
  *
  * @author HVA Robotics Team 3824
  */
 class SetShooterAngle: public Command 
 { 
+private:
+	double angle;
 public:
-	SetShooterAngle();
+	SetShooterAngle(double angle_parameter);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
