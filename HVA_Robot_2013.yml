@@ -179,7 +179,7 @@ Children:
       Children: []
       Properties:
         Sensitivity: !!robotbuilder.data.properties.DoubleProperty {default: 1.25,
-          name: Sensitivity, validators: null, value: 0.0070}
+          name: Sensitivity, validators: null, value: 0.007}
         Input Module (Analog): !!robotbuilder.data.properties.ChoicesProperty
           choices: ['1', '2']
           default: '1'
@@ -501,7 +501,6 @@ Children:
         name: Default Command, type: Command, validators: null, value: Display Pump Status}
   - Name: Pickup
     Base: Subsystem
-<<<<<<< HEAD
     Children:
     - Name: Motor
       Base: CAN Jaguar
@@ -513,7 +512,7 @@ Children:
           name: CAN ID
           validators: [CANID]
           value: '2'
-    - Name: Double Solenoid 1
+    - Name: SuctionCup
       Base: Double Solenoid
       Children: []
       Properties:
@@ -541,9 +540,6 @@ Children:
           name: Reverse Channel (Solenoid)
           validators: *id025
           value: '4'
-=======
-    Children: []
->>>>>>> 7fdb82aa30c02df8a375b6391917005ef7ec1b86
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: None}
@@ -786,7 +782,6 @@ Children:
     Children: []
     Properties:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-<<<<<<< HEAD
         name: Requires, type: Subsystem, validators: null, value: Pickup}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
@@ -802,9 +797,6 @@ Children:
     Base: Command Group
     Children: []
     Properties:
-=======
-        name: Requires, type: Subsystem, validators: null, value: None}
->>>>>>> 7fdb82aa30c02df8a375b6391917005ef7ec1b86
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
   Properties: {}

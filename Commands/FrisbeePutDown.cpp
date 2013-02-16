@@ -32,7 +32,7 @@ void FrisbeePutDown::Execute() {
 // Make this return true when this Command no longer needs to run execute()
 bool FrisbeePutDown::IsFinished() {
 	if (timer->Get() > 1.0)
-		Robot::pickup->doubleSolenoid1->Set(DoubleSolenoid::kReverse);
+		Robot::pickup->suctionCup->Set(DoubleSolenoid::kReverse);
 		return true;
 	
 	return false;

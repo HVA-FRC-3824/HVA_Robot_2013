@@ -9,9 +9,7 @@
 // it from being updated in th future.
 #include "SetShooterSpeed.h"
 #include <math.h>
-
 #define THRESHOLD 50.0
-
 SetShooterSpeed::SetShooterSpeed(double speed) 
 {
 	// Use requires() here to declare subsystem dependencies
