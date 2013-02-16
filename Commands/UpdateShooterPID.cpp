@@ -21,6 +21,9 @@ void UpdateShooterPID::Initialize()
 	Robot::shooterWheel->getPIDController()->SetPID(SmartDashboard::GetNumber("Shooter Speed P Term")/1000.0,
 			  SmartDashboard::GetNumber("Shooter Speed I Term")/1000.0, 
 			  SmartDashboard::GetNumber("Shooter Speed D Term")/1000.0);
+	Robot::shooterAngleAdjust->getPIDController()->SetPID(SmartDashboard::GetNumber("Shooter Angle P Term"),
+			SmartDashboard::GetNumber("Shooter Angle I Term"),
+			SmartDashboard::GetNumber("Shooter Angle D Term"));
 }
 // Called repeatedly when this Command is scheduled to run
 void UpdateShooterPID::Execute() {
