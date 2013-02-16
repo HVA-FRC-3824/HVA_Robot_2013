@@ -20,7 +20,7 @@ FrisbeePutDown::FrisbeePutDown() {
 }
 // Called just before this Command runs the first time
 void FrisbeePutDown::Initialize() {
-//	Robot::pickup->motor->Set(-1.0);
+	Robot::pickup->motor->Set(-1.0);
 	
 	timer->Reset();
 	timer->Start();
