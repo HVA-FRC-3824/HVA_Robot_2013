@@ -23,8 +23,10 @@ class SetShooterAngle: public Command
 { 
 private:
 	double angle;
+	bool angleSpecifiedInConstructor;
 public:
 	SetShooterAngle(double angle_parameter);
+	SetShooterAngle();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
