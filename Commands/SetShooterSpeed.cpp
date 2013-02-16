@@ -28,7 +28,6 @@ void SetShooterSpeed::Execute()
 {
 	SmartDashboard::PutNumber("Shooter Speed Output", Robot::shooterWheel->getPIDController()->Get());
 }
-
 // Make this return true when this Command no longer needs to run execute()
 bool SetShooterSpeed::IsFinished() 
 {

@@ -66,7 +66,6 @@ void Drivetrain::PIDWrite(float output)
    // turn the robot based on the PID controller
    holonomic->HolonomicDrive(0.0, 0.0, output); //This PID only works for rotation
 }
-
 //{
 //	return ultrasonicFront->GetValue() * UNITS_TO_INCHES;
 //}
