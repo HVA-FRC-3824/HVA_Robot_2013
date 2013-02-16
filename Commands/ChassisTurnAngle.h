@@ -28,8 +28,9 @@ class ChassisTurnAngle: public Command
 {	
 private:
 	double degreesToTurn; 
-   Timer *turnTimer;
+	Timer *turnTimer;
 	PIDController *PIDcontroller;
+	float goToGyro;
 	
 public:
 	ChassisTurnAngle(double turnAngle);
