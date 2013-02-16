@@ -39,7 +39,6 @@
 #define SHOOTER_ANGLE_HOME         575.0
 #define AUTONOMOUS_SHOOT_WAIT1		1.0
 #define AUTONOMOUS_SHOOT_WAIT2		1.0
-
 class Robot : public IterativeRobot 
 {
 public:
