@@ -21,6 +21,14 @@
  *
  * @author ExampleAuthor
  */
+
+class ImagePIDInput: public PIDSource 
+{
+public:
+	virtual double PIDGet() {
+		return SmartDashboard::GetNumber("Target Offset");
+	}
+};
 class FrisbeeAim: public Command {
 private:
 	PIDController *PIDcontroller;
