@@ -9,10 +9,10 @@
 // it from being updated in th future.
 #include "SetShooterAngle.h"
 #include <math.h>
-#define SHOOTER_ANGLE_THRESHOLD      0.1
-#define SHOOTER_ANGLE_HOME         575.0
-#define MAX_VALUE	               712.0
-#define MIN_VALUE 				   420.0
+#define SHOOTER_ANGLE_THRESHOLD       0.1
+#define SHOOTER_ANGLE_HOME          575.0
+#define MAX_VALUE	                  880.0
+#define MIN_VALUE 				      420.0
 #define THRESHOLD 1.0
 SetShooterAngle::SetShooterAngle(double angle_parameter) 
 {
