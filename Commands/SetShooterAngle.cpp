@@ -22,7 +22,7 @@ SetShooterAngle::SetShooterAngle(double angle_parameter)
 // Called just before this Command runs the first time
 void SetShooterAngle::Initialize() 
 {
-   if(angle >= 637 && angle <= 505)
+   if(angle > 637 && angle < 505)
 	   angle = SHOOTER_ANGLE_HOME;
    angle = (angle * 75) + SHOOTER_ANGLE_HOME; 
    // setup the PID controller
