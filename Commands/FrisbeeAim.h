@@ -22,6 +22,8 @@
  * @author ExampleAuthor
  */
 class FrisbeeAim: public Command {
+private:
+	PIDController *PIDcontroller;
 public:
 	FrisbeeAim();
 	virtual void Initialize();
