@@ -179,7 +179,7 @@ Children:
       Children: []
       Properties:
         Sensitivity: !!robotbuilder.data.properties.DoubleProperty {default: 1.25,
-          name: Sensitivity, validators: null, value: 0.007}
+          name: Sensitivity, validators: null, value: 0.0070}
         Input Module (Analog): !!robotbuilder.data.properties.ChoicesProperty
           choices: ['1', '2']
           default: '1'
@@ -377,28 +377,28 @@ Children:
       Children: []
       Properties:
         Forward Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id018 ['1', '2', '3', '4', '5', '6', '7', '8']
+          choices: ['1', '2', '3', '4', '5', '6', '7', '8']
           default: '1'
           name: Forward Channel (Solenoid)
-          validators: &id019 [Solenoid]
+          validators: [Solenoid]
           value: '1'
         Forward Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id020 ['1', '2']
+          choices: ['1', '2']
           default: '1'
           name: Forward Module (Solenoid)
-          validators: &id021 [Solenoid]
+          validators: [Solenoid]
           value: '1'
         Reverse Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id022 ['1', '2']
+          choices: ['1', '2']
           default: '1'
           name: Reverse Module (Solenoid)
-          validators: &id023 [Solenoid]
+          validators: [Solenoid]
           value: '1'
         Reverse Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id024 ['1', '2', '3', '4', '5', '6', '7', '8']
+          choices: ['1', '2', '3', '4', '5', '6', '7', '8']
           default: '1'
           name: Reverse Channel (Solenoid)
-          validators: &id025 [Solenoid]
+          validators: [Solenoid]
           value: '2'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
@@ -512,33 +512,37 @@ Children:
           name: CAN ID
           validators: [CANID]
           value: '2'
-    - Name: SuctionCup
-      Base: Double Solenoid
+    - Name: Suction
+      Base: Solenoid
       Children: []
       Properties:
-        Forward Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
+        Output Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
+          choices: &id018 ['1', '2']
+          default: '1'
+          name: Output Module (Solenoid)
+          validators: &id019 [Solenoid]
+          value: '1'
+        Output Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
+          choices: &id020 ['1', '2', '3', '4', '5', '6', '7', '8']
+          default: '1'
+          name: Output Channel (Solenoid)
+          validators: &id021 [Solenoid]
+          value: '3'
+    - Name: Release
+      Base: Solenoid
+      Children: []
+      Properties:
+        Output Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
           choices: *id018
           default: '1'
-          name: Forward Channel (Solenoid)
+          name: Output Module (Solenoid)
           validators: *id019
-          value: '3'
-        Forward Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
+          value: '1'
+        Output Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
           choices: *id020
           default: '1'
-          name: Forward Module (Solenoid)
+          name: Output Channel (Solenoid)
           validators: *id021
-          value: '1'
-        Reverse Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id022
-          default: '1'
-          name: Reverse Module (Solenoid)
-          validators: *id023
-          value: '1'
-        Reverse Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id024
-          default: '1'
-          name: Reverse Channel (Solenoid)
-          validators: *id025
           value: '4'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
@@ -552,10 +556,10 @@ Children:
     Children: []
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
-        choices: &id026 ['1', '2', '3', '4']
+        choices: &id022 ['1', '2', '3', '4']
         default: 1
         name: Number
-        validators: &id027 [Joystick]
+        validators: &id023 [Joystick]
         value: '1'
   - Name: Shoot Joystick
     Base: Joystick
@@ -586,10 +590,10 @@ Children:
           value: whenPressed
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id026
+        choices: *id022
         default: 1
         name: Number
-        validators: *id027
+        validators: *id023
         value: '2'
   Properties: {}
 - Name: Commands

@@ -33,7 +33,7 @@ void FrisbeePickup::Execute() {
 bool FrisbeePickup::IsFinished() {
 	if (timer->Get() > 1.0)
 	{
-		//Robot::pickup->suctionCup->Set(DoubleSolenoid::kForward);
+		Robot::pickup->suction->Set(true);
 		return true;
 	}
 	
