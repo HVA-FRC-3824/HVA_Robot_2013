@@ -12,6 +12,9 @@
 #include "FrisbeeAimAndShoot.h"
 #include "ChassisDriveDistance.h"
 #include "ChassisTurnAngle.h"
+#include "SetShooterSpeed.h"
+#include "SetShooterAngle.h"
+#include "FrisbeeShoot.h"
 
 #define AUTONOMOUS_DRIVE_FORWARD_DISTANCE   10.0
 #define AUTONOMOUS_TURN_ANGLE              -15.0

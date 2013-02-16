@@ -9,7 +9,9 @@
 // it from being updated in th future.
 
 #include "AutonomousShootfromCenter.h"
-#include "FrisbeeAimAndShoot.h"
+#include "SetShooterSpeed.h"
+#include "SetShooterAngle.h"
+#include "FrisbeeShoot.h"
 
 AutonomousShootfromCenter::AutonomousShootfromCenter() 
 {
@@ -24,7 +26,24 @@ AutonomousShootfromCenter::AutonomousShootfromCenter()
 	//      AddSequential(new Command2());
 	// Command1 and Command2 will run in parallel.
 
-   AddSequential(new FrisbeeAimAndShoot());
-   AddSequential(new FrisbeeAimAndShoot());
-   AddSequential(new FrisbeeAimAndShoot());
+	// ramp the shooter speed up
+	AddSequential(new SetShooterSpeed(3000));
+	
+	// set the shooter angle
+	AddParallel(new SetShooterAngle(585));
+	
+	// shoot 1st frisbee
+    AddSequential(new FrisbeeShoot());
+    
+    // wait
+    AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT1));
+    
+    // shoot 2nd frisbee
+    AddSequential(new FrisbeeShoot());
+    
+    // wait
+    AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT2));
+    
+    // shoot 3rd frisbee
+    AddSequential(new FrisbeeShoot());
 }

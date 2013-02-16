@@ -35,8 +35,11 @@
 #define DRIVE_ROTATION              0.0
 #define CLIMBER_VOLTAGE_UP          0.7
 #define CLIMBER_VOLTAGE_DOWN       -0.5
-#define SHOOTER_ANGLE_THRESHOLD      0.1
+#define SHOOTER_ANGLE_THRESHOLD     0.1
 #define SHOOTER_ANGLE_HOME         575.0
+#define AUTONOMOUS_SHOOT_WAIT1		1.0
+#define AUTONOMOUS_SHOOT_WAIT2		1.0
+
 class Robot : public IterativeRobot 
 {
 public:

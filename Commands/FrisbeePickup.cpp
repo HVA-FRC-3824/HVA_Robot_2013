@@ -20,7 +20,7 @@ FrisbeePickup::FrisbeePickup() {
 }
 // Called just before this Command runs the first time
 void FrisbeePickup::Initialize() {
-	//Robot::pickup->motor->Set(1.0);
+	Robot::pickup->motor->Set(1.0);
 	
 	timer->Reset();
 	timer->Start();
