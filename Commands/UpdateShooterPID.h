@@ -8,28 +8,22 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef SET_SHOOTER_SPEED_H
-#define SET_SHOOTER_SPEED_H
+
+#ifndef UPDATESHOOTERPID_H
+#define UPDATESHOOTERPID_H
+
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
-#include "Timer.h"
 
 /**
  *
  *
- * @author HVA Robotics Team 3824
+ * @author ExampleAuthor
  */
-class SetShooterSpeed: public Command 
-{
-private:
-   double shooterSpeed;
-   Timer *shooterTimer;
-   bool SpeedSpecifiedInConstructor;
-   
+class UpdateShooterPID: public Command {
 public:
-	SetShooterSpeed(double speed);	// For autonomous
-	SetShooterSpeed();				// Get Speed From the Smart Dashboard
+	UpdateShooterPID();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
