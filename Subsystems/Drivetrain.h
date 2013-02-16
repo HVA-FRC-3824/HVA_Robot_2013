@@ -24,6 +24,7 @@ private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities
 public: 
+//Dead code, but may want to try later when there is time
 //   class TurnSource: public PIDSource
 //   {
 //      double PIDGet();
@@ -61,7 +62,6 @@ public:
 	void HolonomicDrive(float magnitude, float direction, float rotation);
 	float GetFrontDistance();
 	float GetRearDistance();
-	float GetDistance();
 	void PIDWrite(float output);
 	double PIDGet();
 };

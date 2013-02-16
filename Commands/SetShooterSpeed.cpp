@@ -20,18 +20,19 @@ SetShooterSpeed::SetShooterSpeed(double speed)
 // Called just before this Command runs the first time
 void SetShooterSpeed::Initialize() 
 {
-	Robot::shooterWheel->PIDcontroller->SetSetpoint(1/(shooterSpeed/60)); //RPM to Period in s:
+	Robot::shooterWheel->getPIDController()->SetSetpoint(1/(shooterSpeed/60)); //RPM to Period in s:
 	SmartDashboard::PutNumber("Shooter speed", shooterSpeed);
 }
 // Called repeatedly when this Command is scheduled to run
 void SetShooterSpeed::Execute() 
 {
-	SmartDashboard::PutNumber("Shooter Speed Output", Robot::shooterWheel->PIDcontroller->Get());
+	SmartDashboard::PutNumber("Shooter Speed Output", Robot::shooterWheel->getPIDController()->Get());
 }
+
 // Make this return true when this Command no longer needs to run execute()
 bool SetShooterSpeed::IsFinished() 
 {
-	 return Robot::shooterWheel->PIDcontroller->OnTarget();
+	 return Robot::shooterWheel->getPIDController()->OnTarget();
 }
 // Called once after isFinished returns true
 void SetShooterSpeed::End() 
