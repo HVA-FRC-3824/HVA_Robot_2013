@@ -25,10 +25,11 @@ class SetShooterSpeed: public Command
 private:
    double shooterSpeed;
    Timer *shooterTimer;
-   PIDController *PIDcontroller;
+   bool SpeedSpecifiedInConstructor;
    
 public:
-	SetShooterSpeed(double speed);
+	SetShooterSpeed(double speed);	// For autonomous
+	SetShooterSpeed();				// Get Speed From the Smart Dashboard
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

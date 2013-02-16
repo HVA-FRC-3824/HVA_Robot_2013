@@ -20,7 +20,10 @@ FrisbeePickup::FrisbeePickup() {
 }
 // Called just before this Command runs the first time
 void FrisbeePickup::Initialize() {
-	Robot::pickup->motor->Set(1.0);
+//	Robot::pickup->motor->Set(1.0);
+	
+	timer->Reset();
+	timer->Start();
 }
 // Called repeatedly when this Command is scheduled to run
 void FrisbeePickup::Execute() {
@@ -28,13 +31,20 @@ void FrisbeePickup::Execute() {
 }
 // Make this return true when this Command no longer needs to run execute()
 bool FrisbeePickup::IsFinished() {
-	return true;
+	if (timer->Get() > 1.0)
+	{
+		Robot::pickup->doubleSolenoid1->Set(DoubleSolenoid::kForward);
+		return true;
+	}
+	
+	return false;
 }
 // Called once after isFinished returns true
 void FrisbeePickup::End() {
-	
+	timer->Stop();
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void FrisbeePickup::Interrupted() {
+	End();
 }

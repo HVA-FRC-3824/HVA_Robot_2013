@@ -9,8 +9,8 @@
 // it from being updated in th future.
 
 
-#ifndef FRISBEE_PUT_DOWN_H
-#define FRISBEE_PUT_DOWN_H
+#ifndef UPDATESHOOTERPID_H
+#define UPDATESHOOTERPID_H
 
 
 #include "Commands/Subsystem.h"
@@ -21,11 +21,9 @@
  *
  * @author ExampleAuthor
  */
-class FrisbeePutDown: public Command {
-private:
-	Timer *timer;
+class UpdateShooterPID: public Command {
 public:
-	FrisbeePutDown();
+	UpdateShooterPID();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

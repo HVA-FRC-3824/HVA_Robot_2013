@@ -19,7 +19,8 @@ Teleoperated::Teleoperated()
 // Called just before this Command runs the first time
 void Teleoperated::Initialize() 
 {
-	
+	Robot::shooterWheel->encoder->Start();
+	Robot::shooterWheel->encoder->SetMaxPeriod(.2);
 }
 // Called repeatedly when this Command is scheduled to run
 void Teleoperated::Execute() 
@@ -27,17 +28,20 @@ void Teleoperated::Execute()
 	Robot::drivetrain->HolonomicDrive(Robot::oi->getDriveJoystick());
 	
 	// get the trhottle on the shooter joystick
-	float speed = Robot::oi->getShootJoystick()->GetThrottle();
+	//float speed = Robot::oi->getShootJoystick()->GetThrottle();
 	
 	// convert the joystick range (-1 to 1) to the desired motor speed (0 to 1)
-	speed = (-speed / 2) + 0.5;
-   Robot::shooterWheelVoltage->motor->Set(speed);
+	//speed = (-speed / 2) + 0.5;
+   //Robot::shooterWheelVoltage->motor->Set(speed);
    
    SmartDashboard::PutBoolean("Shooter Switch", Robot::shooterPusher->stopSwitch->Get());
    SmartDashboard::PutBoolean("Climber Up Limit Switch", Robot::climber->limitUp->Get());
    SmartDashboard::PutBoolean("Climber Down Limit Switch", Robot::climber->limitDown->Get());
    SmartDashboard::PutNumber("Shooter Speed IO", Robot::shooterWheel->encoder->Get());
+   SmartDashboard::PutNumber("Shooter Speed Period", (1.0/Robot::shooterWheel->encoder->GetPeriod())*60.0);
    SmartDashboard::PutNumber("Shooter Speed Input", Robot::shooterWheel->digitalInput1->Get());
+   SmartDashboard::PutNumber("Shooter Voltage:", Robot::shooterWheel->motor->Get());
+   SmartDashboard::PutNumber("GIT", Robot::shooterWheel->pidEncoder->PIDGet());
 }
 // Make this return true when this Command no longer needs to run execute()
 bool Teleoperated::IsFinished() 

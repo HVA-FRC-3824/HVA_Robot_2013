@@ -368,7 +368,7 @@ Children:
           value: '7'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
-        name: Default Command, type: Command, validators: null, value: Set Shooter Angle}
+        name: Default Command, type: Command, validators: null, value: None}
   - Name: Climber Tipper
     Base: Subsystem
     Children:
@@ -501,6 +501,7 @@ Children:
         name: Default Command, type: Command, validators: null, value: Display Pump Status}
   - Name: Pickup
     Base: Subsystem
+<<<<<<< HEAD
     Children:
     - Name: Motor
       Base: CAN Jaguar
@@ -540,6 +541,9 @@ Children:
           name: Reverse Channel (Solenoid)
           validators: *id025
           value: '4'
+=======
+    Children: []
+>>>>>>> 7fdb82aa30c02df8a375b6391917005ef7ec1b86
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Default Command, type: Command, validators: null, value: None}
@@ -744,7 +748,7 @@ Children:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: Shooter Angle Adjust}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: true}
+        name: Button on SmartDashboard, validators: null, value: false}
   - Name: Set Shooter Angle Joystick
     Base: Command
     Children: []
@@ -760,7 +764,7 @@ Children:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: Shooter Wheel}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: false}
+        name: Button on SmartDashboard, validators: null, value: true}
   - Name: Set Shooter Speed Joystick
     Base: Command
     Children: []
@@ -777,11 +781,12 @@ Children:
         name: Requires, type: Subsystem, validators: null, value: Drivetrain}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
-  - Name: Frisbee Pickup
+  - Name: UpdateShooterPID
     Base: Command
     Children: []
     Properties:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+<<<<<<< HEAD
         name: Requires, type: Subsystem, validators: null, value: Pickup}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
@@ -797,6 +802,9 @@ Children:
     Base: Command Group
     Children: []
     Properties:
+=======
+        name: Requires, type: Subsystem, validators: null, value: None}
+>>>>>>> 7fdb82aa30c02df8a375b6391917005ef7ec1b86
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: true}
   Properties: {}
