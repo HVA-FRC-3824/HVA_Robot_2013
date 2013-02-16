@@ -21,6 +21,7 @@ FrisbeeShoot::FrisbeeShoot()
 void FrisbeeShoot::Initialize() 
 {
 	Robot::shooterPusher->motor->Set(Relay::kReverse);
+	pusherTimer->Reset();
 	pusherTimer->Start();
 }
 // Called repeatedly when this Command is scheduled to run
@@ -41,7 +42,6 @@ bool FrisbeeShoot::IsFinished()
 void FrisbeeShoot::End() 
 {
 	Robot::shooterPusher->motor->Set(Relay::kOff);
-	pusherTimer->Reset();
 	pusherTimer->Stop();
 }
 // Called when another command which requires one or more of the same

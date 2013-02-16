@@ -44,6 +44,7 @@ bool ChassisDriveDistance::IsFinished()
 void ChassisDriveDistance::End() 
 {
 	timer->Stop();
+	Robot::drivetrain->holonomic->StopMotor();
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
