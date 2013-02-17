@@ -21,7 +21,6 @@ Pickup::Pickup() : Subsystem("Pickup")
 	// Set PID Controller to null initially
 	PIDcontroller = NULL;
 }
-
 void Pickup::InitDefaultCommand()
 {
 	// Set the default command for a subsystem here.
