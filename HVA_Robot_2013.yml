@@ -517,7 +517,7 @@ Children:
           default: '1'
           name: Output Channel (Solenoid)
           validators: &id021 [Solenoid]
-          value: '3'
+          value: '7'
     - Name: Release
       Base: Solenoid
       Children: []
@@ -533,7 +533,7 @@ Children:
           default: '1'
           name: Output Channel (Solenoid)
           validators: *id021
-          value: '4'
+          value: '8'
     - Name: Motor
       Base: Speed Controller
       Children: []

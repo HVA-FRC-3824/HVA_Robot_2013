@@ -108,10 +108,10 @@ void RobotMap::init()
 	pumpCompressorPump = new Compressor(1, 8, 1, 1);
 	
 	
-	pickupSuction = new Solenoid(1, 3);
+	pickupSuction = new Solenoid(1, 7);
 	lw->AddActuator("Pickup", "Suction", pickupSuction);
 	
-	pickupRelease = new Solenoid(1, 4);
+	pickupRelease = new Solenoid(1, 8);
 	lw->AddActuator("Pickup", "Release", pickupRelease);
 	
 	pickupMotor = new Victor(1, 8);
