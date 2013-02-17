@@ -39,6 +39,6 @@ PIDController* Pickup:: getPIDController()
 		PIDcontroller = new PIDController(
 				SmartDashboard::GetNumber("Pickup P Term"),
 				SmartDashboard::GetNumber("Pickup I Term"),
-				SmardDashboard::GetNumber("Pickup D Term"));
+				SmartDashboard::GetNumber("Pickup D Term"), potentiometer, motor);
 	}
 }
