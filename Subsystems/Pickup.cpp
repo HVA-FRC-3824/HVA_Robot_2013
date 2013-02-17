@@ -30,7 +30,7 @@ void Pickup::InitDefaultCommand()
 }
 // Put methods for controlling this subsystem
 // here. Call these from Commands.
-PIDController* Pickup:: getPIDController()
+PIDController* Pickup::getPIDController()
 {
 	if (PIDcontroller == NULL)
 	{
@@ -38,6 +38,8 @@ PIDController* Pickup:: getPIDController()
 		PIDcontroller = new PIDController(
 				SmartDashboard::GetNumber("Pickup P Term"),
 				SmartDashboard::GetNumber("Pickup I Term"),
-				SmartDashboard::GetNumber("Pickup D Term"), potentiometer, motor);
+				SmartDashboard::GetNumber("Pickup D Term"), 
+				potentiometer, motor);
 	}
+	return PIDcontroller;
 }
