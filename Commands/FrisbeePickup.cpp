@@ -21,17 +21,20 @@
 FrisbeePickup::FrisbeePickup() 
 {
 	// Turn on the suction
-	AddParallel(new SetPickupSuction(true));
+	AddSequential(new SetPickupSuction(true));
 	
 	// Move the arm to the pickup position
-	AddSequential(new SetPickupPosition(PICKUP_POSITION));
+	AddSequential(new SetPickupPosition(PICKUP_POSITION), 1.0);
+	AddSequential(new WaitCommand(1));
 	
 	// Move the arm to the release position
 	AddSequential(new SetPickupPosition(RELEASE_POSITION));
 
-	
+	AddSequential(new WaitCommand(1));
 	// Turn off the suction
 	AddSequential(new SetPickupSuction(false));
+	
+	AddSequential(new WaitCommand(1));
 
 	
 	// Move the arm to the home position
