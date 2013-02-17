@@ -20,11 +20,11 @@
 
 FrisbeePickup::FrisbeePickup() 
 {
+	// Turn on the suction
+	AddParallel(new SetPickupSuction(true));
+	
 	// Move the arm to the pickup position
 	AddSequential(new SetPickupPosition(PICKUP_POSITION));
-	
-	// Turn on the suction
-	AddSequential(new SetPickupSuction(true));
 	
 	// Move the arm to the release position
 	AddSequential(new SetPickupPosition(RELEASE_POSITION));
