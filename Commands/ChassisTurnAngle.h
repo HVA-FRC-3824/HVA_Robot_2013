@@ -33,8 +33,11 @@ private:
 	Timer *turnTimer;
 	PIDController *PIDcontroller;
 	float goToGyro;
+	bool anglePassed;
+	void init();
 	
 public:
+	ChassisTurnAngle();
 	ChassisTurnAngle(double turnAngle);
 	virtual void Initialize();
 	virtual void Execute();

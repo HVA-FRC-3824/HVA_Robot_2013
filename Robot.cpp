@@ -43,8 +43,8 @@ void Robot::RobotInit()
    SmartDashboard::PutNumber("Shooter Angle D Term", 0.01);
    
    // PID value for aimer
-   SmartDashboard::PutNumber("Shooter Aim P: ", .05);
-   SmartDashboard::PutNumber("Shooter Aim I: ", 0.001);
+   SmartDashboard::PutNumber("Shooter Aim P: ", 0.01);
+   SmartDashboard::PutNumber("Shooter Aim I: ", 0.0);
    SmartDashboard::PutNumber("Shooter Aim D: ", 0.0);
       
    
