@@ -20,7 +20,6 @@ AnalogChannel* RobotMap::drivetrainUltrasonicRear = NULL;
 Gyro* RobotMap::drivetrainGyro = NULL;
 SpeedController* RobotMap::shooterWheelMotor = NULL;
 GearTooth* RobotMap::shooterWheelEncoder = NULL;
-SpeedController* RobotMap::shooterWheelVoltageMotor = NULL;
 Relay* RobotMap::shooterPusherMotor = NULL;
 DigitalInput* RobotMap::shooterPusherStopSwitch = NULL;
 AnalogChannel* RobotMap::shooterAngleAdjustPotentiometer = NULL;
@@ -74,9 +73,6 @@ void RobotMap::init()
 	
 	shooterWheelEncoder = new GearTooth(1, 1, false);
 	lw->AddSensor("Shooter Wheel", "Encoder", shooterWheelEncoder);
-	
-	shooterWheelVoltageMotor = new Talon(1, 10);
-	lw->AddActuator("Shooter Wheel Voltage", "Motor", (Talon*) shooterWheelVoltageMotor);
 	
 	shooterPusherMotor = new Relay(1, 2);
 	lw->AddActuator("Shooter Pusher", "Motor", shooterPusherMotor);

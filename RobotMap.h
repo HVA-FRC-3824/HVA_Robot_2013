@@ -30,7 +30,6 @@ public:
 	static Gyro* drivetrainGyro;
 	static SpeedController* shooterWheelMotor;
 	static GearTooth* shooterWheelEncoder;
-	static SpeedController* shooterWheelVoltageMotor;
 	static Relay* shooterPusherMotor;
 	static DigitalInput* shooterPusherStopSwitch;
 	static AnalogChannel* shooterAngleAdjustPotentiometer;
