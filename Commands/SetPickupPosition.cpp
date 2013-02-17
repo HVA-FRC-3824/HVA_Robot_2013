@@ -11,7 +11,7 @@
 #include "math.h"
 // TODO: Set MAX and MIN of pickup
 #define MAX_VALUE 		958.0
-#define MIN_VALUE 		532.0
+#define MIN_VALUE 		360.0
 #define THRESHOLD 		  5.0
 SetPickupPosition::SetPickupPosition(double position_parameter)
 {
