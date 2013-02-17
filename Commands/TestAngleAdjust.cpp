@@ -8,12 +8,11 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #include "TestAngleAdjust.h"
 #include "SetShooterAngle.h"
 #include "ChassisDriveDistance.h"
-TestAngleAdjust::TestAngleAdjust() {
+TestAngleAdjust::TestAngleAdjust() 
+{
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());
@@ -27,7 +26,6 @@ TestAngleAdjust::TestAngleAdjust() {
 	AddSequential(new SetShooterAngle(655.0));
 */
 	AddSequential(new ChassisDriveDistance(2.0));
-	
 	
 	// To run multiple commands at the same time,
 	// use AddParallel()

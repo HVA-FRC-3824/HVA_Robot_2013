@@ -20,7 +20,7 @@ Teleoperated::Teleoperated()
 void Teleoperated::Initialize() 
 {
 	Robot::shooterWheel->encoder->Start();
-	Robot::shooterWheel->encoder->SetMaxPeriod(.2);
+	Robot::shooterWheel->encoder->SetMaxPeriod(0.2);
 }
 // Called repeatedly when this Command is scheduled to run
 void Teleoperated::Execute() 

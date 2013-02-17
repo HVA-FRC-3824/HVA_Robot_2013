@@ -16,7 +16,8 @@
  *
  * @author HVA Robotics Team 3824
  */
-class ShooterWheelVoltage: public Subsystem {
+class ShooterWheelVoltage: public Subsystem 
+{
 private:
 	// It's desirable that everything possible under private except
 	// for methods that implement subsystem capabilities

@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
 #ifndef HOOK_UP_TO_ENGAGE_H
 #define HOOK_UP_TO_ENGAGE_H
-
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -21,7 +19,8 @@
  *
  * @author HVA Robotics Team 3824
  */
-class HookUptoEngage: public Command {
+class HookUptoEngage: public Command 
+{
 public:
 	HookUptoEngage();
 	virtual void Initialize();

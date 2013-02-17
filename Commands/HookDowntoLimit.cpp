@@ -8,6 +8,7 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 #include "HookDowntoLimit.h"
+#define CLIMBER_VOLTAGE_DOWN       -0.5
 HookDowntoLimit::HookDowntoLimit() 
 {
 	// Use requires() here to declare subsystem dependencies

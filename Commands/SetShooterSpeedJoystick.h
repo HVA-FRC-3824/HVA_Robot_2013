@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
 #ifndef SET_SHOOTER_SPEED_JOYSTICK_H
 #define SET_SHOOTER_SPEED_JOYSTICK_H
-
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -21,7 +19,8 @@
  *
  * @author ExampleAuthor
  */
-class SetShooterSpeedJoystick: public Command {
+class SetShooterSpeedJoystick: public Command
+{
 public:
 	SetShooterSpeedJoystick();
 	virtual void Initialize();

@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
 #ifndef FRISBEE_PICKUP_H
 #define FRISBEE_PICKUP_H
-
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -21,7 +19,8 @@
  *
  * @author ExampleAuthor
  */
-class FrisbeePickup: public Command {
+class FrisbeePickup: public Command 
+{
 private:
 	Timer *timer;
 public:

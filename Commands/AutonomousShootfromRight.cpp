@@ -16,8 +16,8 @@
 #include "SetShooterAngle.h"
 #include "FrisbeeShoot.h"
 
-#define AUTONOMOUS_DRIVE_FORWARD_DISTANCE   10.0
-#define AUTONOMOUS_TURN_ANGLE              -15.0
+#define AUTONOMOUS_DRIVE_FORWARD_DISTANCE    2.0
+#define AUTONOMOUS_TURN_ANGLE              -10.0
 
 AutonomousShootfromRight::AutonomousShootfromRight() 
 {
@@ -32,21 +32,18 @@ AutonomousShootfromRight::AutonomousShootfromRight()
 	//      AddSequential(new Command2());
 	// Command1 and Command2 will run in parallel.
    
-	// drive forward
+   // ramp the shooter speed up
+   AddParallel(new SetShooterSpeed(3000));
+   
+   // set the shooter angle
+   AddParallel(new SetShooterAngle(585));
+   
+   // drive forward
 	AddSequential(new ChassisDriveDistance(AUTONOMOUS_DRIVE_FORWARD_DISTANCE));
 	   
 	// turn left 
 	AddSequential(new ChassisTurnAngle(AUTONOMOUS_TURN_ANGLE)); 
-	
-	// ramp the shooter speed up
-	AddSequential(new SetShooterSpeed(3000));
-	
-	// set the shooter angle
-	AddParallel(new SetShooterAngle(585));
-	
-	// wait 
-	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT1));
-	 
+
 	// shoot first Frisbee
 	AddSequential(new FrisbeeShoot());
 	

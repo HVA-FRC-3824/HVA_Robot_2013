@@ -8,6 +8,10 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 #include "ChassisDrivetoWall.h"
+#define STOPPING_DISTANCE          10.0f
+#define DRIVE_POWER                 0.7
+#define DRIVE_DIRECTION             0.0
+#define DRIVE_ROTATION              0.0
 ChassisDrivetoWall::ChassisDrivetoWall()
 {
    // Use requires() here to declare subsystem dependencies
@@ -23,18 +27,19 @@ void ChassisDrivetoWall::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void ChassisDrivetoWall::Execute() 
 {
-//   printf("In ChassisDrivetoWall::Execute()\n");
-   Robot::drivetrain->HolonomicDrive(DRIVE_POWER, DRIVE_DIRECTION, DRIVE_ROTATION); // Starts motors 
+   // Start motors 
+   Robot::drivetrain->HolonomicDrive(DRIVE_POWER, DRIVE_DIRECTION, DRIVE_ROTATION); 
 }
 // Make this return true when this Command no longer needs to run execute()
 bool ChassisDrivetoWall::IsFinished()
 {	
+   // get the distance from the ultrasonic sensor
 	distance = Robot::drivetrain->GetFrontDistance();
-	if(distance <= STOPPING_DISTANCE)
-		{
-			printf("Has hit the right distance.\n");
+	
+	// determine if the robot has reached the desired distance
+	if (distance <= STOPPING_DISTANCE)
 			return true;
-		}
+	
 	return false;
 }
 // Called once after isFinished returns true
@@ -46,5 +51,5 @@ void ChassisDrivetoWall::End()
 // subsystems is scheduled to run
 void ChassisDrivetoWall::Interrupted()
 {
-  End();
+   End();
 }
