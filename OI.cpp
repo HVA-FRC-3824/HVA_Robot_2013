@@ -57,6 +57,7 @@ OI::OI()
 	SmartDashboard::PutData("Autonomous Shoot from Right", new AutonomousShootfromRight());
 	SmartDashboard::PutData("Autonomous Shoot from Left", new AutonomousShootfromLeft());
 	SmartDashboard::PutData("Chassis Drive to Wall", new ChassisDrivetoWall());
+	SmartDashboard::PutData("Chassis Turn Angle", new ChassisTurnAngle());
 	SmartDashboard::PutData("Climb", new Climb());
 	SmartDashboard::PutData("Climb Abort", new ClimbAbort());
 	SmartDashboard::PutData("Climber Extend", new ClimberExtend());
