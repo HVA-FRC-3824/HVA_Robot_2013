@@ -25,20 +25,26 @@ FrisbeeAim::FrisbeeAim() {
 // Called just before this Command runs the first time
 void FrisbeeAim::Initialize() {
 	// starts PID controller
+	PIDcontroller->SetPID(SmartDashboard::GetNumber("Shooter Aim P: ")/1000.,
+		SmartDashboard::GetNumber("Shooter Aim I: ")/1000.,
+		SmartDashboard::GetNumber("Shooter Aim D: ")/1000.);
 	PIDcontroller->SetSetpoint(0);
 	PIDcontroller->Enable();
 }
 // Called repeatedly when this Command is scheduled to run
 void FrisbeeAim::Execute() {
-	
+	//TODO: use Gyro as error of PID. Update setpoint based on best estimate of angle. To compute angle we need to estimate distance
+	//Distance can be estimated by height of the top line of top target.
+	SmartDashboard::PutNumber("Aim PID result",PIDcontroller->Get());
 }
 // Make this return true when this Command no longer needs to run execute()
 bool FrisbeeAim::IsFinished() {
-	return fabs(SmartDashboard::GetNumber("Target Offset")) < AIM_PIXEL_THRESHOLD;
+	return false; //fabs(SmartDashboard::GetNumber("camera offset")) < AIM_PIXEL_THRESHOLD;
 }
 // Called once after isFinished returns true
 void FrisbeeAim::End() {
-	PIDcontroller->Disable();	
+	PIDcontroller->Disable();
+	Robot::drivetrain->holonomic->HolonomicDrive(0,0,0);
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

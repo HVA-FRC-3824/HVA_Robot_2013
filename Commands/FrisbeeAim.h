@@ -26,7 +26,7 @@ class ImagePIDInput: public PIDSource
 {
 public:
 	virtual double PIDGet() {
-		return SmartDashboard::GetNumber("Target Offset");
+		return -SmartDashboard::GetNumber("camera offset");
 	}
 };
 class FrisbeeAim: public Command {
