@@ -20,7 +20,6 @@ SetShooterSpeed::SetShooterSpeed(double speed)
 	
 	// remember the desired shooter speed
 	shooterSpeed = speed;
-	SmartDashboard::PutNumber("Shooter speed", shooterSpeed);
 	
 	// indicate that the speed was specified in the constructor
 	SpeedSpecifiedInConstructor = true;

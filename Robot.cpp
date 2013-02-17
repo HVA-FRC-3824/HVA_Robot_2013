@@ -48,7 +48,7 @@ void Robot::RobotInit()
    
    // PID value for pickup
    SmartDashboard::PutNumber("Pickup P Term", 0.01);
-   SmartDashboard::PutNumber("Pickup I Term", 0.0);
+   SmartDashboard::PutNumber("Pickup I Term", 0.0001);
    SmartDashboard::PutNumber("Pickup D Term", 0.0); 
    
    SmartDashboard::PutNumber("Shooter Voltage:", 0.0);

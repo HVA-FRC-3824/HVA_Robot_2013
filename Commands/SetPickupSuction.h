@@ -8,8 +8,10 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef FRISBEE_PUT_DOWN_H
-#define FRISBEE_PUT_DOWN_H
+
+#ifndef SET_PICKUP_SUCTION_H
+#define SET_PICKUP_SUCTION_H
+
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -19,12 +21,13 @@
  *
  * @author ExampleAuthor
  */
-class FrisbeePutDown: public Command 
-{
+class SetPickupSuction: public Command {
 private:
-	Timer *timer;
+	bool suck;
+	bool suckSetInConstructor;
 public:
-	FrisbeePutDown();
+	SetPickupSuction();
+	SetPickupSuction(bool suck_parameter);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
