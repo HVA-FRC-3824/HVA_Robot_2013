@@ -8,6 +8,7 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 #include "ChassisTurnAngle.h"
+#include <math.h>
 #define TURN_THRESHOLD              5.0
 #define TURN_TIMEOUT                5.0
 ChassisTurnAngle::ChassisTurnAngle(double turnAngle) 
@@ -38,11 +39,10 @@ void ChassisTurnAngle::Initialize()
    turnTimer->Start();
    
    // set the target turn position
-	float goToGyro = (degreesToTurn + Robot::drivetrain->gyro->GetAngle());
+	goToGyro = (degreesToTurn + Robot::drivetrain->gyro->GetAngle());
 	
 	// setup the PID controller and enable
 	PIDcontroller->SetSetpoint(goToGyro);
-	PIDcontroller->SetAbsoluteTolerance(TURN_THRESHOLD);
 	PIDcontroller->Enable();
 }
 // Called repeatedly when this Command is scheduled to run
@@ -53,7 +53,8 @@ void ChassisTurnAngle::Execute()
 // Make this return true when this Command no longer needs to run execute()
 bool ChassisTurnAngle::IsFinished() 
 {
-   return (PIDcontroller->OnTarget() || turnTimer->Get() > TURN_TIMEOUT);
+	return (fabs(goToGyro - Robot::drivetrain->gyro->PIDGet()) < TURN_THRESHOLD) || 
+	       (turnTimer->Get() > TURN_TIMEOUT);
 }
 // Called once after isFinished returns true
 void ChassisTurnAngle::End() 

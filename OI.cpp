@@ -23,6 +23,7 @@
 #include "Commands/ClimberExtend.h"
 #include "Commands/ClimberRetract.h"
 #include "Commands/DisplayPumpStatus.h"
+#include "Commands/FrisbeeAim.h"
 #include "Commands/FrisbeeAimAndShoot.h"
 #include "Commands/FrisbeePutDown.h"
 #include "Commands/FrisbeeShoot.h"
@@ -59,6 +60,7 @@ OI::OI()
 	SmartDashboard::PutData("Climber Extend", new ClimberExtend());
 	SmartDashboard::PutData("Climber Retract", new ClimberRetract());
 	SmartDashboard::PutData("Display Pump Status", new DisplayPumpStatus());
+	SmartDashboard::PutData("Frisbee Aim", new FrisbeeAim());
 	SmartDashboard::PutData("Frisbee Aim And Shoot", new FrisbeeAimAndShoot());
 	SmartDashboard::PutData("Frisbee Shoot", new FrisbeeShoot());
 	SmartDashboard::PutData("Hook Down to Limit", new HookDowntoLimit());
