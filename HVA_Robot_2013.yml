@@ -289,16 +289,16 @@ Children:
       Children: []
       Properties:
         Input Module (Analog): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id018 ['1', '2']
+          choices: &id014 ['1', '2']
           default: '1'
           name: Input Module (Analog)
-          validators: &id019 [AnalogInput]
+          validators: &id015 [AnalogInput]
           value: '1'
         Input Channel (Analog): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id020 ['1', '2', '3', '4', '5', '6', '7', '8']
+          choices: &id016 ['1', '2', '3', '4', '5', '6', '7', '8']
           default: '1'
           name: Input Channel (Analog)
-          validators: &id021 [AnalogInput]
+          validators: &id017 [AnalogInput]
           value: '5'
     - Name: Motor
       Base: Speed Controller
@@ -463,33 +463,17 @@ Children:
       Children: []
       Properties:
         Output Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id014 ['1', '2']
+          choices: ['1', '2']
           default: '1'
           name: Output Module (Solenoid)
-          validators: &id015 [Solenoid]
+          validators: [Solenoid]
           value: '1'
         Output Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: &id016 ['1', '2', '3', '4', '5', '6', '7', '8']
+          choices: ['1', '2', '3', '4', '5', '6', '7', '8']
           default: '1'
           name: Output Channel (Solenoid)
-          validators: &id017 [Solenoid]
+          validators: [Solenoid]
           value: '7'
-    - Name: Release
-      Base: Solenoid
-      Children: []
-      Properties:
-        Output Module (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id014
-          default: '1'
-          name: Output Module (Solenoid)
-          validators: *id015
-          value: '1'
-        Output Channel (Solenoid): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id016
-          default: '1'
-          name: Output Channel (Solenoid)
-          validators: *id017
-          value: '8'
     - Name: Motor
       Base: Speed Controller
       Children: []
@@ -517,16 +501,16 @@ Children:
       Children: []
       Properties:
         Input Module (Analog): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id018
+          choices: *id014
           default: '1'
           name: Input Module (Analog)
-          validators: *id019
+          validators: *id015
           value: '1'
         Input Channel (Analog): !!robotbuilder.data.properties.ChoicesProperty
-          choices: *id020
+          choices: *id016
           default: '1'
           name: Input Channel (Analog)
-          validators: *id021
+          validators: *id017
           value: '6'
     Properties:
       Default Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
@@ -540,10 +524,10 @@ Children:
     Children: []
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
-        choices: &id022 ['1', '2', '3', '4']
+        choices: &id018 ['1', '2', '3', '4']
         default: 1
         name: Number
-        validators: &id023 [Joystick]
+        validators: &id019 [Joystick]
         value: '1'
   - Name: Shoot Joystick
     Base: Joystick
@@ -574,10 +558,10 @@ Children:
           value: whenPressed
     Properties:
       Number: !!robotbuilder.data.properties.ChoicesProperty
-        choices: *id022
+        choices: *id018
         default: 1
         name: Number
-        validators: *id023
+        validators: *id019
         value: '2'
   Properties: {}
 - Name: Commands
