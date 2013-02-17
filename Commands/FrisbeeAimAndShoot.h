@@ -16,8 +16,6 @@
 
 #define FRISBEE_ANGLE_AUTO			5.0		
 
-
-
 #include "Commands/CommandGroup.h"
 
 /**

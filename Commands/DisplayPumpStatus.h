@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
 #ifndef DISPLAY_PUMP_STATUS_H
 #define DISPLAY_PUMP_STATUS_H
-
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -21,7 +19,8 @@
  *
  * @author HVA Robotics Team 3824
  */
-class DisplayPumpStatus: public Command {
+class DisplayPumpStatus: public Command
+{
 public:
 	DisplayPumpStatus();
 	virtual void Initialize();

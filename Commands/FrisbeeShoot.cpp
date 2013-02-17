@@ -8,6 +8,7 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 #include "FrisbeeShoot.h"
+#define PUSHER_TIMER                0.25
 FrisbeeShoot::FrisbeeShoot() 
 {
 	// Use requires() here to declare subsystem dependencies
@@ -20,7 +21,9 @@ FrisbeeShoot::FrisbeeShoot()
 // Called just before this Command runs the first time
 void FrisbeeShoot::Initialize() 
 {
+   // start the shooter
 	Robot::shooterPusher->motor->Set(Relay::kReverse);
+	// reset and start the timer
 	pusherTimer->Reset();
 	pusherTimer->Start();
 }
@@ -32,7 +35,8 @@ void FrisbeeShoot::Execute()
 // Make this return true when this Command no longer needs to run execute()
 bool FrisbeeShoot::IsFinished() 
 {
-	if (pusherTimer->Get() > PUSHER_TIMER) //don't read stopSwitch until we know we are off it
+   //don't read stopSwitch until we know we are off it
+   if (pusherTimer->Get() > PUSHER_TIMER) 
 	{
 		return Robot::shooterPusher->stopSwitch->Get();
 	}
@@ -41,6 +45,7 @@ bool FrisbeeShoot::IsFinished()
 // Called once after isFinished returns true
 void FrisbeeShoot::End() 
 {
+   // stop the shooter moter and the timer
 	Robot::shooterPusher->motor->Set(Relay::kOff);
 	pusherTimer->Stop();
 }

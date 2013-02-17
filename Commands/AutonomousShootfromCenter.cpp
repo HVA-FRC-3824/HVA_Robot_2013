@@ -30,24 +30,20 @@ AutonomousShootfromCenter::AutonomousShootfromCenter()
 	AddParallel(new SetShooterSpeed(2500));
 	
 	// set the shooter angle
-	//AddSequential(new SetShooterAngle(585));
-	
-	// wait
-	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT1));
-	//AddSequential(new WaitForChildren(2));
+	AddSequential(new SetShooterAngle(585));
 	
 	// shoot 1st frisbee
-    AddSequential(new FrisbeeShoot());
+   AddSequential(new FrisbeeShoot());
     
-    // wait
-    AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT1));
+   // wait
+   AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT1));
     
-    // shoot 2nd frisbee
-    AddSequential(new FrisbeeShoot());
+   // shoot 2nd frisbee
+   AddSequential(new FrisbeeShoot());
     
-    // wait
-    AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT2));
+   // wait
+   AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT2));
     
-    // shoot 3rd frisbee
-    AddSequential(new FrisbeeShoot());
+   // shoot 3rd frisbee
+   AddSequential(new FrisbeeShoot());
 }

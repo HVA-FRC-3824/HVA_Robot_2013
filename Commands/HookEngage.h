@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
 #ifndef HOOK_ENGAGE_H
 #define HOOK_ENGAGE_H
-
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -21,7 +19,8 @@
  *
  * @author HVA Robotics Team 3824
  */
-class HookEngage: public Command {
+class HookEngage: public Command 
+{
 public:
 	HookEngage();
 	virtual void Initialize();

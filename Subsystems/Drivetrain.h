@@ -60,8 +60,10 @@ public:
 	void InitDefaultCommand();
 	void HolonomicDrive(Joystick *joystick);
 	void HolonomicDrive(float magnitude, float direction, float rotation);
+	
 	float GetFrontDistance();
 	float GetRearDistance();
+	
 	void PIDWrite(float output);
 	double PIDGet();
 };

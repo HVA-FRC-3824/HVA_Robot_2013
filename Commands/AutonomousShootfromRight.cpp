@@ -36,17 +36,14 @@ AutonomousShootfromRight::AutonomousShootfromRight()
 	AddParallel(new SetShooterSpeed(2500));
 	
 	// set the shooter angle
-	AddSequential(new SetShooterAngle(585));
+	AddParallel(new SetShooterAngle(585));
 	
 	// drive forward
 	AddSequential(new ChassisDriveDistance(AUTONOMOUS_DRIVE_FORWARD_DISTANCE));
 	   
 	// turn left 
 	AddSequential(new ChassisTurnAngle(AUTONOMOUS_TURN_ANGLE)); 
-	
-	// wait 
-	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT1));
-	 
+
 	// shoot first Frisbee
 	AddSequential(new FrisbeeShoot());
 	

@@ -9,28 +9,20 @@
 // it from being updated in th future.
 
 
+
 #ifndef FRISBEE_PICKUP_H
 #define FRISBEE_PICKUP_H
 
-
-#include "Commands/Subsystem.h"
-#include "../Robot.h"
+#include "Commands/CommandGroup.h"
 
 /**
  *
  *
  * @author ExampleAuthor
  */
-class FrisbeePickup: public Command {
-private:
-	Timer *timer;
-public:
+class FrisbeePickup: public CommandGroup {
+public:	
 	FrisbeePickup();
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
 };
 
 #endif

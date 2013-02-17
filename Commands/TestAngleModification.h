@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
 #ifndef TEST_ANGLE_MODIFICATION_H
 #define TEST_ANGLE_MODIFICATION_H
-
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -21,7 +19,8 @@
  *
  * @author ExampleAuthor
  */
-class TestAngleModification: public Command {
+class TestAngleModification: public Command 
+{
 public:
 	TestAngleModification();
 	virtual void Initialize();

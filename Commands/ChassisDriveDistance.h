@@ -8,9 +8,9 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
 #ifndef CHASSIS_DRIVE_DISTANCE_H
 #define CHASSIS_DRIVE_DISTANCE_H
+
 #define DRIVING_POWER               0.2
 #define DRIVING_DIRECTION           0.0
 #define DRIVING_ROTATION            0.0  

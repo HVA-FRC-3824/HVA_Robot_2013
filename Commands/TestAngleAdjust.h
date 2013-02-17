@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #ifndef TEST_ANGLE_ADJUST_H
 #define TEST_ANGLE_ADJUST_H
 
@@ -20,7 +18,8 @@
  *
  * @author ExampleAuthor
  */
-class TestAngleAdjust: public CommandGroup {
+class TestAngleAdjust: public CommandGroup
+{
 public:	
 	TestAngleAdjust();
 };
