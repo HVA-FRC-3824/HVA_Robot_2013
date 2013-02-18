@@ -20,7 +20,7 @@
  * This allows it to be accurate and concise without losing precision 
  * from loss of voltage.
  * 
- * Timeouts after TURN_TIMEOUT seconds
+ * Waits TURN_TIMEOUT seconds to make sure it really is at the angle (not shooting through)
  * 
  * PID terms are read from smart dashboard
  * 
@@ -30,11 +30,10 @@ class ChassisTurnAngle: public Command
 {	
 private:
 	double degreesToTurn; 
-	Timer *turnTimer;
-	PIDController *PIDcontroller;
+	Timer turnTimer;
+	PIDController PIDcontroller;
 	float goToGyro;
 	bool anglePassed;
-	void init();
 	
 public:
 	ChassisTurnAngle();

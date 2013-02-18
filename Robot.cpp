@@ -27,14 +27,17 @@ void Robot::RobotInit()
 {
    // Must be called before constructing OI
    // PID values for the turn angle
-   SmartDashboard::PutNumber("Chassis Turn P Term", 0.1);
-   SmartDashboard::PutNumber("Chassis Turn I Term", 0.01);
-   SmartDashboard::PutNumber("Chassis Turn D Term", 0.0);
+   SmartDashboard::PutNumber("Chassis Turn P Term", 0.04); //Tuned for Robot 1!
+   SmartDashboard::PutNumber("Chassis Turn I Term", 0.004);
+   SmartDashboard::PutNumber("Chassis Turn D Term", 0.04);
+   
+   SmartDashboard::PutNumber("Chassis Turn Angle Degrees", 10);
    
    // PID values for the shooter speed
    SmartDashboard::PutNumber("Shooter Speed P Term", 1);
    SmartDashboard::PutNumber("Shooter Speed I Term", 0.05);
    SmartDashboard::PutNumber("Shooter Speed D Term", 0.0);
+   
    
    // PID values for the shooter
    SmartDashboard::PutNumber("Shooter Angle P Term", 0.01);
