@@ -15,6 +15,7 @@
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
+#include "ChassisTurnAngle.h"
 
 /**
  *
@@ -22,6 +23,10 @@
  * @author ExampleAuthor
  */
 class DriveToFrisbee: public Command {
+private:
+	ChassisTurnAngle turnCommand;
+	double target;
+	double pixelToDegree;
 public:
 	DriveToFrisbee();
 	virtual void Initialize();

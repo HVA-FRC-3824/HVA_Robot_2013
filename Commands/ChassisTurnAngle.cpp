@@ -47,12 +47,13 @@ void ChassisTurnAngle::Execute()
 {
    
 }
+
 // Make this return true when this Command no longer needs to run execute()
 bool ChassisTurnAngle::IsFinished() 
 {
 	
 	//TODO replace timer to check that we are stopped at the angle
-	if  (fabs(goToGyro - Robot::drivetrain->gyro->PIDGet()) < TURN_THRESHOLD)
+	if  (fabs(PIDcontroller.GetSetpoint() - Robot::drivetrain->gyro->PIDGet()) < TURN_THRESHOLD)
 	{
 		return turnTimer.Get() > TURN_TIMEOUT;
 	} 
