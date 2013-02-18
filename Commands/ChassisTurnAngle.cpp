@@ -31,7 +31,7 @@ void ChassisTurnAngle::Initialize()
    
     if(!anglePassed)
     	degreesToTurn = SmartDashboard::GetNumber("Chassis Turn Angle Degrees");
-	goToGyro = (degreesToTurn + Robot::drivetrain->gyro->GetAngle());
+	float goToGyro = (degreesToTurn + Robot::drivetrain->gyro->GetAngle());
 	
 	// setup the PID controller and enable
 	PIDcontroller.SetPID(SmartDashboard::GetNumber("Chassis Turn P Term"),

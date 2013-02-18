@@ -32,7 +32,6 @@ private:
 	double degreesToTurn; 
 	Timer turnTimer;
 	PIDController PIDcontroller;
-	float goToGyro;
 	bool anglePassed;
 	
 public:

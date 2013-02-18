@@ -22,9 +22,8 @@
  *
  * @author ExampleAuthor
  */
-class DriveToFrisbee: public Command {
+class DriveToFrisbee: public ChassisTurnAngle {
 private:
-	ChassisTurnAngle turnCommand;
 	double target;
 	double pixelToDegree;
 public:

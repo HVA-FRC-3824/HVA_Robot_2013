@@ -66,5 +66,6 @@ public:
 	
 	void PIDWrite(float output);
 	double PIDGet();
+	double pidMag; //Magnetidue used while driving under PID control
 };
 #endif
