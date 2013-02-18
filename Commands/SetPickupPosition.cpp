@@ -9,7 +9,7 @@
 // it from being updated in th future.
 #include "SetPickupPosition.h"
 #include "math.h"
-// TODO: Set MAX and MIN of pickup
+
 #define MAX_VALUE 		958.0
 #define MIN_VALUE 		360.0
 #define THRESHOLD 		  5.0
