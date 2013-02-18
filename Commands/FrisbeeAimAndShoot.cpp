@@ -27,7 +27,7 @@ FrisbeeAimAndShoot::FrisbeeAimAndShoot()
    // Command1 and Command2 will run in parallel.
   
    //AddSequential(new SetShooterAngle(FRISBEE_ANGLE_AUTO));
-   AddSequential(new FrisbeeAim());
+   //AddSequential(new FrisbeeAim());
    float shooterSpeed = SmartDashboard::GetNumber("Shooter Voltage:");
    AddSequential(new SetShooterSpeed(shooterSpeed));
    AddSequential(new FrisbeeShoot());

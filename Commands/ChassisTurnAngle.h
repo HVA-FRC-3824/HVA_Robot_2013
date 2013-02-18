@@ -13,8 +13,6 @@
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
-#include "Timer.h"
-
 /**
  * This command uses PID controls to accurately turn a set degrees.
  * This allows it to be accurate and concise without losing precision 
@@ -30,7 +28,6 @@ class ChassisTurnAngle: public Command
 {	
 private:
 	double degreesToTurn; 
-	Timer turnTimer;
 	PIDController PIDcontroller;
 	bool anglePassed;
 	
