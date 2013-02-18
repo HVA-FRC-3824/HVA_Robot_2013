@@ -22,6 +22,10 @@ ShooterWheel::ShooterWheel() : Subsystem("ShooterWheel")
    // allow newing the controller in the first command that uses the shooter
    // wheel to ensure the PID runs
 	PIDcontroller = NULL;
+	
+	// Set up the encoder for use.
+	encoder->Start();
+	encoder->SetMaxPeriod(0.2);
 }
  
 PIDController *ShooterWheel::getPIDController() 

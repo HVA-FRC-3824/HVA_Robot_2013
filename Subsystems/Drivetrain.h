@@ -59,6 +59,7 @@ public:
 	Drivetrain();
 	void InitDefaultCommand();
 	void HolonomicDrive(Joystick *joystick);
+	void HolonomicDriveReverse(Joystick *joystick);
 	void HolonomicDrive(float magnitude, float direction, float rotation);
 	
 	float GetFrontDistance();

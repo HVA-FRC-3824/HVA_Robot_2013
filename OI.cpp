@@ -24,6 +24,8 @@
 #include "Commands/ClimberRetract.h"
 #include "Commands/DisplayPumpStatus.h"
 #include "Commands/DriveToFrisbee.h"
+#include "Commands/DrivetrainNormalDrive.h"
+#include "Commands/DrivetrainReverseDrive.h"
 #include "Commands/FrisbeeAim.h"
 #include "Commands/FrisbeeAimAndShoot.h"
 #include "Commands/FrisbeePickup.h"
@@ -52,6 +54,8 @@ OI::OI()
 	shootDiskButton->WhenPressed(new FrisbeeShoot());
 	driveJoystick = new Joystick(1);
 	
+	reverseDrive = new JoystickButton(driveJoystick, 1);
+	reverseDrive->WhileHeld(new DrivetrainReverseDrive());
      
         // SmartDashboard Buttons
 	SmartDashboard::PutData("Autonomous Shoot from Center", new AutonomousShootfromCenter());
