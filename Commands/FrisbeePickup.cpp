@@ -14,9 +14,9 @@
 #include "SetPickupPosition.h"
 #include "SetPickupSuction.h"
 
-#define PICKUP_POSITION		360.0
-#define RELEASE_POSITION	886.0
-#define HOME_POSITION		700.0
+#define PICKUP_POSITION		103.0
+#define RELEASE_POSITION	647.0
+#define HOME_POSITION		500.0
 
 FrisbeePickup::FrisbeePickup() 
 {

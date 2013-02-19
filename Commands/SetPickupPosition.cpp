@@ -10,8 +10,8 @@
 #include "SetPickupPosition.h"
 #include "math.h"
 
-#define MAX_VALUE 		958.0
-#define MIN_VALUE 		360.0
+#define MAX_VALUE 		672.0
+#define MIN_VALUE 		103.0
 #define THRESHOLD 		  5.0
 SetPickupPosition::SetPickupPosition(double position_parameter)
 {
