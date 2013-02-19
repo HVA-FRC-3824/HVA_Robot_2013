@@ -36,7 +36,7 @@ void Robot::RobotInit()
    
    // PID values for the shooter speed
    SmartDashboard::PutNumber("Shooter Speed P Term", 1);
-   SmartDashboard::PutNumber("Shooter Speed I Term", 0.04);
+   SmartDashboard::PutNumber("Shooter Speed I Term", 0.03);
    SmartDashboard::PutNumber("Shooter Speed D Term", 0.0);
    
    
@@ -51,9 +51,9 @@ void Robot::RobotInit()
    SmartDashboard::PutNumber("Shooter Aim D: ", 0.0);
    
    // PID value for pickup
-   SmartDashboard::PutNumber("Pickup P Term", 0.01);
-   SmartDashboard::PutNumber("Pickup I Term", 0.0001);
-   SmartDashboard::PutNumber("Pickup D Term", 0.0); 
+   SmartDashboard::PutNumber("Pickup P Term", 0.02);
+   SmartDashboard::PutNumber("Pickup I Term", 0.001);
+   SmartDashboard::PutNumber("Pickup D Term", 0.009); 
    
    SmartDashboard::PutNumber("Shooter Voltage:", 0.0);
    RobotMap::init();

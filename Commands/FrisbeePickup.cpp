@@ -14,7 +14,8 @@
 #include "SetPickupPosition.h"
 #include "SetPickupSuction.h"
 
-#define PICKUP_POSITION		103.0
+#define PICKUP_POSITION		 95.0
+#define PICKUP_STAGE		122.0
 #define RELEASE_POSITION	647.0
 #define HOME_POSITION		500.0
 
@@ -23,14 +24,18 @@ FrisbeePickup::FrisbeePickup()
 	// Turn on the suction
 	AddSequential(new SetPickupSuction(true));
 	
+	// Move the arm to the pickup stage position
+	//AddSequential(new SetPickupPosition(PICKUP_STAGE), 1.0);
+	//AddSequential(new WaitCommand(.5));
+	
 	// Move the arm to the pickup position
 	AddSequential(new SetPickupPosition(PICKUP_POSITION), 1.0);
 	AddSequential(new WaitCommand(1));
 	
 	// Move the arm to the release position
-	AddSequential(new SetPickupPosition(RELEASE_POSITION));
-
+	AddSequential(new SetPickupPosition(RELEASE_POSITION), 1.0);
 	AddSequential(new WaitCommand(1));
+	
 	// Turn off the suction
 	AddSequential(new SetPickupSuction(false));
 	
@@ -38,7 +43,7 @@ FrisbeePickup::FrisbeePickup()
 
 	
 	// Move the arm to the home position
-	AddSequential(new SetPickupPosition(HOME_POSITION));
+	AddSequential(new SetPickupPosition(HOME_POSITION), 1.0);
 
 	
 	

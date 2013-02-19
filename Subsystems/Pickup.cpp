@@ -40,7 +40,7 @@ PIDController* Pickup::getPIDController()
 				SmartDashboard::GetNumber("Pickup I Term"),
 				SmartDashboard::GetNumber("Pickup D Term"), 
 				potentiometer, this);
-		PIDcontroller->SetOutputRange(-0.4, 0.6);
+		PIDcontroller->SetOutputRange(-0.5, 0.7);
 	}
 	return PIDcontroller;
 }
