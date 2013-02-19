@@ -46,7 +46,7 @@ void SetShooterAngle::Initialize()
 	// ensure the range of the shooter angle
    if (angle > MAX_VALUE)
 	   angle = MAX_VALUE;
-   if (angle < 505)
+   if (angle < MIN_VALUE)
 	   angle = MIN_VALUE;
    
    // setup the PID controller
