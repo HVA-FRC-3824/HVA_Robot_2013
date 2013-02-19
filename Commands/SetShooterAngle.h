@@ -15,7 +15,7 @@
 #include "../Robot.h"
 
 /**
- * SetShooterAngle based on argument to constructor
+ *SetShooterAngle based on argument to constructor
  *
  * @author HVA Robotics Team 3824
  */

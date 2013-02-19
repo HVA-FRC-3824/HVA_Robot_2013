@@ -9,6 +9,7 @@
 // it from being updated in th future.
 #include "FrisbeeAim.h"
 #include <math.h>
+
 #define AIM_PIXEL_THRESHOLD 		3
 FrisbeeAim::FrisbeeAim() {
 	// Use requires() here to declare subsystem dependencies

@@ -26,8 +26,6 @@
  * SetShooterSpeed command, which is supposed to set the speed of the wheel
  * to the float shooterSpeed.
  * 
- * TODO: Aiming isn't implemented yet.
- *
  * @author HVA Robotics Team 3824
  */
 class FrisbeeAimAndShoot: public CommandGroup 

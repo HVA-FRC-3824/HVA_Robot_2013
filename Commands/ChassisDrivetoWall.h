@@ -14,7 +14,6 @@
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
 
-//TODO: Add a command which drives to feeder station and aligns to slot.
 
 /**
  * 
