@@ -40,6 +40,7 @@ public:
 	virtual void End();
 	virtual void Interrupted();
 	friend class DriveToFrisbee;
+	friend class FrisbeeAim;
 };
 
 #endif

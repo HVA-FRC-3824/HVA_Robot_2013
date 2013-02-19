@@ -15,23 +15,26 @@
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
+#include "ChassisTurnAngle.h"
 
 /**
  *
  *
  * @author ExampleAuthor
  */
+//
+//class ImagePIDInput: public PIDSource 
+//{
+//public:
+//	virtual double PIDGet() {
+//		return -SmartDashboard::GetNumber("Camera offset");
+//	}
+//};
 
-class ImagePIDInput: public PIDSource 
-{
-public:
-	virtual double PIDGet() {
-		return -SmartDashboard::GetNumber("Camera offset");
-	}
-};
-class FrisbeeAim: public Command {
+class FrisbeeAim: public ChassisTurnAngle {
 private:
-	PIDController *PIDcontroller;
+	double target;
+	double pixelToDegree;
 public:
 	FrisbeeAim();
 	virtual void Initialize();
