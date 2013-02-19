@@ -36,7 +36,7 @@ void Robot::RobotInit()
    
    // PID values for the shooter speed
    SmartDashboard::PutNumber("Shooter Speed P Term", 1);
-   SmartDashboard::PutNumber("Shooter Speed I Term", 0.05);
+   SmartDashboard::PutNumber("Shooter Speed I Term", 0.04);
    SmartDashboard::PutNumber("Shooter Speed D Term", 0.0);
    
    
