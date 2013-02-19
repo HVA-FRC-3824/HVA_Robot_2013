@@ -16,7 +16,7 @@
  *
  * @author ExampleAuthor
  */
-class Pickup: public Subsystem {
+class Pickup: public Subsystem, public PIDOutput {
 private:
 	PIDController * PIDcontroller;
 public:
@@ -29,6 +29,7 @@ public:
 	PIDController *getPIDController();
 	
 	Pickup();
+	void PIDWrite(float output);
 	void InitDefaultCommand();
 };
 #endif
