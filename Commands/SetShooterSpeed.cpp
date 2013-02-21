@@ -57,18 +57,25 @@ void SetShooterSpeed::Initialize()
 	}
 	
    // enable the PID controller
-	Robot::shooterWheel->getPIDController()->Enable();
+	   //Robot::shooterWheel->getPIDController()->Enable(); TODO - reactivate PID
+	   Robot::shooterWheel->getPIDController()->Disable();
 }
 // Called repeatedly when this Command is scheduled to run
 void SetShooterSpeed::Execute() 
 {
+//	// TODO - Remove when PID is enabled
+//	float shooterVoltage = Robot::oi->getShootJoystick()->GetZ();
+//	shooterVoltage = (shooterVoltage + 1.0) / 2.0;	
+//	Robot::shooterWheel->SetWheelSpeed(shooterVoltage);
 	
+	Robot::shooterWheel->SetWheelSpeed(0.8);
 }
 // Make this return true when this Command no longer needs to run execute()
 bool SetShooterSpeed::IsFinished() 
 {
    // determine is the shooter speed is within the desired limit
-	return fabs(shooterSpeed - Robot::shooterWheel->pidEncoder->PIDGet()) < THRESHOLD;
+	return false;  // TODO - Remove when shooter PID is enabled
+	//return fabs(shooterSpeed - Robot::shooterWheel->pidEncoder->PIDGet()) < THRESHOLD;	
 }
 // Called once after isFinished returns true
 void SetShooterSpeed::End() 
