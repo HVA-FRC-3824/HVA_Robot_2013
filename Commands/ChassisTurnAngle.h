@@ -13,6 +13,8 @@
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
+
+#define TURN_THRESHOLD              1.5 //works with 1 but is a bit slow
 /**
  * This command uses PID controls to accurately turn a set degrees.
  * This allows it to be accurate and concise without losing precision 
