@@ -30,7 +30,7 @@ private:
    bool m_isRPM;
    
 public:
-	SetShooterSpeed(double speed, bool isRPM = false);	// For autonomous
+	SetShooterSpeed(double speed, bool isRPM = true);	// For autonomous
 	SetShooterSpeed();				// Get Speed From the Smart Dashboard
 	virtual void Initialize();
 	virtual void Execute();

@@ -27,6 +27,8 @@ SetShooterSpeed::SetShooterSpeed(double speed, bool isRPM)
 	
 	// indicate that the speed was specified in the constructor
 	m_SpeedSpecifiedInConstructor = true;
+	
+	// Indicate that the shooter speed is set in rpm mode.
 	m_isRPM = isRPM;
 }
 SetShooterSpeed::SetShooterSpeed() 
@@ -45,52 +47,50 @@ SetShooterSpeed::SetShooterSpeed()
 // Called just before this Command runs the first time
 void SetShooterSpeed::Initialize() 
 {
-	    // determine if the shooter speed should be read from the Pot
-		if (m_SpeedSpecifiedInConstructor == true) // use speed specified
+	// determine if the shooter speed should be read from the Pot
+	if (m_SpeedSpecifiedInConstructor == true) // use speed specified
+	{
+		// Voltage or PID control
+		if(m_isRPM == false)
 		{
-		  // read the desired shooter RPM from the constructor
+			// Voltage Mode
+			Robot::shooterWheel->getPIDController()->Disable();
+		}
+		else // Velocity PID mode
+		{
+			// read the desired shooter RPM from the constructor
 			Robot::shooterWheel->getPIDController()->SetSetpoint(m_shooterSpeed);
-			
-			// Voltage or PID control
-			if(m_isRPM == false)
-			{
-				// Voltage Mode
-				Robot::shooterWheel->getPIDController()->Disable();
-			}
-			else
-			{
-				Robot::shooterWheel->getPIDController()->SetSetpoint(m_shooterSpeed);
 
-			    // enable the PID controller
-			    Robot::shooterWheel->getPIDController()->Enable(); 
-			}
+			// enable the PID controller
+			Robot::shooterWheel->getPIDController()->Enable(); 
 		}
-		else // values should be read from pot
+	}
+	else // values should be read from pot
+	{
+		// Read if the driverStation is voltage or pid control
+		m_isRPM = DriverStation::GetInstance()->GetEnhancedIO().GetButton(INPUT_SHOOTER_RPM_VOLTAGE);
+		
+		// Voltage or PID control
+		if(m_isRPM == false)
 		{
-			
-			m_isRPM = ;
-			
-			// Voltage or PID control
-			if(m_isRPM == false)
-			{
-				// Voltage Mode
-				Robot::shooterWheel->getPIDController()->Disable();
-			}
-			else
-			{
-			   // read the value from the pot
-				m_shooterSpeed = 	DriverStation::GetInstance()->GetEnhancedIO().GetAnalogIn(ANALOG_SHOOTER_SPEED);
-				
-				// Convert the pot value to speed
-				m_shooterSpeed = m_shooterSpeed*(MAX_VALUE - MIN_VALUE)/3.3 + MIN_VALUE;
-				
-				// Set the setpoint
-				Robot::shooterWheel->getPIDController()->SetSetpoint(m_shooterSpeed);
-
-			    // enable the PID controller
-			    Robot::shooterWheel->getPIDController()->Enable(); 
-			}
+			// Voltage Mode
+			Robot::shooterWheel->getPIDController()->Disable();
 		}
+		else
+		{
+		   // read the value from the pot
+			m_shooterSpeed = DriverStation::GetInstance()->GetEnhancedIO().GetAnalogIn(ANALOG_SHOOTER_SPEED);
+			
+			// Convert the pot value to speed
+			m_shooterSpeed = m_shooterSpeed*(MAX_VALUE - MIN_VALUE)/3.3 + MIN_VALUE;
+			
+			// Set the setpoint
+			Robot::shooterWheel->getPIDController()->SetSetpoint(m_shooterSpeed);
+
+			// enable the PID controller
+			Robot::shooterWheel->getPIDController()->Enable(); 
+		}
+	}
 }
 // Called repeatedly when this Command is scheduled to run
 void SetShooterSpeed::Execute() 
@@ -100,24 +100,52 @@ void SetShooterSpeed::Execute()
 	{
 		if(m_isRPM == false)
 		{
-			Robot::shooterWheel->motor->Set(m_shooterSpeed);
+			// Set the shooter voltage
+			Robot::shooterWheel->SetWheelSpeed(m_shooterSpeed);
 		}
 	}
 	else // Use pot to control
 	{
-		if()
+		if(m_isRPM == false) // Voltage Control
+		{
+			// read the value from the pot
+			m_shooterSpeed = DriverStation::GetInstance()->GetEnhancedIO().GetAnalogIn(ANALOG_SHOOTER_SPEED);
+			
+			// Convert the pot value to a positive 0-1 moter value
+			m_shooterSpeed = m_shooterSpeed / 3.3;
+			
+			// Set the shooter voltage
+			Robot::shooterWheel->SetWheelSpeed(m_shooterSpeed);
+		}
+		else // RPM Control
+		{
+			// Read the value from the pot
+			m_shooterSpeed = DriverStation::GetInstance()->GetEnhancedIO().GetAnalogIn(ANALOG_SHOOTER_SPEED);
+			
+			// Convert the pot value to RPM
+			m_shooterSpeed = m_shooterSpeed*(MAX_VALUE - MIN_VALUE)/3.3 + MIN_VALUE;
+			
+			// Update the setpoint
+			Robot::shooterWheel->getPIDController()->SetSetpoint(m_shooterSpeed);
+		}
 	}
-		
-	float shooterVoltage = Robot::oi->getShootJoystick()->GetZ();
-	shooterVoltage = (shooterVoltage + 1.0) / 2.0;	
-	Robot::shooterWheel->SetWheelSpeed(shooterVoltage);
 	
 }
 // Make this return true when this Command no longer needs to run execute()
 bool SetShooterSpeed::IsFinished() 
 {
-    // determine is the shooter speed is within the desired limit
-	return fabs(m_shooterSpeed - Robot::shooterWheel->pidEncoder->PIDGet()) < THRESHOLD;	
+	// There are two casses that we want the robot to finish
+	
+	// Case 1: Speed is meet
+	// determine is the shooter speed is within the desired limit
+	if (fabs(m_shooterSpeed - Robot::shooterWheel->pidEncoder->PIDGet()) < THRESHOLD)
+		return true;
+	
+	// Case 2: The speed is controlled by pot and mode changes
+	if ((m_SpeedSpecifiedInConstructor == false) && (m_SpeedSpecifiedInConstructor != DriverStation::GetInstance()->GetEnhancedIO().GetButton(INPUT_SHOOTER_RPM_VOLTAGE)))
+		return true;
+	
+	return false;	
 }
 // Called once after isFinished returns true
 void SetShooterSpeed::End() 
