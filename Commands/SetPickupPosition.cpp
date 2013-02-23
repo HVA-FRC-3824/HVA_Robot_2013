@@ -9,7 +9,6 @@
 // it from being updated in th future.
 #include "SetPickupPosition.h"
 #include "math.h"
-
 #define MAX_VALUE 		672.0
 #define MIN_VALUE 		 90.0
 #define THRESHOLD 		  5.0
