@@ -55,7 +55,9 @@ void SetPickupPosition::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void SetPickupPosition::Execute() 
 {
-	
+	// <DEBUG>
+	SmartDashboard::PutNumber("Pickup Position", position);
+	// </DEBUG>
 }
 // Make this return true when this Command no longer needs to run execute()
 bool SetPickupPosition::IsFinished() 

@@ -66,7 +66,7 @@ void RobotMap::init()
 	
 	drivetrainGyro = new Gyro(1, 1);
 	lw->AddSensor("Drivetrain", "Gyro", drivetrainGyro);
-	drivetrainGyro->SetSensitivity(0.007);
+	drivetrainGyro->SetSensitivity(0.0070);
 	shooterWheelMotor = new Talon(1, 5);
 	lw->AddActuator("Shooter Wheel", "Motor", (Talon*) shooterWheelMotor);
 	

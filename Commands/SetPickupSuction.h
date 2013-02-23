@@ -23,11 +23,11 @@
  */
 class SetPickupSuction: public Command {
 private:
-	bool sucktion;
-	bool sucktionSetInConstructor;
+	bool suction;
+	bool suctionSetInConstructor;
 public:
 	SetPickupSuction();
-	SetPickupSuction(bool sucktion_parameter);
+	SetPickupSuction(bool suction_parameter);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

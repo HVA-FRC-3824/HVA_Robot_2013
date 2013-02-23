@@ -24,8 +24,6 @@ class SetShooterAngleforPickup: public CommandGroup {
 public:	
 	SetShooterAngleforPickup();
 	void Initialize();
-	void End();
-	void Interrupted();
 };
 
 #endif

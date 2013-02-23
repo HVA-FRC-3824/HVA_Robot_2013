@@ -16,14 +16,11 @@
 #define INPUT_PICKUP_UP								10	//Double Toggle
 #define INPUT_PICKUP_DOWN							1	//Double Toggle
 #define INPUT_PICKUP_HOME							8	//Button
-
 #define INPUT_SHOOTER_SPEED_ADJUSTMENT_MANUAL		2	//Plot Switch
 #define INPUT_SHOOTER_ANGLE_ADJUSTMENT_MANUAL		7	//Toggle Switch
 #define INPUT_SHOOTER_RPM_VOLTAGE					5	//Toggle Switch
 #define INPUT_SHOOTER_STOP							6	//Button
-
 #define INPUT_FRISBEE_SHOOT						   11	//Button
-
 #define INPUT_SHOOTER_POSITION_1				   13	//Button
 #define INPUT_SHOOTER_POSITION_2				   14	//Button
 #define INPUT_SHOOTER_POSITION_3				   15	//Button
