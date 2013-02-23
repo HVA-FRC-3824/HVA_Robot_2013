@@ -37,6 +37,9 @@ void Teleoperated::Execute()
    SmartDashboard::PutNumber("Shooter Speed GIT", Robot::shooterWheel->pidEncoder->PIDGet());
    SmartDashboard::PutNumber("Shooter Angle GIT", Robot::shooterAngleAdjust->potentiometer->PIDGet());
    SmartDashboard::PutNumber("Pickup Position GIT", Robot::pickup->potentiometer->PIDGet());
+   // <DEBUG>
+   SmartDashboard::PutNumber("Pickup Voltage", Robot::pickup->motor->Get());
+   // </DEBUG>
 }
 // Make this return true when this Command no longer needs to run execute()
 bool Teleoperated::IsFinished() 
