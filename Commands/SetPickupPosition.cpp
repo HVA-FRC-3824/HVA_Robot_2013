@@ -9,9 +9,7 @@
 // it from being updated in th future.
 #include "SetPickupPosition.h"
 #include "math.h"
-#define MAX_VALUE 		672.0
-#define MIN_VALUE 		 90.0
-#define THRESHOLD 		  5.0
+
 SetPickupPosition::SetPickupPosition(double position_parameter)
 {
 	position = position_parameter;
@@ -46,10 +44,10 @@ void SetPickupPosition::Initialize()
 	}
 	
 	// Ensure the range of the pickup
-	if (position > MAX_VALUE)
-		position = MAX_VALUE;
-	if (position < MIN_VALUE)
-		position = MIN_VALUE;
+	if (position > PICKUP_MAX_VALUE)
+		position = PICKUP_MAX_VALUE;
+	if (position < PICKUP_MIN_VALUE)
+		position = PICKUP_MIN_VALUE;
 	
 	// Setup the PID controller
 	Robot::pickup->getPIDController()->SetSetpoint(position);
@@ -63,7 +61,7 @@ void SetPickupPosition::Execute()
 // Make this return true when this Command no longer needs to run execute()
 bool SetPickupPosition::IsFinished() 
 {
-	return fabs(position - Robot::pickup->potentiometer->PIDGet()) < THRESHOLD;
+	return fabs(position - Robot::pickup->potentiometer->PIDGet()) < PICKUP_THRESHOLD;
 }
 // Called once after isFinished returns true
 void SetPickupPosition::End() 

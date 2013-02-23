@@ -16,6 +16,18 @@
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
 
+/****** Define the constants for the position of the pickup arm ******/
+#define PICKUP_MAX_VALUE 		672.0
+#define PICKUP_MIN_VALUE 		 90.0
+#define PICKUP_THRESHOLD 		  5.0
+
+// Define Positions
+#define PICKUP_POSITION				 95.0
+#define PICKUP_STAGE				122.0
+#define PICKUP_RELEASE_POSITION		647.0
+#define PICKUP_HOME_POSITION		500.0
+/*********************************************************************/
+
 /**
  *
  *
