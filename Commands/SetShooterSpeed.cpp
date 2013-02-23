@@ -9,7 +9,6 @@
 // it from being updated in th future.
 #include "SetShooterSpeed.h"
 #include <math.h>
-
 SetShooterSpeed::SetShooterSpeed(double speed, bool isRPM) 
 {
 	// Use requires() here to declare subsystem dependencies

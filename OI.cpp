@@ -40,6 +40,7 @@
 #include "Commands/SetPickupSuction.h"
 #include "Commands/SetShooterAngle.h"
 #include "Commands/SetShooterAngleJoystick.h"
+#include "Commands/SetShooterAngleforPickup.h"
 #include "Commands/SetShooterSpeed.h"
 #include "Commands/SetShooterSpeedJoystick.h"
 #include "Commands/Teleoperated.h"

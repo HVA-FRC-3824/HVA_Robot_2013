@@ -9,7 +9,6 @@
 // it from being updated in th future.
 #include "SetShooterAngle.h"
 #include <math.h>
-
 SetShooterAngle::SetShooterAngle(double angle_parameter) 
 {
 	angle = angle_parameter;

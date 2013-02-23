@@ -10,7 +10,6 @@
 #ifndef OI_H
 #define OI_H
 #include "WPILib.h"
-
 // defines Cypress IO
 #define INPUT_PICKUP_UP								3	//Double Toggle
 #define INPUT_PICKUP_DOWN							4	//Double Toggle

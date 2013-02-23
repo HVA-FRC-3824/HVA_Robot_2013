@@ -13,11 +13,15 @@
 #include "FrisbeePickup.h"
 #include "SetPickupPosition.h"
 #include "SetPickupSuction.h"
+#include "SetShooterAngleforPickup.h"
 
 FrisbeePickup::FrisbeePickup() 
 {
 	// Turn on the suction
 	AddSequential(new SetPickupSuction(true));
+	
+	// Make sure the shooter is out of the way for the pickup
+	AddSequential(new SetShooterAngleforPickup(), 1.0);
 	
 	// Move the arm to the pickup stage position
 	//AddSequential(new SetPickupPosition(PICKUP_STAGE), 1.0);
