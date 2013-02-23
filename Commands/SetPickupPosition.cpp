@@ -9,7 +9,6 @@
 // it from being updated in th future.
 #include "SetPickupPosition.h"
 #include "math.h"
-
 SetPickupPosition::SetPickupPosition(double position_parameter)
 {
 	position = position_parameter;

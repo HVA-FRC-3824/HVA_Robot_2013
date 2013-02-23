@@ -10,8 +10,13 @@
 
 
 
-#ifndef CYPRESS_GOTO_POSITION_3_H
-#define CYPRESS_GOTO_POSITION_3_H
+#ifndef CYPRESS_GOTO_POSITION_H
+#define CYPRESS_GOTO_POSITION_H
+
+#include "WPILib.h"
+#include "../OI.h"
+#include "SetShooterAngle.h"
+#include "SetShooterSpeed.h"
 
 #include "Commands/CommandGroup.h"
 
@@ -20,9 +25,18 @@
  *
  * @author ExampleAuthor
  */
-class CypressGotoPosition3: public CommandGroup {
+class CypressGotoPosition: public CommandGroup 
+{
+private:
+	double m_angle;
+	double m_velocity;
+	double m_isRPM;
 public:	
-	CypressGotoPosition3();
+	CypressGotoPosition();
+	CypressGotoPosition(double angle, double velocity, bool isRPM = true);
+	void Initialize();
+	void End();
+	void Interrupted();
 };
 
 #endif

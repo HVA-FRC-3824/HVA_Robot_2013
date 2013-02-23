@@ -10,8 +10,8 @@
 #ifndef OI_H
 #define OI_H
 #include "WPILib.h"
-// defines Cypress IO
 
+// defines Cypress IO
 #define INPUT_PICKUP_UP								3	//Double Toggle
 #define INPUT_PICKUP_DOWN							4	//Double Toggle
 #define INPUT_SHOOTER_ANGLE_ADJUSTMENT_MANUAL		7	//Toggle Switch
@@ -26,10 +26,8 @@
 #define INPUT_SHOOTER_POSITION_3					15	//Button
 #define INPUT_SHOOTER_POSITION_4					16	//Button
 #define INPUT_PICKUP_SUCTION						17	//Toggle Switch
-
 #define ANALOG_SHOOTER_SPEED						1	//Pot
 #define ANALOG_SHOOTER_ADJUST						2	//Pot
-
 class OI 
 {
 private:

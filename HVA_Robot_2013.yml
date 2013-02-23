@@ -179,7 +179,7 @@ Children:
       Children: []
       Properties:
         Sensitivity: !!robotbuilder.data.properties.DoubleProperty {default: 1.25,
-          name: Sensitivity, validators: null, value: 0.0070}
+          name: Sensitivity, validators: null, value: 0.007}
         Input Module (Analog): !!robotbuilder.data.properties.ChoicesProperty
           choices: ['1', '2']
           default: '1'
@@ -864,25 +864,7 @@ Children:
         name: Requires, type: Subsystem, validators: null, value: Drivetrain}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: false}
-  - Name: Cypress Goto Position 1
-    Base: Command Group
-    Children: []
-    Properties:
-      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: true}
-  - Name: Cypress Goto Position 2
-    Base: Command Group
-    Children: []
-    Properties:
-      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: true}
-  - Name: Cypress Goto Position 3
-    Base: Command Group
-    Children: []
-    Properties:
-      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: true}
-  - Name: Cypress Goto Position 4
+  - Name: Cypress Goto Position
     Base: Command Group
     Children: []
     Properties:
@@ -916,6 +898,6 @@ Properties:
     validators: null, value: 3824}
   Export Commands: !!robotbuilder.data.properties.BooleanProperty {default: true,
     name: Export Commands, validators: null, value: true}
-  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Administrator\NetBeansProjects',
-    extension: null, folder: true, name: Java Project Directory, validators: null,
-    value: 'C:\Users\Administrator\NetBeansProjects'}
+  Java Project Directory: !!robotbuilder.data.properties.FileProperty {default: 'C:\Users\Aaron
+      Young\NetBeansProjects', extension: null, folder: true, name: Java Project Directory,
+    validators: null, value: 'C:\Users\Administrator\NetBeansProjects'}

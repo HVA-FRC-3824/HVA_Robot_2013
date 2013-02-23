@@ -10,9 +10,6 @@
 #include "SetShooterAngle.h"
 #include <math.h>
 
-#define MAX_VALUE	                  566.0
-#define MIN_VALUE 				      110.0
-#define THRESHOLD                     1.0
 SetShooterAngle::SetShooterAngle(double angle_parameter) 
 {
 	angle = angle_parameter;
@@ -42,13 +39,14 @@ void SetShooterAngle::Initialize()
 	if(angleSpecifiedInConstructor == false)
 	{
 		angle = DriverStation::GetInstance()->GetEnhancedIO().GetAnalogIn(ANALOG_SHOOTER_ADJUST);
+		angle = angle * (SHOOTER_ANGLE_MAX_VALUE - SHOOTER_ANGLE_MIN_VALUE)/3.3 + SHOOTER_ANGLE_MIN_VALUE;
 	}
 	
 	// ensure the range of the shooter angle
-   if (angle > MAX_VALUE)
-	   angle = MAX_VALUE;
-   if (angle < MIN_VALUE)
-	   angle = MIN_VALUE;
+   if (angle > SHOOTER_ANGLE_MAX_VALUE)
+	   angle = SHOOTER_ANGLE_MAX_VALUE;
+   if (angle < SHOOTER_ANGLE_MIN_VALUE)
+	   angle = SHOOTER_ANGLE_MIN_VALUE;
    
    // setup the PID controller
    Robot::shooterAngleAdjust->getPIDController()->SetSetpoint(angle);
@@ -60,12 +58,12 @@ void SetShooterAngle::Execute()
 	if(angleSpecifiedInConstructor == false)
 	{
 		angle = DriverStation::GetInstance()->GetEnhancedIO().GetAnalogIn(ANALOG_SHOOTER_ADJUST);
-		angle = angle * (MAX_VALUE - MIN_VALUE)/3.3 + MIN_VALUE;
+		angle = angle * (SHOOTER_ANGLE_MAX_VALUE - SHOOTER_ANGLE_MIN_VALUE)/3.3 + SHOOTER_ANGLE_MIN_VALUE;
 		
-		if (angle > MAX_VALUE)
-			angle = MAX_VALUE;
-		if (angle < MIN_VALUE)
-			angle = MIN_VALUE;
+		if (angle > SHOOTER_ANGLE_MAX_VALUE)
+			angle = SHOOTER_ANGLE_MAX_VALUE;
+		if (angle < SHOOTER_ANGLE_MIN_VALUE)
+			angle = SHOOTER_ANGLE_MIN_VALUE;
 		   
 		Robot::shooterAngleAdjust->getPIDController()->SetSetpoint(angle);
 		
@@ -77,7 +75,7 @@ void SetShooterAngle::Execute()
 bool SetShooterAngle::IsFinished() 
 {
    // determine if the shooter angle is within the desired range
-	return fabs(angle - Robot::shooterAngleAdjust->potentiometer->PIDGet()) < THRESHOLD;
+	return fabs(angle - Robot::shooterAngleAdjust->potentiometer->PIDGet()) < SHOOTER_ANGLE_THRESHOLD;
 }
 // Called once after isFinished returns true
 void SetShooterAngle::End() 

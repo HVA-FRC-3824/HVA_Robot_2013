@@ -10,10 +10,6 @@
 #include "SetShooterSpeed.h"
 #include <math.h>
 
-#define THRESHOLD    50.0
-#define MAX_VALUE  3500.0
-#define MIN_VALUE     0.0
-
 SetShooterSpeed::SetShooterSpeed(double speed, bool isRPM) 
 {
 	// Use requires() here to declare subsystem dependencies
@@ -60,7 +56,6 @@ void SetShooterSpeed::Initialize()
 		{
 			// read the desired shooter RPM from the constructor
 			Robot::shooterWheel->getPIDController()->SetSetpoint(m_shooterSpeed);
-
 			// enable the PID controller
 			Robot::shooterWheel->getPIDController()->Enable(); 
 		}
@@ -82,11 +77,10 @@ void SetShooterSpeed::Initialize()
 			m_shooterSpeed = DriverStation::GetInstance()->GetEnhancedIO().GetAnalogIn(ANALOG_SHOOTER_SPEED);
 			
 			// Convert the pot value to speed
-			m_shooterSpeed = m_shooterSpeed*(MAX_VALUE - MIN_VALUE)/3.3 + MIN_VALUE;
+			m_shooterSpeed = m_shooterSpeed*(SHOOTER_SPEED_MAX_VALUE - SHOOTER_SPEED_MIN_VALUE)/3.3 + SHOOTER_SPEED_MIN_VALUE;
 			
 			// Set the setpoint
 			Robot::shooterWheel->getPIDController()->SetSetpoint(m_shooterSpeed);
-
 			// enable the PID controller
 			Robot::shooterWheel->getPIDController()->Enable(); 
 		}
@@ -123,7 +117,7 @@ void SetShooterSpeed::Execute()
 			m_shooterSpeed = DriverStation::GetInstance()->GetEnhancedIO().GetAnalogIn(ANALOG_SHOOTER_SPEED);
 			
 			// Convert the pot value to RPM
-			m_shooterSpeed = m_shooterSpeed*(MAX_VALUE - MIN_VALUE)/3.3 + MIN_VALUE;
+			m_shooterSpeed = m_shooterSpeed*(SHOOTER_SPEED_MAX_VALUE - SHOOTER_SPEED_MIN_VALUE)/3.3 + SHOOTER_SPEED_MIN_VALUE;
 			
 			// Update the setpoint
 			Robot::shooterWheel->getPIDController()->SetSetpoint(m_shooterSpeed);
@@ -138,7 +132,7 @@ bool SetShooterSpeed::IsFinished()
 	
 	// Case 1: Speed is meet
 	// determine is the shooter speed is within the desired limit
-	if (fabs(m_shooterSpeed - Robot::shooterWheel->pidEncoder->PIDGet()) < THRESHOLD)
+	if (fabs(m_shooterSpeed - Robot::shooterWheel->pidEncoder->PIDGet()) < SHOOTER_SPEED_THRESHOLD)
 		return true;
 	
 	// Case 2: The speed is controlled by pot and mode changes
