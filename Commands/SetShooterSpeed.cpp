@@ -80,6 +80,11 @@ void SetShooterSpeed::Initialize()
 			// Convert the pot value to speed
 			m_shooterSpeed = m_shooterSpeed*(SHOOTER_SPEED_MAX_VALUE - SHOOTER_SPEED_MIN_VALUE)/3.3 + SHOOTER_SPEED_MIN_VALUE;
 			
+			if (m_shooterSpeed > SHOOTER_SPEED_MAX_VALUE)
+				m_shooterSpeed = SHOOTER_SPEED_MAX_VALUE;
+			if (m_shooterSpeed < SHOOTER_SPEED_MIN_VALUE)
+				m_shooterSpeed = SHOOTER_SPEED_MIN_VALUE;
+			
 			// Set the setpoint
 			Robot::shooterWheel->getPIDController()->SetSetpoint(m_shooterSpeed);
 			// enable the PID controller
@@ -119,6 +124,11 @@ void SetShooterSpeed::Execute()
 			
 			// Convert the pot value to RPM
 			m_shooterSpeed = m_shooterSpeed*(SHOOTER_SPEED_MAX_VALUE - SHOOTER_SPEED_MIN_VALUE)/3.3 + SHOOTER_SPEED_MIN_VALUE;
+			
+			if (m_shooterSpeed > SHOOTER_SPEED_MAX_VALUE)
+				m_shooterSpeed = SHOOTER_SPEED_MAX_VALUE;
+			if (m_shooterSpeed < SHOOTER_SPEED_MIN_VALUE)
+				m_shooterSpeed = SHOOTER_SPEED_MIN_VALUE;
 			
 			// Update the setpoint
 			Robot::shooterWheel->getPIDController()->SetSetpoint(m_shooterSpeed);
