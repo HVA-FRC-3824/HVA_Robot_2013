@@ -29,13 +29,13 @@ CypressGotoPosition::CypressGotoPosition(double angle, double velocity, bool isR
 void CypressGotoPosition::Initialize()
 {
 	// Check to see if automated shooter position
-	if (DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_ANGLE_ADJUSTMENT_MANUAL) == false)
+	if (!(DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_ANGLE_ADJUSTMENT_MANUAL)) == false)
 	{
 		AddParallel(new SetShooterAngle(m_angle));
 	}
 	
 	// Check to see if automated shooter speed
-	if (DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_SPEED_ADJUSTMENT_MANUAL) == false)
+	if (!(DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_SPEED_ADJUSTMENT_MANUAL)) == false)
 	{
 		AddParallel(new SetShooterSpeed(m_velocity, m_isRPM));
 	}
