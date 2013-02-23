@@ -9,6 +9,7 @@
 // it from being updated in th future.
 #include "SetShooterAngle.h"
 #include <math.h>
+
 #define MAX_VALUE	                  566.0
 #define MIN_VALUE 				      110.0
 #define THRESHOLD                     1.0
@@ -40,7 +41,7 @@ void SetShooterAngle::Initialize()
    // determine if the shooter angle should be pulled from the SmartDashboard
 	if(angleSpecifiedInConstructor == false)
 	{
-		angle = SmartDashboard::GetNumber("Shooter Angle:");
+		angle = DriverStation::GetInstance()->GetEnhancedIO().GetAnalogIn(ANALOG_SHOOTER_ADJUST);
 	}
 	
 	// ensure the range of the shooter angle
@@ -56,7 +57,21 @@ void SetShooterAngle::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void SetShooterAngle::Execute() 
 {
+	if(angleSpecifiedInConstructor == false)
+	{
+		angle = DriverStation::GetInstance()->GetEnhancedIO().GetAnalogIn(ANALOG_SHOOTER_ADJUST);
+		angle = angle * (MAX_VALUE - MIN_VALUE)/3.3 + MIN_VALUE;
+		
+		if (angle > MAX_VALUE)
+			angle = MAX_VALUE;
+		if (angle < MIN_VALUE)
+			angle = MIN_VALUE;
+		   
+		Robot::shooterAngleAdjust->getPIDController()->SetSetpoint(angle);
+		
+	}
 	
+	printf("Angle: %f\n", angle);
 }
 // Make this return true when this Command no longer needs to run execute()
 bool SetShooterAngle::IsFinished() 

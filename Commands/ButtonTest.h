@@ -8,26 +8,25 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef SET_SHOOTER_ANGLE_H
-#define SET_SHOOTER_ANGLE_H
+
+#ifndef BUTTON_TEST_H
+#define BUTTON_TEST_H
+
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
-#include "../OI.h"
 
 /**
- *SetShooterAngle based on argument to constructor
  *
- * @author HVA Robotics Team 3824
+ *
+ * @author ExampleAuthor
  */
-class SetShooterAngle: public Command 
-{ 
+class ButtonTest: public Command {
 private:
-	double angle;
-	bool angleSpecifiedInConstructor;
+	int m_number;
 public:
-	SetShooterAngle(double angle_parameter);
-	SetShooterAngle();
+	ButtonTest(int number);
+	ButtonTest();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

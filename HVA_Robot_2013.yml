@@ -179,7 +179,7 @@ Children:
       Children: []
       Properties:
         Sensitivity: !!robotbuilder.data.properties.DoubleProperty {default: 1.25,
-          name: Sensitivity, validators: null, value: 0.007}
+          name: Sensitivity, validators: null, value: 0.0070}
         Input Module (Analog): !!robotbuilder.data.properties.ChoicesProperty
           choices: ['1', '2']
           default: '1'
@@ -519,6 +519,28 @@ Children:
 - Name: Operator Interface
   Base: OI
   Children:
+  - Name: Digital Button 1
+    Base: Digital Button
+    Children: []
+    Properties:
+      Command: !!robotbuilder.data.properties.TypeSelectionProperty
+        default: None
+        name: Command
+        type: Command
+        validators: [TypeDropdownSelected]
+        value: Autonomous Command
+      When to Run: !!robotbuilder.data.properties.ChoicesProperty
+        choices: [whileHeld, whenPressed, whenReleased]
+        default: whileHeld
+        name: When to Run
+        validators: null
+        value: whileHeld
+      Digital Pin: !!robotbuilder.data.properties.ChoicesProperty
+        choices: ['1', '2', '3', '4', '5', '6', '7', '8']
+        default: '1'
+        name: Digital Pin
+        validators: null
+        value: '1'
   - Name: Drive Joystick
     Base: Joystick
     Children:
