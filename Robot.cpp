@@ -55,7 +55,6 @@ void Robot::RobotInit()
    SmartDashboard::PutNumber("Pickup I Term", 0.001);
    SmartDashboard::PutNumber("Pickup D Term", 0.009); 
    
-   SmartDashboard::PutNumber("Shooter Voltage:", 0.0);
    // Defaults to Search for target
    SmartDashboard::PutString("Target Type", "target");
    RobotMap::init();

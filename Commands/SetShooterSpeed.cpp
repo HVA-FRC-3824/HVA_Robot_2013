@@ -40,6 +40,10 @@ SetShooterSpeed::SetShooterSpeed()
 // Called just before this Command runs the first time
 void SetShooterSpeed::Initialize() 
 {
+	// <DEBUG>
+	printf("In Shooter Speed Initializer\n");
+	// </DEBUG>
+	
 	// determine if the shooter speed should be read from the Pot
 	if (m_SpeedSpecifiedInConstructor == true) // use speed specified
 	{
@@ -60,7 +64,11 @@ void SetShooterSpeed::Initialize()
 	else // values should be read from pot
 	{
 		// Read if the driverStation is voltage or pid control
-		m_isRPM = DriverStation::GetInstance()->GetEnhancedIO().GetButton(INPUT_SHOOTER_RPM_VOLTAGE);
+		m_isRPM = DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_RPM_VOLTAGE);
+		
+		// <DEBUG>
+		printf("Initialize m_isRPM to %d\n", DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_RPM_VOLTAGE));
+		// </DEBUG>
 		
 		// Voltage or PID control
 		if(m_isRPM == false)
@@ -121,7 +129,8 @@ void SetShooterSpeed::Execute()
 		}
 	}
 	// <DEBUG>
-	SmartDashboard::PutNumber("ShooterSpeed", m_shooterSpeed);
+	SmartDashboard::PutNumber("Shooter Speed", m_shooterSpeed);
+	SmartDashboard::PutBoolean("isRPM", m_isRPM);
 	// </DEBUG>
 }
 // Make this return true when this Command no longer needs to run execute()
@@ -135,7 +144,7 @@ bool SetShooterSpeed::IsFinished()
 		return true;
 	
 	// Case 2: The speed is controlled by pot and mode changes
-	if ((m_SpeedSpecifiedInConstructor == false) && (m_SpeedSpecifiedInConstructor != DriverStation::GetInstance()->GetEnhancedIO().GetButton(INPUT_SHOOTER_RPM_VOLTAGE)))
+	if ((m_SpeedSpecifiedInConstructor == false) && (m_isRPM != DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_RPM_VOLTAGE)))
 		return true;
 	
 	return false;	
