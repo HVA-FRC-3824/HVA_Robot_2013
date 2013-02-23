@@ -50,6 +50,18 @@
 #define PICKUP_UP_VOLTAGE							0.5
 #define PICKUP_DOWN_VOLTAGE						   -0.5
 /****** CYPRESS POSITION DEFINES ******/
+#define POSITION_1_ANGLE		SHOOTER_ANGLE_MIN_VALUE
+#define POSITION_1_VELOCITY							0.0
+#define POSITION_1_IS_RPM						  false
+#define POSITION_2_ANGLE						  200.0
+#define POSITION_2_VELOCITY					     3000.0
+#define POSITION_2_IS_RPM						   true
+#define POSITION_3_ANGLE						  300.0
+#define POSITION_3_VELOCITY						 2000.0
+#define POSITION_3_IS_RPM						   true
+#define POSITION_4_ANGLE						  400.0
+#define POSITION_4_VELOCITY						   0.55
+#define POSITION_4_IS_RPM						  false
 class Robot : public IterativeRobot 
 {
 public:

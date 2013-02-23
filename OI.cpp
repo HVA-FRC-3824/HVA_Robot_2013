@@ -24,6 +24,7 @@
 #include "Commands/ClimberExtend.h"
 #include "Commands/ClimberRetract.h"
 #include "Commands/CypressGotoPosition.h"
+#include "Commands/CypressGotoPositionTest.h"
 #include "Commands/DisplayPumpStatus.h"
 #include "Commands/DriveToFrisbee.h"
 #include "Commands/DrivetrainNormalDrive.h"
@@ -99,10 +100,10 @@ OI::OI()
 	m_pickupHome->WhenPressed(new SetPickupPosition(PICKUP_HOME_POSITION));
 	m_pickup->WhenPressed(new FrisbeePickup());	
 	m_shooterStop->WhenPressed(new SetShooterSpeed(0, false));
-	m_shooterPosition_1->WhenPressed(new CypressGotoPosition());	
-	m_shooterPosition_2->WhenPressed(new CypressGotoPosition());		
-	m_shooterPosition_3->WhenPressed(new CypressGotoPosition());	
-	m_shooterPosition_4->WhenPressed(new CypressGotoPosition());
+	m_shooterPosition_1->WhenPressed(new CypressGotoPositionTest(POSITION_1_ANGLE, POSITION_1_VELOCITY, POSITION_1_IS_RPM));	
+	m_shooterPosition_2->WhenPressed(new CypressGotoPositionTest(POSITION_2_ANGLE, POSITION_2_VELOCITY, POSITION_2_IS_RPM));		
+	m_shooterPosition_3->WhenPressed(new CypressGotoPositionTest(POSITION_3_ANGLE, POSITION_3_VELOCITY, POSITION_3_IS_RPM));	
+	m_shooterPosition_4->WhenPressed(new CypressGotoPositionTest(POSITION_4_ANGLE, POSITION_4_VELOCITY, POSITION_4_IS_RPM));
 	m_pickupSuction->WhenPressed(new SetPickupSuction(true));
 	m_pickupSuction->WhenReleased(new SetPickupSuction(false));
 }

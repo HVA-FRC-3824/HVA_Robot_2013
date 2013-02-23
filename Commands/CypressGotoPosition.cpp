@@ -28,6 +28,7 @@ CypressGotoPosition::CypressGotoPosition(double angle, double velocity, bool isR
 
 void CypressGotoPosition::Initialize()
 {
+	printf("IN Cypress Initialize\n");
 	// Check to see if automated shooter position
 	if (!(DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_ANGLE_ADJUSTMENT_MANUAL)) == false)
 	{

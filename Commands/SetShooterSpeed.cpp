@@ -62,10 +62,6 @@ void SetShooterSpeed::Initialize()
 		// Read if the driverStation is voltage or pid control
 		m_isRPM = !(DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_RPM_VOLTAGE));
 		
-		// <DEBUG>
-		printf("Initialize m_isRPM to %d\n", m_isRPM);
-		// </DEBUG>
-		
 		// Voltage or PID control
 		if(m_isRPM == false)
 		{

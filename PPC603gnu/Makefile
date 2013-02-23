@@ -172,6 +172,10 @@ HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/CypressGotoPosition.o
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
 
+HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/CypressGotoPositionTest.o : $(PRJ_ROOT_DIR)/Commands/CypressGotoPositionTest.cpp $(FORCE_FILE_BUILD)
+	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
+
+
 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/DisplayPumpStatus.o : $(PRJ_ROOT_DIR)/Commands/DisplayPumpStatus.cpp $(FORCE_FILE_BUILD)
 	$(TRACE_FLAG)if [ ! -d "`dirname "$@"`" ]; then mkdir -p "`dirname "$@"`"; fi;echo "building $@"; $(TOOL_PATH)ccppc $(DEBUGFLAGS_C++-Compiler) $(CC_ARCH_SPEC) -ansi -Wall  -MD -MP -mlongcall $(ADDED_C++FLAGS) $(IDE_INCLUDES) $(ADDED_INCLUDES) -DCPU=$(CPU) -DTOOL_FAMILY=$(TOOL_FAMILY) -DTOOL=$(TOOL) -D_WRS_KERNEL   $(DEFINES) -o "$@" -c "$<"
 
@@ -326,6 +330,7 @@ OBJECTS_HVA_Robot_2013 = HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Comma
 	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ClimberExtend.o \
 	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ClimberRetract.o \
 	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/CypressGotoPosition.o \
+	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/CypressGotoPositionTest.o \
 	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/DisplayPumpStatus.o \
 	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/DriveToFrisbee.o \
 	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/DrivetrainNormalDrive.o \
@@ -378,19 +383,19 @@ DEP_FILES := HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/Autonomo
 	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/AutonomousShootfromLeft.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/AutonomousShootfromRight.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ButtonTest.d \
 	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ChassisDriveDistance.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ChassisDrivetoWall.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ChassisTurnAngle.d \
 	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/Climb.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ClimbAbort.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ClimberExtend.d \
-	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ClimberRetract.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/CypressGotoPosition.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/DisplayPumpStatus.d \
-	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/DriveToFrisbee.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/DrivetrainNormalDrive.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/DrivetrainReverseDrive.d \
-	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/FrisbeeAim.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/FrisbeeAimAndShoot.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/FrisbeePickup.d \
-	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/FrisbeeShoot.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/HookDowntoLimit.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/HookEngage.d \
-	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/HookUptoEngage.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/HookUptoLimit.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/SetPickupPosition.d \
-	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/SetPickupSuction.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/SetPickupVoltage.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/SetShooterAngle.d \
-	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/SetShooterAngleJoystick.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/SetShooterAngleforPickup.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/SetShooterSpeed.d \
-	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/SetShooterSpeedJoystick.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/Teleoperated.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/TestAngleAdjust.d \
-	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/TestAngleModification.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/UpdateShooterPID.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/OI.d \
-	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Robot.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/RobotMap.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Climber.d \
-	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ClimberTipper.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Drivetrain.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Pickup.d \
-	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Pump.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterAngleAdjust.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterPusher.d \
-	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterWheel.d
+	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/ClimberRetract.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/CypressGotoPosition.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/CypressGotoPositionTest.d \
+	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/DisplayPumpStatus.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/DriveToFrisbee.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/DrivetrainNormalDrive.d \
+	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/DrivetrainReverseDrive.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/FrisbeeAim.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/FrisbeeAimAndShoot.d \
+	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/FrisbeePickup.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/FrisbeeShoot.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/HookDowntoLimit.d \
+	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/HookEngage.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/HookUptoEngage.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/HookUptoLimit.d \
+	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/SetPickupPosition.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/SetPickupSuction.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/SetPickupVoltage.d \
+	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/SetShooterAngle.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/SetShooterAngleJoystick.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/SetShooterAngleforPickup.d \
+	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/SetShooterSpeed.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/SetShooterSpeedJoystick.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/Teleoperated.d \
+	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/TestAngleAdjust.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/TestAngleModification.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Commands/UpdateShooterPID.d \
+	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/OI.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Robot.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/RobotMap.d \
+	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Climber.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ClimberTipper.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Drivetrain.d \
+	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Pickup.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/Pump.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterAngleAdjust.d \
+	 HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterPusher.d HVA_Robot_2013/$(MODE_DIR)/Objects/HVA_Robot_2013/Subsystems/ShooterWheel.d
 -include $(DEP_FILES)
 
 
