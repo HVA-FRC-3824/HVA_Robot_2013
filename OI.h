@@ -25,6 +25,7 @@
 #define INPUT_SHOOTER_POSITION_2					14	//Button
 #define INPUT_SHOOTER_POSITION_3					15	//Button
 #define INPUT_SHOOTER_POSITION_4					16	//Button
+#define INPUT_PICKUP_SUCTION						17	//Toggle Switch
 
 #define ANALOG_SHOOTER_SPEED						1	//Pot
 #define ANALOG_SHOOTER_ADJUST						2	//Pot
@@ -52,8 +53,7 @@ private:
 	DigitalIOButton* m_shooterPosition_2;
 	DigitalIOButton* m_shooterPosition_3;
 	DigitalIOButton* m_shooterPosition_4;
-	
-
+	DigitalIOButton* m_pickupSuction;
 	
 public:
 	OI();
