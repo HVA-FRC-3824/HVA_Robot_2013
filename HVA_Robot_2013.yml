@@ -864,12 +864,6 @@ Children:
         name: Requires, type: Subsystem, validators: null, value: Drivetrain}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: false}
-  - Name: Cypress Goto Position
-    Base: Command Group
-    Children: []
-    Properties:
-      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: false}
   - Name: Button Test
     Base: Command
     Children: []
@@ -892,7 +886,7 @@ Children:
         name: Requires, type: Subsystem, validators: null, value: Pickup}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: false}
-  - Name: Cypress Goto Position Test
+  - Name: Cypress Goto Position
     Base: Command
     Children: []
     Properties:

@@ -9,34 +9,34 @@
 // it from being updated in th future.
 
 
+#ifndef CYPRESS_GOTO_POSITION_TEST_H
+#define CYPRESS_GOTO_POSITION_TEST_H
 
-#ifndef CYPRESS_GOTO_POSITION_H
-#define CYPRESS_GOTO_POSITION_H
 
-#include "WPILib.h"
-#include "../OI.h"
-#include "SetShooterAngle.h"
-#include "SetShooterSpeed.h"
-
-#include "Commands/CommandGroup.h"
+#include "Commands/Subsystem.h"
+#include "../Robot.h"
 
 /**
  *
  *
  * @author ExampleAuthor
  */
-class CypressGotoPosition: public CommandGroup 
+class CypressGotoPosition: public Command 
 {
 private:
 	double m_angle;
 	double m_velocity;
 	double m_isRPM;
-public:	
+	Command *setShooterAngle;
+	Command *setShooterSpeed;
+public:
 	CypressGotoPosition();
 	CypressGotoPosition(double angle, double velocity, bool isRPM = true);
-	void Initialize();
-	void End();
-	void Interrupted();
+	virtual void Initialize();
+	virtual void Execute();
+	virtual bool IsFinished();
+	virtual void End();
+	virtual void Interrupted();
 };
 
 #endif
