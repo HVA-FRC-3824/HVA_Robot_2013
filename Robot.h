@@ -46,6 +46,9 @@
 #define PICKUP_STAGE						      122.0
 #define PICKUP_RELEASE_POSITION					  647.0
 #define PICKUP_HOME_POSITION					  500.0
+/****** PICKUP VOLTAGE ******/
+#define PICKUP_UP_VOLTAGE							0.5
+#define PICKUP_DOWN_VOLTAGE						   -0.5
 /****** CYPRESS POSITION DEFINES ******/
 class Robot : public IterativeRobot 
 {

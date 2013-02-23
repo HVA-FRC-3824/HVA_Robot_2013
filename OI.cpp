@@ -38,6 +38,7 @@
 #include "Commands/HookUptoLimit.h"
 #include "Commands/SetPickupPosition.h"
 #include "Commands/SetPickupSuction.h"
+#include "Commands/SetPickupVoltage.h"
 #include "Commands/SetShooterAngle.h"
 #include "Commands/SetShooterAngleJoystick.h"
 #include "Commands/SetShooterAngleforPickup.h"
@@ -86,8 +87,12 @@ OI::OI()
 	m_pickupSuction = new DigitalIOButton(INPUT_PICKUP_SUCTION);
 	
 	// Command assignment for DriverStationButtons
-	m_pickupUp->WhenPressed(new SetPickupPosition(PICKUP_MAX_VALUE));
-	m_pickupDown->WhenPressed(new SetPickupPosition(PICKUP_MIN_VALUE));	
+	m_pickupUp->WhenPressed(new SetPickupVoltage(PICKUP_UP_VOLTAGE));
+	m_pickupUp->WhenReleased(new SetPickupVoltage(0.0));
+	m_pickupDown->WhenPressed(new SetPickupVoltage(PICKUP_DOWN_VOLTAGE));
+	m_pickupDown->WhenReleased(new SetPickupVoltage(0.0));
+	
+	
 	m_shooterAngleAdjustmentManual->WhileHeld(new SetShooterAngle());
 	m_shooterSpeedAdjustmentManual->WhileHeld(new SetShooterSpeed());	
 	m_frisbeeShoot->WhenPressed(new FrisbeeShoot());	
