@@ -11,11 +11,12 @@
 #define OI_H
 #include "WPILib.h"
 // defines Cypress IO
+
 #define INPUT_PICKUP_UP								3	//Double Toggle
 #define INPUT_PICKUP_DOWN							4	//Double Toggle
 #define INPUT_SHOOTER_ANGLE_ADJUSTMENT_MANUAL		7	//Toggle Switch
 #define INPUT_SHOOTER_RPM_ADJUSTMENT_MANUAL			6	//Plot Switch
-#define INPUT_SHOOTER_RPM_VOLTAGE					7	//Toggle Switch
+#define INPUT_SHOOTER_RPM_VOLTAGE					5	//Toggle Switch
 #define INPUT_FRISBEE_SHOOT							8	//Button
 #define INPUT_PICKUP_HOME							9	//Button
 #define INPUT_PICKUP								10	//Button

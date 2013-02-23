@@ -14,6 +14,7 @@
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
 #include "Timer.h"
+#include "../OI.h"
 
 /**
  *
@@ -23,12 +24,13 @@
 class SetShooterSpeed: public Command 
 {
 private:
-   double shooterSpeed;
-   Timer *shooterTimer;
-   bool SpeedSpecifiedInConstructor;
+   double m_shooterSpeed;
+   Timer *m_shooterTimer;
+   bool m_SpeedSpecifiedInConstructor;
+   bool m_isRPM;
    
 public:
-	SetShooterSpeed(double speed);	// For autonomous
+	SetShooterSpeed(double speed, bool isRPM = false);	// For autonomous
 	SetShooterSpeed();				// Get Speed From the Smart Dashboard
 	virtual void Initialize();
 	virtual void Execute();
