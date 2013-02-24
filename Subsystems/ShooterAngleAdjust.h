@@ -16,7 +16,7 @@
  *
  * @author ExampleAuthor
  */
-class ShooterAngleAdjust: public Subsystem 
+class ShooterAngleAdjust: public Subsystem, public PIDOutput
 {
 private:
 	PIDController *PIDcontroller;
@@ -30,5 +30,6 @@ public:
    
    ShooterAngleAdjust();
 	void InitDefaultCommand();
+	void PIDWrite(float output);
 };
 #endif

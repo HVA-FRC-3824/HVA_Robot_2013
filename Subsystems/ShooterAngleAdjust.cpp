@@ -43,7 +43,12 @@ PIDController* ShooterAngleAdjust::getPIDController()
 			SmartDashboard::GetNumber("Shooter Angle P Term"), 
 			SmartDashboard::GetNumber("Shooter Angle I Term"), 
 			SmartDashboard::GetNumber("Shooter Angle D Term"),
-			potentiometer, motor);
+			potentiometer, this);
    }
    return PIDcontroller;
+}
+
+void ShooterAngleAdjust::PIDWrite(float output)
+{
+	motor->Set(-output);
 }

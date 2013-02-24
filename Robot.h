@@ -29,8 +29,8 @@
 #define AUTONOMOUS_SHOOT_WAIT1	 	   			 	1.0
 #define AUTONOMOUS_SHOOT_WAIT2   					1.0
 /****** SHOOTER POSITION ******/
-#define SHOOTER_ANGLE_MAX_VALUE	                  566.0
-#define SHOOTER_ANGLE_MIN_VALUE 				  110.0
+#define SHOOTER_ANGLE_MAX_VALUE	                  850.0
+#define SHOOTER_ANGLE_MIN_VALUE 				    0.0
 #define SHOOTER_ANGLE_THRESHOLD                     1.0
 #define SHOOTER_ANGLE_MAX_PICKUP_VALUE			  200.0
 #define SHOOTER_ANGLE_PICKUP_VALUE				  130.0
