@@ -25,8 +25,6 @@ public:
 	static SpeedController* drivetrainRearRight;
 	static SpeedController* drivetrainRearLeft;
 	static RobotDrive* drivetrainHolonomic;
-	static AnalogChannel* drivetrainUltrasonicFront;
-	static AnalogChannel* drivetrainUltrasonicRear;
 	static Gyro* drivetrainGyro;
 	static SpeedController* shooterWheelMotor;
 	static GearTooth* shooterWheelEncoder;
@@ -34,10 +32,6 @@ public:
 	static DigitalInput* shooterPusherStopSwitch;
 	static AnalogChannel* shooterAngleAdjustPotentiometer;
 	static SpeedController* shooterAngleAdjustMotor;
-	static DoubleSolenoid* climberTipperSolenoid;
-	static SpeedController* climberMotor;
-	static DigitalInput* climberLimitUp;
-	static DigitalInput* climberLimitDown;
 	static Compressor* pumpCompressorPump;
 	static Solenoid* pickupSuction;
 	static SpeedController* pickupMotor;

@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
 #ifndef DRIVETRAIN_NORMAL_DRIVE_H
 #define DRIVETRAIN_NORMAL_DRIVE_H
-
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -21,7 +19,8 @@
  *
  * @author ExampleAuthor
  */
-class DrivetrainNormalDrive: public Command {
+class DrivetrainNormalDrive: public Command 
+{
 public:
 	DrivetrainNormalDrive();
 	virtual void Initialize();

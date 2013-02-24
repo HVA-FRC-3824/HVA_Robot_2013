@@ -47,7 +47,6 @@ PIDController* ShooterAngleAdjust::getPIDController()
    }
    return PIDcontroller;
 }
-
 void ShooterAngleAdjust::PIDWrite(float output)
 {
 	motor->Set(-output);

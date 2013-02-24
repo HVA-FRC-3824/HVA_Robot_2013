@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #include "FrisbeePickup.h"
 #include "SetPickupPosition.h"
 #include "SetPickupSuction.h"
@@ -37,15 +35,11 @@ FrisbeePickup::FrisbeePickup()
 	
 	// Turn off the suction
 	AddSequential(new SetPickupSuction(false));
-	
 	AddSequential(new WaitCommand(1));
 
-	
 	// Move the arm to the home position
 	AddSequential(new SetPickupPosition(PICKUP_HOME_POSITION), 1.0);
 
-	
-	
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());

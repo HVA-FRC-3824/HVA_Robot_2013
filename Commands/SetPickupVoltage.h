@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
 #ifndef SET_PICKUP_VOLTAGE_H
 #define SET_PICKUP_VOLTAGE_H
-
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"

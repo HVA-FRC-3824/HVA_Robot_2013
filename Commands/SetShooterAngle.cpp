@@ -63,8 +63,7 @@ void SetShooterAngle::Execute()
 		if (angle < SHOOTER_ANGLE_MIN_VALUE)
 			angle = SHOOTER_ANGLE_MIN_VALUE;
 		   
-		Robot::shooterAngleAdjust->getPIDController()->SetSetpoint(angle);
-		
+		Robot::shooterAngleAdjust->getPIDController()->SetSetpoint(angle);	
 	}
 	
 	// <DEBUG>

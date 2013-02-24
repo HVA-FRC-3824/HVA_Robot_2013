@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #ifndef SET_SHOOTER_ANGLE_FOR_PICKUP_H
 #define SET_SHOOTER_ANGLE_FOR_PICKUP_H
 
@@ -20,7 +18,8 @@
  *
  * @author ExampleAuthor
  */
-class SetShooterAngleforPickup: public CommandGroup {
+class SetShooterAngleforPickup: public CommandGroup
+{
 public:	
 	SetShooterAngleforPickup();
 	void Initialize();

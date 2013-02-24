@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #ifndef FRISBEE_PICKUP_H
 #define FRISBEE_PICKUP_H
 
@@ -20,7 +18,8 @@
  *
  * @author ExampleAuthor
  */
-class FrisbeePickup: public CommandGroup {
+class FrisbeePickup: public CommandGroup
+{
 public:	
 	FrisbeePickup();
 };

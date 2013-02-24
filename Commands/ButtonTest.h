@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
 #ifndef BUTTON_TEST_H
 #define BUTTON_TEST_H
-
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -21,7 +19,8 @@
  *
  * @author ExampleAuthor
  */
-class ButtonTest: public Command {
+class ButtonTest: public Command 
+{
 private:
 	int m_number;
 public:

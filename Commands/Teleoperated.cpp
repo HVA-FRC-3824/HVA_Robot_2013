@@ -30,8 +30,6 @@ void Teleoperated::Execute()
    //Robot::shooterWheelVoltage->motor->Set(speed);
    
    SmartDashboard::PutBoolean("Shooter Switch", Robot::shooterPusher->stopSwitch->Get());
-   SmartDashboard::PutBoolean("Climber Up Limit Switch", Robot::climber->limitUp->Get());
-   SmartDashboard::PutBoolean("Climber Down Limit Switch", Robot::climber->limitDown->Get());
    SmartDashboard::PutNumber("Shooter Speed IO", Robot::shooterWheel->encoder->Get());
    SmartDashboard::PutNumber("Shooter Speed Period", (1.0/Robot::shooterWheel->encoder->GetPeriod())*60.0);
    SmartDashboard::PutNumber("Shooter Speed GIT", Robot::shooterWheel->pidEncoder->PIDGet());

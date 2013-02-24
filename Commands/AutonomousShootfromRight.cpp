@@ -16,7 +16,7 @@
 #include "SetShooterAngle.h"
 #include "FrisbeeShoot.h"
 
-#define AUTONOMOUS_DRIVE_FORWARD_DISTANCE   2.0
+#define AUTONOMOUS_DRIVE_FORWARD_DISTANCE    2.0
 #define AUTONOMOUS_TURN_ANGLE              -15.0
 
 AutonomousShootfromRight::AutonomousShootfromRight() 

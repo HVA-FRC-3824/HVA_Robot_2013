@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #include "SetShooterAngleforPickup.h"
 #include "../Robot.h"
 #include "SetShooterAngle.h"

@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
 #ifndef FRISBEE_AIM_H
 #define FRISBEE_AIM_H
-
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -26,12 +24,14 @@
 //class ImagePIDInput: public PIDSource 
 //{
 //public:
-//	virtual double PIDGet() {
+//	virtual double PIDGet() 
+// {
 //		return -SmartDashboard::GetNumber("Camera offset");
 //	}
 //};
 
-class FrisbeeAim: public ChassisTurnAngle {
+class FrisbeeAim: public ChassisTurnAngle 
+{
 private:
 	double target;
 	double pixelToDegree;

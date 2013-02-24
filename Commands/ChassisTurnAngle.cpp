@@ -23,11 +23,9 @@ ChassisTurnAngle::ChassisTurnAngle(double turnAngle) : degreesToTurn(turnAngle),
 }
 // Called just before this Command runs the first time
 void ChassisTurnAngle::Initialize() 
-{
-   
+{  
    // set the target turn position
-   
-    if(!anglePassed)
+   if(!anglePassed)
     	degreesToTurn = SmartDashboard::GetNumber("Chassis Turn Angle Degrees");
 	float goToGyro = (degreesToTurn + Robot::drivetrain->gyro->GetAngle());
 	
@@ -37,7 +35,6 @@ void ChassisTurnAngle::Initialize()
 		      SmartDashboard::GetNumber("Chassis Turn D Term"));
 	PIDcontroller.SetSetpoint(goToGyro);
 	PIDcontroller.Enable();
-	
 }
 // Called repeatedly when this Command is scheduled to run
 void ChassisTurnAngle::Execute()

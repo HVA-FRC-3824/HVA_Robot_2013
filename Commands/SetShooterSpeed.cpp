@@ -91,7 +91,7 @@ void SetShooterSpeed::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void SetShooterSpeed::Execute() 
 {
-    // determine if the shooter speed should be read from the Pot
+   // determine if the shooter speed should be read from the Pot
 	if (m_SpeedSpecifiedInConstructor == true) // use speed specified
 	{
 		if(m_isRPM == false)

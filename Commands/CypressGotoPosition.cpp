@@ -27,6 +27,7 @@ CypressGotoPosition::CypressGotoPosition(double angle, double velocity, bool isR
 void CypressGotoPosition::Initialize() 
 {
 	printf("IN Cypress Initialize\n");
+	
 	// Check to see if automated shooter position
 	if (!(DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_ANGLE_ADJUSTMENT_MANUAL)) == false)
 	{
@@ -56,6 +57,7 @@ void CypressGotoPosition::Initialize()
 			{
 				delete(setShooterSpeed);
 			}
+			
 			setShooterSpeed = new SetShooterSpeed(m_velocity, m_isRPM);
 			setShooterSpeed->Start();
 		}
@@ -71,12 +73,14 @@ void CypressGotoPosition::Execute()
 	
 }
 // Make this return true when this Command no longer needs to run execute()
-bool CypressGotoPosition::IsFinished() {
+bool CypressGotoPosition::IsFinished() 
+{
 	return true;
 }
 // Called once after isFinished returns true
 void CypressGotoPosition::End() 
 {
+   
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

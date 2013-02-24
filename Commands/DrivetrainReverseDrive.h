@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
 #ifndef DRIVETRAIN_REVERSE_DRIVE_H
 #define DRIVETRAIN_REVERSE_DRIVE_H
-
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -21,7 +19,8 @@
  *
  * @author ExampleAuthor
  */
-class DrivetrainReverseDrive: public Command {
+class DrivetrainReverseDrive: public Command
+{
 public:
 	DrivetrainReverseDrive();
 	virtual void Initialize();

@@ -8,21 +8,19 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
 #ifndef SET_PICKUP_POSITION_H
 #define SET_PICKUP_POSITION_H
 
-
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
-
 
 /**
  *
  *
  * @author ExampleAuthor
  */
-class SetPickupPosition: public Command {
+class SetPickupPosition: public Command
+{
 private:
 	double position;
 	bool positionSpecifiedInConstructor;

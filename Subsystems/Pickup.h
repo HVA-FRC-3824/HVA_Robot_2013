@@ -16,7 +16,8 @@
  *
  * @author ExampleAuthor
  */
-class Pickup: public Subsystem, public PIDOutput {
+class Pickup: public Subsystem, public PIDOutput 
+{
 private:
 	PIDController * PIDcontroller;
 public:

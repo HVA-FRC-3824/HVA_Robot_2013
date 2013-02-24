@@ -15,8 +15,6 @@ SpeedController* RobotMap::drivetrainFrontLeft = NULL;
 SpeedController* RobotMap::drivetrainRearRight = NULL;
 SpeedController* RobotMap::drivetrainRearLeft = NULL;
 RobotDrive* RobotMap::drivetrainHolonomic = NULL;
-AnalogChannel* RobotMap::drivetrainUltrasonicFront = NULL;
-AnalogChannel* RobotMap::drivetrainUltrasonicRear = NULL;
 Gyro* RobotMap::drivetrainGyro = NULL;
 SpeedController* RobotMap::shooterWheelMotor = NULL;
 GearTooth* RobotMap::shooterWheelEncoder = NULL;
@@ -24,10 +22,6 @@ Relay* RobotMap::shooterPusherMotor = NULL;
 DigitalInput* RobotMap::shooterPusherStopSwitch = NULL;
 AnalogChannel* RobotMap::shooterAngleAdjustPotentiometer = NULL;
 SpeedController* RobotMap::shooterAngleAdjustMotor = NULL;
-DoubleSolenoid* RobotMap::climberTipperSolenoid = NULL;
-SpeedController* RobotMap::climberMotor = NULL;
-DigitalInput* RobotMap::climberLimitUp = NULL;
-DigitalInput* RobotMap::climberLimitDown = NULL;
 Compressor* RobotMap::pumpCompressorPump = NULL;
 Solenoid* RobotMap::pickupSuction = NULL;
 SpeedController* RobotMap::pickupMotor = NULL;
@@ -58,15 +52,9 @@ void RobotMap::init()
         drivetrainHolonomic->SetMaxOutput(1.0);
         drivetrainHolonomic->SetInvertedMotor(RobotDrive::kFrontRightMotor, true);
         drivetrainHolonomic->SetInvertedMotor(RobotDrive::kRearRightMotor, true);
-	drivetrainUltrasonicFront = new AnalogChannel(1, 3);
-	lw->AddSensor("Drivetrain", "Ultrasonic Front", drivetrainUltrasonicFront);
-	
-	drivetrainUltrasonicRear = new AnalogChannel(1, 4);
-	lw->AddSensor("Drivetrain", "Ultrasonic Rear", drivetrainUltrasonicRear);
-	
 	drivetrainGyro = new Gyro(1, 1);
 	lw->AddSensor("Drivetrain", "Gyro", drivetrainGyro);
-	drivetrainGyro->SetSensitivity(0.0070);
+	drivetrainGyro->SetSensitivity(0.007);
 	shooterWheelMotor = new Talon(1, 5);
 	lw->AddActuator("Shooter Wheel", "Motor", (Talon*) shooterWheelMotor);
 	
@@ -84,18 +72,6 @@ void RobotMap::init()
 	
 	shooterAngleAdjustMotor = new Victor(1, 7);
 	lw->AddActuator("Shooter Angle Adjust", "Motor", (Victor*) shooterAngleAdjustMotor);
-	
-	climberTipperSolenoid = new DoubleSolenoid(1, 1, 2);      
-	
-	
-	climberMotor = new Talon(1, 6);
-	lw->AddActuator("Climber", "Motor", (Talon*) climberMotor);
-	
-	climberLimitUp = new DigitalInput(1, 5);
-	lw->AddSensor("Climber", "Limit Up", climberLimitUp);
-	
-	climberLimitDown = new DigitalInput(1, 6);
-	lw->AddSensor("Climber", "Limit Down", climberLimitDown);
 	
 	pumpCompressorPump = new Compressor(1, 8, 1, 1);
 	

@@ -38,18 +38,22 @@ void SetPickupSuction::Initialize()
 	// </DEBUG>
 }
 // Called repeatedly when this Command is scheduled to run
-void SetPickupSuction::Execute() {
+void SetPickupSuction::Execute()
+{
 	
 }
 // Make this return true when this Command no longer needs to run execute()
-bool SetPickupSuction::IsFinished() {
+bool SetPickupSuction::IsFinished()
+{
 	return true;
 }
 // Called once after isFinished returns true
-void SetPickupSuction::End() {
+void SetPickupSuction::End() 
+{
 	
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void SetPickupSuction::Interrupted() {
+void SetPickupSuction::Interrupted()
+{
 }
