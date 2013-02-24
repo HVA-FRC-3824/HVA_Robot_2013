@@ -8,30 +8,21 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef FRISBEE_SHOOT_H
-#define FRISBEE_SHOOT_H
 
-#include "Timer.h"
-#include "Commands/Subsystem.h"
-#include "../Robot.h"
+
+#ifndef AUTONOMOUS_SHOOT_MIDDLE_GOAL_HARD_TO_CENTERLINE_H
+#define AUTONOMOUS_SHOOT_MIDDLE_GOAL_HARD_TO_CENTERLINE_H
+
+#include "Commands/CommandGroup.h"
 
 /**
  *
  *
- * @author HVA Robotics Team 3824
+ * @author ExampleAuthor
  */
-class FrisbeeShoot: public Command 
-{
-private:
-	Timer *m_pusherTimer;
-	bool m_isJammed;
-public:
-	FrisbeeShoot();
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
+class AutonomousShootMiddleGoalHardtoCenterline: public CommandGroup {
+public:	
+	AutonomousShootMiddleGoalHardtoCenterline();
 };
 
 #endif

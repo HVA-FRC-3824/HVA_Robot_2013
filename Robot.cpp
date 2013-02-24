@@ -83,8 +83,8 @@ void Robot::RobotInit()
    chooser = new SendableChooser();
    chooser->AddDefault("Do Nothing", new AutonomousDoNothing());
    chooser->AddObject("Shoot from Center", new AutonomousShootfromCenter());
-   chooser->AddObject("Shoot Middle Goal", new AutonomousShootMiddleGoalSoft());
-   chooser->AddObject("Shoot Middle Goal", new AutonomousShootMiddleGoalHard());
+   chooser->AddObject("Shoot Middle Goal Soft", new AutonomousShootMiddleGoalSoft());
+   chooser->AddObject("Shoot Middle Goal Hard", new AutonomousShootMiddleGoalHard());
    chooser->AddObject("Shoot from Left", new AutonomousShootfromLeft());
    chooser->AddObject("Shoot from Right", new AutonomousShootfromRight());
    SmartDashboard::PutData("Autonomous modes:", chooser);

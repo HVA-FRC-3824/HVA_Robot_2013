@@ -39,7 +39,7 @@ AutonomousShootfromRight::AutonomousShootfromRight()
 	AddParallel(new SetShooterAngle(585));
 	
 	// drive forward
-	AddSequential(new ChassisDriveDistance(AUTONOMOUS_DRIVE_FORWARD_DISTANCE));
+	AddSequential(new ChassisDriveDistance(AUTONOMOUS_DRIVE_FORWARD_DISTANCE, DRIVING_POWER));
 	   
 	// turn left 
 	AddSequential(new ChassisTurnAngle(AUTONOMOUS_TURN_ANGLE)); 

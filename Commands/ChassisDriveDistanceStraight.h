@@ -8,38 +8,36 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef CHASSIS_DRIVE_DISTANCE_H
-#define CHASSIS_DRIVE_DISTANCE_H
 
-#define DRIVING_POWER               0.2
-#define DRIVING_DIRECTION           0.0
-#define DRIVING_ROTATION            0.0  
+#ifndef CHASSIS_DRIVE_DISTANCE_STRAIGHT_H
+#define CHASSIS_DRIVE_DISTANCE_STRAIGHT_H
+
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
-#include "Timer.h" 
 
 /**
- * This command, when called, causes the robot to drive float distance.
- * 
- * FIMXE: Rename class into ChassisDriveTime/Duration in Robotbuilder
  *
- * @author HVA Robotics Team 3824
+ *
+ * @author ExampleAuthor
  */
-class ChassisDriveDistance: public Command 
+class ChassisDriveDistanceStraight: public Command, public PIDSource, public PIDOutput
 {
 private:
    float driveDuration;
    float drivePower;
+   PIDController *PIDcontroller;
    Timer *timer;
-   
 public:
-	ChassisDriveDistance(float distance, float power);
+	ChassisDriveDistanceStraight(float distance, float power);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
+	
+	void PIDWrite(float output);
+	double PIDGet();
 };
 
 #endif

@@ -25,7 +25,7 @@ TestAngleAdjust::TestAngleAdjust()
 	AddSequential(new WaitCommand(30.0));
 	AddSequential(new SetShooterAngle(655.0));
 */
-	AddSequential(new ChassisDriveDistance(2.0));
+	AddSequential(new ChassisDriveDistance(2.0, DRIVING_POWER));
 	
 	// To run multiple commands at the same time,
 	// use AddParallel()

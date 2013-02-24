@@ -8,30 +8,15 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef FRISBEE_SHOOT_H
-#define FRISBEE_SHOOT_H
 
-#include "Timer.h"
-#include "Commands/Subsystem.h"
-#include "../Robot.h"
 
-/**
- *
- *
- * @author HVA Robotics Team 3824
- */
-class FrisbeeShoot: public Command 
+#include "AutonomousDriveForwardShoot.h"
+#include "ChassisDriveDistanceStraight.h"
+
+AutonomousDriveForwardShoot::AutonomousDriveForwardShoot() 
 {
-private:
-	Timer *m_pusherTimer;
-	bool m_isJammed;
-public:
-	FrisbeeShoot();
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
-};
-
-#endif
+	// Drive Forward
+	AddSequential(new ChassisDriveDistanceStraight(1.0, 0.5));
+	
+	
+}
