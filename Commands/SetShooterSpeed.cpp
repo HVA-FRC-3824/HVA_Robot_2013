@@ -146,7 +146,12 @@ bool SetShooterSpeed::IsFinished()
 		return true;
 	
 	// Case 2: The speed is controlled by pot and mode changes
-	if ((m_SpeedSpecifiedInConstructor == false) && (m_isRPM != !(DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_RPM_VOLTAGE))))
+	if ((m_SpeedSpecifiedInConstructor == false) && 
+			(m_isRPM != !(DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_RPM_VOLTAGE))))
+		return true;
+	
+	// Return true if the voltage is set
+	if (m_isRPM == false)
 		return true;
 	
 	return false;	

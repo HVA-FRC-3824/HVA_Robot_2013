@@ -8,13 +8,14 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#include "AutonomousShootfromCenter.h"
+
+
+#include "AutonomousShootMiddleGoalHard.h"
 #include "SetShooterSpeed.h"
 #include "SetShooterAngle.h"
 #include "FrisbeeShoot.h"
 
-AutonomousShootfromCenter::AutonomousShootfromCenter() 
-{
+AutonomousShootMiddleGoalHard::AutonomousShootMiddleGoalHard() {
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());
@@ -30,10 +31,10 @@ AutonomousShootfromCenter::AutonomousShootfromCenter()
 	AddSequential(new SetShooterSpeed(1.0, false), 1.0);
 	AddSequential(new WaitCommand(1.0));
 	
-	AddParallel(new SetShooterSpeed(0.64, false), 3.0);
+	AddParallel(new SetShooterSpeed(0.8, false), 3.0);
 	
 	// set the shooter angle
-	AddSequential(new SetShooterAngle(509), 3.0);
+	AddSequential(new SetShooterAngle(305), 3.0);
 	
 	AddSequential(new WaitCommand(4.0));
 	
