@@ -12,11 +12,45 @@
 
 #include "AutonomousDriveForwardShoot.h"
 #include "ChassisDriveDistanceStraight.h"
+#include "ChassisDrivetoWallStraight.h"
+#include "SetShooterSpeed.h"
+#include "SetShooterAngle.h"
+#include "FrisbeeShoot.h"
 
 AutonomousDriveForwardShoot::AutonomousDriveForwardShoot() 
 {
 	// Drive Forward
-	AddSequential(new ChassisDriveDistanceStraight(1.0, 0.5));
+	AddSequential(new ChassisDrivetoWallStraight(120.0, 0.5));
+	/*
+	// ramp the shooter speed up
+	AddSequential(new SetShooterSpeed(1.0, false), 1.0);
+	// set the shooter angle
+	AddSequential(new SetShooterAngle(653), 3.0);
+	AddSequential(new WaitCommand(1.0));
 	
+	AddParallel(new SetShooterSpeed(0.62, false), 3.0);
 	
+	AddSequential(new WaitCommand(2.0));
+	
+	// shoot 1st frisbee
+   AddSequential(new FrisbeeShoot());
+   
+   // Slow the next shoots down
+   //AddParallel(new SetShooterSpeed(0.5, false), 3.0);
+    
+   // wait
+   AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT1));
+    
+   // shoot 2nd frisbee
+   AddSequential(new FrisbeeShoot());
+    
+   // wait
+   AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT2));
+    
+   // shoot 3rd frisbee
+   AddSequential(new FrisbeeShoot());
+   
+   // Stop the Shooter
+   AddParallel(new SetShooterSpeed(0, false));
+	*/
 }

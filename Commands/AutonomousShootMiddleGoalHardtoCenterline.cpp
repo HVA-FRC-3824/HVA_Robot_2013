@@ -14,7 +14,7 @@
 #include "SetShooterSpeed.h"
 #include "SetShooterAngle.h"
 #include "FrisbeeShoot.h"
-#include "ChassisDriveDistance.h"
+#include "ChassisDriveDistanceStraight.h"
 #include "ChassisTurnAngle.h"
 
 AutonomousShootMiddleGoalHardtoCenterline::AutonomousShootMiddleGoalHardtoCenterline() {
@@ -30,14 +30,14 @@ AutonomousShootMiddleGoalHardtoCenterline::AutonomousShootMiddleGoalHardtoCenter
 	// Command1 and Command2 will run in parallel.
 
 	// ramp the shooter speed up
-	AddSequential(new SetShooterSpeed(1.0, false), 1.0);
+	AddSequential(new SetShooterSpeed(1.0, false));
 	// set the shooter angle
-	AddSequential(new SetShooterAngle(305), 3.0);
+	AddParallel(new SetShooterAngle(405));
 	AddSequential(new WaitCommand(1.0));
 	
-	AddParallel(new SetShooterSpeed(0.8, false), 3.0);
+	AddParallel(new SetShooterSpeed(0.8, false));
 	
-	AddSequential(new WaitCommand(2.0));
+	AddSequential(new WaitCommand(2.5));
 	
 	// shoot 1st frisbee
    AddSequential(new FrisbeeShoot());
@@ -61,5 +61,5 @@ AutonomousShootMiddleGoalHardtoCenterline::AutonomousShootMiddleGoalHardtoCenter
    AddParallel(new SetShooterSpeed(0, false));
    
    // Drive back
-   AddSequential(new ChassisDriveDistance(1.0, -0.5));
+   AddSequential(new ChassisDriveDistanceStraight(1.2, -0.5));
 }

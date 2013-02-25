@@ -9,8 +9,8 @@
 // it from being updated in th future.
 
 
-#ifndef CHASSIS_DRIVE_DISTANCE_STRAIGHT_H
-#define CHASSIS_DRIVE_DISTANCE_STRAIGHT_H
+#ifndef CHASSIS_DRIVE_TO_WALL_STRAIGHT_H
+#define CHASSIS_DRIVE_TO_WALL_STRAIGHT_H
 
 
 #include "Commands/Subsystem.h"
@@ -21,15 +21,15 @@
  *
  * @author ExampleAuthor
  */
-class ChassisDriveDistanceStraight: public Command, public PIDSource, public PIDOutput
+class ChassisDrivetoWallStraight: public Command, public PIDSource, public PIDOutput
 {
 private:
-   float driveDuration;
+   float driveStopDistance;
    float drivePower;
    PIDController *PIDcontroller;
    Timer *timer;
 public:
-	ChassisDriveDistanceStraight(float duration, float power);
+	ChassisDrivetoWallStraight(float distance, float power);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

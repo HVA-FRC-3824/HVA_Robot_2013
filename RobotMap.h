@@ -26,6 +26,7 @@ public:
 	static SpeedController* drivetrainRearLeft;
 	static RobotDrive* drivetrainHolonomic;
 	static Gyro* drivetrainGyro;
+	static AnalogChannel* drivetrainUltrasonicFront;
 	static SpeedController* shooterWheelMotor;
 	static GearTooth* shooterWheelEncoder;
 	static Relay* shooterPusherMotor;
