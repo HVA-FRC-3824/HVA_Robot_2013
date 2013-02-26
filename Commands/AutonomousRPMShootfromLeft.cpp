@@ -11,6 +11,15 @@
 
 
 #include "AutonomousRPMShootfromLeft.h"
+#include "FrisbeeShoot.h"
+#include "ChassisDriveDistance.h"
+#include "ChassisTurnAngle.h"
+#include "SetShooterSpeed.h"
+#include "SetShooterAngle.h"
+#include "FrisbeeShoot.h"
+
+#define AUTONOMOUS_DRIVE_FORWARD_DISTANCE    2.0
+#define AUTONOMOUS_TURN_ANGLE               15.0
 
 AutonomousRPMShootfromLeft::AutonomousRPMShootfromLeft() {
 	// Add Commands here:
@@ -24,9 +33,30 @@ AutonomousRPMShootfromLeft::AutonomousRPMShootfromLeft() {
 	//      AddSequential(new Command2());
 	// Command1 and Command2 will run in parallel.
 
-	// A command group will require all of the subsystems that each member
-	// would require.
-	// e.g. if Command1 requires chassis, and Command2 requires arm,
-	// a CommandGroup containing them would require both the chassis and the
-	// arm.
+	// ramp the shooter speed up
+	AddParallel(new SetShooterSpeed(2500, true));
+	
+	// set the shooter angle
+	AddParallel(new SetShooterAngle(585));
+	
+	// drive forward
+	AddSequential(new ChassisDriveDistance(AUTONOMOUS_DRIVE_FORWARD_DISTANCE, DRIVING_POWER));
+	   
+	// turn left 
+	AddSequential(new ChassisTurnAngle(AUTONOMOUS_TURN_ANGLE)); 
+	
+	// shoot first Frisbee
+	AddSequential(new FrisbeeShoot());
+	
+	// wait
+	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT1));
+	   
+	// shoot second Frisbee
+	AddSequential(new FrisbeeShoot());
+	
+	// wait
+	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT2));
+	   
+	// shoot third Frisbee
+	AddSequential(new FrisbeeShoot());
 }

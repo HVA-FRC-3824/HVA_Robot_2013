@@ -11,6 +11,9 @@
 
 
 #include "AutonomousRPMShootfromCenter.h"
+#include "SetShooterSpeed.h"
+#include "SetShooterAngle.h"
+#include "FrisbeeShoot.h"
 
 AutonomousRPMShootfromCenter::AutonomousRPMShootfromCenter() {
 	// Add Commands here:
@@ -23,10 +26,35 @@ AutonomousRPMShootfromCenter::AutonomousRPMShootfromCenter() {
 	// e.g. AddParallel(new Command1());
 	//      AddSequential(new Command2());
 	// Command1 and Command2 will run in parallel.
+	
+	AddParallel(new SetShooterSpeed(0.64, true), 3.0);
+	
+	// set the shooter angle
+	AddSequential(new SetShooterAngle(509), 3.0);
+	
+	AddSequential(new WaitCommand(4.0));
+	
+	// shoot 1st frisbee
+	AddSequential(new FrisbeeShoot());
 
-	// A command group will require all of the subsystems that each member
-	// would require.
-	// e.g. if Command1 requires chassis, and Command2 requires arm,
-	// a CommandGroup containing them would require both the chassis and the
-	// arm.
+	// Slow the next shoots down
+	//AddParallel(new SetShooterSpeed(0.5, false), 3.0);
+
+	// wait
+	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT1));
+
+	// shoot 2nd frisbee
+	AddSequential(new FrisbeeShoot());
+
+	// wait
+	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT2));
+
+	// shoot 3rd frisbee
+	AddSequential(new FrisbeeShoot());
+
+	// wait
+	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT2));
+
+	// shoot 4rd frisbee
+	AddSequential(new FrisbeeShoot());
 }
