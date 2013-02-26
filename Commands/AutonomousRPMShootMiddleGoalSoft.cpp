@@ -27,11 +27,7 @@ AutonomousRPMShootMiddleGoalSoft::AutonomousRPMShootMiddleGoalSoft() {
 	//      AddSequential(new Command2());
 	// Command1 and Command2 will run in parallel.
 
-	// ramp the shooter speed up
-	AddSequential(new SetShooterSpeed(1.0, false), 1.0);
-	AddSequential(new WaitCommand(1.0));
-
-	AddParallel(new SetShooterSpeed(0.66, false), 3.0);
+	AddParallel(new SetShooterSpeed(0.66, true), 3.0);
 
 	// set the shooter angle
 	AddSequential(new SetShooterAngle(434), 3.0);

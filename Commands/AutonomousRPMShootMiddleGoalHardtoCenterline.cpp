@@ -29,13 +29,10 @@ AutonomousRPMShootMiddleGoalHardtoCenterline::AutonomousRPMShootMiddleGoalHardto
 	//      AddSequential(new Command2());
 	// Command1 and Command2 will run in parallel.
 
-	// ramp the shooter speed up
-	AddSequential(new SetShooterSpeed(1.0, false));
 	// set the shooter angle
 	AddParallel(new SetShooterAngle(405));
-	AddSequential(new WaitCommand(1.0));
 	
-	AddParallel(new SetShooterSpeed(0.8, false));
+	AddParallel(new SetShooterSpeed(0.8, true));
 	
 	AddSequential(new WaitCommand(2.5));
 	
@@ -58,7 +55,7 @@ AutonomousRPMShootMiddleGoalHardtoCenterline::AutonomousRPMShootMiddleGoalHardto
 	AddSequential(new FrisbeeShoot());
 
 	// Stop the Shooter
-	AddParallel(new SetShooterSpeed(0, false));
+	AddParallel(new SetShooterSpeed(0, true));
 
 	// Drive back
 	AddSequential(new ChassisDriveDistanceStraight(1.2, -0.5));

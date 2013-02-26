@@ -26,38 +26,34 @@ AutonomousShootfromCenter::AutonomousShootfromCenter()
 	//      AddSequential(new Command2());
 	// Command1 and Command2 will run in parallel.
 
-	// ramp the shooter speed up
-	AddSequential(new SetShooterSpeed(1.0, false), 1.0);
-	AddSequential(new WaitCommand(1.0));
-	
 	AddParallel(new SetShooterSpeed(0.64, false), 3.0);
-	
+
 	// set the shooter angle
 	AddSequential(new SetShooterAngle(509), 3.0);
-	
+
 	AddSequential(new WaitCommand(4.0));
-	
+
 	// shoot 1st frisbee
-   AddSequential(new FrisbeeShoot());
-   
-   // Slow the next shoots down
-   //AddParallel(new SetShooterSpeed(0.5, false), 3.0);
-    
-   // wait
-   AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT1));
-    
-   // shoot 2nd frisbee
-   AddSequential(new FrisbeeShoot());
-    
-   // wait
-   AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT2));
-    
-   // shoot 3rd frisbee
-   AddSequential(new FrisbeeShoot());
-   
-   // wait
-   AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT2));
-    
-   // shoot 4rd frisbee
-   AddSequential(new FrisbeeShoot());
+	AddSequential(new FrisbeeShoot());
+
+	// Slow the next shoots down
+	//AddParallel(new SetShooterSpeed(0.5, false), 3.0);
+
+	// wait
+	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT1));
+
+	// shoot 2nd frisbee
+	AddSequential(new FrisbeeShoot());
+
+	// wait
+	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT2));
+
+	// shoot 3rd frisbee
+	AddSequential(new FrisbeeShoot());
+
+	// wait
+	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT2));
+
+	// shoot 4rd frisbee
+	AddSequential(new FrisbeeShoot());
 }
