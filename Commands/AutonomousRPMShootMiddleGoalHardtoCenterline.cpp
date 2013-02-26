@@ -11,6 +11,11 @@
 
 
 #include "AutonomousRPMShootMiddleGoalHardtoCenterline.h"
+#include "SetShooterSpeed.h"
+#include "SetShooterAngle.h"
+#include "FrisbeeShoot.h"
+#include "ChassisDriveDistanceStraight.h"
+#include "ChassisTurnAngle.h"
 
 AutonomousRPMShootMiddleGoalHardtoCenterline::AutonomousRPMShootMiddleGoalHardtoCenterline() {
 	// Add Commands here:
@@ -24,9 +29,37 @@ AutonomousRPMShootMiddleGoalHardtoCenterline::AutonomousRPMShootMiddleGoalHardto
 	//      AddSequential(new Command2());
 	// Command1 and Command2 will run in parallel.
 
-	// A command group will require all of the subsystems that each member
-	// would require.
-	// e.g. if Command1 requires chassis, and Command2 requires arm,
-	// a CommandGroup containing them would require both the chassis and the
-	// arm.
+	// ramp the shooter speed up
+	AddSequential(new SetShooterSpeed(1.0, false));
+	// set the shooter angle
+	AddParallel(new SetShooterAngle(405));
+	AddSequential(new WaitCommand(1.0));
+	
+	AddParallel(new SetShooterSpeed(0.8, false));
+	
+	AddSequential(new WaitCommand(2.5));
+	
+	// shoot 1st frisbee
+	AddSequential(new FrisbeeShoot());
+
+	// Slow the next shoots down
+	//AddParallel(new SetShooterSpeed(0.5, false), 3.0);
+
+	// wait
+	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT1));
+
+	// shoot 2nd frisbee
+	AddSequential(new FrisbeeShoot());
+
+	// wait
+	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT2));
+
+	// shoot 3rd frisbee
+	AddSequential(new FrisbeeShoot());
+
+	// Stop the Shooter
+	AddParallel(new SetShooterSpeed(0, false));
+
+	// Drive back
+	AddSequential(new ChassisDriveDistanceStraight(1.2, -0.5));
 }
