@@ -18,6 +18,26 @@ AutonomousRPMShootMiddleGoalHard::AutonomousRPMShootMiddleGoalHard() {
 	//      AddSequential(new Command2());
 	// these will run in order.
 
+	AddSequential(new SetShooterSpeed(AUTO_SHOOTER_SPEED, true));
+	
+	AddSequential(new WaitCommand(AUTO_SHOOT_WAIT1));
+	
+	AddSequential(new FrisbeeShoot());
+	
+	AddSequential(new WaitCommand(AUTO_SHOOT_WAIT2));
+	
+	AddSequential(new FrisbeeShoot());
+	
+	AddSequential(new WaitCommand(AUTO_SHOOT_WAIT3));
+	
+	AddSequential(new FrisbeeShoot());
+
+	AddSequential(new WaitCommand(AUTO_SHOOT_WAIT4));
+	
+	AddSequential(new FrisbeeShoot());
+	
+	AddSequential(new SetShooterSpeed(0.0, false));
+	
 	// To run multiple commands at the same time,
 	// use AddParallel()
 	// e.g. AddParallel(new Command1());
