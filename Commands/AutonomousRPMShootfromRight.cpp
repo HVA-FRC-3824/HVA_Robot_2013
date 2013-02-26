@@ -9,7 +9,7 @@
 // it from being updated in th future.
 
 #include "AutonomousRPMShootfromRight.h"
-#include "FrisbeeAimAndShoot."
+#include "FrisbeeAimAndShoot.h"
 #include "ChassisDriveDistance.h"
 #include "ChassisTurnAngle.h"
 #include "SetShooterSpeed.h"
@@ -18,6 +18,8 @@
 
 #define AUTONOMOUS_DRIVE_FORWARD_DISTANCE   2.0
 #define AUTONOMOUS_TURN_ANGLE		  -15.0
+
+AutonomousRPMShootfromRight::AutonomousRPMShootfromRight() {
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());
@@ -31,7 +33,7 @@
 	//Ramp up shooter speed
 	AddParallel(new SetShooterSpeed(2500, true));
 	//Set shooter angle
-	AddParallel(new SetShooterAngle(585, true));
+	AddParallel(new SetShooterAngle(585));
 	//Drive forward
 	AddSequential(new ChassisDriveDistance(AUTONOMOUS_DRIVE_FORWARD_DISTANCE, DRIVING_POWER));
 	//Turn left
