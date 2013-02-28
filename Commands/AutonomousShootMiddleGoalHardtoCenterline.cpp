@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #include "AutonomousShootMiddleGoalHardtoCenterline.h"
 #include "SetShooterSpeed.h"
 #include "SetShooterAngle.h"
@@ -17,7 +15,8 @@
 #include "ChassisDriveDistanceStraight.h"
 #include "ChassisTurnAngle.h"
 
-AutonomousShootMiddleGoalHardtoCenterline::AutonomousShootMiddleGoalHardtoCenterline() {
+AutonomousShootMiddleGoalHardtoCenterline::AutonomousShootMiddleGoalHardtoCenterline() 
+{
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
 	//      AddSequential(new Command2());
@@ -31,6 +30,7 @@ AutonomousShootMiddleGoalHardtoCenterline::AutonomousShootMiddleGoalHardtoCenter
 
 	// ramp the shooter speed up
 	AddSequential(new SetShooterSpeed(1.0, false));
+	
 	// set the shooter angle
 	AddParallel(new SetShooterAngle(405));
 	AddSequential(new WaitCommand(1.0));
@@ -42,9 +42,6 @@ AutonomousShootMiddleGoalHardtoCenterline::AutonomousShootMiddleGoalHardtoCenter
 	// shoot 1st frisbee
    AddSequential(new FrisbeeShoot());
    
-   // Slow the next shoots down
-   //AddParallel(new SetShooterSpeed(0.5, false), 3.0);
-    
    // wait
    AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT1));
     

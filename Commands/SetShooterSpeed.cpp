@@ -72,9 +72,8 @@ void SetShooterSpeed::Initialize()
 		{
 		   // read the value from the pot
 			m_shooterSpeed = DriverStation::GetInstance()->GetEnhancedIO().GetAnalogIn(ANALOG_SHOOTER_SPEED);
-			
 			// Convert the pot value to speed
-			m_shooterSpeed = m_shooterSpeed*(SHOOTER_SPEED_MAX_VALUE - SHOOTER_SPEED_MIN_VALUE)/3.3 + SHOOTER_SPEED_MIN_VALUE;
+			m_shooterSpeed = m_shooterSpeed * (SHOOTER_SPEED_MAX_VALUE - SHOOTER_SPEED_MIN_VALUE) / 3.3 + SHOOTER_SPEED_MIN_VALUE;
 			
 			if (m_shooterSpeed > SHOOTER_SPEED_MAX_VALUE)
 				m_shooterSpeed = SHOOTER_SPEED_MAX_VALUE;
@@ -119,7 +118,7 @@ void SetShooterSpeed::Execute()
 			m_shooterSpeed = DriverStation::GetInstance()->GetEnhancedIO().GetAnalogIn(ANALOG_SHOOTER_SPEED);
 			
 			// Convert the pot value to RPM
-			m_shooterSpeed = m_shooterSpeed*(SHOOTER_SPEED_MAX_VALUE - SHOOTER_SPEED_MIN_VALUE)/3.3 + SHOOTER_SPEED_MIN_VALUE;
+			m_shooterSpeed = m_shooterSpeed * (SHOOTER_SPEED_MAX_VALUE - SHOOTER_SPEED_MIN_VALUE)/3.3 + SHOOTER_SPEED_MIN_VALUE;
 			
 			if (m_shooterSpeed > SHOOTER_SPEED_MAX_VALUE)
 				m_shooterSpeed = SHOOTER_SPEED_MAX_VALUE;

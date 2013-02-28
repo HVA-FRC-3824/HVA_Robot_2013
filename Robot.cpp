@@ -44,10 +44,9 @@ void Robot::RobotInit()
    SmartDashboard::PutNumber("Chassis Turn Angle Degrees", 10);
    
    // PID values for the shooter speed
-   SmartDashboard::PutNumber("Shooter Speed P Term", 1);
+   SmartDashboard::PutNumber("Shooter Speed P Term", 1.0);
    SmartDashboard::PutNumber("Shooter Speed I Term", 0.03);
    SmartDashboard::PutNumber("Shooter Speed D Term", 0.0);
-   
    
    // PID values for the shooter
    SmartDashboard::PutNumber("Shooter Angle P Term", 0.03);
@@ -91,20 +90,20 @@ void Robot::RobotInit()
 	// These must be after subsystem construction.
    chooser = new SendableChooser();
    chooser->AddDefault("Do Nothing", new AutonomousDoNothing());
-   chooser->AddObject("Drive forward and shoot", new AutonomousDriveForwardShoot());
-   chooser->AddObject("Drive forward and shoot with RPM", new AutonomousRPMDriveForwardShoot());
-   chooser->AddObject("Shoot from Center with RPM", new AutonomousRPMShootfromCenter());
-   chooser->AddObject("Shoot from Left with RPM", new AutonomousRPMShootfromLeft());
-   chooser->AddObject("Shoot from Right with RPM", new AutonomousRPMShootfromRight());
-   chooser->AddObject("Shoot Middle Goal Hard with RPM", new AutonomousRPMShootMiddleGoalHard());
-   chooser->AddObject("Shoot Middle Goal Hard with RPM from Centerline", new AutonomousRPMShootMiddleGoalHardtoCenterline());
+//   chooser->AddObject("Drive forward and shoot", new AutonomousDriveForwardShoot());
+//   chooser->AddObject("Drive forward and shoot with RPM", new AutonomousRPMDriveForwardShoot());
+//   chooser->AddObject("Shoot from Center with RPM", new AutonomousRPMShootfromCenter());
+//   chooser->AddObject("Shoot from Left with RPM", new AutonomousRPMShootfromLeft());
+//   chooser->AddObject("Shoot from Right with RPM", new AutonomousRPMShootfromRight());
+//   chooser->AddObject("Shoot Middle Goal Hard with RPM", new AutonomousRPMShootMiddleGoalHard());
+//   chooser->AddObject("Shoot Middle Goal Hard with RPM from Centerline", new AutonomousRPMShootMiddleGoalHardtoCenterline());
    chooser->AddObject("Shoot Middle Goal Soft with RPM", new AutonomousRPMShootMiddleGoalSoft());
-   chooser->AddObject("Shoot from Center", new AutonomousShootfromCenter());
-   chooser->AddObject("Shoot from Left", new AutonomousShootfromLeft());
-   chooser->AddObject("Shoot from Right", new AutonomousShootfromRight());
-   chooser->AddObject("Shoot Middle Goal Hard", new AutonomousShootMiddleGoalHard());
-   chooser->AddObject("Shoot Middle Goal Hard to Centerline", new AutonomousShootMiddleGoalHardtoCenterline());
-   chooser->AddObject("Shoot Middle Goal Soft", new AutonomousShootMiddleGoalSoft());
+//   chooser->AddObject("Shoot from Center", new AutonomousShootfromCenter());
+//   chooser->AddObject("Shoot from Left", new AutonomousShootfromLeft());
+//   chooser->AddObject("Shoot from Right", new AutonomousShootfromRight());
+//   chooser->AddObject("Shoot Middle Goal Hard", new AutonomousShootMiddleGoalHard());
+//   chooser->AddObject("Shoot Middle Goal Hard to Centerline", new AutonomousShootMiddleGoalHardtoCenterline());
+//   chooser->AddObject("Shoot Middle Goal Soft", new AutonomousShootMiddleGoalSoft());
    
    SmartDashboard::PutData("Autonomous modes:", chooser);
    

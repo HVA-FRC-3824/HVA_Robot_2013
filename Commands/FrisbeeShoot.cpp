@@ -31,10 +31,6 @@ void FrisbeeShoot::Initialize()
 	// reset and start the timer
 	m_pusherTimer->Reset();
 	m_pusherTimer->Start();
-	
-	// <DEBUG>
-	printf("FIRE\n");
-	// </DEBUG>
 }
 // Called repeatedly when this Command is scheduled to run
 void FrisbeeShoot::Execute() 

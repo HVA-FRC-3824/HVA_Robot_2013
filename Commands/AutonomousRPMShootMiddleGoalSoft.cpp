@@ -8,12 +8,14 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #include "AutonomousRPMShootMiddleGoalSoft.h"
 #include "SetShooterSpeed.h"
 #include "SetShooterAngle.h"
 #include "FrisbeeShoot.h"
+
+#define SHOOTER_VELOCITY         2190.0
+#define SHOOTER_ANGLE             410.0
+#define SHOOTER_WAIT               0.5
 
 AutonomousRPMShootMiddleGoalSoft::AutonomousRPMShootMiddleGoalSoft() {
 	// Add Commands here:
@@ -27,33 +29,30 @@ AutonomousRPMShootMiddleGoalSoft::AutonomousRPMShootMiddleGoalSoft() {
 	//      AddSequential(new Command2());
 	// Command1 and Command2 will run in parallel.
 
-	AddParallel(new SetShooterSpeed(0.66, true), 3.0);
+	AddParallel(new SetShooterSpeed(SHOOTER_VELOCITY, true), 3.0);
 
 	// set the shooter angle
-	AddSequential(new SetShooterAngle(434), 3.0);
+	AddSequential(new SetShooterAngle(SHOOTER_ANGLE), 3.0);
 
-	AddSequential(new WaitCommand(4.0));
+	AddSequential(new WaitCommand(3.0));
 
 	// shoot 1st frisbee
 	AddSequential(new FrisbeeShoot());
 
-	// Slow the next shoots down
-	//AddParallel(new SetShooterSpeed(0.5, false), 3.0);
-
-	// wait
-	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT1));
+	// wait between shots
+	AddSequential(new WaitCommand(SHOOTER_WAIT));
 
 	// shoot 2nd frisbee
 	AddSequential(new FrisbeeShoot());
 
-	// wait
-	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT2));
+	// wait between shots
+	AddSequential(new WaitCommand(SHOOTER_WAIT));
 
 	// shoot 3rd frisbee
 	AddSequential(new FrisbeeShoot());
 
-	// wait
-	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT2));
+	// wait between shots
+	AddSequential(new WaitCommand(SHOOTER_WAIT));
 
 	// shoot 4rd frisbee
 	AddSequential(new FrisbeeShoot());
