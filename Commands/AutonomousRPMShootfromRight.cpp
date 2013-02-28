@@ -16,42 +16,35 @@
 #include "SetShooterAngle.h"
 #include "FrisbeeShoot.h"
 
-#define AUTONOMOUS_DRIVE_FORWARD_DISTANCE   2.0
-#define AUTONOMOUS_TURN_ANGLE		  -15.0
+#define AUTONOMOUS_DRIVE_FORWARD_DISTANCE      2.0
+#define AUTONOMOUS_TURN_ANGLE		            -15.0
 
-AutonomousRPMShootfromRight::AutonomousRPMShootfromRight() {
-	// Add Commands here:
-	// e.g. AddSequential(new Command1());
-	//      AddSequential(new Command2());
-	// these will run in order.  
-	// To run multiple commands at the same time,
-	// use AddParallel()
-	// e.g. AddParallel(new Command1());
-	//      AddSequential(new Command2());
-	// Command1 and Command2 will run in parallel.
-
+AutonomousRPMShootfromRight::AutonomousRPMShootfromRight() 
+{
 	//Ramp up shooter speed
 	AddParallel(new SetShooterSpeed(2500, true));
+	
 	//Set shooter angle
 	AddParallel(new SetShooterAngle(585));
+	
 	//Drive forward
 	AddSequential(new ChassisDriveDistance(AUTONOMOUS_DRIVE_FORWARD_DISTANCE, DRIVING_POWER));
+
 	//Turn left
 	AddSequential(new ChassisTurnAngle(AUTONOMOUS_TURN_ANGLE));
+
 	//Shoot first Frisbee
 	AddSequential(new FrisbeeShoot());
+	
 	//wait
 	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT1));
+	
 	//Shoot second Frisbee
 	AddSequential(new FrisbeeShoot());
+	
 	//wait
 	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT2));
+	
 	//Shoot third Frisbee
 	AddSequential(new FrisbeeShoot());
-	
-	// A command group will require all of the subsystems that each member
-	// would require.
-	// e.g. if Command1 requires chassis, and Command2 requires arm,
-	// a CommandGroup containing them would require both the chassis and the
-	// arm.
 }

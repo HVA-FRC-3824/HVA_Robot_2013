@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #include "AutonomousRPMShootfromLeft.h"
 #include "FrisbeeShoot.h"
 #include "ChassisDriveDistance.h"
@@ -21,18 +19,8 @@
 #define AUTONOMOUS_DRIVE_FORWARD_DISTANCE    2.0
 #define AUTONOMOUS_TURN_ANGLE               15.0
 
-AutonomousRPMShootfromLeft::AutonomousRPMShootfromLeft() {
-	// Add Commands here:
-	// e.g. AddSequential(new Command1());
-	//      AddSequential(new Command2());
-	// these will run in order.
-
-	// To run multiple commands at the same time,
-	// use AddParallel()
-	// e.g. AddParallel(new Command1());
-	//      AddSequential(new Command2());
-	// Command1 and Command2 will run in parallel.
-
+AutonomousRPMShootfromLeft::AutonomousRPMShootfromLeft() 
+{
 	// ramp the shooter speed up
 	AddParallel(new SetShooterSpeed(2500, true));
 	

@@ -8,17 +8,13 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #ifndef AUTONOMOUS_RPM_SHOOT_MIDDLE_GOAL_HARD_H
 #define AUTONOMOUS_RPM_SHOOT_MIDDLE_GOAL_HARD_H
 
-#define	AUTO_SHOOTER_SPEED						3500	// Placeholder
-
-#define AUTO_SHOOT_WAIT1						3.0
-#define AUTO_SHOOT_WAIT2						3.0
-#define AUTO_SHOOT_WAIT3						3.0
-#define AUTO_SHOOT_WAIT4						3.0
+#define AUTO_SHOOT_WAIT1						0.0
+#define AUTO_SHOOT_WAIT2						0.0
+#define AUTO_SHOOT_WAIT3						0.0
+#define AUTO_SHOOT_WAIT4						0.0
 
 #include "Commands/CommandGroup.h"
 #include "ChassisDriveDistanceStraight.h"

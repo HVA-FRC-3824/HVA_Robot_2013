@@ -8,18 +8,18 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #include "AutonomousRPMShootMiddleGoalHard.h"
+#include "SetShooterAngle.h"
 
-AutonomousRPMShootMiddleGoalHard::AutonomousRPMShootMiddleGoalHard() {
-	// Add Commands here:
-	// e.g. AddSequential(new Command1());
-	//      AddSequential(new Command2());
-	// these will run in order.
+#define	AUTO_SHOOTER_SPEED						3000	// Placeholder
 
-	AddSequential(new SetShooterSpeed(AUTO_SHOOTER_SPEED, true));
+AutonomousRPMShootMiddleGoalHard::AutonomousRPMShootMiddleGoalHard() 
+{
+	// set the shooter angle
+	AddSequential(new SetShooterAngle(300), 3.0);
 	
+	AddSequential(new SetShooterSpeed(AUTO_SHOOTER_SPEED, true), 3.0);
+
 	AddSequential(new WaitCommand(AUTO_SHOOT_WAIT1));
 	
 	AddSequential(new FrisbeeShoot());
@@ -37,16 +37,5 @@ AutonomousRPMShootMiddleGoalHard::AutonomousRPMShootMiddleGoalHard() {
 	AddSequential(new FrisbeeShoot());
 	
 	AddSequential(new SetShooterSpeed(0.0, false));
-	
-	// To run multiple commands at the same time,
-	// use AddParallel()
-	// e.g. AddParallel(new Command1());
-	//      AddSequential(new Command2());
-	// Command1 and Command2 will run in parallel.
 
-	// A command group will require all of the subsystems that each member
-	// would require.
-	// e.g. if Command1 requires chassis, and Command2 requires arm,
-	// a CommandGroup containing them would require both the chassis and the
-	// arm.
 }

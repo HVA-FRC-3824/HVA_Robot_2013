@@ -1,168 +1,114 @@
 <xml version="1.0">
 <dashboard>
-	<widget field="Motor PID" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="447"/>
+	<widget field="Slider 1" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="221" y="63"/>
 	</widget>
-	<widget field="Potentiometer PID" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="264"/>
+	<widget field="Checkbox 2" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="221" y="42"/>
 	</widget>
-	<widget field="Shooter Motor D" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="243"/>
+	<widget field="Checkbox 1" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="221" y="21"/>
 	</widget>
-	<widget field="Shooter Motor I" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="222"/>
+	<widget field="isRPM" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="503" y="238"/>
 	</widget>
-	<widget field="Shooter Motor P" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="201"/>
+	<widget field="Shooter Speed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="503" y="217"/>
 	</widget>
-	<widget field="Shooter Angle Enabled" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="180"/>
-	</widget>
-	<widget field="Shooter Angle Setpoint" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="123"/>
-	</widget>
-	<widget field="Shooter Angle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="102"/>
-	</widget>
-	<widget field="Pickup Position GIT" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.LinePlot">
-		<location x="371" y="162"/>
-	</widget>
-	<widget field="Shooter Speed Period" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.LinePlot">
-		<location x="1024" y="36"/>
+	<widget field="ShooterAngel" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="503" y="196"/>
 	</widget>
 	<widget field="Compressor: " type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="366" y="464"/>
+		<location x="503" y="175"/>
+	</widget>
+	<widget field="Pickup Voltage" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="503" y="154"/>
+	</widget>
+	<widget field="Gyro" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="503" y="133"/>
+	</widget>
+	<widget field="Ultra Sonic" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="503" y="112"/>
+	</widget>
+	<widget field="Pickup Position GIT" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="503" y="91"/>
 	</widget>
 	<widget field="Shooter Angle GIT" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="463" y="87"/>
+		<location x="503" y="70"/>
 	</widget>
 	<widget field="Shooter Speed GIT" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="241" y="89"/>
+		<location x="503" y="49"/>
 	</widget>
-	<widget field="Shooter Speed IO" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="1" y="159"/>
-	</widget>
-	<widget field="Climber Down Limit Switch" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="311" y="536"/>
-	</widget>
-	<widget field="Climber Up Limit Switch" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="318" y="514"/>
-		<width>201</width>
-		<height>20</height>
+	<widget field="Shooter Speed Period" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="221" y="387"/>
 	</widget>
 	<widget field="Shooter Switch" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="359" y="489"/>
+		<location x="221" y="366"/>
 	</widget>
-	<widget field="Frisbee Shoot" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.CommandButton">
-		<location x="5" y="286"/>
-		<width>236</width>
-		<height>152</height>
+	<widget field="turn sensitivity" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="357"/>
 	</widget>
 	<widget field="Autonomous modes:" type="String Chooser" class="edu.wpi.first.smartdashboard.gui.elements.Chooser">
-		<location x="3" y="477"/>
-	</widget>
-	<widget field="Frisbee Pickup" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="871" y="250"/>
-	</widget>
-	<widget field="Drive To Frisbee" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="1236" y="520"/>
-	</widget>
-	<widget field="drive to size" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="1129" y="426"/>
-	</widget>
-	<widget field="pixel to degree" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="1055" y="501"/>
-	</widget>
-	<widget field="Set Pickup Suction" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="852" y="126"/>
-	</widget>
-	<widget field="Pickup Suction" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="856" y="106"/>
-	</widget>
-	<widget field="Set Pickup Position" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="849" y="219"/>
+		<location x="221" y="0"/>
 	</widget>
 	<widget field="Pickup Position" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="854" y="203"/>
+		<location x="0" y="391"/>
 	</widget>
-	<widget field="Test Angle Adjust" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="1114" y="390"/>
+	<widget field="Autonomous RPM Shoot from Center" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="522" y="15"/>
 	</widget>
-	<widget field="UpdateShooterPID" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="1014" y="2"/>
-	</widget>
-	<widget field="Teleoperated" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="976" y="420"/>
-	</widget>
-	<widget field="Set Shooter Speed Joystick" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="839" y="493"/>
-	</widget>
-	<widget field="Set Shooter Speed" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="256" y="135"/>
-	</widget>
-	<widget field="Shooter speed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="263" y="111"/>
-		<height>20</height>
-	</widget>
-	<widget field="Set Shooter Angle Joystick" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="1350" y="329"/>
-	</widget>
-	<widget field="Set Shooter Angle" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="478" y="133"/>
-	</widget>
-	<widget field="Shooter Angle:" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="480" y="110"/>
-	</widget>
-	<widget field="Frisbee Aim And Shoot" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="1097" y="452"/>
-	</widget>
-	<widget field="Frisbee Aim" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="1238" y="484"/>
-	</widget>
-	<widget field="Display Pump Status" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="917" y="458"/>
-	</widget>
-	<widget field="Climber Retract" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="1422" y="8"/>
-	</widget>
-	<widget field="Climber Extend" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="1422" y="37"/>
-	</widget>
-	<widget field="Climb Abort" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="1429" y="112"/>
-	</widget>
-	<widget field="Climb" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="1456" y="78"/>
-	</widget>
-	<widget field="Chassis Turn Angle" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="1400" y="509"/>
-	</widget>
-	<widget field="Chassis Drive to Wall" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="1395" y="470"/>
-	</widget>
-	<widget field="Autonomous Shoot from Left" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="1364" y="436"/>
-	</widget>
-	<widget field="Autonomous Shoot from Right" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="1356" y="405"/>
-	</widget>
-	<widget field="Autonomous Shoot from Center" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="1347" y="374"/>
-	</widget>
-	<widget field="Shooter Voltage:" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="81"/>
+	<widget field="Target Type" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="336"/>
 	</widget>
 	<widget field="Shooter Speed P Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="223" y="1"/>
+		<location x="0" y="315"/>
 	</widget>
 	<widget field="Shooter Speed I Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="225" y="22"/>
+		<location x="0" y="294"/>
 	</widget>
 	<widget field="Shooter Speed D Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="222" y="42"/>
+		<location x="0" y="273"/>
 	</widget>
 	<widget field="Shooter Angle P Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="447" y="1"/>
+		<location x="0" y="252"/>
 	</widget>
 	<widget field="Shooter Angle I Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<loc
+		<location x="0" y="231"/>
+	</widget>
+	<widget field="Shooter Angle D Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="210"/>
+	</widget>
+	<widget field="Shooter Aim P: " type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="189"/>
+	</widget>
+	<widget field="Shooter Aim I: " type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="168"/>
+	</widget>
+	<widget field="Shooter Aim D: " type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="147"/>
+	</widget>
+	<widget field="Pickup P Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="126"/>
+	</widget>
+	<widget field="Pickup I Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="105"/>
+	</widget>
+	<widget field="Pickup D Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="84"/>
+	</widget>
+	<widget field="Chassis Turn P Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="63"/>
+	</widget>
+	<widget field="Chassis Turn I Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="42"/>
+	</widget>
+	<widget field="Chassis Turn D Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="21"/>
+	</widget>
+	<widget field="Chassis Turn Angle Degrees" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="0"/>
+	</widget>
+</dashboard>
+<live-window>
+</live-window>
+</xml>

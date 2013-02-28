@@ -25,10 +25,6 @@ void FrisbeeShootReversed::Initialize()
 		// reset and start the timer
 		pusherTimer->Reset();
 		pusherTimer->Start();
-		
-		// <DEBUG>
-		printf("ERIF\n");
-		// </DEBUG>
 }
 // Called repeatedly when this Command is scheduled to run
 void FrisbeeShootReversed::Execute() {

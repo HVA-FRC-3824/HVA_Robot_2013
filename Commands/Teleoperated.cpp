@@ -30,7 +30,6 @@ void Teleoperated::Execute()
    //Robot::shooterWheelVoltage->motor->Set(speed);
    
    SmartDashboard::PutBoolean("Shooter Switch", Robot::shooterPusher->stopSwitch->Get());
-   SmartDashboard::PutNumber("Shooter Speed IO", Robot::shooterWheel->encoder->Get());
    SmartDashboard::PutNumber("Shooter Speed Period", (1.0/Robot::shooterWheel->encoder->GetPeriod())*60.0);
    SmartDashboard::PutNumber("Shooter Speed GIT", Robot::shooterWheel->pidEncoder->PIDGet());
    SmartDashboard::PutNumber("Shooter Angle GIT", Robot::shooterAngleAdjust->potentiometer->PIDGet());

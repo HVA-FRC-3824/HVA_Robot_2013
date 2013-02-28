@@ -9,6 +9,7 @@
 // it from being updated in th future.
 #include "SetShooterSpeed.h"
 #include <math.h>
+
 SetShooterSpeed::SetShooterSpeed(double speed, bool isRPM) 
 {
 	// Use requires() here to declare subsystem dependencies
@@ -53,6 +54,7 @@ void SetShooterSpeed::Initialize()
 		{
 			// read the desired shooter RPM from the constructor
 			Robot::shooterWheel->getPIDController()->SetSetpoint(m_shooterSpeed);
+			
 			// enable the PID controller
 			Robot::shooterWheel->getPIDController()->Enable(); 
 		}
@@ -72,9 +74,8 @@ void SetShooterSpeed::Initialize()
 		{
 		   // read the value from the pot
 			m_shooterSpeed = DriverStation::GetInstance()->GetEnhancedIO().GetAnalogIn(ANALOG_SHOOTER_SPEED);
-			
 			// Convert the pot value to speed
-			m_shooterSpeed = m_shooterSpeed*(SHOOTER_SPEED_MAX_VALUE - SHOOTER_SPEED_MIN_VALUE)/3.3 + SHOOTER_SPEED_MIN_VALUE;
+			m_shooterSpeed = m_shooterSpeed * (SHOOTER_SPEED_MAX_VALUE - SHOOTER_SPEED_MIN_VALUE) / 3.3 + SHOOTER_SPEED_MIN_VALUE;
 			
 			if (m_shooterSpeed > SHOOTER_SPEED_MAX_VALUE)
 				m_shooterSpeed = SHOOTER_SPEED_MAX_VALUE;
@@ -119,7 +120,7 @@ void SetShooterSpeed::Execute()
 			m_shooterSpeed = DriverStation::GetInstance()->GetEnhancedIO().GetAnalogIn(ANALOG_SHOOTER_SPEED);
 			
 			// Convert the pot value to RPM
-			m_shooterSpeed = m_shooterSpeed*(SHOOTER_SPEED_MAX_VALUE - SHOOTER_SPEED_MIN_VALUE)/3.3 + SHOOTER_SPEED_MIN_VALUE;
+			m_shooterSpeed = m_shooterSpeed * (SHOOTER_SPEED_MAX_VALUE - SHOOTER_SPEED_MIN_VALUE)/3.3 + SHOOTER_SPEED_MIN_VALUE;
 			
 			if (m_shooterSpeed > SHOOTER_SPEED_MAX_VALUE)
 				m_shooterSpeed = SHOOTER_SPEED_MAX_VALUE;
@@ -130,6 +131,7 @@ void SetShooterSpeed::Execute()
 			Robot::shooterWheel->getPIDController()->SetSetpoint(m_shooterSpeed);
 		}
 	}
+	
 	// <DEBUG>
 	SmartDashboard::PutNumber("Shooter Speed", m_shooterSpeed);
 	SmartDashboard::PutBoolean("isRPM", m_isRPM);
