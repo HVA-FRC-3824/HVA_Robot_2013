@@ -8,26 +8,20 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef UPDATESHOOTERPID_H
-#define UPDATESHOOTERPID_H
+#ifndef AUTONOMOUS_SHOOT_FROM_CENTER_UNDER_GOAL_H
+#define AUTONOMOUS_SHOOT_FROM_CENTER_UNDER_GOAL_H
 
-#include "Commands/Subsystem.h"
-#include "../Robot.h"
+#include "Commands/CommandGroup.h"
 
 /**
  *
  *
  * @author ExampleAuthor
  */
-class UpdateShooterPID: public Command 
+class AutonomousShootfromCenterUnderGoal: public CommandGroup 
 {
-public:
-	UpdateShooterPID();
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
+public:	
+	AutonomousShootfromCenterUnderGoal();
 };
 
 #endif

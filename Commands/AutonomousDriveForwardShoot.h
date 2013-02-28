@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #ifndef AUTONOMOUS_DRIVE_FORWARD_SHOOT_H
 #define AUTONOMOUS_DRIVE_FORWARD_SHOOT_H
 
@@ -20,7 +18,8 @@
  *
  * @author ExampleAuthor
  */
-class AutonomousDriveForwardShoot: public CommandGroup {
+class AutonomousDriveForwardShoot: public CommandGroup
+{
 public:	
 	AutonomousDriveForwardShoot();
 };

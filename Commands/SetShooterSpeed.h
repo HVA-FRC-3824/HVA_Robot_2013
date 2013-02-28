@@ -12,8 +12,8 @@
 #define SET_SHOOTER_SPEED_H
 
 #include "Commands/Subsystem.h"
-#include "../Robot.h"
 #include "Timer.h"
+#include "../Robot.h"
 #include "../OI.h"
 
 /**

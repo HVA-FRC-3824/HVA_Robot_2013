@@ -8,45 +8,52 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #include "AutonomousRPMShootMiddleGoalHard.h"
+#include "SetShooterSpeed.h"
+#include "SetShooterAngle.h"
+#include "FrisbeeShoot.h"
 
-AutonomousRPMShootMiddleGoalHard::AutonomousRPMShootMiddleGoalHard() {
-	// Add Commands here:
-	// e.g. AddSequential(new Command1());
-	//      AddSequential(new Command2());
-	// these will run in order.
+#define SHOOTER_SPEED               3500.0
+#define SHOOTER_SPEED_TIMEOUT          3.0
 
-	AddSequential(new SetShooterSpeed(AUTO_SHOOTER_SPEED, true));
-	
-	AddSequential(new WaitCommand(AUTO_SHOOT_WAIT1));
-	
-	AddSequential(new FrisbeeShoot());
-	
-	AddSequential(new WaitCommand(AUTO_SHOOT_WAIT2));
-	
-	AddSequential(new FrisbeeShoot());
-	
-	AddSequential(new WaitCommand(AUTO_SHOOT_WAIT3));
-	
-	AddSequential(new FrisbeeShoot());
+#define SHOOTER_ANGLE                410.0
+#define SHOOTER_ANGLE_TIMEOUT          3.0
 
-	AddSequential(new WaitCommand(AUTO_SHOOT_WAIT4));
-	
-	AddSequential(new FrisbeeShoot());
-	
-	AddSequential(new SetShooterSpeed(0.0, false));
-	
-	// To run multiple commands at the same time,
-	// use AddParallel()
-	// e.g. AddParallel(new Command1());
-	//      AddSequential(new Command2());
-	// Command1 and Command2 will run in parallel.
+#define WAIT_FOR_STABILITY             2.0
+#define SHOOTER_WAIT                   0.5
 
-	// A command group will require all of the subsystems that each member
-	// would require.
-	// e.g. if Command1 requires chassis, and Command2 requires arm,
-	// a CommandGroup containing them would require both the chassis and the
-	// arm.
+AutonomousRPMShootMiddleGoalHard::AutonomousRPMShootMiddleGoalHard() 
+{
+   // set the sooter speed
+   AddParallel(new SetShooterSpeed(SHOOTER_SPEED, true), SHOOTER_SPEED_TIMEOUT);
+
+   // set the shooter angle
+   AddSequential(new SetShooterAngle(SHOOTER_ANGLE), SHOOTER_ANGLE_TIMEOUT);
+
+   // wait to ensure the shooter and angle are complete
+   AddSequential(new WaitCommand(WAIT_FOR_STABILITY));
+
+   // shoot 1st frisbee
+   AddSequential(new FrisbeeShoot());
+
+   // wait between shots
+   AddSequential(new WaitCommand(SHOOTER_WAIT));
+
+   // shoot 2nd frisbee
+   AddSequential(new FrisbeeShoot());
+
+   // wait between shots
+   AddSequential(new WaitCommand(SHOOTER_WAIT));
+
+   // shoot 3rd frisbee
+   AddSequential(new FrisbeeShoot());
+
+   // wait between shots
+   AddSequential(new WaitCommand(SHOOTER_WAIT));
+
+   // shoot 4rd frisbee in case one misfired
+   AddSequential(new FrisbeeShoot());
+   
+   // stop the shooter
+   AddSequential(new SetShooterSpeed(0.0, false)); 
 }

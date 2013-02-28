@@ -8,35 +8,18 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #ifndef AUTONOMOUS_RPM_DRIVE_FORWARD_SHOOT_H
 #define AUTONOMOUS_RPM_DRIVE_FORWARD_SHOOT_H
-\
-#define AUTO_SHOOT_WAIT1						3.0
-#define AUTO_SHOOT_WAIT2						3.0
-#define AUTO_SHOOT_WAIT3						3.0
-#define AUTO_SHOOT_WAIT4						3.0
-
-#define AUTO_DRIVE_POWER					1.0
-#define AUTO_DRIVE_TIME						3.0
-
-#define AUTO_SHOOTER_SPEED					3000
 
 #include "Commands/CommandGroup.h"
-#include "ChassisDriveDistanceStraight.h"
-#include "SetShooterSpeed.h"
-#include "FrisbeeShoot.h"
+
 /**
  *
  *
  * @author ExampleAuthor
  */
-class AutonomousRPMDriveForwardShoot: public CommandGroup {
-private:
-	double power;
-	double duration;
-	double shooterSpeed;
+class AutonomousRPMDriveForwardShoot: public CommandGroup 
+{
 public:	
 	AutonomousRPMDriveForwardShoot();
 

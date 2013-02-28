@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #ifndef AUTONOMOUS_RPM_SHOOT_FROM_LEFT_H
 #define AUTONOMOUS_RPM_SHOOT_FROM_LEFT_H
 
@@ -20,7 +18,8 @@
  *
  * @author ExampleAuthor
  */
-class AutonomousRPMShootfromLeft: public CommandGroup {
+class AutonomousRPMShootfromLeft: public CommandGroup
+{
 public:	
 	AutonomousRPMShootfromLeft();
 };

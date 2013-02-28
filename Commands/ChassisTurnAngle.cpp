@@ -25,14 +25,15 @@ ChassisTurnAngle::ChassisTurnAngle(double turnAngle) : degreesToTurn(turnAngle),
 void ChassisTurnAngle::Initialize() 
 {  
    // set the target turn position
-   if(!anglePassed)
+   if (!anglePassed)
     	degreesToTurn = SmartDashboard::GetNumber("Chassis Turn Angle Degrees");
+   
 	float goToGyro = (degreesToTurn + Robot::drivetrain->gyro->GetAngle());
 	
 	// setup the PID controller and enable
 	PIDcontroller.SetPID(SmartDashboard::GetNumber("Chassis Turn P Term"),
-		      SmartDashboard::GetNumber("Chassis Turn I Term"), 
-		      SmartDashboard::GetNumber("Chassis Turn D Term"));
+		                  SmartDashboard::GetNumber("Chassis Turn I Term"), 
+		                  SmartDashboard::GetNumber("Chassis Turn D Term"));
 	PIDcontroller.SetSetpoint(goToGyro);
 	PIDcontroller.Enable();
 }

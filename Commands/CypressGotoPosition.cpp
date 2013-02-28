@@ -12,37 +12,43 @@
 #include "SetShooterSpeed.h"
 CypressGotoPosition::CypressGotoPosition() 
 {
-	CypressGotoPosition(0.0,0.0);
+	CypressGotoPosition(0.0, 0.0, 0.0, false);
 }
-CypressGotoPosition::CypressGotoPosition(double angle, double velocity, bool isRPM)
+CypressGotoPosition::CypressGotoPosition(double angle, double velocity, double voltage, bool isRPM)
 {
 	// Read in the parameters and store them
-	m_angle = angle;
-	m_velocity = velocity;
-	m_isRPM = isRPM;
+	m_angle         = angle;
+	m_velocity      = velocity;
+	m_voltage       = voltage;
+	m_isRPM         = isRPM;
 	setShooterAngle = NULL;
 	setShooterSpeed = NULL;
 }
 // Called just before this Command runs the first time
 void CypressGotoPosition::Initialize() 
 {
-	printf("IN Cypress Initialize\n");
-	
 	// Check to see if automated shooter position
 	if (!(DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_ANGLE_ADJUSTMENT_MANUAL)) == false)
 	{
-		if (setShooterAngle == NULL || !setShooterAngle->IsRunning())
+	   // determine if the shooter angle command class needs to be constructed
+		if ((setShooterAngle == NULL) || (!setShooterAngle->IsRunning()))
 		{
 			// If the command is created delete
-			if(setShooterAngle != NULL)
+			if (setShooterAngle != NULL)
 			{
+			   // remove the shooter angle command class
 				delete(setShooterAngle);
 			}
+			
+			// set the shooter angle from the member variable
 			setShooterAngle = new SetShooterAngle(m_angle);
+			
+			// start the shooter angle command class
 			setShooterAngle->Start();
 		}
 		else
 		{
+		   // shooter angle is running so stop 
 			setShooterAngle->Cancel();
 		}
 	}
@@ -50,19 +56,27 @@ void CypressGotoPosition::Initialize()
 	// Check to see if automated shooter speed
 	if (!(DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_SPEED_ADJUSTMENT_MANUAL)) == false)
 	{
-		if (setShooterSpeed == NULL || !setShooterSpeed->IsRunning())
+      // determine if the shooter speed command class needs to be constructed
+		if ((setShooterSpeed == NULL) || (!setShooterSpeed->IsRunning()))
 		{
 			// If the command is created delete
-			if(setShooterSpeed != NULL)
+			if (setShooterSpeed != NULL)
 			{
+            // remove the shooter speed command class
 				delete(setShooterSpeed);
 			}
 			
-			setShooterSpeed = new SetShooterSpeed(m_velocity, m_isRPM);
+         // set the shooter speed from the member variable
+			if (m_isRPM == true)		   
+			   setShooterSpeed = new SetShooterSpeed(m_velocity, true);
+			else
+            setShooterSpeed = new SetShooterSpeed(m_voltage, false);
+         // start the shooter speed command class
 			setShooterSpeed->Start();
 		}
 		else
 		{
+         // shooter speed is running so stop 
 			setShooterSpeed->Cancel();
 		}
 	}

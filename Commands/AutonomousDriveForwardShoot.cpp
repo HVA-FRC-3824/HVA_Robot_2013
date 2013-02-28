@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #include "AutonomousDriveForwardShoot.h"
 #include "ChassisDriveDistanceStraight.h"
 #include "ChassisDrivetoWallStraight.h"
@@ -17,40 +15,61 @@
 #include "SetShooterAngle.h"
 #include "FrisbeeShoot.h"
 
+#define DISTANCE_FROM_WALL             120.0
+#define DRIVE_POWER                      0.5
+
+#define SHOOTER_VOLTAGE_MAXIMUM          1.0
+#define SHOOTER_VOLTAGE                  0.62
+#define SHOOTER_VOLTAGE_TIMEOUT          1.0
+
+#define SHOOTER_ANGLE                  653.0
+#define SHOOTER_ANGLE_TIMEOUT            3.0
+
+#define SHOOTER_SETTLE_TIME              2.0
+
+#define SHOOTER_WAIT                     0.0
+
 AutonomousDriveForwardShoot::AutonomousDriveForwardShoot() 
 {
-	// Drive Forward
-	AddSequential(new ChassisDrivetoWallStraight(120.0, 0.5));
+	// drive forward
+	AddSequential(new ChassisDrivetoWallStraight(DISTANCE_FROM_WALL, DRIVE_POWER));
 	
-	// ramp the shooter speed up
-	AddSequential(new SetShooterSpeed(1.0, false), 1.0);
+	// set shooter speed to maximum to reduce the ramp up time
+	AddParallel(new SetShooterSpeed(SHOOTER_VOLTAGE_MAXIMUM, false), SHOOTER_VOLTAGE_TIMEOUT);
+	
 	// set the shooter angle
-	AddSequential(new SetShooterAngle(653), 3.0);
+	AddSequential(new SetShooterAngle(SHOOTER_ANGLE), SHOOTER_ANGLE_TIMEOUT);
+	
+	// wait to ensure the angle is at the proper location
 	AddSequential(new WaitCommand(1.0));
 	
-	AddParallel(new SetShooterSpeed(0.62, false), 3.0);
+	// lower to shooter speed to the proper voltage
+	AddParallel(new SetShooterSpeed(SHOOTER_VOLTAGE, false), SHOOTER_VOLTAGE_TIMEOUT);
 	
-	AddSequential(new WaitCommand(2.0));
+	// wait for the shooter to settle
+	AddSequential(new WaitCommand(SHOOTER_SETTLE_TIME));
 	
 	// shoot 1st frisbee
-    AddSequential(new FrisbeeShoot());
+   AddSequential(new FrisbeeShoot());
    
-    // Slow the next shoots down
-   //AddParallel(new SetShooterSpeed(0.5, false), 3.0);
+   // wait between shots
+   AddSequential(new WaitCommand(SHOOTER_WAIT));
     
-    // wait
-    AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT1));
+   // shoot 2nd frisbee
+   AddSequential(new FrisbeeShoot());
     
-    // shoot 2nd frisbee
-    AddSequential(new FrisbeeShoot());
+   // wait between shots
+   AddSequential(new WaitCommand(SHOOTER_WAIT));
     
-    // wait
-    AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT2));
-    
-    // shoot 3rd frisbee
-    AddSequential(new FrisbeeShoot());
+   // shoot 3rd frisbee
+   AddSequential(new FrisbeeShoot());
    
-    // Stop the Shooter
-    AddParallel(new SetShooterSpeed(0, false));
-	
+   // wait between shots
+   AddSequential(new WaitCommand(SHOOTER_WAIT));
+    
+   // shoot "4 h" frisbee in case one missfired
+   AddSequential(new FrisbeeShoot());
+   
+   // stop the Shooter
+   AddParallel(new SetShooterSpeed(0, false));
 }

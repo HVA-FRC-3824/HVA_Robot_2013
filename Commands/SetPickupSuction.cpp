@@ -26,7 +26,7 @@ SetPickupSuction::SetPickupSuction(bool suction_parameter)
 void SetPickupSuction::Initialize() 
 {
 	// Check if the suction is already set
-	if(suctionSetInConstructor == false)
+	if (suctionSetInConstructor == false)
 	{
 		suction = SmartDashboard::GetBoolean("Pickup Suction");
 	}
@@ -56,4 +56,5 @@ void SetPickupSuction::End()
 // subsystems is scheduled to run
 void SetPickupSuction::Interrupted()
 {
+   
 }

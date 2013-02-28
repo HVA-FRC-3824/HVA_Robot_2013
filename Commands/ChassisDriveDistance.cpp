@@ -8,6 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 #include "ChassisDriveDistance.h"
+#define DRIVING_DIRECTION           0.0
+#define DRIVING_ROTATION            0.0  
 ChassisDriveDistance::ChassisDriveDistance(float duration, float power) 
 {
 	// Use requires() here to declare subsystem dependencies

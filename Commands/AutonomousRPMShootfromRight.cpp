@@ -16,42 +16,58 @@
 #include "SetShooterAngle.h"
 #include "FrisbeeShoot.h"
 
-#define AUTONOMOUS_DRIVE_FORWARD_DISTANCE   2.0
-#define AUTONOMOUS_TURN_ANGLE		  -15.0
+#define SHOOTER_SPEED               2500.0
+#define SHOOTER_SPEED_TIMEOUT          3.0
 
-AutonomousRPMShootfromRight::AutonomousRPMShootfromRight() {
-	// Add Commands here:
-	// e.g. AddSequential(new Command1());
-	//      AddSequential(new Command2());
-	// these will run in order.  
-	// To run multiple commands at the same time,
-	// use AddParallel()
-	// e.g. AddParallel(new Command1());
-	//      AddSequential(new Command2());
-	// Command1 and Command2 will run in parallel.
+#define SHOOTER_ANGLE                585.0
+#define SHOOTER_ANGLE_TIMEOUT          3.0
 
-	//Ramp up shooter speed
-	AddParallel(new SetShooterSpeed(2500, true));
-	//Set shooter angle
-	AddParallel(new SetShooterAngle(585));
-	//Drive forward
-	AddSequential(new ChassisDriveDistance(AUTONOMOUS_DRIVE_FORWARD_DISTANCE, DRIVING_POWER));
-	//Turn left
-	AddSequential(new ChassisTurnAngle(AUTONOMOUS_TURN_ANGLE));
-	//Shoot first Frisbee
-	AddSequential(new FrisbeeShoot());
-	//wait
-	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT1));
-	//Shoot second Frisbee
-	AddSequential(new FrisbeeShoot());
-	//wait
-	AddSequential(new WaitCommand(AUTONOMOUS_SHOOT_WAIT2));
-	//Shoot third Frisbee
-	AddSequential(new FrisbeeShoot());
-	
-	// A command group will require all of the subsystems that each member
-	// would require.
-	// e.g. if Command1 requires chassis, and Command2 requires arm,
-	// a CommandGroup containing them would require both the chassis and the
-	// arm.
+#define WAIT_FOR_STABILITY             1.0
+#define SHOOTER_WAIT                   0.5
+
+#define DRIVE_FORWARD_TIME             2.0
+#define TURN_ANGLE		             -15.0
+
+#define DRIVE_POWER                    0.2
+
+AutonomousRPMShootfromRight::AutonomousRPMShootfromRight() 
+{
+   // set the sooter speed
+   AddParallel(new SetShooterSpeed(SHOOTER_SPEED, true), SHOOTER_SPEED_TIMEOUT);
+
+   // set the shooter angle
+   AddSequential(new SetShooterAngle(SHOOTER_ANGLE), SHOOTER_ANGLE_TIMEOUT);
+
+   // drive forward
+   AddSequential(new ChassisDriveDistance(DRIVE_FORWARD_TIME, DRIVE_POWER));
+
+   // turn left
+   AddSequential(new ChassisTurnAngle(TURN_ANGLE));
+   
+   // wait to ensure the shooter and angle are complete
+   AddSequential(new WaitCommand(WAIT_FOR_STABILITY));
+
+   // shoot 1st frisbee
+   AddSequential(new FrisbeeShoot());
+
+   // wait between shots
+   AddSequential(new WaitCommand(SHOOTER_WAIT));
+
+   // shoot 2nd frisbee
+   AddSequential(new FrisbeeShoot());
+
+   // wait between shots
+   AddSequential(new WaitCommand(SHOOTER_WAIT));
+
+   // shoot 3rd frisbee
+   AddSequential(new FrisbeeShoot());
+
+   // wait between shots
+   AddSequential(new WaitCommand(SHOOTER_WAIT));
+
+   // shoot 4rd frisbee in case one misfired
+   AddSequential(new FrisbeeShoot());
+   
+   // stop the shooter
+   AddSequential(new SetShooterSpeed(0.0, false)); 
 }

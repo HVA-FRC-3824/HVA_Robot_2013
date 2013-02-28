@@ -8,30 +8,20 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
+#ifndef AUTONOMOUS_RPM_SHOOT_TOP__GOAL_FROM_SIDE_H
+#define AUTONOMOUS_RPM_SHOOT_TOP__GOAL_FROM_SIDE_H
 
-#ifndef FRISBEE_SHOOT_REVERSED_H
-#define FRISBEE_SHOOT_REVERSED_H
-
-
-#include "Commands/Subsystem.h"
-#include "../Robot.h"
+#include "Commands/CommandGroup.h"
 
 /**
  *
  *
  * @author ExampleAuthor
  */
-class FrisbeeShootReversed: public Command 
+class AutonomousRPMShootTopGoalfromSide: public CommandGroup 
 {
-private:
-	Timer *pusherTimer;
-public:
-	FrisbeeShootReversed();
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
+public:	
+	AutonomousRPMShootTopGoalfromSide();
 };
 
 #endif

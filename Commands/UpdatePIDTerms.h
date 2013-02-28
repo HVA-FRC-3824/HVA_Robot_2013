@@ -8,20 +8,26 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef AUTONOMOUS_SHOOT_MIDDLE_GOAL_HARD_TO_CENTERLINE_H
-#define AUTONOMOUS_SHOOT_MIDDLE_GOAL_HARD_TO_CENTERLINE_H
+#ifndef UPDATEPIDTERMS_H
+#define UPDATEPIDTERMS_H
 
-#include "Commands/CommandGroup.h"
+#include "Commands/Subsystem.h"
+#include "../Robot.h"
 
 /**
  *
  *
  * @author ExampleAuthor
  */
-class AutonomousShootMiddleGoalHardtoCenterline: public CommandGroup
+class UpdatePIDTerms: public Command 
 {
-public:	
-	AutonomousShootMiddleGoalHardtoCenterline();
+public:
+	UpdatePIDTerms();
+	virtual void Initialize();
+	virtual void Execute();
+	virtual bool IsFinished();
+	virtual void End();
+	virtual void Interrupted();
 };
 
 #endif

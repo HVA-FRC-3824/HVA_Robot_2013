@@ -9,7 +9,7 @@
 // it from being updated in th future.
 #include "FrisbeeShoot.h"
 #define PUSHER_TIMER                 0.25
-#define PUSHER_TIMEOUT				  1.2
+#define PUSHER_TIMEOUT				    1.2
 #define PUSHER_REVERSE_TIME			 0.15
 FrisbeeShoot::FrisbeeShoot() 
 {
@@ -28,19 +28,16 @@ void FrisbeeShoot::Initialize()
 	
    // start the shooter
 	Robot::shooterPusher->motor->Set(Relay::kReverse);
+	
 	// reset and start the timer
 	m_pusherTimer->Reset();
 	m_pusherTimer->Start();
-	
-	// <DEBUG>
-	printf("FIRE\n");
-	// </DEBUG>
 }
 // Called repeatedly when this Command is scheduled to run
 void FrisbeeShoot::Execute() 
 {
 	// Checkout jam timeout
-	if(m_pusherTimer->Get() > PUSHER_TIMEOUT)
+	if (m_pusherTimer->Get() > PUSHER_TIMEOUT)
 	{
 		// Set jammed true
 		m_isJammed = true;
@@ -55,22 +52,25 @@ void FrisbeeShoot::Execute()
 // Make this return true when this Command no longer needs to run execute()
 bool FrisbeeShoot::IsFinished() 
 {
-   //don't read stopSwitch until we know we are off it
+   // determine the state (not jammed or jammed)
 	if (m_isJammed == false)
 	{
+	   // determine if the shooter is off the limit switch at the start
 	   if (m_pusherTimer->Get() > PUSHER_TIMER) 
 	   {
+	      // determine if the pusher limit switch has been activated
 			return Robot::shooterPusher->stopSwitch->Get();
 	   }
 	}
 	else
 	{
+	   // determine if the reverse time has expired
 		if (m_pusherTimer->Get() > PUSHER_REVERSE_TIME) 
-		{
 			return true;
-		}
 	}
-  return false;
+	
+	// command not complete
+   return false;
 }
 // Called once after isFinished returns true
 void FrisbeeShoot::End() 

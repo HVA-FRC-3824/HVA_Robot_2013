@@ -30,22 +30,19 @@ ShooterWheel::ShooterWheel() : Subsystem("ShooterWheel")
  
 PIDController *ShooterWheel::getPIDController() 
 {
-	if (PIDcontroller==NULL) 
+	if (PIDcontroller == NULL) 
 	{
-		printf("PID Constructed %f, %f, %f\n", 
-		       SmartDashboard::GetNumber("Shooter Speed P Term"),
-			    SmartDashboard::GetNumber("Shooter Speed I Term"), 
-				 SmartDashboard::GetNumber("Shooter Speed D Term"));
 		PIDcontroller = new PIDController(
 			  SmartDashboard::GetNumber("Shooter Speed P Term"),
 			  SmartDashboard::GetNumber("Shooter Speed I Term"), 
 			  SmartDashboard::GetNumber("Shooter Speed D Term"),
 			  pidEncoder, motor);
+		
 		PIDcontroller->SetOutputRange(0.0, 1.0);
 		// BAD WOLF DO NOT USE ABSOLUTETOLORANCE LOCKS UP NETWORK TABLES
 		//PIDcontroller->SetAbsoluteTolerance(100);
 		//PIDcontroller->SetSetpoint(0);
-		//PIDcontroller->Enable();
+		//PIDcontroller->Enable();  // enabled in SetShooterSpeed
 	}
 	return PIDcontroller;
 }

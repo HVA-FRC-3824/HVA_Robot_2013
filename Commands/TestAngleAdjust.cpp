@@ -11,6 +11,11 @@
 #include "TestAngleAdjust.h"
 #include "SetShooterAngle.h"
 #include "ChassisDriveDistance.h"
+
+#define DRIVING_POWER               0.2
+#define DRIVING_DIRECTION           0.0
+#define DRIVING_ROTATION            0.0  
+
 TestAngleAdjust::TestAngleAdjust() 
 {
 	// Add Commands here:

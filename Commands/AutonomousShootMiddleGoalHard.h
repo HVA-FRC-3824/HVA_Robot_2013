@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #ifndef AUTONOMOUS_SHOOT_MIDDLE_GOAL_HARD_H
 #define AUTONOMOUS_SHOOT_MIDDLE_GOAL_HARD_H
 
@@ -20,7 +18,8 @@
  *
  * @author ExampleAuthor
  */
-class AutonomousShootMiddleGoalHard: public CommandGroup {
+class AutonomousShootMiddleGoalHard: public CommandGroup
+{
 public:	
 	AutonomousShootMiddleGoalHard();
 };

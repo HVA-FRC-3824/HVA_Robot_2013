@@ -8,29 +8,20 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef BUTTON_TEST_H
-#define BUTTON_TEST_H
+#ifndef AUTONOMOUS_RPM_SHOOT_FROM_CENTER_UNDER_GOAL_H
+#define AUTONOMOUS_RPM_SHOOT_FROM_CENTER_UNDER_GOAL_H
 
-#include "Commands/Subsystem.h"
-#include "../Robot.h"
+#include "Commands/CommandGroup.h"
 
 /**
  *
  *
  * @author ExampleAuthor
  */
-class ButtonTest: public Command 
+class AutonomousRPMShootfromCenterUnderGoal: public CommandGroup 
 {
-private:
-	int m_number;
-public:
-	ButtonTest(int number);
-	ButtonTest();
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
+public:	
+	AutonomousRPMShootfromCenterUnderGoal();
 };
 
 #endif

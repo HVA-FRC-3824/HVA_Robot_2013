@@ -12,8 +12,6 @@
 #define AUTONOMOUS_SHOOT_FROM_CENTER_H
 
 #include "Commands/CommandGroup.h"
-#include "../Robot.h"
-#include "Commands/Subsystem.h"
 
 /**
  * Autonomous command that shoots three disks from the center.

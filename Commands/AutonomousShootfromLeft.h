@@ -12,7 +12,6 @@
 #define AUTONOMOUS_SHOOT_FROM_LEFT_H
 
 #include "Commands/CommandGroup.h"
-#include "../Robot.h"
 
 /**
  * Autonomous Command. Start from left corner of pyramid, drives forward,

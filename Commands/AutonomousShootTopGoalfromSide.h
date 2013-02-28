@@ -8,26 +8,20 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef TEST_ANGLE_MODIFICATION_H
-#define TEST_ANGLE_MODIFICATION_H
+#ifndef AUTONOMOUS_SHOOT_TOP__GOAL_FROM_SIDE_H
+#define AUTONOMOUS_SHOOT_TOP__GOAL_FROM_SIDE_H
 
-#include "Commands/Subsystem.h"
-#include "../Robot.h"
+#include "Commands/CommandGroup.h"
 
 /**
  *
  *
  * @author ExampleAuthor
  */
-class TestAngleModification: public Command 
+class AutonomousShootTopGoalfromSide: public CommandGroup
 {
-public:
-	TestAngleModification();
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
+public:	
+	AutonomousShootTopGoalfromSide();
 };
 
 #endif

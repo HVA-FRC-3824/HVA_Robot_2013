@@ -8,37 +8,51 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#include "AutonomousShootfromCenter.h"
+#include "AutonomousShootfromCenterUnderGoal.h"
 #include "ChassisDriveDistanceStraight.h"
 #include "SetShooterSpeed.h"
 #include "SetShooterAngle.h"
 #include "FrisbeeShoot.h"
 
-#define DRIVE_BACK_TIME                0.6
-#define DRIVE_BACK_SPEED              -0.4
+#define DRIVE_BACK_TIME             0.6
+#define DRIVE_BACK_SPEED            0.4
 
-#define SHOOTER_VOLTAGE               0.64
-#define SHOOTER_VOLTAGE_TIMEUT         3.0
+#define DRIVE_FORWARD_TIME          0.6
+#define DRIVE_FORWARD_SPEED         0.4
 
-#define SHOOTER_ANGLE                354.0
-#define SHOOTER_ANGLE_TIMEOUT          3.0
+#define SHOOTER_LOWER_WAIT_TIME     3.0
+#define SHOOTER_RAISE_WAIT_TIME     3.0
 
-#define WAIT_FOR_STABILITY             4.0
-#define SHOOTER_WAIT                   0.5
+#define SHOOTER_VOLTAGE            0.6
+#define SHOOTER_VOLTAGE_TIMEUT     3.0
 
-AutonomousShootfromCenter::AutonomousShootfromCenter() 
+#define SHOOTER_ANGLE_SHOOT       354.0
+#define SHOOTER_ANGLE_TOWER         0.0
+#define SHOOTER_ANGLE_TIMEOUT       3.0
+
+#define SHOOTER_WAIT                0.0
+AutonomousShootfromCenterUnderGoal::AutonomousShootfromCenterUnderGoal() 
 {
    // backup to allow the shoot to lower
-   AddParallel(new ChassisDriveDistanceStraight(DRIVE_BACK_TIME, DRIVE_BACK_SPEED));
+   AddParallel(new ChassisDriveDistanceStraight(DRIVE_BACK_TIME, -DRIVE_BACK_SPEED));
  
    // start the shooter
    AddParallel(new SetShooterSpeed(SHOOTER_VOLTAGE, false), SHOOTER_VOLTAGE_TIMEUT);
    
-   // set the shooter angle
-   AddSequential(new SetShooterAngle(SHOOTER_ANGLE), SHOOTER_ANGLE_TIMEOUT);
+   // set the shooter angle to get below the tower
+   AddSequential(new SetShooterAngle(SHOOTER_ANGLE_TOWER), SHOOTER_ANGLE_TIMEOUT);
+   
+   // wait for shooter to lower
+   AddSequential(new WaitCommand(SHOOTER_LOWER_WAIT_TIME));
+   
+   // drive back to tower to shoot
+   AddSequential(new ChassisDriveDistanceStraight(DRIVE_FORWARD_TIME, DRIVE_FORWARD_SPEED));
+
+   // raise the shooter to shoot
+   AddSequential(new SetShooterAngle(SHOOTER_ANGLE_SHOOT), SHOOTER_ANGLE_TIMEOUT);
 
    // wait for shooter to lower
-   AddSequential(new WaitCommand(WAIT_FOR_STABILITY));
+   AddSequential(new WaitCommand(SHOOTER_RAISE_WAIT_TIME));
 
    // shoot 1st frisbee
    AddSequential(new FrisbeeShoot());

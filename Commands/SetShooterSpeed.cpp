@@ -44,7 +44,7 @@ void SetShooterSpeed::Initialize()
 	if (m_SpeedSpecifiedInConstructor == true) // use speed specified
 	{
 		// Voltage or PID control
-		if(m_isRPM == false)
+		if (m_isRPM == false)
 		{
 			// Voltage Mode
 			Robot::shooterWheel->getPIDController()->Disable();
@@ -53,17 +53,18 @@ void SetShooterSpeed::Initialize()
 		{
 			// read the desired shooter RPM from the constructor
 			Robot::shooterWheel->getPIDController()->SetSetpoint(m_shooterSpeed);
+			
 			// enable the PID controller
 			Robot::shooterWheel->getPIDController()->Enable(); 
 		}
 	}
-	else // values should be read from pot
+	else // values should be read from potentiometer
 	{
 		// Read if the driverStation is voltage or pid control
 		m_isRPM = !(DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_RPM_VOLTAGE));
 		
 		// Voltage or PID control
-		if(m_isRPM == false)
+		if (m_isRPM == false)
 		{
 			// Voltage Mode
 			Robot::shooterWheel->getPIDController()->Disable();
@@ -74,8 +75,9 @@ void SetShooterSpeed::Initialize()
 			m_shooterSpeed = DriverStation::GetInstance()->GetEnhancedIO().GetAnalogIn(ANALOG_SHOOTER_SPEED);
 			
 			// Convert the pot value to speed
-			m_shooterSpeed = m_shooterSpeed*(SHOOTER_SPEED_MAX_VALUE - SHOOTER_SPEED_MIN_VALUE)/3.3 + SHOOTER_SPEED_MIN_VALUE;
+			m_shooterSpeed = m_shooterSpeed * (SHOOTER_SPEED_MAX_VALUE - SHOOTER_SPEED_MIN_VALUE) / 3.3 + SHOOTER_SPEED_MIN_VALUE;
 			
+			// ensure the range of the shooter RPM
 			if (m_shooterSpeed > SHOOTER_SPEED_MAX_VALUE)
 				m_shooterSpeed = SHOOTER_SPEED_MAX_VALUE;
 			if (m_shooterSpeed < SHOOTER_SPEED_MIN_VALUE)
@@ -83,6 +85,7 @@ void SetShooterSpeed::Initialize()
 			
 			// Set the setpoint
 			Robot::shooterWheel->getPIDController()->SetSetpoint(m_shooterSpeed);
+			
 			// enable the PID controller
 			Robot::shooterWheel->getPIDController()->Enable(); 
 		}
@@ -94,15 +97,15 @@ void SetShooterSpeed::Execute()
    // determine if the shooter speed should be read from the Pot
 	if (m_SpeedSpecifiedInConstructor == true) // use speed specified
 	{
-		if(m_isRPM == false)
+		if (m_isRPM == false)
 		{
 			// Set the shooter voltage
 			Robot::shooterWheel->SetWheelSpeed(m_shooterSpeed);
 		}
 	}
-	else // Use pot to control
+	else // Use potentiometer to control
 	{
-		if(m_isRPM == false) // Voltage Control
+		if (m_isRPM == false) // Voltage Control
 		{
 			// read the value from the pot
 			m_shooterSpeed = DriverStation::GetInstance()->GetEnhancedIO().GetAnalogIn(ANALOG_SHOOTER_SPEED);
@@ -119,8 +122,9 @@ void SetShooterSpeed::Execute()
 			m_shooterSpeed = DriverStation::GetInstance()->GetEnhancedIO().GetAnalogIn(ANALOG_SHOOTER_SPEED);
 			
 			// Convert the pot value to RPM
-			m_shooterSpeed = m_shooterSpeed*(SHOOTER_SPEED_MAX_VALUE - SHOOTER_SPEED_MIN_VALUE)/3.3 + SHOOTER_SPEED_MIN_VALUE;
+			m_shooterSpeed = m_shooterSpeed * (SHOOTER_SPEED_MAX_VALUE - SHOOTER_SPEED_MIN_VALUE) / 3.3 + SHOOTER_SPEED_MIN_VALUE;
 			
+         // ensure the range of the shooter RPM
 			if (m_shooterSpeed > SHOOTER_SPEED_MAX_VALUE)
 				m_shooterSpeed = SHOOTER_SPEED_MAX_VALUE;
 			if (m_shooterSpeed < SHOOTER_SPEED_MIN_VALUE)
@@ -130,6 +134,7 @@ void SetShooterSpeed::Execute()
 			Robot::shooterWheel->getPIDController()->SetSetpoint(m_shooterSpeed);
 		}
 	}
+	
 	// <DEBUG>
 	SmartDashboard::PutNumber("Shooter Speed", m_shooterSpeed);
 	SmartDashboard::PutBoolean("isRPM", m_isRPM);
@@ -140,20 +145,22 @@ bool SetShooterSpeed::IsFinished()
 {
 	// There are two casses that we want the robot to finish
 	
-	// Case 1: Speed is meet
+	// Case 1: RPM control and Speed is meet
 	// determine is the shooter speed is within the desired limit
-	if (fabs(m_shooterSpeed - Robot::shooterWheel->pidEncoder->PIDGet()) < SHOOTER_SPEED_THRESHOLD)
-		return true;
+   if (m_isRPM == true) 
+	   if (fabs(m_shooterSpeed - Robot::shooterWheel->pidEncoder->PIDGet()) < SHOOTER_SPEED_THRESHOLD)
+		   return true;
 	
-	// Case 2: The speed is controlled by pot and mode changes
+	// Case 2: The speed is controlled by potentiometer and mode changes
 	if ((m_SpeedSpecifiedInConstructor == false) && 
-			(m_isRPM != !(DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_RPM_VOLTAGE))))
+		 (m_isRPM != !(DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_RPM_VOLTAGE))))
 		return true;
 	
 	// Return true if the voltage is set
 	if (m_isRPM == false)
 		return true;
 	
+	// still adjusting the shooter wheel under PID control
 	return false;	
 }
 // Called once after isFinished returns true

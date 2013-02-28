@@ -14,18 +14,7 @@
 #include "SetShooterSpeed.h"
 #include "FrisbeeAim.h"
 FrisbeeAimAndShoot::FrisbeeAimAndShoot()
-{
-	// Add Commands here:
-	// e.g. AddSequential(new Command1());
-	//      AddSequential(new Command2());
-	// these will run in order.
-   
-   // To run multiple commands at the same time,
-   // use AddParallel()
-   // e.g. AddParallel(new Command1());
-   //      AddSequential(new Command2());
-   // Command1 and Command2 will run in parallel.
-  
+{ 
    //AddSequential(new SetShooterAngle(FRISBEE_ANGLE_AUTO));
    //AddSequential(new FrisbeeAim());
    float shooterSpeed = SmartDashboard::GetNumber("Shooter Voltage:");

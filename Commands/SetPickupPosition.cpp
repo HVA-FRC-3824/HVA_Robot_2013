@@ -73,4 +73,5 @@ void SetPickupPosition::End()
 // subsystems is scheduled to run
 void SetPickupPosition::Interrupted() 
 {
+   
 }

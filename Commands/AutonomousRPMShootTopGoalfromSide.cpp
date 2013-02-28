@@ -8,29 +8,21 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#include "AutonomousRPMShootfromLeft.h"
-#include "FrisbeeShoot.h"
-#include "ChassisDriveDistance.h"
-#include "ChassisTurnAngle.h"
+#include "AutonomousRPMShootTopGoalfromSide.h"
 #include "SetShooterSpeed.h"
 #include "SetShooterAngle.h"
 #include "FrisbeeShoot.h"
 
-#define SHOOTER_SPEED               2500.0
+#define SHOOTER_SPEED               2190.0
 #define SHOOTER_SPEED_TIMEOUT          3.0
 
-#define SHOOTER_ANGLE                585.0
+#define SHOOTER_ANGLE                410.0
 #define SHOOTER_ANGLE_TIMEOUT          3.0
 
-#define WAIT_FOR_STABILITY             1.0
+#define WAIT_FOR_STABILITY             2.0
 #define SHOOTER_WAIT                   0.5
 
-#define DRIVE_FORWARD_TIME             2.0
-#define TURN_ANGLE                    15.0
-
-#define DRIVE_POWER                    0.2
-
-AutonomousRPMShootfromLeft::AutonomousRPMShootfromLeft() 
+AutonomousRPMShootTopGoalfromSide::AutonomousRPMShootTopGoalfromSide()
 {
    // set the sooter speed
    AddParallel(new SetShooterSpeed(SHOOTER_SPEED, true), SHOOTER_SPEED_TIMEOUT);
@@ -38,12 +30,6 @@ AutonomousRPMShootfromLeft::AutonomousRPMShootfromLeft()
    // set the shooter angle
    AddSequential(new SetShooterAngle(SHOOTER_ANGLE), SHOOTER_ANGLE_TIMEOUT);
 
-   // drive forward
-   AddSequential(new ChassisDriveDistance(DRIVE_FORWARD_TIME, DRIVE_POWER));
-
-   // turn left
-   AddSequential(new ChassisTurnAngle(TURN_ANGLE));
-   
    // wait to ensure the shooter and angle are complete
    AddSequential(new WaitCommand(WAIT_FOR_STABILITY));
 

@@ -24,12 +24,13 @@ class CypressGotoPosition: public Command
 private:
 	double m_angle;
 	double m_velocity;
+	double m_voltage;
 	double m_isRPM;
 	Command *setShooterAngle;
 	Command *setShooterSpeed;
 public:
 	CypressGotoPosition();
-	CypressGotoPosition(double angle, double velocity, bool isRPM = true);
+	CypressGotoPosition(double angle, double velocity, double voltage, bool isRPM);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

@@ -37,7 +37,7 @@ void SetShooterAngle::Initialize()
 	if(angleSpecifiedInConstructor == false)
 	{
 		angle = DriverStation::GetInstance()->GetEnhancedIO().GetAnalogIn(ANALOG_SHOOTER_ADJUST);
-		angle = angle * (SHOOTER_ANGLE_MAX_VALUE - SHOOTER_ANGLE_MIN_VALUE)/3.3 + SHOOTER_ANGLE_MIN_VALUE;
+		angle = angle * (SHOOTER_ANGLE_MAX_VALUE - SHOOTER_ANGLE_MIN_VALUE) / 3.3 + SHOOTER_ANGLE_MIN_VALUE;
 	}
 	
 	// ensure the range of the shooter angle
@@ -56,8 +56,9 @@ void SetShooterAngle::Execute()
 	if(angleSpecifiedInConstructor == false)
 	{
 		angle = DriverStation::GetInstance()->GetEnhancedIO().GetAnalogIn(ANALOG_SHOOTER_ADJUST);
-		angle = angle * (SHOOTER_ANGLE_MAX_VALUE - SHOOTER_ANGLE_MIN_VALUE)/3.3 + SHOOTER_ANGLE_MIN_VALUE;
+		angle = angle * (SHOOTER_ANGLE_MAX_VALUE - SHOOTER_ANGLE_MIN_VALUE) / 3.3 + SHOOTER_ANGLE_MIN_VALUE;
 		
+	   // ensure the range of the shooter angle
 		if (angle > SHOOTER_ANGLE_MAX_VALUE)
 			angle = SHOOTER_ANGLE_MAX_VALUE;
 		if (angle < SHOOTER_ANGLE_MIN_VALUE)

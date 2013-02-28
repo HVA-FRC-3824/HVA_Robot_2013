@@ -28,12 +28,13 @@ void ChassisDrivetoWallStraight::Initialize()
 {
 	// setup the PID controller and enable
 	PIDcontroller->SetPID(SmartDashboard::GetNumber("Chassis Turn P Term"),
-		      SmartDashboard::GetNumber("Chassis Turn I Term"), 
-		      SmartDashboard::GetNumber("Chassis Turn D Term"));
+		                   SmartDashboard::GetNumber("Chassis Turn I Term"), 
+		                   SmartDashboard::GetNumber("Chassis Turn D Term"));
 	
 	PIDcontroller->SetSetpoint(PIDGet());
 	PIDcontroller->Enable();
 	
+	// reset the time
 	timer->Reset();
 	timer->Start();
 }

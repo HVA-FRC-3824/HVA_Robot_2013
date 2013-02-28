@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #ifndef AUTONOMOUS_RPM_SHOOT_MIDDLE_GOAL_HARD_TO_CENTERLINE_H
 #define AUTONOMOUS_RPM_SHOOT_MIDDLE_GOAL_HARD_TO_CENTERLINE_H
 
@@ -20,7 +18,8 @@
  *
  * @author ExampleAuthor
  */
-class AutonomousRPMShootMiddleGoalHardtoCenterline: public CommandGroup {
+class AutonomousRPMShootMiddleGoalHardtoCenterline: public CommandGroup 
+{
 public:	
 	AutonomousRPMShootMiddleGoalHardtoCenterline();
 };
