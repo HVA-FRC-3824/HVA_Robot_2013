@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #include "AutonomousShootMiddleGoalSoft.h"
 #include "SetShooterSpeed.h"
 #include "SetShooterAngle.h"

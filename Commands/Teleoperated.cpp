@@ -29,15 +29,15 @@ void Teleoperated::Execute()
 	//speed = (-speed / 2) + 0.5;
    //Robot::shooterWheelVoltage->motor->Set(speed);
    
-   SmartDashboard::PutBoolean("Shooter Switch", Robot::shooterPusher->stopSwitch->Get());
+//   SmartDashboard::PutBoolean("Shooter Switch", Robot::shooterPusher->stopSwitch->Get());
    SmartDashboard::PutNumber("Shooter Speed Period", (1.0/Robot::shooterWheel->encoder->GetPeriod())*60.0);
    SmartDashboard::PutNumber("Shooter Speed GIT", Robot::shooterWheel->pidEncoder->PIDGet());
    SmartDashboard::PutNumber("Shooter Angle GIT", Robot::shooterAngleAdjust->potentiometer->PIDGet());
-   SmartDashboard::PutNumber("Pickup Position GIT", Robot::pickup->potentiometer->PIDGet());
-   SmartDashboard::PutNumber("Ultra Sonic", Robot::drivetrain->GetFrontDistance());
-   SmartDashboard::PutNumber("Gyro", Robot::drivetrain->gyro->PIDGet());
+//   SmartDashboard::PutNumber("Pickup Position GIT", Robot::pickup->potentiometer->PIDGet());
+//   SmartDashboard::PutNumber("Ultra Sonic", Robot::drivetrain->GetFrontDistance());
+//   SmartDashboard::PutNumber("Gyro", Robot::drivetrain->gyro->PIDGet());
    // <DEBUG>
-   SmartDashboard::PutNumber("Pickup Voltage", Robot::pickup->motor->Get());
+//   SmartDashboard::PutNumber("Pickup Voltage", Robot::pickup->motor->Get());
    // </DEBUG>
 }
 // Make this return true when this Command no longer needs to run execute()

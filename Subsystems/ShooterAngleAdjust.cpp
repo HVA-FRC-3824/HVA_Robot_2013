@@ -39,11 +39,13 @@ PIDController* ShooterAngleAdjust::getPIDController()
    if (PIDcontroller == NULL)
    {
 	  // initialize the PID controller
-	  PIDcontroller = new PIDController(
-			SmartDashboard::GetNumber("Shooter Angle P Term"), 
-			SmartDashboard::GetNumber("Shooter Angle I Term"), 
-			SmartDashboard::GetNumber("Shooter Angle D Term"),
-			potentiometer, this);
+//	  PIDcontroller = new PIDController(
+//			SmartDashboard::GetNumber("Shooter Angle P Term"), 
+//			SmartDashboard::GetNumber("Shooter Angle I Term"), 
+//			SmartDashboard::GetNumber("Shooter Angle D Term"),
+//			potentiometer, this);
+	
+	  PIDcontroller = new PIDController(0.03, 0.0, 0.005, potentiometer, this);
    }
    return PIDcontroller;
 }

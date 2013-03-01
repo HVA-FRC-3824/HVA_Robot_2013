@@ -133,8 +133,8 @@ void SetShooterSpeed::Execute()
 	}
 	
 	// <DEBUG>
-	SmartDashboard::PutNumber("Shooter Speed", m_shooterSpeed);
-	SmartDashboard::PutBoolean("isRPM", m_isRPM);
+//	SmartDashboard::PutNumber("Shooter Speed", m_shooterSpeed);
+//	SmartDashboard::PutBoolean("isRPM", m_isRPM);
 	// </DEBUG>
 }
 // Make this return true when this Command no longer needs to run execute()

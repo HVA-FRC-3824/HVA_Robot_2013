@@ -13,35 +13,50 @@
 #include "SetShooterAngle.h"
 #include "FrisbeeShoot.h"
 
-//#define SHOOTER_VELOCITY         2190.0
-//#define SHOOTER_ANGLE             410.0
-#define SHOOTER_WAIT               0.0
+#define SHOOTER_SPEED                           3000.0
+#define SHOOTER_SPEED_TIMEOUT                      2.0
 
-#define AUTO_SHOOTER_SPEED        3000
+#define SHOOTER_ANGLE                            230.0
+#define SHOOTER_ANGLE_TIMEOUT                      2.0
+
+#define WAIT_FOR_STABILITY                         3.0
+
+#define SHOOTER_WAIT                               1.0
+
+#define FRISBEE_SHOOT_TIMEOUT                      2.0
 
 AutonomousRPMShootMiddleGoalSoft::AutonomousRPMShootMiddleGoalSoft()
 {
-	// set the shooter angle
-	AddSequential(new SetShooterAngle(230), 3.0);
+   // set the shooter angle
+   AddSequential(new SetShooterAngle(SHOOTER_ANGLE), SHOOTER_ANGLE_TIMEOUT);
 	
-	AddSequential(new SetShooterSpeed(AUTO_SHOOTER_SPEED, true), 3.0);
+   // set the shooter speed
+   AddSequential(new SetShooterSpeed(SHOOTER_SPEED, true), SHOOTER_SPEED_TIMEOUT);
 
-	AddSequential(new WaitCommand(SHOOTER_WAIT));
-	
-	AddSequential(new FrisbeeShoot());
-	
-	AddSequential(new WaitCommand(SHOOTER_WAIT));
-	
-	AddSequential(new FrisbeeShoot());
-	
-	AddSequential(new WaitCommand(SHOOTER_WAIT));
-	
-	AddSequential(new FrisbeeShoot());
+   // wait to ensure the shooter and angle are complete
+   AddSequential(new WaitCommand(WAIT_FOR_STABILITY));
 
-	AddSequential(new WaitCommand(SHOOTER_WAIT));
-	
-	AddSequential(new FrisbeeShoot());
-	
-	AddSequential(new SetShooterSpeed(0.0, false));
+   // shoot 1st frisbee
+   AddSequential(new FrisbeeShoot(), FRISBEE_SHOOT_TIMEOUT);
 
+   // wait between shots
+   AddSequential(new WaitCommand(SHOOTER_WAIT));
+
+   // shoot 2nd frisbee
+   AddSequential(new FrisbeeShoot(), FRISBEE_SHOOT_TIMEOUT);
+
+   // wait between shots
+   AddSequential(new WaitCommand(SHOOTER_WAIT));
+
+   // shoot 3rd frisbee
+   AddSequential(new FrisbeeShoot(), FRISBEE_SHOOT_TIMEOUT);
+
+   // wait between shots
+   AddSequential(new WaitCommand(SHOOTER_WAIT));
+
+   // shoot 4rd frisbee in case one misfired
+   AddSequential(new FrisbeeShoot(), FRISBEE_SHOOT_TIMEOUT);
+	
+//   // stop the shooter
+//   AddSequential(new SetShooterSpeed(0.0, false));	
 }

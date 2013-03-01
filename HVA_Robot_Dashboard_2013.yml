@@ -1,112 +1,26 @@
 <xml version="1.0">
 <dashboard>
-	<widget field="Slider 1" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="221" y="63"/>
-	</widget>
-	<widget field="Checkbox 2" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="221" y="42"/>
-	</widget>
-	<widget field="Checkbox 1" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="221" y="21"/>
-	</widget>
-	<widget field="isRPM" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="503" y="238"/>
-	</widget>
-	<widget field="Shooter Speed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="503" y="217"/>
-	</widget>
-	<widget field="ShooterAngel" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="503" y="196"/>
-	</widget>
-	<widget field="Compressor: " type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="503" y="175"/>
-	</widget>
-	<widget field="Pickup Voltage" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="503" y="154"/>
-	</widget>
-	<widget field="Gyro" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="503" y="133"/>
-	</widget>
-	<widget field="Ultra Sonic" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="503" y="112"/>
-	</widget>
-	<widget field="Pickup Position GIT" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="503" y="91"/>
+	<widget field="ShooterAngle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="43" y="84"/>
 	</widget>
 	<widget field="Shooter Angle GIT" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="503" y="70"/>
+		<location x="21" y="109"/>
 	</widget>
 	<widget field="Shooter Speed GIT" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="503" y="49"/>
+		<location x="21" y="136"/>
 	</widget>
 	<widget field="Shooter Speed Period" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="221" y="387"/>
-	</widget>
-	<widget field="Shooter Switch" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="221" y="366"/>
-	</widget>
-	<widget field="turn sensitivity" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="357"/>
+		<location x="9" y="160"/>
 	</widget>
 	<widget field="Autonomous modes:" type="String Chooser" class="edu.wpi.first.smartdashboard.gui.elements.Chooser">
-		<location x="221" y="0"/>
+		<location x="248" y="15"/>
 	</widget>
 	<widget field="Pickup Position" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="391"/>
-	</widget>
-	<widget field="Autonomous RPM Shoot from Center" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="522" y="15"/>
-	</widget>
-	<widget field="Target Type" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="336"/>
-	</widget>
-	<widget field="Shooter Speed P Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="315"/>
-	</widget>
-	<widget field="Shooter Speed I Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="294"/>
-	</widget>
-	<widget field="Shooter Speed D Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="273"/>
-	</widget>
-	<widget field="Shooter Angle P Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="252"/>
-	</widget>
-	<widget field="Shooter Angle I Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="231"/>
-	</widget>
-	<widget field="Shooter Angle D Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="210"/>
-	</widget>
-	<widget field="Shooter Aim P: " type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="189"/>
-	</widget>
-	<widget field="Shooter Aim I: " type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="168"/>
-	</widget>
-	<widget field="Shooter Aim D: " type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="147"/>
-	</widget>
-	<widget field="Pickup P Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="126"/>
-	</widget>
-	<widget field="Pickup I Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="105"/>
-	</widget>
-	<widget field="Pickup D Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="84"/>
-	</widget>
-	<widget field="Chassis Turn P Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="63"/>
-	</widget>
-	<widget field="Chassis Turn I Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="42"/>
-	</widget>
-	<widget field="Chassis Turn D Term" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="21"/>
+		<location x="74" y="33"/>
+		<height>20</height>
 	</widget>
 	<widget field="Chassis Turn Angle Degrees" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="0" y="0"/>
+		<location x="7" y="8"/>
 	</widget>
 </dashboard>
 <live-window>

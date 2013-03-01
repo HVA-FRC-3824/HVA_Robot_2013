@@ -11,22 +11,15 @@
 #ifndef AUTONOMOUS_RPM_SHOOT_MIDDLE_GOAL_HARD_H
 #define AUTONOMOUS_RPM_SHOOT_MIDDLE_GOAL_HARD_H
 
-#define AUTO_SHOOT_WAIT1						0.0
-#define AUTO_SHOOT_WAIT2						0.0
-#define AUTO_SHOOT_WAIT3						0.0
-#define AUTO_SHOOT_WAIT4						0.0
-
 #include "Commands/CommandGroup.h"
-#include "ChassisDriveDistanceStraight.h"
-#include "SetShooterSpeed.h"
-#include "FrisbeeShoot.h"
 
 /**
  *
  *
  * @author ExampleAuthor
  */
-class AutonomousRPMShootMiddleGoalHard: public CommandGroup {
+class AutonomousRPMShootMiddleGoalHard: public CommandGroup 
+{
 public:	
 	AutonomousRPMShootMiddleGoalHard();
 };

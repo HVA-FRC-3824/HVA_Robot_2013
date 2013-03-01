@@ -67,7 +67,7 @@ void SetShooterAngle::Execute()
 	}
 	
 	// <DEBUG>
-	SmartDashboard::PutNumber("ShooterAngel", angle);
+	SmartDashboard::PutNumber("ShooterAngle", angle);
 	// </DEBUG>
 }
 // Make this return true when this Command no longer needs to run execute()

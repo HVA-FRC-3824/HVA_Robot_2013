@@ -34,11 +34,14 @@ PIDController* Pickup::getPIDController()
 	if (PIDcontroller == NULL)
 	{
 		// initialize the PID controller
-		PIDcontroller = new PIDController(
-				SmartDashboard::GetNumber("Pickup P Term"),
-				SmartDashboard::GetNumber("Pickup I Term"),
-				SmartDashboard::GetNumber("Pickup D Term"), 
-				potentiometer, this);
+//		PIDcontroller = new PIDController(
+//				SmartDashboard::GetNumber("Pickup P Term"),
+//				SmartDashboard::GetNumber("Pickup I Term"),
+//				SmartDashboard::GetNumber("Pickup D Term"), 
+//				potentiometer, this);
+		   
+		PIDcontroller = new PIDController(0.02, 0.001, 0.009, potentiometer, this);
+		
 		PIDcontroller->SetOutputRange(-0.5, 0.7);
 	}
 	return PIDcontroller;

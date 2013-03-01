@@ -56,7 +56,7 @@ void SetPickupPosition::Initialize()
 void SetPickupPosition::Execute() 
 {
 	// <DEBUG>
-	SmartDashboard::PutNumber("Pickup Position", position);
+//	SmartDashboard::PutNumber("Pickup Position", position);
 	// </DEBUG>
 }
 // Make this return true when this Command no longer needs to run execute()
