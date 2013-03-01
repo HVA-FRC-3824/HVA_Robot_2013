@@ -84,7 +84,7 @@
 //#define POSITION_4_VELOCITY                      1930.0
 //#define POSITION_4_VOLTAGE                          0.6
 //#define POSITION_4_IS_RPM                          true
-#define POSITION_4_ANGLE                          240.0 // under the tower
+#define POSITION_4_ANGLE                          300.0 // under the tower
 #define POSITION_4_VELOCITY                      2650.0
 #define POSITION_4_VOLTAGE                          0.6
 #define POSITION_4_IS_RPM                          true
