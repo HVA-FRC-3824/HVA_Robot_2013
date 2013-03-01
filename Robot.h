@@ -58,10 +58,10 @@
 #define POSITION_1_VOLTAGE                          0.6
 #define POSITION_1_IS_RPM                          true
 
-#define POSITION_2_ANGLE						 230.0 // back of pyramid
-#define POSITION_2_VELOCITY                     3000.0
-#define POSITION_2_VOLTAGE                        0.62
-#define POSITION_2_IS_RPM						  true
+#define POSITION_2_ANGLE						  230.0 // back of pyramid
+#define POSITION_2_VELOCITY                      3000.0
+#define POSITION_2_VOLTAGE                         0.62
+#define POSITION_2_IS_RPM						   true
 
 // swapped buttons 3 and 4 at operator request
 #define POSITION_3_ANGLE                          300.0 // under the tower and loading
@@ -90,15 +90,15 @@
 //#define POSITION_2_VOLTAGE                        0.62
 //#define POSITION_2_IS_RPM						  	true
 
-//#define POSITION_3_ANGLE                          354.0 // under tower
-//#define POSITION_3_VELOCITY                      2900.0
-//#define POSITION_4_VOLTAGE                          0.6
-//#define POSITION_3_IS_RPM                          true
+//#define POSITION_3_ANGLE                         354.0 // under tower
+//#define POSITION_3_VELOCITY                     2900.0
+//#define POSITION_4_VOLTAGE                         0.6
+//#define POSITION_3_IS_RPM                         true
 
-//#define POSITION_4_ANGLE                          660.0 // close to goals
-//#define POSITION_4_VELOCITY                      1930.0
-//#define POSITION_4_VOLTAGE                          0.6
-//#define POSITION_4_IS_RPM                          true
+//#define POSITION_4_ANGLE                         660.0 // close to goals
+//#define POSITION_4_VELOCITY                     1930.0
+//#define POSITION_4_VOLTAGE                         0.6
+//#define POSITION_4_IS_RPM                         true
 
 class Robot : public IterativeRobot 
 {

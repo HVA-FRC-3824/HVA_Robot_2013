@@ -9,8 +9,8 @@
 // it from being updated in th future.
 #include "ShooterWheel.h"
 #include "../Robotmap.h"
-#define P_TERM      0.020
-#define I_TERM      0.001
+#define P_TERM      0.005
+#define I_TERM      0.0004
 #define D_TERM      0.000
 ShooterWheel::ShooterWheel() : Subsystem("ShooterWheel")
 {
