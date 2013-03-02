@@ -24,11 +24,13 @@ void DrivetrainReverseDrive::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void DrivetrainReverseDrive::Execute() 
 {
+	// writes the inverse joystick values to the drivetrain 
 	Robot::drivetrain->HolonomicDriveReverse(Robot::oi->getDriveJoystick());
 }
 // Make this return true when this Command no longer needs to run execute()
 bool DrivetrainReverseDrive::IsFinished() 
 {
+	// constantly updates
 	return false;
 }
 // Called once after isFinished returns true

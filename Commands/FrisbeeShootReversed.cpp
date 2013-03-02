@@ -20,11 +20,12 @@ FrisbeeShootReversed::FrisbeeShootReversed() {
 // Called just before this Command runs the first time
 void FrisbeeShootReversed::Initialize() 
 {
-	   // start the shooter
-		Robot::shooterPusher->motor->Set(Relay::kForward);
-		// reset and start the timer
-		pusherTimer->Reset();
-		pusherTimer->Start();
+    // pushes the frisbee
+	Robot::shooterPusher->motor->Set(Relay::kForward);
+		
+	// reset and start the timer
+	pusherTimer->Reset();
+	pusherTimer->Start();
 }
 // Called repeatedly when this Command is scheduled to run
 void FrisbeeShootReversed::Execute() {

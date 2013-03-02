@@ -30,11 +30,14 @@ void ChassisDriveDistanceStraight::Initialize()
 //		      SmartDashboard::GetNumber("Chassis Turn I Term"), 
 //		      SmartDashboard::GetNumber("Chassis Turn D Term"));
 
+	// sets the PID values (hardcoded)
 	PIDcontroller->SetPID(0.04, 0.004, 0.04);
 	
+	// starts the PID controller and gets a setpoint
 	PIDcontroller->SetSetpoint(PIDGet());
 	PIDcontroller->Enable();
 	
+	// timer starts to count
 	timer->Reset();
 	timer->Start();
 }
@@ -46,19 +49,20 @@ void ChassisDriveDistanceStraight::Execute()
 // Make this return true when this Command no longer needs to run execute()
 bool ChassisDriveDistanceStraight::IsFinished() 
 {
-   // determine when the drive time has expired
+    // determine when the drive time has expired
 	if (timer->Get() >= driveDuration)
 		return true;
 	
+	// loops until timer has run long enough
 	return false;
 }
 // Called once after isFinished returns true
 void ChassisDriveDistanceStraight::End() 
 {
-	// Stop the PID
+	// stops the PID
 	PIDcontroller->Disable();
 	
-	// stop the motor and time
+	// stops the motor and timer
 	Robot::drivetrain->holonomic->StopMotor();
 	timer->Stop();
 }
@@ -70,9 +74,11 @@ void ChassisDriveDistanceStraight::Interrupted()
 }
 double ChassisDriveDistanceStraight::PIDGet()
 {
+	// returns the gyro PID
 	return Robot::drivetrain->gyro->PIDGet();
 }
 void ChassisDriveDistanceStraight::PIDWrite(float output)
 {
+	// writes the PID to the drivetrain
 	Robot::drivetrain->HolonomicDrive(drivePower, 0.0, output);
 }

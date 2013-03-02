@@ -27,24 +27,26 @@ void ChassisDrivetoWall::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void ChassisDrivetoWall::Execute() 
 {
-   // Start motors 
+   // drives motors
    Robot::drivetrain->HolonomicDrive(DRIVE_POWER, DRIVE_DIRECTION, DRIVE_ROTATION); 
 }
 // Make this return true when this Command no longer needs to run execute()
 bool ChassisDrivetoWall::IsFinished()
 {	
-   // get the distance from the ultrasonic sensor
+    // get the distance from the ultrasonic sensor
 	distance = Robot::drivetrain->GetFrontDistance();
 	
 	// determine if the robot has reached the desired distance
 	if (distance <= STOPPING_DISTANCE)
 			return true;
 	
+	// loops until timer has run long enough
 	return false;
 }
 // Called once after isFinished returns true
 void ChassisDrivetoWall::End()
 {
+	// stops the drivetrain
 	Robot::drivetrain->holonomic->StopMotor();
 }
 // Called when another command which requires one or more of the same

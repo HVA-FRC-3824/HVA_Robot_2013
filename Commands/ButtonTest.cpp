@@ -27,7 +27,7 @@ void ButtonTest::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void ButtonTest::Execute() 
 {
-	printf("button %d\n", m_number);
+	printf("Button %d\n", m_number);
 }
 // Make this return true when this Command no longer needs to run execute()
 bool ButtonTest::IsFinished() 

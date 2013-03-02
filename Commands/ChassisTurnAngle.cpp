@@ -34,8 +34,10 @@ void ChassisTurnAngle::Initialize()
 //		      SmartDashboard::GetNumber("Chassis Turn I Term"), 
 //		      SmartDashboard::GetNumber("Chassis Turn D Term"));
 	
+	// sets the PID values (hardcoded)
 	PIDcontroller.SetPID(0.04, 0.004, 0.04);
 	
+	// starts the PID controller and gets a setpoint
 	PIDcontroller.SetSetpoint(goToGyro);
 	PIDcontroller.Enable();
 }
@@ -47,6 +49,7 @@ void ChassisTurnAngle::Execute()
 // Make this return true when this Command no longer needs to run execute()
 bool ChassisTurnAngle::IsFinished() 
 {
+	// finds the absolute value of the error the PID needs
 	return fabs(PIDcontroller.GetSetpoint() - Robot::drivetrain->gyro->PIDGet()) < TURN_THRESHOLD;
 }
 // Called once after isFinished returns true

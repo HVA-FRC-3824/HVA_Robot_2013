@@ -24,11 +24,13 @@ void DrivetrainNormalDrive::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void DrivetrainNormalDrive::Execute() 
 {
+	// writes the joystick values to the drivetrain
 	Robot::drivetrain->HolonomicDrive(Robot::oi->getDriveJoystick());
 }
 // Make this return true when this Command no longer needs to run execute()
 bool DrivetrainNormalDrive::IsFinished() 
 {
+	// constantly updates
 	return false;
 }
 // Called once after isFinished returns true

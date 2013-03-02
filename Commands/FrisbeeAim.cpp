@@ -9,7 +9,7 @@
 // it from being updated in th future.
 #include "FrisbeeAim.h"
 #include <math.h>
-#define PIXELTODEGREE            1 
+#define PIXELTODEGREE            	1 
 #define AIM_PIXEL_THRESHOLD 		3
 FrisbeeAim::FrisbeeAim() : ChassisTurnAngle(0) 
 {
@@ -50,12 +50,14 @@ void FrisbeeAim::Execute()
 // Make this return true when this Command no longer needs to run execute()
 bool FrisbeeAim::IsFinished() 
 {
+	// loops until Turn Angle returns that it has hit the angle
 	return ChassisTurnAngle::IsFinished();
 }
 // Called once after isFinished returns true
 void FrisbeeAim::End()
 {
 	//PIDcontroller->Disable();
+	// ends the PID Turn Angle
 	ChassisTurnAngle::End();
 }
 // Called when another command which requires one or more of the same

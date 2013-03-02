@@ -23,11 +23,12 @@ FrisbeeShoot::FrisbeeShoot()
 // Called just before this Command runs the first time
 void FrisbeeShoot::Initialize() 
 {
-	// Frisbee is not jammed yet
+	// frisbee is not jammed yet
 	m_isJammed = false;
 	
-   // start the shooter
+   // pushes the frisbee
 	Robot::shooterPusher->motor->Set(Relay::kReverse);
+	
 	// reset and start the timer
 	m_pusherTimer->Reset();
 	m_pusherTimer->Start();
@@ -66,12 +67,14 @@ bool FrisbeeShoot::IsFinished()
 			return true;
 		}
 	}
-  return false;
+	
+	// loops constantly until it isn't jammed
+	return false;
 }
 // Called once after isFinished returns true
 void FrisbeeShoot::End() 
 {
-   // stop the shooter moter and the timer
+   // stop the shooter motor and the timer
 	Robot::shooterPusher->motor->Set(Relay::kOff);
 	m_pusherTimer->Stop();
 }

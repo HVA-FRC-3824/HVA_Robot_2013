@@ -63,6 +63,7 @@ bool DriveToFrisbee::IsFinished()
 // Called once after isFinished returns true
 void DriveToFrisbee::End() 
 {
+	// stops the drivetrain and ends PID turn angle
 	Robot::drivetrain->holonomic->HolonomicDrive(0, 0, 0);
 	ChassisTurnAngle::End();
 }

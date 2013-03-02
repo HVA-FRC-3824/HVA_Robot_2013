@@ -31,11 +31,14 @@ void ChassisDrivetoWallStraight::Initialize()
 //		      SmartDashboard::GetNumber("Chassis Turn I Term"), 
 //		      SmartDashboard::GetNumber("Chassis Turn D Term"));
 
+	// sets the PID values (hardcoded)
 	PIDcontroller->SetPID(0.04, 0.004, 0.04);
 	
+	// starts the PID controller and gets a setpoint
 	PIDcontroller->SetSetpoint(PIDGet());
 	PIDcontroller->Enable();
 	
+	// timer starts to count
 	timer->Reset();
 	timer->Start();
 }
@@ -50,16 +53,17 @@ bool ChassisDrivetoWallStraight::IsFinished()
 	// determine if the robot has reached the desired distance
 	if (Robot::drivetrain->GetFrontDistance() <= driveStopDistance)
 			return true;
-	
+
+	// loops until timer has run long enough
 	return false;
 }
 // Called once after isFinished returns true
 void ChassisDrivetoWallStraight::End() 
 {
-	// Stop the PID
+	// stops the PID
 	PIDcontroller->Disable();
 	
-	// stop the motor and time
+	// stops the motor and time
 	Robot::drivetrain->holonomic->StopMotor();
 	timer->Stop();
 }
@@ -71,9 +75,11 @@ void ChassisDrivetoWallStraight::Interrupted()
 }
 double ChassisDrivetoWallStraight::PIDGet()
 {
+	// returns the gyro PID 
 	return Robot::drivetrain->gyro->PIDGet();
 }
 void ChassisDrivetoWallStraight::PIDWrite(float output)
 {
+	// writes the PID to the drivetrain
 	Robot::drivetrain->HolonomicDrive(drivePower, 0.0, output);
 }
