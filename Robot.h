@@ -26,19 +26,16 @@
 #define TIPPER_EXTEND_RETRACT_TIME      			3.0
 #define AUTONOMOUS_SHOOT_WAIT1	 	   		 	    0.0
 #define AUTONOMOUS_SHOOT_WAIT2   					0.0
-
 /****** SHOOTER POSITION ******/
 #define SHOOTER_ANGLE_MAX_VALUE	                  850.0
 #define SHOOTER_ANGLE_MIN_VALUE 			        0.0
 #define SHOOTER_ANGLE_THRESHOLD                     1.0
 #define SHOOTER_ANGLE_MAX_PICKUP_VALUE			  200.0
 #define SHOOTER_ANGLE_PICKUP_VALUE				  130.0
-
 /****** SHOOTER SPEED ******/
 #define SHOOTER_SPEED_THRESHOLD    				   50.0
 #define SHOOTER_SPEED_MAX_VALUE  				 3600.0
 #define SHOOTER_SPEED_MIN_VALUE   			     1000.0
-
 /****** PICKUP POSITION ******/
 #define PICKUP_MAX_VALUE 				           672.0
 #define PICKUP_MIN_VALUE 		 		            90.0
@@ -47,59 +44,48 @@
 #define PICKUP_STAGE				               122.0
 #define PICKUP_RELEASE_POSITION					   647.0
 #define PICKUP_HOME_POSITION	                   500.0
-
 /****** PICKUP VOLTAGE ******/
 #define PICKUP_UP_VOLTAGE					        0.5
 #define PICKUP_DOWN_VOLTAGE						   -0.5
-
 /****** CYPRESS POSITION DEFINES ******/
 #define POSITION_1_ANGLE                          660.0 // close to goals
 #define POSITION_1_VELOCITY                      1930.0
 #define POSITION_1_VOLTAGE                          0.6
 #define POSITION_1_IS_RPM                          true
-
 #define POSITION_2_ANGLE						  230.0 // back of pyramid
 #define POSITION_2_VELOCITY                      3000.0
 #define POSITION_2_VOLTAGE                         0.62
 #define POSITION_2_IS_RPM						   true
-
 // swapped buttons 3 and 4 at operator request
 #define POSITION_3_ANGLE                          300.0 // under the tower and loading
 #define POSITION_3_VELOCITY                      2650.0
 #define POSITION_3_VOLTAGE                          0.6
 #define POSITION_3_IS_RPM                          true
-
 #define POSITION_4_ANGLE                            0.0 // lowest angle for position 3
 #define POSITION_4_VELOCITY                      2650.0
 #define POSITION_4_VOLTAGE                          0.6
 #define POSITION_4_IS_RPM                          true
-
 #define POSITION_5_ANGLE                          854.0 // tower goal
 #define POSITION_5_VELOCITY                      1725.0
 #define POSITION_5_VOLTAGE                          0.6
 #define POSITION_5_IS_RPM                          true
-
 /****** OLD CYPRESS POSITION DEFINES ******/
 //#define POSITION_1_ANGLE		                  	25.0 // full court
 //#define POSITION_1_VELOCITY                     3600.0
 //#define POSITION_1_VOLTAGE                         1.0
 //#define POSITION_1_IS_RPM						  	true
-
 //#define POSITION_2_ANGLE						  	67.0 // mid court
 //#define POSITION_2_VELOCITY                     3600.0
 //#define POSITION_2_VOLTAGE                        0.62
 //#define POSITION_2_IS_RPM						  	true
-
 //#define POSITION_3_ANGLE                         354.0 // under tower
 //#define POSITION_3_VELOCITY                     2900.0
 //#define POSITION_4_VOLTAGE                         0.6
 //#define POSITION_3_IS_RPM                         true
-
 //#define POSITION_4_ANGLE                         660.0 // close to goals
 //#define POSITION_4_VELOCITY                     1930.0
 //#define POSITION_4_VOLTAGE                         0.6
 //#define POSITION_4_IS_RPM                         true
-
 class Robot : public IterativeRobot 
 {
 public:
