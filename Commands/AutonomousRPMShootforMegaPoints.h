@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #ifndef AUTONOMOUS_RPM_SHOOT_FOR_MEGA_POINTS_H
 #define AUTONOMOUS_RPM_SHOOT_FOR_MEGA_POINTS_H
 

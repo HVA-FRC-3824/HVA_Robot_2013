@@ -19,8 +19,8 @@
 //    Angle: 
 
 #define DRIVE_BACK_TIME             0.4
-#define DRIVE_BACK_SPEED            0.4
-#define DRIVE_FORWARD_TIME          0.525
+#define DRIVE_BACK_SPEED           -0.4
+#define DRIVE_FORWARD_TIME        0.525
 #define DRIVE_FORWARD_SPEED         0.4
 
 #define SHOOTER_LOWER_WAIT_TIME     1.0
@@ -35,10 +35,10 @@
 
 AutonomousRPMShootfromCenter::AutonomousRPMShootfromCenter() 
 {
-	printf("AutonomousRPMShootfromCenter\n");
+   printf("AutonomousRPMShootfromCenter\n");
 	
    // backup to allow the shoot to lower
-   AddSequential(new ChassisDriveDistanceStraight(DRIVE_BACK_TIME, -DRIVE_BACK_SPEED));
+   AddSequential(new ChassisDriveDistanceStraight(DRIVE_BACK_TIME, DRIVE_BACK_SPEED));
  
    // start the shooter
    AddSequential(new SetShooterSpeed(SHOOTER_SPEED, true), 1.0);

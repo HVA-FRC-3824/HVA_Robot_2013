@@ -8,25 +8,76 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #include "AutonomousRPMShootforMegaPoints.h"
+#include "ChassisDriveDistanceStraight.h"
+#include "SetShooterSpeed.h"
+#include "SetShooterAngle.h"
+#include "FrisbeeShoot.h"
 
-AutonomousRPMShootforMegaPoints::AutonomousRPMShootforMegaPoints() {
-	// Add Commands here:
-	// e.g. AddSequential(new Command1());
-	//      AddSequential(new Command2());
-	// these will run in order.
+#define DRIVE_BACK_TIME             0.4
+#define DRIVE_BACK_SPEED           -0.4
+#define DRIVE_FORWARD_TIME        0.525
+#define DRIVE_FORWARD_SPEED         0.4
 
-	// To run multiple commands at the same time,
-	// use AddParallel()
-	// e.g. AddParallel(new Command1());
-	//      AddSequential(new Command2());
-	// Command1 and Command2 will run in parallel.
+#define SHOOTER_LOWER_WAIT_TIME     1.0
+#define SHOOTER_RAISE_WAIT_TIME     1.0
 
-	// A command group will require all of the subsystems that each member
-	// would require.
-	// e.g. if Command1 requires chassis, and Command2 requires arm,
-	// a CommandGroup containing them would require both the chassis and the
-	// arm.
+#define SHOOTER_SPEED            2650.0
+
+#define SHOOTER_ANGLE_SHOOT       300.0
+#define SHOOTER_ANGLE_TOWER         0.0
+
+#define SHOOTER_WAIT                0.5
+
+AutonomousRPMShootforMegaPoints::AutonomousRPMShootforMegaPoints() 
+{
+	printf("AutonomousRPMShootforMegaPoints\n");
+
+	// backup to allow the shoot to lower
+	AddSequential(new ChassisDriveDistanceStraight(DRIVE_BACK_TIME, DRIVE_BACK_SPEED));
+
+	// start the shooter
+	AddParallel(new SetShooterSpeed(SHOOTER_SPEED, true), 1.0);
+
+	// set the shooter angle to get below the tower
+	AddSequential(new SetShooterAngle(SHOOTER_ANGLE_TOWER), 3.0);
+
+	// wait for shooter to lower
+	AddSequential(new WaitCommand(SHOOTER_LOWER_WAIT_TIME));
+
+	// drive back to tower to shoot
+	AddParallel(new ChassisDriveDistanceStraight(DRIVE_FORWARD_TIME, DRIVE_FORWARD_SPEED));
+
+	// wait for robot to drive in
+	AddSequential(new WaitCommand(1.0));
+
+	// raise the shooter to shoot
+	AddSequential(new SetShooterAngle(SHOOTER_ANGLE_SHOOT), 3.0);
+
+	// wait for shooter to lower
+	AddSequential(new WaitCommand(SHOOTER_RAISE_WAIT_TIME));
+
+	// shoot 1st frisbee
+	AddSequential(new FrisbeeShoot());
+
+	// wait between shots
+	AddSequential(new WaitCommand(SHOOTER_WAIT));
+
+	// shoot 2nd frisbee
+	AddSequential(new FrisbeeShoot());
+
+	// wait between shots
+	AddSequential(new WaitCommand(SHOOTER_WAIT));
+
+	// shoot 3rd frisbee
+	AddSequential(new FrisbeeShoot());
+
+	// wait between shots
+	AddSequential(new WaitCommand(SHOOTER_WAIT));
+
+	// shoot 4rd frisbee
+	AddSequential(new FrisbeeShoot());
+
+	// lowers to exit the tower for teleop
+	AddSequential(new SetShooterAngle(SHOOTER_ANGLE_TOWER), 2.0);
 }

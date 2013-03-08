@@ -11,6 +11,7 @@
 #include "Commands/AutonomousDoNothing.h"
 #include "Commands/AutonomousDriveForwardShoot.h"
 #include "Commands/AutonomousRPMDriveForwardShoot.h"
+#include "Commands/AutonomousRPMShootforMegaPoints.h"
 #include "Commands/AutonomousRPMShootfromCenter.h"
 #include "Commands/AutonomousRPMShootfromLeft.h"
 #include "Commands/AutonomousRPMShootfromRight.h"
@@ -92,6 +93,7 @@ void Robot::RobotInit()
    chooser->AddDefault("1) Do Nothing", new AutonomousDoNothing());
 //   chooser->AddObject("Drive forward and shoot", new AutonomousDriveForwardShoot());
 //   chooser->AddObject("Drive forward and shoot with RPM", new AutonomousRPMDriveForwardShoot());
+   chooser->AddObject("Autonomous for Maximum Points", new AutonomousRPMShootforMegaPoints());
    chooser->AddObject("2) Shoot from Center to Top Goal", new AutonomousRPMShootfromCenter());
 //   chooser->AddObject("Shoot from Left with RPM", new AutonomousRPMShootfromLeft());
 //   chooser->AddObject("Shoot from Right with RPM", new AutonomousRPMShootfromRight());
