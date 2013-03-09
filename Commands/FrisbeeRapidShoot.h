@@ -14,14 +14,17 @@
 
 
 #include "Commands/Subsystem.h"
+#include "FrisbeeShoot.h"
 #include "../Robot.h"
 
 /**
- *
- *
- * @author ExampleAuthor
+ * It is being exececuted while button 2 is held. It shoots when PID controller is on target.
  */
 class FrisbeeRapidShoot: public Command {
+private:
+	Timer voltageShootTimer;
+	FrisbeeShoot shootCommand;
+	bool isShooting;
 public:
 	FrisbeeRapidShoot();
 	virtual void Initialize();

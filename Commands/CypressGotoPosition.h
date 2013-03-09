@@ -15,9 +15,7 @@
 #include "../Robot.h"
 
 /**
- *
- *
- * @author ExampleAuthor
+ * Set shooter angle and speed based on input board
  */
 class CypressGotoPosition: public Command 
 {

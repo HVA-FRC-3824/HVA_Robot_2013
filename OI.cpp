@@ -62,6 +62,8 @@ OI::OI()
 	
 	joystickShoot = new JoystickButton(driveJoystick, 1);
 	joystickShoot->WhenPressed(new FrisbeeShoot());
+	joystickRapidShoot = new JoystickButton(driveJoystick, 2);
+	joystickRapidShoot->WhileHeld(new FrisbeeRapidShoot());
      
         // SmartDashboard Buttons
 	SmartDashboard::PutData("Autonomous RPM Shoot for Mega Points", new AutonomousRPMShootforMegaPoints());
