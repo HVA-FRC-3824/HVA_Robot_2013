@@ -10,7 +10,6 @@
 //
 #define ISRPM 0 //TODO: read somehow from CypressGotoPositon (has to be made possible there)
 #define VOLTAGE_SHOOT_WAIT_TIME 2
-
 #include "FrisbeeRapidShoot.h"
 FrisbeeRapidShoot::FrisbeeRapidShoot() {
 	// Use requires() here to declare subsystem dependencies
