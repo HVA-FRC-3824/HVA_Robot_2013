@@ -20,27 +20,17 @@ FrisbeeRapidShoot::FrisbeeRapidShoot() {
 }
 // Called just before this Command runs the first time
 void FrisbeeRapidShoot::Initialize() {
-	isShooting = false;
+
 }
 // Called repeatedly when this Command is scheduled to run
 void FrisbeeRapidShoot::Execute() {
-	if (isShooting == true && shootCommand.IsFinished()) //not currently shooting
-	{
-		isShooting = false;
-	}
-	
-	if (isShooting)
-	{
-		shootCommand.Execute();
-	}
-	else
+	if (!shootCommand.IsRunning()) 
 	{
 		bool isRPM = !(DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_RPM_VOLTAGE));
 		if((isRPM && Robot::shooterWheel->getPIDController()->OnTarget())
 				|| (!isRPM && voltageShootTimer.Get()>VOLTAGE_SHOOT_WAIT_TIME))
 		{
-			shootCommand.Initialize();
-			isShooting = true;
+			shootCommand.Start();
 			voltageShootTimer.Reset();
 		}
 	}	
