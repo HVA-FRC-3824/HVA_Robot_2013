@@ -19,6 +19,7 @@
 #include "Commands/AutonomousRPMShootMiddleGoalSoft.h"
 #include "Commands/AutonomousRPMShootforMegaPoints.h"
 #include "Commands/AutonomousRPMShootfromCenter.h"
+#include "Commands/AutonomousRPMShootfromCenterRapid.h"
 #include "Commands/AutonomousRPMShootfromLeft.h"
 #include "Commands/AutonomousRPMShootfromRight.h"
 #include "Commands/AutonomousShootMiddleGoalHard.h"

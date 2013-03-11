@@ -8,17 +8,21 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef AUTONOMOUS_RPM_SHOOT_FOR_MEGA_POINTS_H
-#define AUTONOMOUS_RPM_SHOOT_FOR_MEGA_POINTS_H
+
+
+#ifndef AUTONOMOUS_RPM_SHOOT_FROM_CENTER_RAPID_H
+#define AUTONOMOUS_RPM_SHOOT_FROM_CENTER_RAPID_H
 
 #include "Commands/CommandGroup.h"
 
 /**
- * TODO: How is this different from ShootfromCenter?
+ *
+ *
+ * @author ExampleAuthor
  */
-class AutonomousRPMShootforMegaPoints: public CommandGroup {
+class AutonomousRPMShootfromCenterRapid: public CommandGroup {
 public:	
-	AutonomousRPMShootforMegaPoints();
+	AutonomousRPMShootfromCenterRapid();
 };
 
 #endif

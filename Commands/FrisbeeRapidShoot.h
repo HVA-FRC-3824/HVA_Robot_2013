@@ -24,8 +24,11 @@ class FrisbeeRapidShoot: public Command {
 private:
 	Timer voltageShootTimer;
 	FrisbeeShoot shootCommand;
+	int shotCount;
+	int requiredShots;
 public:
 	FrisbeeRapidShoot();
+	FrisbeeRapidShoot(int reqShots);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

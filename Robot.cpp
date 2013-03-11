@@ -13,6 +13,7 @@
 #include "Commands/AutonomousRPMDriveForwardShoot.h"
 #include "Commands/AutonomousRPMShootforMegaPoints.h"
 #include "Commands/AutonomousRPMShootfromCenter.h"
+#include "Commands/AutonomousRPMShootfromCenterRapid.h"
 #include "Commands/AutonomousRPMShootfromLeft.h"
 #include "Commands/AutonomousRPMShootfromRight.h"
 #include "Commands/AutonomousRPMShootMiddleGoalHard.h"
@@ -93,13 +94,14 @@ void Robot::RobotInit()
    chooser->AddDefault("1) Do Nothing", new AutonomousDoNothing());
 //   chooser->AddObject("Drive forward and shoot", new AutonomousDriveForwardShoot());
 //   chooser->AddObject("Drive forward and shoot with RPM", new AutonomousRPMDriveForwardShoot());
-   chooser->AddObject("Autonomous for Maximum Points", new AutonomousRPMShootforMegaPoints());
-   chooser->AddObject("2) Shoot from Center to Top Goal", new AutonomousRPMShootfromCenter());
+   chooser->AddObject("2) Shoot from Cetner to Top Goal fast", new AutonomousRPMShootfromCenterRapid());
+   chooser->AddObject("3) Autonomous for Maximum Points", new AutonomousRPMShootforMegaPoints());
+   chooser->AddObject("4) Shoot from Center to Top Goal", new AutonomousRPMShootfromCenter());
 //   chooser->AddObject("Shoot from Left with RPM", new AutonomousRPMShootfromLeft());
 //   chooser->AddObject("Shoot from Right with RPM", new AutonomousRPMShootfromRight());
-   chooser->AddObject("3) Shoot from Side to Top Goal", new AutonomousRPMShootMiddleGoalHard());
+   chooser->AddObject("5) Shoot from Side to Top Goal", new AutonomousRPMShootMiddleGoalHard());
 //   chooser->AddObject("Shoot Middle Goal Hard with RPM from Centerline", new AutonomousRPMShootMiddleGoalHardtoCenterline());
-   chooser->AddObject("4) Shoot from Side to Middle Goal", new AutonomousRPMShootMiddleGoalSoft());
+   chooser->AddObject("6) Shoot from Side to Middle Goal", new AutonomousRPMShootMiddleGoalSoft());
 //   chooser->AddObject("Shoot from Center", new AutonomousShootfromCenter());
 //   chooser->AddObject("Shoot from Left", new AutonomousShootfromLeft());
 //   chooser->AddObject("Shoot from Right", new AutonomousShootfromRight());
