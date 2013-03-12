@@ -46,6 +46,7 @@ void CypressGotoPosition::Initialize()
 	}
 	
 	// Check to see if automated shooter speed
+	//TODO: What is INPUT_SHOOTER_SPEED_ADJUSTMENT_MANUAL?!?
 	if (!(DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_SPEED_ADJUSTMENT_MANUAL)) == false)
 	{
 		if (setShooterSpeed == NULL || !setShooterSpeed->IsRunning())

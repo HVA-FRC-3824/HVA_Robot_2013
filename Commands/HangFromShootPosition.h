@@ -8,17 +8,20 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef AUTONOMOUS_RPM_SHOOT_FOR_MEGA_POINTS_H
-#define AUTONOMOUS_RPM_SHOOT_FOR_MEGA_POINTS_H
+
+
+#ifndef HANG_FROM_SHOOT_POSITION_H
+#define HANG_FROM_SHOOT_POSITION_H
 
 #include "Commands/CommandGroup.h"
 
 /**
- * TODO: How is this different from ShootfromCenter?
+ *To be run at shoot position under tower.
+ *Drives backward, turns around, then rams into the tower to hang
  */
-class AutonomousRPMShootforMegaPoints: public CommandGroup {
+class HangFromShootPosition: public CommandGroup {
 public:	
-	AutonomousRPMShootforMegaPoints();
+	HangFromShootPosition();
 };
 
 #endif

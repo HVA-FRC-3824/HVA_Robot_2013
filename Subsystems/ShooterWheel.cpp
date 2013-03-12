@@ -48,7 +48,7 @@ PIDController *ShooterWheel::getPIDController()
 		
 		PIDcontroller->SetOutputRange(0.0, 1.0);
 		// BAD WOLF DO NOT USE ABSOLUTETOLORANCE LOCKS UP NETWORK TABLES
-		//PIDcontroller->SetAbsoluteTolerance(100);
+		PIDcontroller->SetAbsoluteTolerance(100); //TODO check whether WIP bug is fixed
 		//PIDcontroller->SetSetpoint(0);
 		//PIDcontroller->Enable();
 	}
