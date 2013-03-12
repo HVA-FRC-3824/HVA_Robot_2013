@@ -8,36 +8,27 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef SET_SHOOTER_SPEED_H
-#define SET_SHOOTER_SPEED_H
+
+#ifndef GET_SHOOTER_SPEED_RPM_H
+#define GET_SHOOTER_SPEED_RPM_H
+
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
-#include "Timer.h"
-#include "../OI.h"
-#include "GetShooterSpeedRPM.h"
+#include "SetShooterSpeed.h"
 /**
  *
  *
- * @author HVA Robotics Team 3824
+ * @author ExampleAuthor
  */
-class SetShooterSpeed: public Command 
-{
-private:
-   double m_shooterSpeed;
-   Timer *m_shooterTimer;
-   bool m_SpeedSpecifiedInConstructor;
-   bool m_isRPM;
-   
+class GetShooterSpeedRPM: public Command {
 public:
-	SetShooterSpeed(double speed, bool isRPM = true);	// For autonomous
-	SetShooterSpeed();				// Get Speed From the Smart Dashboard
+	GetShooterSpeedRPM();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
-	friend class GetShooterSpeedRPM;
 };
 
 #endif
