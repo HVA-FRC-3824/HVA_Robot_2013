@@ -11,9 +11,7 @@
 #define PUSHER_TIMER                 0.15
 #define PUSHER_TIMEOUT				  1.2
 #define PUSHER_REVERSE_TIME			 0.15
-
 int FrisbeeShoot::lastShotDataCounter = 0;
-
 FrisbeeShoot::FrisbeeShoot() 
 {
 	// Use requires() here to declare subsystem dependencies
@@ -79,10 +77,8 @@ void FrisbeeShoot::End()
    // stop the shooter moter and the timer
 	Robot::shooterPusher->motor->Set(Relay::kOff);
 	m_pusherTimer->Stop();
-
 	lastShotDataCounter++;
 	SmartDashboard::PutNumber("Shot Counter", lastShotDataCounter);
-
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
