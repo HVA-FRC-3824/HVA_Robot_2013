@@ -66,6 +66,8 @@ bool FrisbeeShoot::IsFinished()
 			return true;
 		}
 	}
+	//SmartDashboard::PutNumber("Last Shot Shooter RPM", 0);
+	//SmartDashboard::PutNumber("Last Shot Shooter Angle", 0);
   return false;
 }
 // Called once after isFinished returns true

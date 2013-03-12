@@ -14,7 +14,7 @@
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
 #include "../OI.h"
-
+#include "GetShooterAngle.h"
 /**
  *SetShooterAngle based on argument to constructor
  *
@@ -33,6 +33,7 @@ public:
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
+	friend class GetShooterAngle;
 };
 
 #endif

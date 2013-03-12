@@ -43,7 +43,8 @@ void Robot::RobotInit()
 //   SmartDashboard::PutNumber("Chassis Turn D Term", 0.04);
    
    SmartDashboard::PutNumber("Chassis Turn Angle Degrees", 10);
-   
+   SmartDashboard::PutNumber("Last Shot Shooter RPM", 0);
+   SmartDashboard::PutNumber("Last Shot Shooter Angle", 0);
    // PID values for the shooter speed
 //   SmartDashboard::PutNumber("Shooter Speed P Term", 1.0);
 //   SmartDashboard::PutNumber("Shooter Speed I Term", 0.03);
