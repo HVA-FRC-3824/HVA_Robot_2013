@@ -8,32 +8,30 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef FRISBEE_SHOOT_H
-#define FRISBEE_SHOOT_H
 
-#include "Timer.h"
+#ifndef HANGER_UP_H
+#define HANGER_UP_H
+
+
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
+#include "Timer.h"
 
 /**
  *
  *
- * @author HVA Robotics Team 3824
+ * @author ExampleAuthor
  */
-class FrisbeeShoot: public Command 
-{
+class HangerUp: public Command {
 private:
-	Timer *m_pusherTimer;
-	bool m_isJammed;
+	Timer hangTimer;
 public:
-	FrisbeeShoot();
+	HangerUp();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
-
-	static int lastShotDataCounter;
 };
 
 #endif

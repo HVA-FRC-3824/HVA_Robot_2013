@@ -8,32 +8,27 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef FRISBEE_SHOOT_H
-#define FRISBEE_SHOOT_H
 
-#include "Timer.h"
+#ifndef GET_SHOOTER_ANGLE_H
+#define GET_SHOOTER_ANGLE_H
+
+
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
-
+#include "SetShooterAngle.h"
 /**
  *
  *
- * @author HVA Robotics Team 3824
+ * @author ExampleAuthor
  */
-class FrisbeeShoot: public Command 
-{
-private:
-	Timer *m_pusherTimer;
-	bool m_isJammed;
+class GetShooterAngle: public Command {
 public:
-	FrisbeeShoot();
+	GetShooterAngle();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
-
-	static int lastShotDataCounter;
 };
 
 #endif

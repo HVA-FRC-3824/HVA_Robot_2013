@@ -8,31 +8,27 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef FRISBEE_SHOOT_H
-#define FRISBEE_SHOOT_H
 
-#include "Timer.h"
+#ifndef GET_LAST_SHOT_NUMBER_H
+#define GET_LAST_SHOT_NUMBER_H
+
+
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
 
 /**
  *
  *
- * @author HVA Robotics Team 3824
+ * @author ExampleAuthor
  */
-class FrisbeeShoot: public Command 
-{
-private:
-	Timer *m_pusherTimer;
-	bool m_isJammed;
+class GetLastShotNumber: public Command {
 public:
-	FrisbeeShoot();
+	GetLastShotNumber();
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
-
 	static int lastShotDataCounter;
 };
 

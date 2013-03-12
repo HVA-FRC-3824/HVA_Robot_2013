@@ -27,8 +27,7 @@ private:
 	int shotCount;
 	int requiredShots;
 public:
-	FrisbeeRapidShoot();
-	FrisbeeRapidShoot(int reqShots);
+	FrisbeeRapidShoot(int reqShots=100);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();

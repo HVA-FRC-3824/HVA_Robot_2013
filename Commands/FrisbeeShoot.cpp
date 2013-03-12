@@ -8,9 +8,10 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 #include "FrisbeeShoot.h"
-#define PUSHER_TIMER                 0.25
+#define PUSHER_TIMER                 0.15
 #define PUSHER_TIMEOUT				  1.2
 #define PUSHER_REVERSE_TIME			 0.15
+int FrisbeeShoot::lastShotDataCounter = 0;
 FrisbeeShoot::FrisbeeShoot() 
 {
 	// Use requires() here to declare subsystem dependencies
@@ -66,6 +67,8 @@ bool FrisbeeShoot::IsFinished()
 			return true;
 		}
 	}
+	//SmartDashboard::PutNumber("Last Shot Shooter RPM", 0);
+	//SmartDashboard::PutNumber("Last Shot Shooter Angle", 0);
   return false;
 }
 // Called once after isFinished returns true
@@ -74,6 +77,8 @@ void FrisbeeShoot::End()
    // stop the shooter moter and the timer
 	Robot::shooterPusher->motor->Set(Relay::kOff);
 	m_pusherTimer->Stop();
+	lastShotDataCounter++;
+	SmartDashboard::PutNumber("Shot Counter", lastShotDataCounter);
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

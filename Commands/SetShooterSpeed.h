@@ -15,7 +15,7 @@
 #include "../Robot.h"
 #include "Timer.h"
 #include "../OI.h"
-
+#include "GetShooterSpeedRPM.h"
 /**
  *
  *
@@ -37,6 +37,7 @@ public:
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
+	friend class GetShooterSpeedRPM;
 };
 
 #endif
