@@ -146,8 +146,8 @@ Children:
       Base: Gyro
       Children: []
       Properties:
-        Sensitivity: !!robotbuilder.data.properties.DoubleProperty {default: 0.007,
-          name: Sensitivity, validators: null, value: 0.007}
+        Sensitivity: !!robotbuilder.data.properties.DoubleProperty {default: 0.0070,
+          name: Sensitivity, validators: null, value: 0.0070}
         Input Module (Analog): !!robotbuilder.data.properties.ChoicesProperty
           choices: ['1']
           default: '1'
@@ -629,7 +629,7 @@ Children:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: Shooter Pusher}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: false}
+        name: Button on SmartDashboard, validators: null, value: true}
   - Name: Frisbee Shoot Reversed
     Base: Command
     Children: []

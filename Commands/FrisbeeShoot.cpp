@@ -8,7 +8,7 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 #include "FrisbeeShoot.h"
-#define PUSHER_TIMER                 0.25
+#define PUSHER_TIMER                 0.15
 #define PUSHER_TIMEOUT				  1.2
 #define PUSHER_REVERSE_TIME			 0.15
 FrisbeeShoot::FrisbeeShoot() 
