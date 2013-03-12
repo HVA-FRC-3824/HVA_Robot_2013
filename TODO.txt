@@ -12,10 +12,10 @@
 
 
 Test: 
-Rapid Shoot Joystick
+Rapid Shoot Joystick---- DONE
 Rapid SHoot Autonomous
 Auto hang
-Record
+Record---- DONE
 Prerecorded shooter values (Cypress). Add lob into 5, full court
 Auto Full court
 
