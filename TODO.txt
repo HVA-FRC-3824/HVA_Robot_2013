@@ -1,23 +1,26 @@
-1.	Convert the shooter angle from ADC values to degrees. (Michael)
-2.	Add continuous fire when holding trigger (may have to change the angle or RPM between Frisbees). Prevent firing unless the motors are at correct RPM – need to be able to override (or add a light when ready to fire). (Spencer) DONE – Needs testing
-3.	Reduce the time to shoot the three Frisbees in autonomous using parallel commands and remove unnecessary waits. (Michael)
-4.	Optimize the Frisbee pickup command group. (Kyle+Tym)
-5.	Write code to back up 2 feet and shoot. Test whether reliable. Backup another feet and see we are always at right distance for pickup. Also make version to pick-up in front in case robot is small enough to fit under pyramid. 
-6.	Add Frisbee image processing to locate and drive to Frisbees in autonomous. (Kyle, maybe done?)
-7.	Change Frisbee pickup button to automatically turn and shoot from loading station (return to loading position).
+1.	Convert the shooter angle from ADC values to degrees. (Owen)
+6.	Add Frisbee image processing to locate and drive to Frisbees in autonomous. (Kyle, maybe done?, not sure it is needed)
 8.	Improve the readability of the shooter angle and RPM for calibration (practice).
+10.     Put Hang Up/Down on Cypress
+
+Done:
+2.	Add continuous fire when holding trigger (may have to change the angle or RPM between Frisbees). Prevent firing unless the motors are at correct 3.	Reduce the time to shoot the three Frisbees in autonomous using parallel commands and remove unnecessary waits. DONE (Michael)
+4.	Optimize the Frisbee pickup command group. DONE (Kyle+Tym)
+RPM – need to be able to override (or add a light when ready to fire). (Spencer) DONE – Needs testing
+5.	Write code to back up 2 feet and shoot. Test whether reliable. Backup another feet and see we are always at right distance for pickup. Also make 7.	Change Frisbee pickup button to automatically turn and shoot from loading station (return to loading position).version to pick-up in front in case robot is small enough to fit under pyramid. (not needed - we pickup in front)
 9.	Add recording information from the game (number of shots and the angle/RPM of each shot – maybe an image of the shot). The information can be used for position angle/RPM calibration.
-10.	Add auto hang software from the shooting position to the tower.
-11.	Modify software to improve the shooting speed (do not rotate the full 360 degrees). Doesn’t need to be done if we have a pusher with 2 arms and a pin in two positions so that the switch gets pushed every 180deg.
+
 
 
 Test: 
-Rapid Shoot Joystick---- DONE
+Rapid Shoot Joystick
+Any Autonomous
 Rapid SHoot Autonomous
-Auto hang
-Record---- DONE
+Pickup
+Auto Full court (turn from loading)
 Prerecorded shooter values (Cypress). Add lob into 5, full court
-Auto Full court
+
 
 
 Ask: which positions are used? Should one of them be for full?
+Where is the LED ring?
