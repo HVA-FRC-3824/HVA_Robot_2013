@@ -97,8 +97,8 @@ void Robot::RobotInit()
    chooser->AddDefault("1) Do Nothing", new AutonomousDoNothing());
 //   chooser->AddObject("Drive forward and shoot", new AutonomousDriveForwardShoot());
 //   chooser->AddObject("Drive forward and shoot with RPM", new AutonomousRPMDriveForwardShoot());
-   chooser->AddObject("2) Shoot from Cetner to Top Goal fast", new AutonomousRPMShootfromCenterRapid());
-   chooser->AddObject("3) Autonomous for Maximum Points", new AutonomousRPMShootforMegaPoints());
+   chooser->AddObject("2) Shoot from Center to Top Goal fast", new AutonomousRPMShootfromCenterRapid());
+   chooser->AddObject("3) Shoot and Pickup for Maximum Points", new AutonomousRPMShootforMegaPoints());
    chooser->AddObject("4) Shoot from Center to Top Goal", new AutonomousRPMShootfromCenter());
 //   chooser->AddObject("Shoot from Left with RPM", new AutonomousRPMShootfromLeft());
 //   chooser->AddObject("Shoot from Right with RPM", new AutonomousRPMShootfromRight());

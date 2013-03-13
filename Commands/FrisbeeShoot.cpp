@@ -28,7 +28,7 @@ void FrisbeeShoot::Initialize()
 	m_isJammed = false;
 	
    // start the shooter
-	Robot::shooterPusher->motor->Set(Relay::kReverse);
+	Robot::shooterPusher->motor->Set(Relay::kForward);
 	// reset and start the timer
 	m_pusherTimer->Reset();
 	m_pusherTimer->Start();
@@ -43,7 +43,7 @@ void FrisbeeShoot::Execute()
 		m_isJammed = true;
 		
 		// Reverse the shooter
-		Robot::shooterPusher->motor->Set(Relay::kForward);
+		Robot::shooterPusher->motor->Set(Relay::kReverse);
 		
 		// Reset the timer
 		m_pusherTimer->Reset();
