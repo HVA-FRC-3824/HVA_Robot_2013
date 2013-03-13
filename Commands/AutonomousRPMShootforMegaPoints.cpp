@@ -13,24 +13,26 @@
 #include "SetShooterSpeed.h"
 #include "SetShooterAngle.h"
 #include "FrisbeeShoot.h"
+#include "FrisbeePickup.h"
 
 #define DRIVE_BACK_TIME             0.4
 #define DRIVE_BACK_SPEED           -0.4
-#define DRIVE_FORWARD_TIME        0.525
+#define DRIVE_FORWARD_TIME          0.8
 #define DRIVE_FORWARD_SPEED         0.4
 
 #define SHOOTER_LOWER_WAIT_TIME     1.0
 #define SHOOTER_RAISE_WAIT_TIME     1.0
 
+#define SHOOTER_ANGLE_PICKUP	  150.0
+
 #define SHOOTER_SPEED            2650.0
 
-#define SHOOTER_ANGLE_SHOOT       300.0
-#define SHOOTER_ANGLE_TOWER         0.0
+#define SHOOTER_ANGLE_SHOOT_FIRST 300.0
+#define SHOOTER_ANGLE_TOWER_FIRST   0.0
 
-#define SHOOTER_WAIT                0.5
+#define SHOOTER_WAIT                0.4
 
-AutonomousRPMShootforMegaPoints::AutonomousRPMShootforMegaPoints() 
-{
+AutonomousRPMShootforMegaPoints::AutonomousRPMShootforMegaPoints() {
 	printf("AutonomousRPMShootforMegaPoints\n");
 
 	// backup to allow the shoot to lower
@@ -39,23 +41,11 @@ AutonomousRPMShootforMegaPoints::AutonomousRPMShootforMegaPoints()
 	// start the shooter
 	AddParallel(new SetShooterSpeed(SHOOTER_SPEED, true), 1.0);
 
-	// set the shooter angle to get below the tower
-	AddSequential(new SetShooterAngle(SHOOTER_ANGLE_TOWER), 3.0);
+	// lower the shooter to shoot
+	AddSequential(new SetShooterAngle(SHOOTER_ANGLE_SHOOT_FIRST), 2.0);
 
 	// wait for shooter to lower
 	AddSequential(new WaitCommand(SHOOTER_LOWER_WAIT_TIME));
-
-	// drive back to tower to shoot
-	AddParallel(new ChassisDriveDistanceStraight(DRIVE_FORWARD_TIME, DRIVE_FORWARD_SPEED));
-
-	// wait for robot to drive in
-	AddSequential(new WaitCommand(1.0));
-
-	// raise the shooter to shoot
-	AddSequential(new SetShooterAngle(SHOOTER_ANGLE_SHOOT), 3.0);
-
-	// wait for shooter to lower
-	AddSequential(new WaitCommand(SHOOTER_RAISE_WAIT_TIME));
 
 	// shoot 1st frisbee
 	AddSequential(new FrisbeeShoot());
@@ -72,12 +62,25 @@ AutonomousRPMShootforMegaPoints::AutonomousRPMShootforMegaPoints()
 	// shoot 3rd frisbee
 	AddSequential(new FrisbeeShoot());
 
+	// lower the shooter to go under the tower
+	AddSequential(new SetShooterAngle(SHOOTER_ANGLE_TOWER_FIRST), 2.0);
+	
+	// drive under the tower to pickup
+	AddSequential(new ChassisDriveDistanceStraight(DRIVE_FORWARD_TIME, DRIVE_FORWARD_SPEED));
+	
+	// pickup a frisbee
+	AddSequential(new FrisbeePickup());
+	
+	// pickup another frisbee
+	AddSequential(new FrisbeePickup());
+	
+	// shoot frisbee
+	AddSequential(new FrisbeeShoot());
+	
 	// wait between shots
 	AddSequential(new WaitCommand(SHOOTER_WAIT));
-
-	// shoot 4rd frisbee
+	
+	// shoot another frisbee
 	AddSequential(new FrisbeeShoot());
-
-	// lowers to exit the tower for teleop
-	AddSequential(new SetShooterAngle(SHOOTER_ANGLE_TOWER), 2.0);
+	
 }
