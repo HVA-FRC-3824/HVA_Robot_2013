@@ -24,7 +24,15 @@ void DisplayPumpStatus::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void DisplayPumpStatus::Execute()
 {
-//   SmartDashboard::PutBoolean("Compressor: ",  Robot::pump->compressorPump->GetPressureSwitchValue());   
+   //SmartDashboard::PutBoolean("Compressor Status: ",  Robot::pump->compressorPump->GetPressureSwitchValue());
+	if(Robot::pump->compressorPump->GetPressureSwitchValue() == true)
+	{
+		SmartDashboard::PutString("Compressor Status: ",  "ON");
+	}
+	else
+	{
+		SmartDashboard::PutString("Compressor Status: ",  "OFF");
+	}
 }
 // Make this return true when this Command no longer needs to run execute()
 bool DisplayPumpStatus::IsFinished() 

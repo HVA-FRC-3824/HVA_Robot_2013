@@ -21,13 +21,16 @@
 //would be nicer to subclass but would require changes to auto-generated code
 class PIDGearTooth : public PIDSource
 {
-private:
-	GearTooth* gearTooth;
 public:
+	GearTooth* gearTooth;
+
 	PIDGearTooth(GearTooth* sensor) { gearTooth = sensor; } 
 	
 	// Return RPM for the PID controller
-	double PIDGet() { return (1.0/gearTooth->GetPeriod())*60.0 ; }
+	double PIDGet() { double period = gearTooth->GetPeriod();
+	if((1.0/period)*60.0 > 5000.0)
+		printf("period: %lf", period);
+	return (1.0/gearTooth->GetPeriod())*60.0 ; }
 };
 class ShooterWheel: public Subsystem 
 {
