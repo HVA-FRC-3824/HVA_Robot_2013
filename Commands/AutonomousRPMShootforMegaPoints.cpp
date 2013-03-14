@@ -33,7 +33,7 @@
 #define SHOOTER_WAIT                0.4
 
 AutonomousRPMShootforMegaPoints::AutonomousRPMShootforMegaPoints() {
-	printf("AutonomousRPMShootforMegaPoints\n");
+	printf("Start AutonomousRPMShootforMegaPoints\n");
 
 	// backup to allow the shoot to lower
 	AddSequential(new ChassisDriveDistanceStraight(DRIVE_BACK_TIME, DRIVE_BACK_SPEED));
@@ -82,5 +82,7 @@ AutonomousRPMShootforMegaPoints::AutonomousRPMShootforMegaPoints() {
 	
 	// shoot another frisbee
 	AddSequential(new FrisbeeShoot());
+	
+	printf("End AutonomousRPMShootforMegaPoints\n");
 	
 }

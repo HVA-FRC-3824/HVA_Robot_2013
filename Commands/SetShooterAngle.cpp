@@ -79,7 +79,8 @@ bool SetShooterAngle::IsFinished()
 // Called once after isFinished returns true
 void SetShooterAngle::End() 
 {
-   
+	  
+	   SmartDashboard::PutNumber("Shooter Angle GIT", Robot::shooterAngleAdjust->potentiometer->PIDGet());
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

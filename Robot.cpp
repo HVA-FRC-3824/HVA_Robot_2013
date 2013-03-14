@@ -11,7 +11,7 @@
 #include "Commands/AutonomousDoNothing.h"
 #include "Commands/AutonomousDriveForwardShoot.h"
 #include "Commands/AutonomousRPMDriveForwardShoot.h"
-#include "Commands/AutonomousRPMShootforMegaPoints.h"
+//#include "Commands/AutonomousRPMShootforMegaPoints.h"
 #include "Commands/AutonomousRPMShootfromCenter.h"
 #include "Commands/AutonomousRPMShootfromCenterRapid.h"
 #include "Commands/AutonomousRPMShootfromLeft.h"
@@ -47,6 +47,9 @@ void Robot::RobotInit()
    SmartDashboard::PutNumber("Chassis Turn Angle Degrees", 10);
    SmartDashboard::PutNumber("Last Shot Shooter RPM", 0);
    SmartDashboard::PutNumber("Last Shot Shooter Angle", 0);
+   SmartDashboard::PutNumber("Shot Counter", 0);
+   SmartDashboard::PutNumber("Match Number", 1);
+   
    // PID values for the shooter speed
 //   SmartDashboard::PutNumber("Shooter Speed P Term", 1.0);
 //   SmartDashboard::PutNumber("Shooter Speed I Term", 0.03);
@@ -98,7 +101,7 @@ void Robot::RobotInit()
 //   chooser->AddObject("Drive forward and shoot", new AutonomousDriveForwardShoot());
 //   chooser->AddObject("Drive forward and shoot with RPM", new AutonomousRPMDriveForwardShoot());
    chooser->AddObject("2) Shoot from Center to Top Goal fast", new AutonomousRPMShootfromCenterRapid());
-   chooser->AddObject("3) Shoot and Pickup for Maximum Points", new AutonomousRPMShootforMegaPoints());
+//   chooser->AddObject("3) Shoot and Pickup for Maximum Points", new AutonomousRPMShootforMegaPoints());
    chooser->AddObject("4) Shoot from Center to Top Goal", new AutonomousRPMShootfromCenter());
 //   chooser->AddObject("Shoot from Left with RPM", new AutonomousRPMShootfromLeft());
 //   chooser->AddObject("Shoot from Right with RPM", new AutonomousRPMShootfromRight());

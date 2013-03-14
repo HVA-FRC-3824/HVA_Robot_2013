@@ -162,6 +162,8 @@ bool SetShooterSpeed::IsFinished()
 void SetShooterSpeed::End() 
 {
 	// not disabling because we always want the shooter to keep running
+	 SmartDashboard::PutNumber("Shooter Speed Period", (1.0/Robot::shooterWheel->encoder->GetPeriod())*60.0);
+		 SmartDashboard::PutNumber("Shooter Speed GIT", Robot::shooterWheel->pidEncoder->PIDGet());
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

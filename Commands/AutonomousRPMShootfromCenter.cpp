@@ -35,7 +35,7 @@
 
 AutonomousRPMShootfromCenter::AutonomousRPMShootfromCenter() 
 {
-   printf("AutonomousRPMShootfromCenter\n");
+   printf("Start AutonomousRPMShootfromCenter\n");
 	
    // backup to allow the shoot to lower
    AddSequential(new ChassisDriveDistanceStraight(DRIVE_BACK_TIME, DRIVE_BACK_SPEED));
@@ -84,4 +84,6 @@ AutonomousRPMShootfromCenter::AutonomousRPMShootfromCenter()
    
    // lowers to exit the tower for teleop
    AddSequential(new SetShooterAngle(SHOOTER_ANGLE_TOWER), 2.0);
+   
+   printf("End AutonomousRPMShootfromCenter\n");
 }

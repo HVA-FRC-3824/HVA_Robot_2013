@@ -19,6 +19,7 @@
 
 AutonomousRPMDriveForwardShoot::AutonomousRPMDriveForwardShoot() 
 {
+	printf("In AutonomousRPMDriveForwardShoot()\n");
    // drive forward
 	AddSequential(new ChassisDriveDistanceStraight(AUTO_DRIVE_TIME, AUTO_DRIVE_POWER));
 
@@ -51,4 +52,7 @@ AutonomousRPMDriveForwardShoot::AutonomousRPMDriveForwardShoot()
 	
 	// stop the shooter
 	AddSequential(new SetShooterSpeed(0.0, false));
+	
+	printf("Out AutonomousRPMDriveForwardShoot()\n");
+ 
 }
