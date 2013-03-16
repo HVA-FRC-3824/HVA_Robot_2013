@@ -57,7 +57,7 @@ bool FrisbeeShoot::IsFinished()
 	{
 	   if (m_pusherTimer->Get() > PUSHER_TIMER) 
 	   {
-			return Robot::shooterPusher->stopSwitch->Get();
+			return !(Robot::shooterPusher->stopSwitch->Get());
 	   }
 	}
 	else

@@ -33,6 +33,7 @@ void Teleoperated::Execute()
    SmartDashboard::PutNumber("Shooter Speed Period", (1.0/Robot::shooterWheel->encoder->GetPeriod())*60.0);
    SmartDashboard::PutNumber("Shooter Speed GIT", Robot::shooterWheel->pidEncoder->PIDGet());
    SmartDashboard::PutNumber("Shooter Angle GIT", Robot::shooterAngleAdjust->potentiometer->PIDGet());
+   SmartDashboard::PutNumber("Pickup Pot", Robot::pickup->potentiometer->PIDGet());
 //   SmartDashboard::PutNumber("Shooter Voltage", Robot::shooterWheel->motor->Get());
 //   SmartDashboard::PutNumber("Shooter Speed", Robot::shooterWheel->PIDcontroller->GetSetpoint());
 //   SmartDashboard::PutNumber("Pickup Position GIT", Robot::pickup->potentiometer->PIDGet());
@@ -40,6 +41,7 @@ void Teleoperated::Execute()
 //   SmartDashboard::PutNumber("Gyro", Robot::drivetrain->gyro->PIDGet());
    // <DEBUG>
 //   SmartDashboard::PutNumber("Pickup Voltage", Robot::pickup->motor->Get());
+   //SmartDashboard::PutBoolean("Shoot Sensor", Robot::shooterPusher->stopSwitch->Get());
    // </DEBUG>
 }
 // Make this return true when this Command no longer needs to run execute()

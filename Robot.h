@@ -37,17 +37,9 @@
 #define SHOOTER_SPEED_THRESHOLD    				   50.0
 #define SHOOTER_SPEED_MAX_VALUE  				 3600.0
 #define SHOOTER_SPEED_MIN_VALUE   			     1000.0
-/****** PICKUP POSITION ******/
-#define PICKUP_MAX_VALUE 				           672.0
-#define PICKUP_MIN_VALUE 		 		            90.0
-#define PICKUP_THRESHOLD 		                    5.0
-#define PICKUP_POSITION						   	    95.0
-#define PICKUP_STAGE				               122.0
-#define PICKUP_RELEASE_POSITION					   647.0
-#define PICKUP_HOME_POSITION	                   500.0
 /****** PICKUP VOLTAGE ******/
-#define PICKUP_UP_VOLTAGE					        0.5
-#define PICKUP_DOWN_VOLTAGE						   -0.5
+#define PICKUP_UP_VOLTAGE					       -0.4
+#define PICKUP_DOWN_VOLTAGE						    0.2
 /****** CYPRESS POSITION DEFINES ******/
 #define POSITION_1_ANGLE                          660.0 // close to goals
 #define POSITION_1_VELOCITY                      1930.0

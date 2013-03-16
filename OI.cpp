@@ -72,7 +72,7 @@ OI::OI()
 	driveJoystick = new Joystick(1);
 	
 	joystickRapidShoot = new JoystickButton(driveJoystick, 11);
-	joystickRapidShoot->WhileHeld(new FrisbeeShoot());
+	joystickRapidShoot->WhileHeld(new FrisbeeRapidShoot());
 	joystickSingleShoot = new JoystickButton(driveJoystick, 12);
 	joystickSingleShoot->WhenPressed(new FrisbeeShoot());
 	joystickShoot = new JoystickButton(driveJoystick, 1);
@@ -112,7 +112,7 @@ OI::OI()
 	
 	m_shooterAngleAdjustmentManual->WhileHeld(new SetShooterAngle());
 	m_shooterSpeedAdjustmentManual->WhileHeld(new SetShooterSpeed());	
-	m_frisbeeShoot->WhileHeld(new FrisbeeShoot());	
+	m_frisbeeShoot->WhileHeld(new FrisbeeRapidShoot());	
 	m_pickupHome->WhenPressed(new SetPickupPosition(PICKUP_HOME_POSITION));
 	m_hang->WhenPressed(new HangToggle());	
 	m_shooterStop->WhenPressed(new SetShooterSpeed(0, false));
