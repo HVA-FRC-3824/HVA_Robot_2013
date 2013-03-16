@@ -22,6 +22,7 @@
 #include "Commands/AutonomousRPMShootfromCenterRapid.h"
 #include "Commands/AutonomousRPMShootfromLeft.h"
 #include "Commands/AutonomousRPMShootfromRight.h"
+#include "Commands/AutonomousRPMShootingwithPickup.h"
 #include "Commands/AutonomousShootMiddleGoalHard.h"
 #include "Commands/AutonomousShootMiddleGoalHardtoCenterline.h"
 #include "Commands/AutonomousShootMiddleGoalSoft.h"
@@ -30,6 +31,7 @@
 #include "Commands/AutonomousShootfromRight.h"
 #include "Commands/ButtonTest.h"
 #include "Commands/ChassisDriveDistance.h"
+#include "Commands/ChassisDriveDistanceSideways.h"
 #include "Commands/ChassisDriveDistanceStraight.h"
 #include "Commands/ChassisDrivetoWall.h"
 #include "Commands/ChassisDrivetoWallStraight.h"
@@ -79,10 +81,12 @@ OI::OI()
 	joystickShoot->WhileHeld(new FrisbeeRapidShoot());
      
         // SmartDashboard Buttons
+	SmartDashboard::PutData("Autonomous RPM Shooting with Pickup", new AutonomousRPMShootingwithPickup());
 	SmartDashboard::PutData("Hang From Shoot Position", new HangFromShootPosition());
 	SmartDashboard::PutData("Long Shot from Left Loading Station", new LongShotfromLeftLoadingStation());
 	SmartDashboard::PutData("Long Shot from Right Loading Station", new LongShotfromRightLoadingStation());
 	SmartDashboard::PutData("Frisbee Shoot", new FrisbeeShoot());
+	SmartDashboard::PutData("Frisbee Pickup", new FrisbeePickup());
 	SmartDashboard::PutData("Frisbee Rapid Shoot", new FrisbeeRapidShoot());
 	SmartDashboard::PutData("Hanger Pull Down", new HangerPullDown());
 	SmartDashboard::PutData("Hanger Up", new HangerUp());

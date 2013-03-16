@@ -43,13 +43,13 @@ PIDController* Pickup::getPIDController()
 //				SmartDashboard::GetNumber("Pickup D Term"), 
 //				potentiometer, this);
 		   
-		PIDcontroller = new PIDController(0.02, 0.001, 0.009, potentiometer, this);
+		PIDcontroller = new PIDController(0.01, 0.0, 0.009, potentiometer, this);
 		
-		PIDcontroller->SetOutputRange(-0.5, 0.7);
+		PIDcontroller->SetOutputRange(-0.4, 0.6);
 	}
 	return PIDcontroller;
 }
 void Pickup::PIDWrite(float output)
 {
-	motor->Set(-output);
+	motor->Set(output);
 }

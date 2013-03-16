@@ -42,6 +42,7 @@ void Teleoperated::Execute()
    // <DEBUG>
 //   SmartDashboard::PutNumber("Pickup Voltage", Robot::pickup->motor->Get());
    //SmartDashboard::PutBoolean("Shoot Sensor", Robot::shooterPusher->stopSwitch->Get());
+   SmartDashboard::PutNumber("Shooter Velocity Sensor Count", Robot::shooterWheel->encoder->Get());
    // </DEBUG>
 }
 // Make this return true when this Command no longer needs to run execute()
