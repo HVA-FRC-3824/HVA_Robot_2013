@@ -17,9 +17,7 @@ HangerPullDown::HangerPullDown() {
 }
 // Called just before this Command runs the first time
 void HangerPullDown::Initialize() {
-	hangTimer.Start();
-	hangTimer.Reset();	
-	Robot::hang->hangSolenoid->Set(DoubleSolenoid::kReverse);
+	Robot::hang->hangSolenoid->Set(false);
 }
 // Called repeatedly when this Command is scheduled to run
 void HangerPullDown::Execute() {
@@ -27,12 +25,11 @@ void HangerPullDown::Execute() {
 }
 // Make this return true when this Command no longer needs to run execute()
 bool HangerPullDown::IsFinished() {
-	return hangTimer.Get() > HANG_TIME;
+	return true;
 }
 // Called once after isFinished returns true
 void HangerPullDown::End() {
-	Robot::hang->hangSolenoid->Set(DoubleSolenoid::kOff);
-	hangTimer.Stop();
+
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

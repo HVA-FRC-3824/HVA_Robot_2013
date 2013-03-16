@@ -17,21 +17,18 @@ HangerUp::HangerUp() {
 }
 // Called just before this Command runs the first time
 void HangerUp::Initialize() {
-	hangTimer.Start();
-	hangTimer.Reset();
-	Robot::hang->hangSolenoid->Set(DoubleSolenoid::kForward);
+	Robot::hang->hangSolenoid->Set(true);
 }
 // Called repeatedly when this Command is scheduled to run
 void HangerUp::Execute() {
 }
 // Make this return true when this Command no longer needs to run execute()
 bool HangerUp::IsFinished() {
-	return hangTimer.Get() > HANG_TIME;
+	return true;
 }
 // Called once after isFinished returns true
 void HangerUp::End() {
-	Robot::hang->hangSolenoid->Set(DoubleSolenoid::kOff);
-	hangTimer.Stop();
+
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

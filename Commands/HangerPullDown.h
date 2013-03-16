@@ -24,7 +24,6 @@
  */
 class HangerPullDown: public Command {
 private:
-	Timer hangTimer;
 public:
 	HangerPullDown();
 	virtual void Initialize();

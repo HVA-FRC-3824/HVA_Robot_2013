@@ -39,7 +39,7 @@
 #define SHOOTER_SPEED_MIN_VALUE   			     1000.0
 /****** PICKUP VOLTAGE ******/
 #define PICKUP_UP_VOLTAGE					       -0.4
-#define PICKUP_DOWN_VOLTAGE						    0.2
+#define PICKUP_DOWN_VOLTAGE						    0.3
 /****** CYPRESS POSITION DEFINES ******/
 #define POSITION_1_ANGLE                          660.0 // close to goals
 #define POSITION_1_VELOCITY                      1930.0

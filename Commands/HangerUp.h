@@ -24,7 +24,6 @@
  */
 class HangerUp: public Command {
 private:
-	Timer hangTimer;
 public:
 	HangerUp();
 	virtual void Initialize();
