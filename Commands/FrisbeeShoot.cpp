@@ -79,7 +79,6 @@ void FrisbeeShoot::End()
 	m_pusherTimer->Stop();
 	lastShotDataCounter++;
 	SmartDashboard::PutNumber("Shot Counter", lastShotDataCounter);
-
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

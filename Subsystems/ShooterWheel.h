@@ -23,7 +23,6 @@ class PIDGearTooth : public PIDSource
 {
 public:
 	GearTooth* gearTooth;
-
 	PIDGearTooth(GearTooth* sensor) { gearTooth = sensor; } 
 	
 	// Return RPM for the PID controller

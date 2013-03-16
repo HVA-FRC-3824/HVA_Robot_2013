@@ -1,5 +1,4 @@
-1.	Convert the shooter angle from ADC values to degrees. (Owen)
-6.	Add Frisbee image processing to locate and drive to Frisbees in autonomous. (Kyle, maybe done?, not sure it is needed)
+1.	Convert the shooter angle from ADC values to degrees. (Michael)
 8.	Improve the readability of the shooter angle and RPM for calibration (practice).
 10.     Put Hang Up/Down on Cypress
 
@@ -9,13 +8,15 @@ Done:
 RPM – need to be able to override (or add a light when ready to fire). (Spencer) DONE – Needs testing
 5.	Write code to back up 2 feet and shoot. Test whether reliable. Backup another feet and see we are always at right distance for pickup. Also make 7.	Change Frisbee pickup button to automatically turn and shoot from loading station (return to loading position).version to pick-up in front in case robot is small enough to fit under pyramid. (not needed - we pickup in front)
 9.	Add recording information from the game (number of shots and the angle/RPM of each shot – maybe an image of the shot). The information can be used for position angle/RPM calibration.
+6.	Add Frisbee image processing to locate and drive to Frisbees in autonomous. (Kyle, maybe done?, not sure it is needed)
 
 
 
 Test: 
-Rapid Shoot Joystick
+Frisbee Image Processing to Pickup
+Rapid Shoot Joystick (works great)
 Any Autonomous
-Rapid SHoot Autonomous
+Rapid Shoot Autonomous
 Pickup
 Auto Full court (turn from loading)
 Prerecorded shooter values (Cypress). Add lob into 5, full court

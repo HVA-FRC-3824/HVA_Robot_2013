@@ -9,12 +9,10 @@
 // it from being updated in th future.
 #include "ShooterWheel.h"
 #include "../Robotmap.h"
-
 // TODO These are the values used at palm meadow
 //#define P_TERM      0.005
 //#define I_TERM      0.0004
 //#define D_TERM      0.000
-
 #define P_TERM		0.006
 #define I_TERM		0.0004
 #define D_TERM		0.000
