@@ -14,13 +14,14 @@
 #include "SetShooterSpeed.h"
 #include "SetShooterAngle.h"
 #include "FrisbeeRapidShoot.h"
+#include "ChassisDriveDistance.h"
 #include "ChassisDriveDistanceStraight.h"
 #include "FrisbeePickup.h"
 #include "ChassisDriveDistanceSidewaysStrainght.h"
 #include "ChassisTurnAngle.h"
 
 #define SHOOTER_SPEED            2650.0
-#define SHOOTER_ANGLE_SHOOT       318.0
+#define SHOOTER_ANGLE_SHOOT       340.0
 #define SECOND_ANGLE			  378.0
 
 AutonomousRPMShootingwithPickup::AutonomousRPMShootingwithPickup() {
@@ -34,9 +35,11 @@ AutonomousRPMShootingwithPickup::AutonomousRPMShootingwithPickup() {
 	   
 	   // shoot 3 Frisbees as fast as possible (it waits on the speed to be correct)
 	   //AddSequential(new FrisbeeRapidShoot(3), 10.0);
-		AddSequential(new WaitCommand(1.0));
+	AddSequential(new WaitCommand(1.0));
 	   AddSequential(new FrisbeeShoot());
+	   AddSequential(new WaitCommand(0.1));
 	   AddSequential(new FrisbeeShoot());
+	   AddSequential(new WaitCommand(0.1));
 	   AddSequential(new FrisbeeShoot());
 	   
 	   AddParallel(new SetShooterAngle(10.0));
@@ -47,7 +50,7 @@ AutonomousRPMShootingwithPickup::AutonomousRPMShootingwithPickup() {
 	   
 	   AddSequential(new ChassisTurnAngle(14.0));
 	   //AddSequential(new ChassisDriveDistanceSidewaysStrainght(0.1, 0.4));
-	   //AddSequential(new ChassisDriveDistanceSidewaysStrainght(.7, .7));
+	   AddSequential(new ChassisDriveDistance(.1, .4));
 	   
 	   AddSequential(new FrisbeePickup());
 	   AddSequential(new ChassisTurnAngle(-12.0));
