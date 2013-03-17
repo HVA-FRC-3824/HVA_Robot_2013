@@ -15,7 +15,7 @@
 #define INPUT_HANG									      3	//Button
 #define INPUT_PICKUP_UP						             10	//Double Toggle
 #define INPUT_PICKUP_DOWN							      1	//Double Toggle
-#define INPUT_PICKUP_HOME							      8	//Button
+#define INPUT_PICKUP_PICKUP							      8	//Button
 #define INPUT_SHOOTER_SPEED_ADJUSTMENT_MANUAL	       	  2	//Plot Switch
 #define INPUT_SHOOTER_ANGLE_ADJUSTMENT_MANUAL			  7	//Toggle Switch
 #define INPUT_SHOOTER_RPM_VOLTAGE				   		  5	//Toggle Switch
@@ -42,14 +42,14 @@ private:
 	DigitalIOButton* m_shooterAngleAdjustmentManual;
 	DigitalIOButton* m_shooterSpeedAdjustmentManual;
 	DigitalIOButton* m_frisbeeShoot;
-	DigitalIOButton* m_pickupHome;
+	DigitalIOButton* m_pickupPickup;
 	DigitalIOButton* m_hang;
 	DigitalIOButton* m_shooterStop;
 	DigitalIOButton* m_shooterPosition_1;
 	DigitalIOButton* m_shooterPosition_2;
 	DigitalIOButton* m_shooterPosition_3;
-   DigitalIOButton* m_shooterPosition_4;
-   DigitalIOButton* m_shooterPosition_5;
+    DigitalIOButton* m_shooterPosition_4;
+    DigitalIOButton* m_shooterPosition_5;
 	DigitalIOButton* m_pickupSuction;
 	
 public:

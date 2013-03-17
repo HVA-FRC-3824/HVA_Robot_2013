@@ -74,6 +74,7 @@ bool FrisbeeShoot::IsFinished()
 // Called once after isFinished returns true
 void FrisbeeShoot::End() 
 {
+	printf("Finished Shoot\n");
    // stop the shooter moter and the timer
 	Robot::shooterPusher->motor->Set(Relay::kOff);
 	m_pusherTimer->Stop();

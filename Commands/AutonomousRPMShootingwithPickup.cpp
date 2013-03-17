@@ -16,32 +16,43 @@
 #include "FrisbeeRapidShoot.h"
 #include "ChassisDriveDistanceStraight.h"
 #include "FrisbeePickup.h"
-#include "ChassisDriveDistanceSideways.h"
+#include "ChassisDriveDistanceSidewaysStrainght.h"
+#include "ChassisTurnAngle.h"
 
 #define SHOOTER_SPEED            2650.0
-#define SHOOTER_ANGLE_SHOOT       300.0
-#define SECOND_ANGLE			  280.0
+#define SHOOTER_ANGLE_SHOOT       318.0
+#define SECOND_ANGLE			  378.0
 
 AutonomousRPMShootingwithPickup::AutonomousRPMShootingwithPickup() {
-	// start the shooter
-	   AddParallel(new SetShooterSpeed(SHOOTER_SPEED, true), 1.0);
+
 		
 	   // set the shooter angle to get below the tower
-	   AddSequential(new SetShooterAngle(SHOOTER_ANGLE_SHOOT), 3.0);
+		AddParallel(new SetShooterAngle(SHOOTER_ANGLE_SHOOT), 3.0);
+	   
+		// start the shooter
+		AddSequential(new SetShooterSpeed(SHOOTER_SPEED, true), 3.0);
 	   
 	   // shoot 3 Frisbees as fast as possible (it waits on the speed to be correct)
-	   AddSequential(new FrisbeeRapidShoot(3), 10.0);
-	   
-	   AddParallel(new SetShooterAngle(SECOND_ANGLE));
-	   
-	   AddSequential(new ChassisDriveDistanceStraight(.5, .5));
-	   
-	   AddSequential(new FrisbeePickup());
-	   
+	   //AddSequential(new FrisbeeRapidShoot(3), 10.0);
+		AddSequential(new WaitCommand(1.0));
+	   AddSequential(new FrisbeeShoot());
+	   AddSequential(new FrisbeeShoot());
 	   AddSequential(new FrisbeeShoot());
 	   
-	   AddSequential(new ChassisDriveDistanceSideways(.5, .5));
+	   AddParallel(new SetShooterAngle(10.0));
+	   
+	   AddSequential(new ChassisDriveDistanceStraight(0.3, 0.4));
 	   
 	   AddSequential(new FrisbeePickup());
+	   
+	   AddSequential(new ChassisTurnAngle(14.0));
+	   //AddSequential(new ChassisDriveDistanceSidewaysStrainght(0.1, 0.4));
+	   //AddSequential(new ChassisDriveDistanceSidewaysStrainght(.7, .7));
+	   
+	   AddSequential(new FrisbeePickup());
+	   AddSequential(new ChassisTurnAngle(-12.0));
+	   AddParallel(new SetShooterAngle(SECOND_ANGLE));
+	   AddSequential(new WaitCommand(2.0));
+	   AddSequential(new FrisbeeShoot());
 	   AddSequential(new FrisbeeShoot());
 }

@@ -8,39 +8,35 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef SET_PICKUP_POSITION_H
-#define SET_PICKUP_POSITION_H
+
+#ifndef CHASSIS_DRIVE_DISTANCE_SIDEWAYS_STRAINGHT_H
+#define CHASSIS_DRIVE_DISTANCE_SIDEWAYS_STRAINGHT_H
+
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
-
-/****** PICKUP POSITION ******/
-#define PICKUP_MAX_VALUE 				           890.0
-#define PICKUP_MIN_VALUE 		 		             3.0
-#define PICKUP_THRESHOLD 		                     5.0
-#define PICKUP_POSITION						   	   880.0
-#define PICKUP_STAGE				               122.0
-#define PICKUP_RELEASE_POSITION					   168.0
-#define PICKUP_HOME_POSITION	                    20.0
 
 /**
  *
  *
  * @author ExampleAuthor
  */
-class SetPickupPosition: public Command
-{
+class ChassisDriveDistanceSidewaysStrainght: public Command, public PIDSource, public PIDOutput{
 private:
-	double position;
-	bool positionSpecifiedInConstructor;
+	   float driveDuration;
+	   float drivePower;
+	   PIDController *PIDcontroller;
+	   Timer *timer;
 public:
-	SetPickupPosition(double position_parameter);
-	SetPickupPosition();
+	ChassisDriveDistanceSidewaysStrainght(float duration, float power);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
+	
+	void PIDWrite(float output);
+	double PIDGet();
 };
 
 #endif

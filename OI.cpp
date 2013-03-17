@@ -32,6 +32,7 @@
 #include "Commands/ButtonTest.h"
 #include "Commands/ChassisDriveDistance.h"
 #include "Commands/ChassisDriveDistanceSideways.h"
+#include "Commands/ChassisDriveDistanceSidewaysStrainght.h"
 #include "Commands/ChassisDriveDistanceStraight.h"
 #include "Commands/ChassisDrivetoWall.h"
 #include "Commands/ChassisDrivetoWallStraight.h"
@@ -98,7 +99,7 @@ OI::OI()
 	m_shooterAngleAdjustmentManual = new DigitalIOButton(INPUT_SHOOTER_ANGLE_ADJUSTMENT_MANUAL);
 	m_shooterSpeedAdjustmentManual = new DigitalIOButton(INPUT_SHOOTER_SPEED_ADJUSTMENT_MANUAL);
 	m_frisbeeShoot = new DigitalIOButton(INPUT_FRISBEE_SHOOT);
-	m_pickupHome = new DigitalIOButton(INPUT_PICKUP_HOME);
+	m_pickupPickup = new DigitalIOButton(INPUT_PICKUP_PICKUP);
 	m_hang = new DigitalIOButton(INPUT_HANG);
 	m_shooterStop = new DigitalIOButton(INPUT_SHOOTER_STOP);
 	m_shooterPosition_1 = new DigitalIOButton(INPUT_SHOOTER_POSITION_1);
@@ -117,7 +118,7 @@ OI::OI()
 	m_shooterAngleAdjustmentManual->WhileHeld(new SetShooterAngle());
 	m_shooterSpeedAdjustmentManual->WhileHeld(new SetShooterSpeed());	
 	m_frisbeeShoot->WhileHeld(new FrisbeeRapidShoot());	
-	m_pickupHome->WhenPressed(new SetPickupPosition(PICKUP_HOME_POSITION));
+	m_pickupPickup->WhenPressed(new FrisbeePickup());
 	m_hang->WhenPressed(new HangToggle());	
 	m_shooterStop->WhenPressed(new SetShooterSpeed(0, false));
 	m_shooterPosition_1->WhenPressed(new CypressGotoPosition(POSITION_1_ANGLE, POSITION_1_VELOCITY, POSITION_1_IS_RPM));	

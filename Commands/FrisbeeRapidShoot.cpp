@@ -19,32 +19,41 @@ FrisbeeRapidShoot::FrisbeeRapidShoot(int reqShots) {
 	requiredShots = reqShots; //by default shoot as long as pressed
 }
 // Called just before this Command runs the first time
-void FrisbeeRapidShoot::Initialize() {
+void FrisbeeRapidShoot::Initialize() 
+{
 	shotCount = 0;
 }
 // Called repeatedly when this Command is scheduled to run
-void FrisbeeRapidShoot::Execute() {
+void FrisbeeRapidShoot::Execute() 
+{
+	printf("ShootCommand Running: %d, Finished: %d\n", shootCommand.IsRunning(), shootCommand.IsFinished());
 	if (!shootCommand.IsRunning()) 
 	{
 		bool isRPM = !(DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_RPM_VOLTAGE));
+		printf("ISRPM: %d\n", isRPM);
 		if((isRPM && Robot::shooterWheel->getPIDController()->OnTarget())
 				|| (!isRPM && voltageShootTimer.Get()>VOLTAGE_SHOOT_WAIT_TIME))
 		{
 			shootCommand.Start();
 			voltageShootTimer.Reset();
 			shotCount++;
+			printf("Shot Counter %d\n", shotCount);
 		}
 	}	
 }
 // Make this return true when this Command no longer needs to run execute()
-bool FrisbeeRapidShoot::IsFinished() {
+bool FrisbeeRapidShoot::IsFinished() 
+{
 	return shotCount>=requiredShots && shootCommand.IsFinished();
 }
 // Called once after isFinished returns true
-void FrisbeeRapidShoot::End() {
-	
+void FrisbeeRapidShoot::End() 
+{
+	printf("Shooting Finished\n");
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
-void FrisbeeRapidShoot::Interrupted() {
+void FrisbeeRapidShoot::Interrupted() 
+{
+	printf("Shooting INtereputed\n");
 }
