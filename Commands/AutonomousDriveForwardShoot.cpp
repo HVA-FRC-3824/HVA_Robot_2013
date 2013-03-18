@@ -26,25 +26,25 @@
 
 AutonomousDriveForwardShoot::AutonomousDriveForwardShoot() 
 {
-	// Drive Forward
-	AddSequential(new ChassisDrivetoWallStraight(DISTANCE_FROM_WALL, DRIVE_POWER));
+   // Drive Forward
+   AddSequential(new ChassisDrivetoWallStraight(DISTANCE_FROM_WALL, DRIVE_POWER));
 	
-	// set shooter speed to maximum to reduce the ramp up time
-	AddSequential(new SetShooterSpeed(SHOOTER_VOLTAGE_MAXIMUM, false), 1.0);
+   // set shooter speed to maximum to reduce the ramp up time
+   AddSequential(new SetShooterSpeed(SHOOTER_VOLTAGE_MAXIMUM, false), 1.0);
 	
-	// set the shooter angle
-	AddSequential(new SetShooterAngle(SHOOTER_ANGLE), 3.0);
+   // set the shooter angle
+   AddSequential(new SetShooterAngle(SHOOTER_ANGLE), 3.0);
 	
-	// wait to ensure the angle is at the proper location
-	AddSequential(new WaitCommand(1.0));
+   // wait to ensure the angle is at the proper location
+   AddSequential(new WaitCommand(1.0));
 	
-	// lower to shooter speed to the proper voltage
-	AddParallel(new SetShooterSpeed(SHOOTER_VOLTAGE, false), 3.0);
+   // lower to shooter speed to the proper voltage
+   AddParallel(new SetShooterSpeed(SHOOTER_VOLTAGE, false), 3.0);
 	
-	// wait for the shooter to settle
-	AddSequential(new WaitCommand(2.0));
+   // wait for the shooter to settle
+   AddSequential(new WaitCommand(2.0));
 	
-	// shoot 1st frisbee
+   // shoot 1st frisbee
    AddSequential(new FrisbeeShoot());
    
    // wait between shots

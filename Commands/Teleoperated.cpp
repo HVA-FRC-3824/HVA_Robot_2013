@@ -27,25 +27,19 @@ void Teleoperated::Execute()
 	
 	// convert the joystick range (-1 to 1) to the desired motor speed (0 to 1)
 	//speed = (-speed / 2) + 0.5;
-   //Robot::shooterWheelVoltage->motor->Set(speed);
+    //Robot::shooterWheelVoltage->motor->Set(speed);
    
-//   SmartDashboard::PutBoolean("Shooter Switch", Robot::shooterPusher->stopSwitch->Get());
-   SmartDashboard::PutNumber("Shooter Speed Period", (1.0/Robot::shooterWheel->encoder->GetPeriod())*60.0);
-   SmartDashboard::PutNumber("Shooter Speed GIT", Robot::shooterWheel->pidEncoder->PIDGet());
-   SmartDashboard::PutNumber("Shooter Angle GIT", Robot::shooterAngleAdjust->potentiometer->PIDGet());
+   SmartDashboard::PutNumber("Gyro", Robot::drivetrain->gyro->GetAngle());
+   SmartDashboard::PutNumber("Shooter Speed", Robot::shooterWheel->pidEncoder->PIDGet());
+   SmartDashboard::PutNumber("Shooter Angle", Robot::shooterAngleAdjust->potentiometer->PIDGet());
    SmartDashboard::PutNumber("Pickup Pot", Robot::pickup->potentiometer->PIDGet());
+//   SmartDashboard::PutBoolean("Shooter Switch", Robot::shooterPusher->stopSwitch->Get());
 //   SmartDashboard::PutNumber("Shooter Voltage", Robot::shooterWheel->motor->Get());
-//   SmartDashboard::PutNumber("Shooter Speed", Robot::shooterWheel->PIDcontroller->GetSetpoint());
-//   SmartDashboard::PutNumber("Pickup Position GIT", Robot::pickup->potentiometer->PIDGet());
 //   SmartDashboard::PutNumber("Ultra Sonic", Robot::drivetrain->GetFrontDistance());
-//   SmartDashboard::PutNumber("Gyro", Robot::drivetrain->gyro->PIDGet());
-   // <DEBUG>
 //   SmartDashboard::PutNumber("Pickup Voltage", Robot::pickup->motor->Get());
-   //SmartDashboard::PutBoolean("Shoot Sensor", Robot::shooterPusher->stopSwitch->Get());
-   SmartDashboard::PutNumber("Gyro", Robot::drivetrain->gyro->PIDGet());
-   SmartDashboard::PutNumber("Shooter Velocity Sensor Count", Robot::shooterWheel->encoder->Get());
-   SmartDashboard::PutBoolean("Shooter Speed On Target", Robot::shooterWheel->getPIDController()->OnTarget());
-   // </DEBUG>
+//   SmartDashboard::PutBoolean("Shoot Sensor", Robot::shooterPusher->stopSwitch->Get());
+//   SmartDashboard::PutNumber("Shooter Velocity Sensor Count", Robot::shooterWheel->encoder->Get());
+//   SmartDashboard::PutBoolean("Shooter Speed On Target", Robot::shooterWheel->getPIDController()->OnTarget());
 }
 // Make this return true when this Command no longer needs to run execute()
 bool Teleoperated::IsFinished() 

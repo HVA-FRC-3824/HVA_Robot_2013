@@ -16,7 +16,8 @@
 /**
  * TODO: How is this different from ShootfromCenter?
  */
-class AutonomousRPMShootforMegaPoints: public CommandGroup {
+class AutonomousRPMShootforMegaPoints: public CommandGroup 
+{
 public:	
 	AutonomousRPMShootforMegaPoints();
 };

@@ -24,7 +24,7 @@ FrisbeeAim::FrisbeeAim() : ChassisTurnAngle(0)
 		SmartDashboard::GetNumber("Shooter Aim D: "),
 		Robot::drivetrain->gyro->PIDGet(),Robot::drivetrain);
 */
-	SmartDashboard::PutNumber("pixel to degree", 0.1);
+	SmartDashboard::PutNumber("Pixel to Degree", 0.1);
 }
 // Called just before this Command runs the first time
 void FrisbeeAim::Initialize() 
@@ -32,10 +32,10 @@ void FrisbeeAim::Initialize()
 	SmartDashboard::PutString("Target Type", "target");
 	ChassisTurnAngle::Initialize();
 	
-	pixelToDegree = SmartDashboard::GetNumber("pixel to degree");
+	pixelToDegree = SmartDashboard::GetNumber("Pixel to Degree");
 	
 	target = Robot::drivetrain->gyro->GetAngle()+
-				SmartDashboard::GetNumber("camera offset")*pixelToDegree;
+				SmartDashboard::GetNumber("Camera Offset") * pixelToDegree;
 	
 	PIDcontroller.SetSetpoint(target);	
 }

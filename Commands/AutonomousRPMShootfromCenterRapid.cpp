@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #include "AutonomousRPMShootfromCenterRapid.h"
 #include "SetShooterSpeed.h"
 #include "SetShooterAngle.h"
@@ -18,8 +16,8 @@
 #define SHOOTER_SPEED            2650.0
 #define SHOOTER_ANGLE_SHOOT       300.0
 
-
-AutonomousRPMShootfromCenterRapid::AutonomousRPMShootfromCenterRapid() {
+AutonomousRPMShootfromCenterRapid::AutonomousRPMShootfromCenterRapid() 
+{
    // start the shooter
    AddParallel(new SetShooterSpeed(SHOOTER_SPEED, true), 1.0);
 	

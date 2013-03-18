@@ -15,74 +15,70 @@
 #include "FrisbeeShoot.h"
 #include "FrisbeePickup.h"
 
-#define DRIVE_BACK_TIME             0.4
-#define DRIVE_BACK_SPEED           -0.4
-#define DRIVE_FORWARD_TIME          0.8
-#define DRIVE_FORWARD_SPEED         0.4
+#define DRIVE_BACK_TIME                0.4
+#define DRIVE_BACK_SPEED              -0.4
+#define DRIVE_FORWARD_TIME             0.8
+#define DRIVE_FORWARD_SPEED            0.4
 
-#define SHOOTER_LOWER_WAIT_TIME     1.0
-#define SHOOTER_RAISE_WAIT_TIME     1.0
+#define SHOOTER_LOWER_WAIT_TIME        1.0
+#define SHOOTER_RAISE_WAIT_TIME        1.0
 
-#define SHOOTER_ANGLE_PICKUP	  150.0
+#define SHOOTER_ANGLE_PICKUP   	     150.0
 
-#define SHOOTER_SPEED            2650.0
+#define SHOOTER_SPEED               2650.0
 
-#define SHOOTER_ANGLE_SHOOT_FIRST 300.0
-#define SHOOTER_ANGLE_TOWER_FIRST   0.0
+#define SHOOTER_ANGLE_SHOOT_FIRST    300.0
+#define SHOOTER_ANGLE_TOWER_FIRST      0.0
 
 #define SHOOTER_WAIT                0.4
 
-AutonomousRPMShootforMegaPoints::AutonomousRPMShootforMegaPoints() {
-	printf("Start AutonomousRPMShootforMegaPoints\n");
+AutonomousRPMShootforMegaPoints::AutonomousRPMShootforMegaPoints()
+{
+   // backup to allow the shoot to lower
+   AddSequential(new ChassisDriveDistanceStraight(DRIVE_BACK_TIME, DRIVE_BACK_SPEED));
 
-	// backup to allow the shoot to lower
-	AddSequential(new ChassisDriveDistanceStraight(DRIVE_BACK_TIME, DRIVE_BACK_SPEED));
+   // start the shooter
+   AddParallel(new SetShooterSpeed(SHOOTER_SPEED, true), 1.0);
 
-	// start the shooter
-	AddParallel(new SetShooterSpeed(SHOOTER_SPEED, true), 1.0);
+   // lower the shooter to shoot
+   AddSequential(new SetShooterAngle(SHOOTER_ANGLE_SHOOT_FIRST), 2.0);
 
-	// lower the shooter to shoot
-	AddSequential(new SetShooterAngle(SHOOTER_ANGLE_SHOOT_FIRST), 2.0);
+   // wait for shooter to lower
+   AddSequential(new WaitCommand(SHOOTER_LOWER_WAIT_TIME));
 
-	// wait for shooter to lower
-	AddSequential(new WaitCommand(SHOOTER_LOWER_WAIT_TIME));
+   // shoot 1st frisbee
+   AddSequential(new FrisbeeShoot());
 
-	// shoot 1st frisbee
-	AddSequential(new FrisbeeShoot());
+   // wait between shots
+   AddSequential(new WaitCommand(SHOOTER_WAIT));
 
-	// wait between shots
-	AddSequential(new WaitCommand(SHOOTER_WAIT));
+   // shoot 2nd frisbee
+   AddSequential(new FrisbeeShoot());
 
-	// shoot 2nd frisbee
-	AddSequential(new FrisbeeShoot());
+   // wait between shots
+   AddSequential(new WaitCommand(SHOOTER_WAIT));
 
-	// wait between shots
-	AddSequential(new WaitCommand(SHOOTER_WAIT));
+   // shoot 3rd frisbee
+   AddSequential(new FrisbeeShoot());
 
-	// shoot 3rd frisbee
-	AddSequential(new FrisbeeShoot());
-
-	// lower the shooter to go under the tower
-	AddSequential(new SetShooterAngle(SHOOTER_ANGLE_TOWER_FIRST), 2.0);
+   // lower the shooter to go under the tower
+   AddSequential(new SetShooterAngle(SHOOTER_ANGLE_TOWER_FIRST), 2.0);
 	
-	// drive under the tower to pickup
-	AddSequential(new ChassisDriveDistanceStraight(DRIVE_FORWARD_TIME, DRIVE_FORWARD_SPEED));
+   // drive under the tower to pickup
+   AddSequential(new ChassisDriveDistanceStraight(DRIVE_FORWARD_TIME, DRIVE_FORWARD_SPEED));
 	
-	// pickup a frisbee
-	AddSequential(new FrisbeePickup());
+   // pickup a frisbee
+   AddSequential(new FrisbeePickup());
 	
-	// pickup another frisbee
-	AddSequential(new FrisbeePickup());
+   // pickup another frisbee
+   AddSequential(new FrisbeePickup());
 	
-	// shoot frisbee
-	AddSequential(new FrisbeeShoot());
+   // shoot frisbee
+   AddSequential(new FrisbeeShoot());
 	
-	// wait between shots
-	AddSequential(new WaitCommand(SHOOTER_WAIT));
+   // wait between shots
+   AddSequential(new WaitCommand(SHOOTER_WAIT));
 	
-	// shoot another frisbee
-	AddSequential(new FrisbeeShoot());
-	
-	printf("End AutonomousRPMShootforMegaPoints\n");
-	
+   // shoot another frisbee
+   AddSequential(new FrisbeeShoot());	
 }

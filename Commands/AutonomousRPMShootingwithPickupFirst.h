@@ -8,30 +8,20 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef HANG_TOGGLE_H
-#define HANG_TOGGLE_H
+#ifndef AUTONOMOUS_RPM_SHOOTING_WITH_PICKUP_FIRST_H
+#define AUTONOMOUS_RPM_SHOOTING_WITH_PICKUP_FIRST_H
 
-#include "Commands/Subsystem.h"
-#include "../Robot.h"
+#include "Commands/CommandGroup.h"
 
 /**
  *
  *
  * @author ExampleAuthor
  */
-class HangToggle: public Command 
+class AutonomousRPMShootingwithPickupFirst: public CommandGroup 
 {
-private:
-	bool m_isUp;
-	Command *m_hangUp;
-	Command *m_hangPullDown;
-public:
-	HangToggle();
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
+public:	
+	AutonomousRPMShootingwithPickupFirst();
 };
 
 #endif

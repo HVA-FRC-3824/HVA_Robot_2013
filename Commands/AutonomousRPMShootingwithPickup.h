@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #ifndef AUTONOMOUS_RPM_SHOOTING_WITH_PICKUP_H
 #define AUTONOMOUS_RPM_SHOOTING_WITH_PICKUP_H
 
@@ -20,7 +18,8 @@
  *
  * @author ExampleAuthor
  */
-class AutonomousRPMShootingwithPickup: public CommandGroup {
+class AutonomousRPMShootingwithPickup: public CommandGroup 
+{
 public:	
 	AutonomousRPMShootingwithPickup();
 };

@@ -14,6 +14,9 @@
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
 
+#define TURN_P_TERM                 0.04
+#define TURN_I_TERM                 0.00
+#define TURN_D_TERM                 0.005
 #define TURN_THRESHOLD              1.5 //works with 1 but is a bit slow
 /**
  * This command uses PID controls to accurately turn a set degrees.

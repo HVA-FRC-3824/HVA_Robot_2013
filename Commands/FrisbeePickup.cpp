@@ -19,7 +19,7 @@ FrisbeePickup::FrisbeePickup()
 	AddParallel(new SetPickupSuction(true));
 	
 	// Make sure the shooter is out of the way for the pickup
-	//AddSequential(new SetShooterAngleforPickup(), 1.0);
+	AddSequential(new SetShooterAngleforPickup(), 1.0);
 	
 	// Move the arm to the pickup stage position
 	//AddSequential(new SetPickupPosition(PICKUP_STAGE), 1.0);
@@ -27,33 +27,18 @@ FrisbeePickup::FrisbeePickup()
 	
 	// Move the arm to the pickup position
 	AddSequential(new SetPickupPosition(PICKUP_POSITION), 1.0);
-	AddSequential(new WaitCommand(0.75));
+	AddSequential(new WaitCommand(0.3));
 	
 	// Move the arm to the release position
 	AddSequential(new SetPickupPosition(PICKUP_RELEASE_POSITION), 1.0);
-	AddSequential(new WaitCommand(1.5));
+	AddSequential(new WaitCommand(0.75));
 	
 	// Turn off the suction
 	AddParallel(new SetPickupSuction(false));
+	
+	// TODO - remove for autonomous to make it quicker
 	AddSequential(new WaitCommand(1.0));
 
 	// Move the arm to the home position
 	AddSequential(new SetPickupPosition(PICKUP_HOME_POSITION), 1.0);
-
-	// Add Commands here:
-	// e.g. AddSequential(new Command1());
-	//      AddSequential(new Command2());
-	// these will run in order.
-
-	// To run multiple commands at the same time,
-	// use AddParallel()
-	// e.g. AddParallel(new Command1());
-	//      AddSequential(new Command2());
-	// Command1 and Command2 will run in parallel.
-
-	// A command group will require all of the subsystems that each member
-	// would require.
-	// e.g. if Command1 requires chassis, and Command2 requires arm,
-	// a CommandGroup containing them would require both the chassis and the
-	// arm.
 }

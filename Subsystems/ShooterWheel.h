@@ -26,7 +26,8 @@ public:
 	PIDGearTooth(GearTooth* sensor) { gearTooth = sensor; } 
 	
 	// Return RPM for the PID controller
-	double PIDGet() {
+	double PIDGet() 
+	{
 //		static int count = 0;
 //		double zero = 0;
 //		static double period[3]={1/zero,1/zero,1/zero};
@@ -43,7 +44,7 @@ public:
 ////	if((1.0/period)*60.0 > 5000.0)
 ////		printf("period: %lf", period);
 //		return (1.0/median)*60.0 ;
-		return (1.0/gearTooth->GetPeriod()) * 60.0;
+		return (1.0 / gearTooth->GetPeriod()) * 60.0;
 	}
 };
 class ShooterWheel: public Subsystem 

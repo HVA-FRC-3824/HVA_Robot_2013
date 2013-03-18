@@ -40,6 +40,8 @@ SetShooterSpeed::SetShooterSpeed()
 // Called just before this Command runs the first time
 void SetShooterSpeed::Initialize() 
 {
+	printf("SetShooterSpeed Initialize\n");
+	
 	// determine if the shooter speed should be read from the Pot
 	if (m_SpeedSpecifiedInConstructor == true) // use speed specified
 	{
@@ -92,7 +94,6 @@ void SetShooterSpeed::Initialize()
 			Robot::shooterWheel->getPIDController()->Enable(); 
 		}
 	}
-	// 
 }
 // Called repeatedly when this Command is scheduled to run
 void SetShooterSpeed::Execute() 
@@ -140,7 +141,7 @@ void SetShooterSpeed::Execute()
 			Robot::shooterWheel->getPIDController()->SetSetpoint(m_shooterSpeed);
 		}
 	}
-	if(Robot::shooterWheel->pidEncoder->gearTooth->StatusIsFatal())
+	if (Robot::shooterWheel->pidEncoder->gearTooth->StatusIsFatal())
 	{
 		printf("Status is Fatal: True\n");
 	}
@@ -173,9 +174,11 @@ bool SetShooterSpeed::IsFinished()
 // Called once after isFinished returns true
 void SetShooterSpeed::End() 
 {
-	// not disabling because we always want the shooter to keep running
-	 SmartDashboard::PutNumber("Shooter Speed Period", (1.0/Robot::shooterWheel->encoder->GetPeriod())*60.0);
-		 SmartDashboard::PutNumber("Shooter Speed GIT", Robot::shooterWheel->pidEncoder->PIDGet());
+   // not disabling because we always want the shooter to keep running
+//   SmartDashboard::PutNumber("Shooter Speed", (1.0/Robot::shooterWheel->encoder->GetPeriod())*60.0);
+//   SmartDashboard::PutNumber("Shooter Speed", Robot::shooterWheel->pidEncoder->PIDGet());
+	
+	printf("SetShooterSpeed End\n");
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
@@ -183,4 +186,5 @@ void SetShooterSpeed::Interrupted()
 {
 	// not disabling because we always want the shooter to keep running
 	// ideally when interrupting it should reset to previous value but is probably overkill
+	printf("SetShooterSpeed Interrupted\n");
 }

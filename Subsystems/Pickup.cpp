@@ -45,7 +45,7 @@ PIDController* Pickup::getPIDController()
 		   
 		PIDcontroller = new PIDController(0.01, 0.0, 0.009, potentiometer, this);
 		
-		PIDcontroller->SetOutputRange(-0.4, 0.6);
+		PIDcontroller->SetOutputRange(-0.65, 0.8);
 	}
 	return PIDcontroller;
 }

@@ -8,9 +8,9 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 #include "FrisbeeShoot.h"
-#define PUSHER_TIMER                 0.15
-#define PUSHER_TIMEOUT				  1.2
-#define PUSHER_REVERSE_TIME			 0.15
+#define PUSHER_TIMER                  0.15
+#define PUSHER_TIMEOUT				  1.20
+#define PUSHER_REVERSE_TIME			  0.15
 int FrisbeeShoot::lastShotDataCounter = 0;
 FrisbeeShoot::FrisbeeShoot() 
 {
@@ -24,14 +24,14 @@ FrisbeeShoot::FrisbeeShoot()
 // Called just before this Command runs the first time
 void FrisbeeShoot::Initialize() 
 {
-	// Frisbee is not jammed yet
-	m_isJammed = false;
+   // Frisbee is not jammed yet
+   m_isJammed = false;
 	
    // start the shooter
-	Robot::shooterPusher->motor->Set(Relay::kForward);
-	// reset and start the timer
-	m_pusherTimer->Reset();
-	m_pusherTimer->Start();
+   Robot::shooterPusher->motor->Set(Relay::kForward);
+   // reset and start the timer
+   m_pusherTimer->Reset();
+   m_pusherTimer->Start();
 }
 // Called repeatedly when this Command is scheduled to run
 void FrisbeeShoot::Execute() 
@@ -67,23 +67,20 @@ bool FrisbeeShoot::IsFinished()
 			return true;
 		}
 	}
-	//SmartDashboard::PutNumber("Last Shot Shooter RPM", 0);
-	//SmartDashboard::PutNumber("Last Shot Shooter Angle", 0);
   return false;
 }
 // Called once after isFinished returns true
 void FrisbeeShoot::End() 
 {
-	printf("Finished Shoot\n");
    // stop the shooter moter and the timer
-	Robot::shooterPusher->motor->Set(Relay::kOff);
-	m_pusherTimer->Stop();
-	lastShotDataCounter++;
-	SmartDashboard::PutNumber("Shot Counter", lastShotDataCounter);
+   Robot::shooterPusher->motor->Set(Relay::kOff);
+   m_pusherTimer->Stop();
+   lastShotDataCounter++;
+   SmartDashboard::PutNumber("Shot Counter", lastShotDataCounter);
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
 void FrisbeeShoot::Interrupted() 
 {
-	End();
+   End();
 }

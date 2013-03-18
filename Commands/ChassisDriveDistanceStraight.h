@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
 #ifndef CHASSIS_DRIVE_DISTANCE_STRAIGHT_H
 #define CHASSIS_DRIVE_DISTANCE_STRAIGHT_H
-
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"

@@ -8,30 +8,20 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef HANG_TOGGLE_H
-#define HANG_TOGGLE_H
+#ifndef INITIALIZE_ROBOT_FOR_MATCH_H
+#define INITIALIZE_ROBOT_FOR_MATCH_H
 
-#include "Commands/Subsystem.h"
-#include "../Robot.h"
+#include "Commands/CommandGroup.h"
 
 /**
  *
  *
  * @author ExampleAuthor
  */
-class HangToggle: public Command 
+class InitializeRobotforMatch: public CommandGroup
 {
-private:
-	bool m_isUp;
-	Command *m_hangUp;
-	Command *m_hangPullDown;
-public:
-	HangToggle();
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
+public:	
+	InitializeRobotforMatch();
 };
 
 #endif

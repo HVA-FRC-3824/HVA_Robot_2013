@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #ifndef GET_LAST_SHOT_DATA_H
 #define GET_LAST_SHOT_DATA_H
 
@@ -22,10 +20,10 @@
  *
  * @author ExampleAuthor
  */
-class GetLastShotData: public CommandGroup {
+class GetLastShotData: public CommandGroup 
+{
 public:	
 	GetLastShotData();
-
 };
 
 #endif

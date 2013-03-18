@@ -15,13 +15,13 @@
 #include "../Robot.h"
 
 /****** PICKUP POSITION ******/
-#define PICKUP_MAX_VALUE 				           890.0
-#define PICKUP_MIN_VALUE 		 		             3.0
+#define PICKUP_MAX_VALUE 				         10000.0
+#define PICKUP_MIN_VALUE 		 		             0.0
 #define PICKUP_THRESHOLD 		                     5.0
-#define PICKUP_POSITION						   	   880.0
-#define PICKUP_STAGE				               122.0
-#define PICKUP_RELEASE_POSITION					   168.0
-#define PICKUP_HOME_POSITION	                    20.0
+
+#define PICKUP_POSITION						   	   960.0
+#define PICKUP_RELEASE_POSITION					   320.0
+#define PICKUP_HOME_POSITION	                   160.0
 
 /**
  *
@@ -31,8 +31,7 @@
 class SetPickupPosition: public Command
 {
 private:
-	double position;
-	bool positionSpecifiedInConstructor;
+	double m_position;
 public:
 	SetPickupPosition(double position_parameter);
 	SetPickupPosition();

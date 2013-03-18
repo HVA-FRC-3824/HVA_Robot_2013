@@ -20,40 +20,36 @@
 
 AutonomousRPMDriveForwardShoot::AutonomousRPMDriveForwardShoot() 
 {
-	printf("In AutonomousRPMDriveForwardShoot()\n");
    // drive forward
-	AddSequential(new ChassisDriveDistanceStraight(AUTO_DRIVE_TIME, AUTO_DRIVE_POWER));
+   AddSequential(new ChassisDriveDistanceStraight(AUTO_DRIVE_TIME, AUTO_DRIVE_POWER));
 
-	// set the shooter speed
-	AddSequential(new SetShooterSpeed(AUTO_SHOOTER_SPEED, true));
+   // set the shooter speed
+   AddSequential(new SetShooterSpeed(AUTO_SHOOTER_SPEED, true));
 	
-	// wait for the shooter to come up to speed
-	AddSequential(new WaitCommand(SHOOTER_WAIT));
+   // wait for the shooter to come up to speed
+   AddSequential(new WaitCommand(SHOOTER_WAIT));
 	
-	// shoot the 1st Frisbee
-	AddSequential(new FrisbeeShoot());
+   // shoot the 1st Frisbee
+   AddSequential(new FrisbeeShoot());
 	
-	// wait between shots
-	AddSequential(new WaitCommand(SHOOTER_WAIT));
+   // wait between shots
+   AddSequential(new WaitCommand(SHOOTER_WAIT));
 	
    // shoot the 2nd Frisbee
-	AddSequential(new FrisbeeShoot());
+   AddSequential(new FrisbeeShoot());
 	
    // wait between shots
-	AddSequential(new WaitCommand(SHOOTER_WAIT));
+   AddSequential(new WaitCommand(SHOOTER_WAIT));
 	
    // shoot the 3rd Frisbee
-	AddSequential(new FrisbeeShoot());
+   AddSequential(new FrisbeeShoot());
 
    // wait between shots
-	AddSequential(new WaitCommand(SHOOTER_WAIT));
+   AddSequential(new WaitCommand(SHOOTER_WAIT));
 	
    // shoot the 4th Frisbee in case one misfired
-	AddSequential(new FrisbeeShoot());
+   AddSequential(new FrisbeeShoot());
 	
-	// stop the shooter
-	AddSequential(new SetShooterSpeed(0.0, false));
-	
-	printf("Out AutonomousRPMDriveForwardShoot()\n");
- 
+   // stop the shooter
+   AddSequential(new SetShooterSpeed(0.0, false));
 }
