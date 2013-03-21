@@ -33,9 +33,10 @@ void Teleoperated::Execute()
    SmartDashboard::PutNumber("Shooter Speed", Robot::shooterWheel->pidEncoder->PIDGet());
    SmartDashboard::PutNumber("Shooter Angle", Robot::shooterAngleAdjust->potentiometer->PIDGet());
    SmartDashboard::PutNumber("Pickup Pot", Robot::pickup->potentiometer->PIDGet());
+   SmartDashboard::PutNumber("Ultra Sonic", Robot::drivetrain->GetFrontDistance());
+
 //   SmartDashboard::PutBoolean("Shooter Switch", Robot::shooterPusher->stopSwitch->Get());
 //   SmartDashboard::PutNumber("Shooter Voltage", Robot::shooterWheel->motor->Get());
-//   SmartDashboard::PutNumber("Ultra Sonic", Robot::drivetrain->GetFrontDistance());
 //   SmartDashboard::PutNumber("Pickup Voltage", Robot::pickup->motor->Get());
 //   SmartDashboard::PutBoolean("Shoot Sensor", Robot::shooterPusher->stopSwitch->Get());
 //   SmartDashboard::PutNumber("Shooter Velocity Sensor Count", Robot::shooterWheel->encoder->Get());

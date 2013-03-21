@@ -925,6 +925,26 @@ Children:
     Properties:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: false}
+  - Name: Test Drive Straight
+    Base: Command Group
+    Children: []
+    Properties:
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+  - Name: ChassisDrivetoWallStraight
+    Base: Command
+    Children: []
+    Properties:
+      Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
+        name: Requires, type: Subsystem, validators: null, value: Drivetrain}
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
+  - Name: Drive Forwared 10 inches
+    Base: Command Group
+    Children: []
+    Properties:
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: true}
   Properties: {}
 Properties:
   Autonomous Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,

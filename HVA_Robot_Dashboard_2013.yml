@@ -1,5 +1,26 @@
 <xml version="1.0">
 <dashboard>
+	<widget field="frisbee size" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="371"/>
+	</widget>
+	<widget field="frisbee offset" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="350"/>
+	</widget>
+	<widget field="camera offset" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="329"/>
+	</widget>
+	<widget field="Pickup Release" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="308"/>
+	</widget>
+	<widget field="Pickup Pot" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="287"/>
+	</widget>
+	<widget field="Pickup Home" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="128"/>
+	</widget>
+	<widget field="Pickup Frisbee" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="0"/>
+	</widget>
 	<widget field="Shooter Speed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="507" y="70"/>
 	</widget>
@@ -8,24 +29,6 @@
 	</widget>
 	<widget field="Chassis Turn Angle" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
 		<location x="0" y="179"/>
-	</widget>
-	<widget field="Pickup Release" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="191" y="357"/>
-	</widget>
-	<widget field="Pickup Home" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="200" y="331"/>
-	</widget>
-	<widget field="Pickup Goto Release" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="6" y="355"/>
-	</widget>
-	<widget field="Pickup Goto Home" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="16" y="324"/>
-	</widget>
-	<widget field="Pickup Goto Frisbee" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
-		<location x="7" y="383"/>
-	</widget>
-	<widget field="Pickup Frisbee" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="193" y="383"/>
 	</widget>
 	<static-widget class="edu.wpi.first.smartdashboard.camera.WPICameraExtension">
 		<location x="713" y="73"/>
@@ -43,9 +46,6 @@
 	</widget>
 	<widget field="Compressor Status: " type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="15" y="266"/>
-	</widget>
-	<widget field="Pickup Pot" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
-		<location x="213" y="409"/>
 	</widget>
 	<widget field="Shooter Angle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="510" y="95"/>

@@ -18,34 +18,39 @@
 #include "FrisbeePickup.h"
 #include "ChassisDriveDistanceSidewaysStrainght.h"
 #include "ChassisTurnAngle.h"
+#include "ChassisDrivetoWallStraight.h"
+#include "SetPickupPosition.h"
+
+#define SHOOTER_ANGLE_FOR_PICKUP 130
 
 AutonomousRPMShootingwithPickupFirst::AutonomousRPMShootingwithPickupFirst()
 {
    // set the shooter angle to get below the tower
    // NOTE: Shooter angle should already be set before match
-   AddParallel(new SetShooterAngle(10.0), 3.0);
+   AddParallel(new SetShooterAngle(SHOOTER_ANGLE_FOR_PICKUP), 3.0);
    
    // start the shooter
    AddParallel(new SetShooterSpeed(SHOOTER_SPEED_BACK_OF_TOWER, true), 3.0);
 
    // drive straight to get the first Frisbee
-   AddSequential(new ChassisDriveDistanceStraight(0.4, 0.4), 3.0);
+   //AddSequential(new ChassisDriveDistanceStraight(0.4, 0.4), 3.0);
+   AddSequential(new ChassisDrivetoWallStraight(63, 0.3));
 
    // wait to allow the robot to move under the tower
-   AddSequential(new WaitCommand(0.2));
+   AddSequential(new WaitCommand(0.1));
    
    // pick up the Frisbee
    AddSequential(new FrisbeePickup());
    
    // set the shooter angle for under the tower
-   AddSequential(new SetShooterAngle(SHOOTER_ANGLE_UNDER_TOWER), 3.0);
+   AddSequential(new SetShooterAngle(SHOOTER_ANGLE_UNDER_TOWER), 2.0);
    
    // shoot 3 Frisbees as fast as possible (it waits on the speed to be correct)
    //AddSequential(new FrisbeeRapidShoot(3), 10.0);
    // Note: Should not have to wait since the Set Shooter Spped command will
    //       not return until the shooter is up to speed
    //AddSequential(new WaitCommand(1.0));
-   AddSequential(new WaitCommand(0.1));
+   AddSequential(new WaitCommand(0.2));
    AddSequential(new FrisbeeShoot());
    AddSequential(new WaitCommand(0.1));
    AddSequential(new FrisbeeShoot());
@@ -55,24 +60,27 @@ AutonomousRPMShootingwithPickupFirst::AutonomousRPMShootingwithPickupFirst()
    AddSequential(new FrisbeeShoot());
    
    // lower the shooter to pickup the Frisbees (basically all the way down)
-   AddParallel(new SetShooterAngle(10.0), 3.0);
+   AddParallel(new SetShooterAngle(SHOOTER_ANGLE_FOR_PICKUP), 3.0);
 
    // turn and drive forward slightly to get the next Frisbee
-   AddSequential(new ChassisTurnAngle(-13.0));
-   AddSequential(new ChassisDriveDistance(0.08, 0.4));
+   AddSequential(new ChassisTurnAngle(-14.0));
+   //AddSequential(new ChassisDriveDistance(0.08, 0.3));
 
    // pick up the Frisbee
    AddSequential(new FrisbeePickup());
 
    // set the shooter angle fdor under the tower
-   AddParallel(new SetShooterAngle(SHOOTER_ANGLE_UNDER_TOWER), 3.0);
+   AddParallel(new SetShooterAngle(SHOOTER_ANGLE_UNDER_TOWER_SECOND), 3.0);
 
    // turn back to the goal
-   AddSequential(new ChassisTurnAngle(15.0), 2.0);
+   AddSequential(new ChassisTurnAngle(16.0), 2.0);
    
    // shoot the Frisbees
-   AddSequential(new WaitCommand(1.0));
+   AddSequential(new WaitCommand(1.4));
    AddSequential(new FrisbeeShoot());
    AddSequential(new WaitCommand(0.1));
    AddSequential(new FrisbeeShoot());
+   
+   	// Move the arm to the home position
+   	AddSequential(new SetPickupPosition(PICKUP_HOME_POSITION), 1.0);
 }

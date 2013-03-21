@@ -19,9 +19,9 @@
 #define PICKUP_MIN_VALUE 		 		             0.0
 #define PICKUP_THRESHOLD 		                     5.0
 
-#define PICKUP_POSITION						   	   960.0
-#define PICKUP_RELEASE_POSITION					   320.0
-#define PICKUP_HOME_POSITION	                   160.0
+#define PICKUP_POSITION						   	  1000.0
+#define PICKUP_RELEASE_POSITION					   370.0
+#define PICKUP_HOME_POSITION	                   210.0
 
 /**
  *
