@@ -43,7 +43,8 @@ PIDController* Pickup::getPIDController()
 //				SmartDashboard::GetNumber("Pickup D Term"), 
 //				potentiometer, this);
 		   
-		PIDcontroller = new PIDController(0.01, 0.0, 0.009, potentiometer, this);
+		// old PID parameters 0.01 0.0 0.009
+		PIDcontroller = new PIDController(0.005, 0.0, 0.005, potentiometer, this);
 		
 		PIDcontroller->SetOutputRange(-0.65, 0.8);
 	}

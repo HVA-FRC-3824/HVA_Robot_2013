@@ -82,5 +82,7 @@ AutonomousRPMShootingwithPickupFirst::AutonomousRPMShootingwithPickupFirst()
    AddSequential(new FrisbeeShoot());
    
    	// Move the arm to the home position
-   	AddSequential(new SetPickupPosition(PICKUP_HOME_POSITION), 1.0);
+   	AddParallel(new SetPickupPosition(PICKUP_HOME_POSITION), 1.0);
+   	
+   	AddSequential(new SetShooterAngle(SHOOTER_ANGLE_FOR_PICKUP), 2.0);
 }
