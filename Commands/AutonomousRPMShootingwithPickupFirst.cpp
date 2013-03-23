@@ -36,7 +36,7 @@ AutonomousRPMShootingwithPickupFirst::AutonomousRPMShootingwithPickupFirst()
 
    // drive straight to get the first Frisbee
    //AddSequential(new ChassisDriveDistanceStraight(0.4, 0.4), 3.0);
-   AddSequential(new ChassisDrivetoWallStraight(DRIVE_UNDER_TOWER_DISTANCE, 0.3));
+   AddSequential(new ChassisDrivetoWallStraight(DRIVE_UNDER_TOWER_DISTANCE, 0.35));
 
    // wait to allow the robot to move under the tower
    AddSequential(new WaitCommand(0.1));
