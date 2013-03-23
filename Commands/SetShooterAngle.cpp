@@ -79,6 +79,7 @@ void SetShooterAngle::Execute()
 		// ADC   = (angle - Y_INTERCEPT) / SLOPE
 		angle = (angle - SHOOTER_ANGLE_Y_INTERCEPT) / SHOOTER_ANGLE_SLOPE;
 		   
+		// Set the setpoint in ADC
 		Robot::shooterAngleAdjust->getPIDController()->SetSetpoint(angle);	
 	}
 }
