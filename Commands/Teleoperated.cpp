@@ -31,7 +31,8 @@ void Teleoperated::Execute()
    
    SmartDashboard::PutNumber("Gyro", Robot::drivetrain->gyro->GetAngle());
    SmartDashboard::PutNumber("Shooter Speed", Robot::shooterWheel->pidEncoder->PIDGet());
-   SmartDashboard::PutNumber("Shooter Angle", Robot::shooterAngleAdjust->potentiometer->PIDGet());
+   SmartDashboard::PutNumber("Shooter Angle Degrees", (0.0337 * Robot::shooterAngleAdjust->potentiometer->PIDGet() + 17.203));
+   SmartDashboardData("Shooter Angle in ADC", Robot::shooterAngleAdjust->potentiometer->PIDGet());
    SmartDashboard::PutNumber("Pickup Pot", Robot::pickup->potentiometer->PIDGet());
    SmartDashboard::PutNumber("Ultra Sonic", Robot::drivetrain->GetFrontDistance());
 
