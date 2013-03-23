@@ -23,14 +23,12 @@
 #define SHOOTER_LOWER_WAIT_TIME        1.0
 #define SHOOTER_RAISE_WAIT_TIME        1.0
 
-#define SHOOTER_ANGLE_PICKUP   	     150.0
-
 #define SHOOTER_SPEED               2650.0
 
-#define SHOOTER_ANGLE_SHOOT_FIRST    300.0
-#define SHOOTER_ANGLE_TOWER_FIRST      0.0
+#define SHOOTER_ANGLE_SHOOT_FIRST     27.313  // 300.0
+#define SHOOTER_ANGLE_TOWER_FIRST     17.203  //   0.0
 
-#define SHOOTER_WAIT                0.4
+#define SHOOTER_WAIT                   0.4
 
 AutonomousRPMShootforMegaPoints::AutonomousRPMShootforMegaPoints()
 {

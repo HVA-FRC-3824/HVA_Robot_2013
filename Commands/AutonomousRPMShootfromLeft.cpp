@@ -19,13 +19,15 @@
 #define AUTONOMOUS_DRIVE_FORWARD_DISTANCE    2.0
 #define AUTONOMOUS_TURN_ANGLE               15.0
 
+#define SHOOTER_ANGLE                       36.9175  // 585
+
 AutonomousRPMShootfromLeft::AutonomousRPMShootfromLeft() 
 {
 	// ramp the shooter speed up
 	AddParallel(new SetShooterSpeed(2500, true));
 	
 	// set the shooter angle
-	AddParallel(new SetShooterAngle(585));
+	AddParallel(new SetShooterAngle(SHOOTER_ANGLE));
 	
 	// drive forward
 	AddSequential(new ChassisDriveDistance(AUTONOMOUS_DRIVE_FORWARD_DISTANCE, DRIVING_POWER));

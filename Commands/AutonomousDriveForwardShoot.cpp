@@ -19,8 +19,8 @@
 #define DRIVE_POWER                 0.5
 
 #define SHOOTER_VOLTAGE_MAXIMUM     1.0
-#define SHOOTER_VOLTAGE            0.62
-#define SHOOTER_ANGLE             653.0
+#define SHOOTER_VOLTAGE             0.62
+#define SHOOTER_ANGLE              39.2091  // 653.0
 
 #define SHOOTER_WAIT                0.0
 

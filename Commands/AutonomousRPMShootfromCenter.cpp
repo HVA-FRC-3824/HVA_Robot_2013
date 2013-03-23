@@ -28,8 +28,8 @@
 
 #define SHOOTER_SPEED            2650.0
 
-#define SHOOTER_ANGLE_SHOOT       300.0
-#define SHOOTER_ANGLE_TOWER         0.0
+#define SHOOTER_ANGLE_SHOOT        27.313  // 300.0
+#define SHOOTER_ANGLE_TOWER        17.203  //   0.0
 
 #define SHOOTER_WAIT                0.5
 

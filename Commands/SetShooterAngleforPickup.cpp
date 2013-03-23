@@ -19,6 +19,8 @@ SetShooterAngleforPickup::SetShooterAngleforPickup()
 
 void SetShooterAngleforPickup::Initialize()
 {
+   // set the shooter angle as high as possible for autonomous pickup
+   // Note: The camera is not used by the operators in autonomous
 	if (Robot::shooterAngleAdjust->potentiometer->PIDGet() > SHOOTER_ANGLE_MAX_PICKUP_VALUE)
 	{
 		AddSequential(new SetShooterAngle(SHOOTER_ANGLE_PICKUP_VALUE));

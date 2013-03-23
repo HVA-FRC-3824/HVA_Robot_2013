@@ -16,8 +16,10 @@
 #include "SetShooterAngle.h"
 #include "FrisbeeShoot.h"
 
-#define AUTONOMOUS_DRIVE_FORWARD_DISTANCE      2.0
+#define AUTONOMOUS_DRIVE_FORWARD_DISTANCE         2.0
 #define AUTONOMOUS_TURN_ANGLE		            -15.0
+
+#define SHOOTER_ANGLE                         36.9175  // 585 
 
 AutonomousRPMShootfromRight::AutonomousRPMShootfromRight() 
 {
@@ -25,7 +27,7 @@ AutonomousRPMShootfromRight::AutonomousRPMShootfromRight()
 	AddParallel(new SetShooterSpeed(2500, true));
 	
 	//Set shooter angle
-	AddParallel(new SetShooterAngle(585));
+   AddParallel(new SetShooterAngle(SHOOTER_ANGLE));
 	
 	//Drive forward
 	AddSequential(new ChassisDriveDistance(AUTONOMOUS_DRIVE_FORWARD_DISTANCE, DRIVING_POWER));

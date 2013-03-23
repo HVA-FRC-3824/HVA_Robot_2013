@@ -21,7 +21,9 @@
 #include "ChassisDrivetoWallStraight.h"
 #include "SetPickupPosition.h"
 
-#define SHOOTER_ANGLE_FOR_PICKUP 130
+#define DRIVE_UNDER_TOWER_DISTANCE         63.0
+#define TURN_LEFT_ANGLE                   -14.0
+#define TURN_RIGHT_ANGLE                   16.0
 
 AutonomousRPMShootingwithPickupFirst::AutonomousRPMShootingwithPickupFirst()
 {
@@ -34,7 +36,7 @@ AutonomousRPMShootingwithPickupFirst::AutonomousRPMShootingwithPickupFirst()
 
    // drive straight to get the first Frisbee
    //AddSequential(new ChassisDriveDistanceStraight(0.4, 0.4), 3.0);
-   AddSequential(new ChassisDrivetoWallStraight(63, 0.3));
+   AddSequential(new ChassisDrivetoWallStraight(DRIVE_UNDER_TOWER_DISTANCE, 0.3));
 
    // wait to allow the robot to move under the tower
    AddSequential(new WaitCommand(0.1));
@@ -63,7 +65,7 @@ AutonomousRPMShootingwithPickupFirst::AutonomousRPMShootingwithPickupFirst()
    AddParallel(new SetShooterAngle(SHOOTER_ANGLE_FOR_PICKUP), 3.0);
 
    // turn and drive forward slightly to get the next Frisbee
-   AddSequential(new ChassisTurnAngle(-14.0));
+   AddSequential(new ChassisTurnAngle(TURN_LEFT_ANGLE));
    //AddSequential(new ChassisDriveDistance(0.08, 0.3));
 
    // pick up the Frisbee
@@ -73,7 +75,7 @@ AutonomousRPMShootingwithPickupFirst::AutonomousRPMShootingwithPickupFirst()
    AddParallel(new SetShooterAngle(SHOOTER_ANGLE_UNDER_TOWER_SECOND), 3.0);
 
    // turn back to the goal
-   AddSequential(new ChassisTurnAngle(16.0), 2.0);
+   AddSequential(new ChassisTurnAngle(TURN_RIGHT_ANGLE), 2.0);
    
    // shoot the Frisbees
    AddSequential(new WaitCommand(1.4));
@@ -81,8 +83,9 @@ AutonomousRPMShootingwithPickupFirst::AutonomousRPMShootingwithPickupFirst()
    AddSequential(new WaitCommand(0.1));
    AddSequential(new FrisbeeShoot());
    
-   	// Move the arm to the home position
-   	AddParallel(new SetPickupPosition(PICKUP_HOME_POSITION), 1.0);
+   // Move the arm to the home position
+   AddParallel(new SetPickupPosition(PICKUP_HOME_POSITION), 1.0);
    	
-   	AddSequential(new SetShooterAngle(SHOOTER_ANGLE_FOR_PICKUP), 2.0);
+   // lower the shooter to allow driving out from under the tower
+   AddSequential(new SetShooterAngle(SHOOTER_ANGLE_FOR_PICKUP), 2.0);
 }

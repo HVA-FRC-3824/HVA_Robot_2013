@@ -14,7 +14,7 @@
 #include "FrisbeeRapidShoot.h"
 
 #define SHOOTER_SPEED            2650.0
-#define SHOOTER_ANGLE_SHOOT       300.0
+#define SHOOTER_ANGLE_SHOOT        27.313  // 300.0
 
 AutonomousRPMShootfromCenterRapid::AutonomousRPMShootfromCenterRapid() 
 {

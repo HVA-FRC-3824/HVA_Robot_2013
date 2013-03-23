@@ -41,7 +41,7 @@ AutonomousRPMShootingwithPickup::AutonomousRPMShootingwithPickup()
    AddSequential(new FrisbeeShoot());
    
    // lower the shooter to pickup the Frisbees (basically all the way down)
-   AddParallel(new SetShooterAngle(10.0), 3.0);
+   AddParallel(new SetShooterAngle(SHOOTER_ANGLE_FOR_PICKUP), 3.0);
 
    // drive straight to get the first Frisbee
    AddSequential(new ChassisDriveDistanceStraight(0.3, 0.4), 3.0);

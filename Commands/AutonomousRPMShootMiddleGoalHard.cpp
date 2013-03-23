@@ -16,7 +16,7 @@
 #define SHOOTER_SPEED                           3000.0
 #define SHOOTER_SPEED_TIMEOUT                      2.0
 
-#define SHOOTER_ANGLE                            300.0
+#define SHOOTER_ANGLE                             27.313  // 300.0
 #define SHOOTER_ANGLE_TIMEOUT                      2.0
 
 #define WAIT_FOR_STABILITY                         3.0

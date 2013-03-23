@@ -24,7 +24,8 @@ void GetShooterAngle::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void GetShooterAngle::Execute() 
 {
-	   SmartDashboard::PutNumber("Shot Shooter Angle", SetShooterAngle().angle);
+   // report the shooter angle in degrees
+   SmartDashboard::PutNumber("Shot Shooter Angle", (SHOOTER_ANGLE_SLOPE * SetShooterAngle().angle) + SHOOTER_ANGLE_Y_INTERCEPT);
 }
 // Make this return true when this Command no longer needs to run execute()
 bool GetShooterAngle::IsFinished() 

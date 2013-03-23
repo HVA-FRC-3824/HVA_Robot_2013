@@ -17,6 +17,8 @@
 #include "ChassisDriveDistanceStraight.h"
 #include "ChassisTurnAngle.h"
 
+#define SHOOTER_ANGLE    30.8515   // 405
+
 AutonomousRPMShootMiddleGoalHardtoCenterline::AutonomousRPMShootMiddleGoalHardtoCenterline() {
 	// Add Commands here:
 	// e.g. AddSequential(new Command1());
@@ -30,7 +32,7 @@ AutonomousRPMShootMiddleGoalHardtoCenterline::AutonomousRPMShootMiddleGoalHardto
 	// Command1 and Command2 will run in parallel.
 
 	// set the shooter angle
-	AddParallel(new SetShooterAngle(405));
+	AddParallel(new SetShooterAngle(SHOOTER_ANGLE)); 
 	
 	AddParallel(new SetShooterSpeed(0.8, true));
 	

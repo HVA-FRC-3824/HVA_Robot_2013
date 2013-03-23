@@ -17,11 +17,11 @@
 #include "ChassisTurnAngle.h"
 #include "FrisbeeShoot.h"
 
-#define BACK_UP_SPEED 		-0.2
-#define BACK_UP_TIME		0.5
-#define ROTATE_ANGLE		-150
-#define SHOOTER_ANGLE		25.0
-#define SHOOTER_SPEED		3600
+#define BACK_UP_SPEED        -0.2
+#define BACK_UP_TIME          0.5
+#define ROTATE_ANGLE       -150.0
+#define SHOOTER_ANGLE        18.0455  // 25.0
+#define SHOOTER_SPEED      3600.0
 
 LongShotfromLeftLoadingStation::LongShotfromLeftLoadingStation() {
 	// Add Commands here:
