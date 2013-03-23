@@ -23,6 +23,7 @@
 class SetShooterAngle: public Command 
 { 
 private:
+	double setAngle;
 	double angle;
 	bool angleSpecifiedInConstructor;
 public:

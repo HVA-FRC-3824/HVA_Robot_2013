@@ -118,7 +118,7 @@ OI::OI()
     m_shooterPosition_5->WhenPressed(new CypressGotoPosition(POSITION_5_ANGLE, POSITION_5_VELOCITY, POSITION_5_IS_RPM));
 		
 	m_shooterStop = new DigitalIOButton(INPUT_SHOOTER_STOP);
-	m_shooterStop->WhenPressed(new SetShooterSpeed(0, false));
+	m_shooterStop->WhenPressed(new CypressGotoPosition(POSITION_LOADING, 0, false));
 	m_frisbeeShoot = new DigitalIOButton(INPUT_FRISBEE_SHOOT);
 	m_frisbeeShoot->WhileHeld(new FrisbeeRapidShoot());	
 }

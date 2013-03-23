@@ -31,7 +31,7 @@
 #define SHOOTER_ANGLE_Y_INTERCEPT                  17.203
 /****** BACK/UNDER TOWER ******/
 #define SHOOTER_ANGLE_BACK_OF_TOWER                28.661  // 340.0
-#define SHOOTER_ANGLE_UNDER_TOWER                  29.9416 // 378.0
+#define SHOOTER_ANGLE_UNDER_TOWER                  30.0 // 378.0
 #define SHOOTER_ANGLE_UNDER_TOWER_SECOND           28.324  // 330.0
 #define SHOOTER_ANGLE_FOR_PICKUP                   21.584  // 130.0
 #define SHOOTER_SPEED_BACK_OF_TOWER              2650.0
@@ -75,11 +75,14 @@
 #define POSITION_4_VELOCITY                      2650.0
 #define POSITION_4_VOLTAGE                          0.6
 #define POSITION_4_IS_RPM                          true
-// tower goal
-#define POSITION_5_ANGLE                           45.9828 // 854.0 
-#define POSITION_5_VELOCITY                      1725.0
+// Long Shoot
+#define POSITION_5_ANGLE                           10.0 // 854.0 
+#define POSITION_5_VELOCITY                      3250.0
 #define POSITION_5_VOLTAGE                          0.6
 #define POSITION_5_IS_RPM                          true
+// Loadind define
+#define POSITION_LOADING						   36.0
+#define POSITION_INITIALIZE                        28.0
 /****** OLD CYPRESS POSITION DEFINES ******/
 //#define POSITION_1_ANGLE                          25.0 // full court
 //#define POSITION_1_VELOCITY                    3600.0

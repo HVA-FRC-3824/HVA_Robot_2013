@@ -21,9 +21,10 @@
 #include "ChassisDrivetoWallStraight.h"
 #include "SetPickupPosition.h"
 
-#define DRIVE_UNDER_TOWER_DISTANCE         63.0
+#define DRIVE_UNDER_TOWER_DISTANCE         64.0
 #define TURN_LEFT_ANGLE                   -14.0
 #define TURN_RIGHT_ANGLE                   16.0
+#define FIRST_SHOOT_ANGLE_OFFSET		   -1.0
 
 AutonomousRPMShootingwithPickupFirst::AutonomousRPMShootingwithPickupFirst()
 {
@@ -45,15 +46,16 @@ AutonomousRPMShootingwithPickupFirst::AutonomousRPMShootingwithPickupFirst()
    AddSequential(new FrisbeePickup());
    
    // set the shooter angle for under the tower
-   AddSequential(new SetShooterAngle(SHOOTER_ANGLE_UNDER_TOWER), 2.0);
+   AddSequential(new SetShooterAngle(SHOOTER_ANGLE_UNDER_TOWER + FIRST_SHOOT_ANGLE_OFFSET), 2.0);
    
    // shoot 3 Frisbees as fast as possible (it waits on the speed to be correct)
    //AddSequential(new FrisbeeRapidShoot(3), 10.0);
    // Note: Should not have to wait since the Set Shooter Spped command will
    //       not return until the shooter is up to speed
    //AddSequential(new WaitCommand(1.0));
-   AddSequential(new WaitCommand(0.2));
+   AddSequential(new WaitCommand(0.1));
    AddSequential(new FrisbeeShoot());
+   AddSequential(new SetShooterAngle(SHOOTER_ANGLE_UNDER_TOWER), 2.0);
    AddSequential(new WaitCommand(0.1));
    AddSequential(new FrisbeeShoot());
    AddSequential(new WaitCommand(0.1));
@@ -78,7 +80,7 @@ AutonomousRPMShootingwithPickupFirst::AutonomousRPMShootingwithPickupFirst()
    AddSequential(new ChassisTurnAngle(TURN_RIGHT_ANGLE), 2.0);
    
    // shoot the Frisbees
-   AddSequential(new WaitCommand(1.4));
+   AddSequential(new WaitCommand(1.2));
    AddSequential(new FrisbeeShoot());
    AddSequential(new WaitCommand(0.1));
    AddSequential(new FrisbeeShoot());

@@ -12,7 +12,7 @@
 SetShooterAngle::SetShooterAngle(double angle_parameter) 
 {
 	// get the angle and convert from degrees to ADC values
-	angle = angle_parameter;
+	setAngle = angle_parameter;
 	
 	// Use requires() here to declare subsystem dependencies
 	// eg. requires(chassis);
@@ -44,6 +44,10 @@ void SetShooterAngle::Initialize()
 		angle = DriverStation::GetInstance()->GetEnhancedIO().GetAnalogIn(ANALOG_SHOOTER_ADJUST);
 		// Convert the Voltage to Degrees
 		angle = angle * (SHOOTER_ANGLE_MAX_VALUE - SHOOTER_ANGLE_MIN_VALUE)/3.3 + SHOOTER_ANGLE_MIN_VALUE;
+	}
+	else
+	{
+		angle = setAngle;
 	}
 	
 	// ensure the range of the shooter angle

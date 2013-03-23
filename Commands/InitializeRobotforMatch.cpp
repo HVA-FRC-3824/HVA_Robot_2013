@@ -23,7 +23,7 @@ InitializeRobotforMatch::InitializeRobotforMatch()
 	AddParallel(new SetPickupPosition(PICKUP_HOME_POSITION), 3.0);
 
 	// set the shooter angle
-	AddParallel(new SetShooterAngle(SHOOTER_ANGLE_BACK_OF_TOWER), 3.0);
+	AddParallel(new SetShooterAngle(POSITION_INITIALIZE), 3.0);
 	
 	// retract the hanger
 	AddParallel(new HangerPullDown(), 3.0);	
