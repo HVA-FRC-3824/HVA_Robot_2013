@@ -13,8 +13,10 @@
 #include "SetPickupSuction.h"
 #include "SetShooterAngleforPickup.h"
 
+int FrisbeePickup::PickupCount = 0;
 FrisbeePickup::FrisbeePickup() 
 {
+
 	// Turn on the suction
 	AddParallel(new SetPickupSuction(true));
 	
@@ -35,7 +37,9 @@ FrisbeePickup::FrisbeePickup()
 	
 	// Turn off the suction
 	AddParallel(new SetPickupSuction(false));
-	
+	PickupCount++;
+	SmartDashboard::PutNumber("Pickup Counter", FrisbeePickup::PickupCount);
+
 //	// TODO - remove for autonomous to make it quicker
 //	AddSequential(new WaitCommand(0.5));
 //

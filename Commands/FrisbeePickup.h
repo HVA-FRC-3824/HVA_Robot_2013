@@ -21,6 +21,7 @@
 class FrisbeePickup: public CommandGroup
 {
 public:	
+	static int PickupCount;
 	FrisbeePickup();
 };
 

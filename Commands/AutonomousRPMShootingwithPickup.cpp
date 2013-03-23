@@ -24,7 +24,12 @@ AutonomousRPMShootingwithPickup::AutonomousRPMShootingwithPickup()
    // NOTE: Shooter angle should already be set before match
    //       using the initialize button on the Joystick (button 7)
 //   AddSequential(new SetShooterAngle(SHOOTER_ANGLE_BACK_OF_TOWER), 3.0);
-   
+
+   Robot::MatchCount += 1;
+   SmartDashboard::PutNumber("Match Counter", Robot::MatchCount);
+   SmartDashboard::PutNumber("Shot Counter", 0);
+   SmartDashboard::PutNumber("Pickup Counter", 0);
+
    // start the shooter
    AddSequential(new SetShooterSpeed(SHOOTER_SPEED_BACK_OF_TOWER, true), 3.0);
 

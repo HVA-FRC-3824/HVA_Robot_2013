@@ -13,6 +13,8 @@
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
+#include "FrisbeeShoot.h"
+#include "FrisbeePickup.h"
 
 /**
  *
