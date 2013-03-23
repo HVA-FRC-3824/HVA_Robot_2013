@@ -11,9 +11,8 @@
 #include <math.h>
 SetShooterAngle::SetShooterAngle(double angle_parameter) 
 {
-   // get the angle and convert from degrees to ADC values
-   // ADC   = (angle - Y_INTERCEPT) / SLOPE
-   angle = (angle_parameter - SHOOTER_ANGLE_Y_INTERCEPT) / SHOOTER_ANGLE_SLOPE;
+	// get the angle and convert from degrees to ADC values
+	angle = angle_parameter;
 	
 	// Use requires() here to declare subsystem dependencies
 	// eg. requires(chassis);
@@ -41,7 +40,9 @@ void SetShooterAngle::Initialize()
    // determine if the shooter angle should be pulled from the SmartDashboard
 	if (angleSpecifiedInConstructor == false)
 	{
+		// Angle is currently in 0V to 3.3V
 		angle = DriverStation::GetInstance()->GetEnhancedIO().GetAnalogIn(ANALOG_SHOOTER_ADJUST);
+		// Convert the Voltage to Degrees
 		angle = angle * (SHOOTER_ANGLE_MAX_VALUE - SHOOTER_ANGLE_MIN_VALUE)/3.3 + SHOOTER_ANGLE_MIN_VALUE;
 	}
 	
@@ -50,6 +51,10 @@ void SetShooterAngle::Initialize()
 	   angle = SHOOTER_ANGLE_MAX_VALUE;
    if (angle < SHOOTER_ANGLE_MIN_VALUE)
 	   angle = SHOOTER_ANGLE_MIN_VALUE;
+   
+   // Convert the angle which is stored in degrees to ADC
+   // ADC   = (angle - Y_INTERCEPT) / SLOPE
+   angle = (angle - SHOOTER_ANGLE_Y_INTERCEPT) / SHOOTER_ANGLE_SLOPE;
    
    // setup the PID controller
    Robot::shooterAngleAdjust->getPIDController()->SetSetpoint(angle);
@@ -60,7 +65,9 @@ void SetShooterAngle::Execute()
 {
 	if(angleSpecifiedInConstructor == false)
 	{
+		// Angle is currently in 0V to 3.3V
 		angle = DriverStation::GetInstance()->GetEnhancedIO().GetAnalogIn(ANALOG_SHOOTER_ADJUST);
+		// Convert the Voltage to Degrees
 		angle = angle * (SHOOTER_ANGLE_MAX_VALUE - SHOOTER_ANGLE_MIN_VALUE)/3.3 + SHOOTER_ANGLE_MIN_VALUE;
 		
 		if (angle > SHOOTER_ANGLE_MAX_VALUE)
@@ -68,6 +75,8 @@ void SetShooterAngle::Execute()
 		if (angle < SHOOTER_ANGLE_MIN_VALUE)
 			angle = SHOOTER_ANGLE_MIN_VALUE;
 		
+		// Convert the angle which is stored in degrees to ADC
+		// ADC   = (angle - Y_INTERCEPT) / SLOPE
 		angle = (angle - SHOOTER_ANGLE_Y_INTERCEPT) / SHOOTER_ANGLE_SLOPE;
 		   
 		Robot::shooterAngleAdjust->getPIDController()->SetSetpoint(angle);	
