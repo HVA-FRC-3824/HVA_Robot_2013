@@ -21,7 +21,7 @@
 
 #define PICKUP_POSITION						   	   905.0 //--950.0
 #define PICKUP_RELEASE_POSITION					   295.0 //--350.0
-#define PICKUP_HOME_POSITION	                   100.0 //--190.0
+#define PICKUP_HOME_POSITION	                    80.0 //--190.0
 
 /**
  *
