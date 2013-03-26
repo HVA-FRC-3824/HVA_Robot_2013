@@ -21,7 +21,7 @@
 #include "ChassisDrivetoWallStraight.h"
 #include "SetPickupPosition.h"
 
-#define DRIVE_UNDER_TOWER_DISTANCE         63.5
+#define DRIVE_UNDER_TOWER_DISTANCE         64.5
 #define TURN_LEFT_ANGLE                   -14.0
 #define TURN_RIGHT_ANGLE                   16.0
 #define FIRST_SHOOT_ANGLE_OFFSET		   -1.0

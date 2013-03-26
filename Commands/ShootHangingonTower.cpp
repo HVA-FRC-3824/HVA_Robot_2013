@@ -8,33 +8,15 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef FRISBEE_SHOOT_H
-#define FRISBEE_SHOOT_H
+#include "ShootHangingonTower.h"
+#include "SetShooterSpeed.h"
+#include "SetShooterAngle.h"
 
-#include "Timer.h"
-#include "Commands/Subsystem.h"
-#include "../Robot.h"
-
-/**
- *
- *
- * @author HVA Robotics Team 3824
- */
-class FrisbeeShoot: public Command 
+ShootHangingonTower::ShootHangingonTower()
 {
-private:
-	Timer *m_pusherTimer;
-	bool m_isJammed;
-
-public:
-	FrisbeeShoot();
-	virtual void Initialize();
-	virtual void Execute();
-	virtual bool IsFinished();
-	virtual void End();
-	virtual void Interrupted();
-
-	static int lastShotDataCounter;
-};
-
-#endif
+	// disable the shooter
+	AddParallel(new SetShooterSpeed(HANGING_ON_TOWER_VELOCITY, HANGING_ON_TOWER_IS_RPM), 3.0);
+	
+	// set the shooter angle
+	AddParallel(new SetShooterAngle(HANGING_ON_TOWER_ANGLE), 3.0);	
+}

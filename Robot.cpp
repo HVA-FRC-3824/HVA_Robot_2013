@@ -99,13 +99,13 @@ void Robot::RobotInit()
 	// These must be after subsystem construction.
    chooser = new SendableChooser();
    chooser->AddDefault("1) Do Nothing", new AutonomousDoNothing());
-   chooser->AddObject("2) Shoot from Center and Pickup", new AutonomousRPMShootingwithPickup());
-   chooser->AddObject("3) Shoot from Center to Top Goal Rapid", new AutonomousRPMShootfromCenterRapid());
-   chooser->AddObject("4) Shoot from Center to Top Goal", new AutonomousRPMShootfromCenter());
-   chooser->AddObject("5) Shoot from Side to Top Goal", new AutonomousRPMShootMiddleGoalHard());
-   chooser->AddObject("6) Shoot from Side to Middle Goal", new AutonomousRPMShootMiddleGoalSoft());
-   chooser->AddObject("7) Drive Forward and Shoot to Middle Goal", new AutonomousDriveForwardShoot());
-   chooser->AddObject("8) Pickup and Shoot from Center", new AutonomousRPMShootingwithPickupFirst());
+   //chooser->AddObject("2) Shoot from Center and Pickup", new AutonomousRPMShootingwithPickup());
+   //chooser->AddObject("3) Shoot from Center to Top Goal Rapid", new AutonomousRPMShootfromCenterRapid());
+   //chooser->AddObject("4) Shoot from Center to Top Goal", new AutonomousRPMShootfromCenter());
+   chooser->AddObject("2) Shoot from Side to Top Goal", new AutonomousRPMShootMiddleGoalHard());
+   //chooser->AddObject("6) Shoot from Side to Middle Goal", new AutonomousRPMShootMiddleGoalSoft());
+   //chooser->AddObject("7) Drive Forward and Shoot to Middle Goal", new AutonomousDriveForwardShoot());
+   chooser->AddObject("3) Pickup and Shoot from Center", new AutonomousRPMShootingwithPickupFirst());
 //   chooser->AddObject("Shoot Middle Goal Hard with RPM from Centerline", new AutonomousRPMShootMiddleGoalHardtoCenterline());
 //   chooser->AddObject("Shoot from Left", new AutonomousRPMShootfromLeft());
 //   chooser->AddObject("Shoot from Right", new AutonomousRPMShootfromRight());

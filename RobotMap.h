@@ -31,6 +31,7 @@ public:
 	static GearTooth* shooterWheelEncoder;
 	static Relay* shooterPusherMotor;
 	static DigitalInput* shooterPusherStopSwitch;
+	static DigitalOutput* shooterPusherLEDChase;
 	static AnalogChannel* shooterAngleAdjustPotentiometer;
 	static SpeedController* shooterAngleAdjustMotor;
 	static Compressor* pumpCompressorPump;

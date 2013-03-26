@@ -12,6 +12,7 @@
 #define PUSHER_TIMEOUT				  1.20
 #define PUSHER_REVERSE_TIME			  0.15
 int FrisbeeShoot::lastShotDataCounter = 0;
+
 FrisbeeShoot::FrisbeeShoot() 
 {
 	// Use requires() here to declare subsystem dependencies
@@ -24,11 +25,15 @@ FrisbeeShoot::FrisbeeShoot()
 // Called just before this Command runs the first time
 void FrisbeeShoot::Initialize() 
 {
+	
+   Robot::shooterPusher->lEDChase = 0;
    // Frisbee is not jammed yet
    m_isJammed = false;
 	
    // start the shooter
    Robot::shooterPusher->motor->Set(Relay::kReverse);
+   
+   
    // reset and start the timer
    m_pusherTimer->Reset();
    m_pusherTimer->Start();
@@ -77,6 +82,7 @@ void FrisbeeShoot::End()
    m_pusherTimer->Stop();
    lastShotDataCounter++;
    SmartDashboard::PutNumber("Shot Counter", lastShotDataCounter);
+   //Robot::shooterPusher->lEDChase = 1;
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

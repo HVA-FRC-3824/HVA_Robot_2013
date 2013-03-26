@@ -21,6 +21,7 @@ SpeedController* RobotMap::shooterWheelMotor = NULL;
 GearTooth* RobotMap::shooterWheelEncoder = NULL;
 Relay* RobotMap::shooterPusherMotor = NULL;
 DigitalInput* RobotMap::shooterPusherStopSwitch = NULL;
+DigitalOutput* RobotMap::shooterPusherLEDChase = NULL;
 AnalogChannel* RobotMap::shooterAngleAdjustPotentiometer = NULL;
 SpeedController* RobotMap::shooterAngleAdjustMotor = NULL;
 Compressor* RobotMap::pumpCompressorPump = NULL;
@@ -74,6 +75,9 @@ void RobotMap::init()
 	
 	shooterPusherStopSwitch = new DigitalInput(1, 2);
 	lw->AddSensor("Shooter Pusher", "Stop Switch", shooterPusherStopSwitch);
+	
+	shooterPusherLEDChase = new DigitalOutput(1, 4);
+	
 	
 	shooterAngleAdjustPotentiometer = new AnalogChannel(1, 5);
 	lw->AddSensor("Shooter Angle Adjust", "Potentiometer", shooterAngleAdjustPotentiometer);
