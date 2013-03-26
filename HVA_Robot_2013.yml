@@ -506,7 +506,7 @@ Children:
           name: When to Run
           validators: null
           value: whileHeld
-    - Name: Joystick Single Shoot
+    - Name: Setup for Match
       Base: Joystick Button
       Children: []
       Properties:
@@ -515,13 +515,13 @@ Children:
           name: Command
           type: Command
           validators: *id018
-          value: Frisbee Shoot
+          value: Initialize Robot for Match
         Button: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id019
           default: '1'
           name: Button
           validators: null
-          value: '12'
+          value: '7'
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: Drive Joystick}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
@@ -530,6 +530,30 @@ Children:
           name: When to Run
           validators: null
           value: whenPressed
+    - Name: Shoot when Hanging on Tower
+      Base: Joystick Button
+      Children: []
+      Properties:
+        Command: !!robotbuilder.data.properties.TypeSelectionProperty
+          default: None
+          name: Command
+          type: Command
+          validators: *id018
+          value: Shoot Hanging on Tower
+        Button: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id019
+          default: '1'
+          name: Button
+          validators: null
+          value: '9'
+        Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
+          name: Joystick, validators: null, value: Drive Joystick}
+        When to Run: !!robotbuilder.data.properties.ChoicesProperty
+          choices: *id020
+          default: whileHeld
+          name: When to Run
+          validators: null
+          value: whileHeld
     - Name: Joystick Rapid Shoot
       Base: Joystick Button
       Children: []
@@ -554,7 +578,7 @@ Children:
           name: When to Run
           validators: null
           value: whileHeld
-    - Name: Setup for Match
+    - Name: Joystick Single Shoot
       Base: Joystick Button
       Children: []
       Properties:
@@ -563,13 +587,13 @@ Children:
           name: Command
           type: Command
           validators: *id018
-          value: Initialize Robot for Match
+          value: Frisbee Shoot
         Button: !!robotbuilder.data.properties.ChoicesProperty
           choices: *id019
           default: '1'
           name: Button
           validators: null
-          value: '7'
+          value: '12'
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: Drive Joystick}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
@@ -648,6 +672,12 @@ Children:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: false}
   - Name: Autonomous RPM Shoot from Left
+    Base: Command Group
+    Children: []
+    Properties:
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: false}
+  - Name: Autonomous RPM Shooting with Pickup First
     Base: Command Group
     Children: []
     Properties:
@@ -804,7 +834,7 @@ Children:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: None}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: false}
+        name: Button on SmartDashboard, validators: null, value: true}
   - Name: Frisbee Pickup
     Base: Command Group
     Children: []
@@ -919,18 +949,12 @@ Children:
         name: Requires, type: Subsystem, validators: null, value: None}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
         name: Button on SmartDashboard, validators: null, value: false}
-  - Name: Autonomous RPM Shooting with Pickup First
-    Base: Command Group
-    Children: []
-    Properties:
-      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: false}
   - Name: Test Drive Straight
     Base: Command Group
     Children: []
     Properties:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: true}
+        name: Button on SmartDashboard, validators: null, value: false}
   - Name: ChassisDrivetoWallStraight
     Base: Command
     Children: []
@@ -938,13 +962,19 @@ Children:
       Requires: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,
         name: Requires, type: Subsystem, validators: null, value: Drivetrain}
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: true}
+        name: Button on SmartDashboard, validators: null, value: false}
   - Name: Drive Forwared 10 inches
     Base: Command Group
     Children: []
     Properties:
       Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
-        name: Button on SmartDashboard, validators: null, value: true}
+        name: Button on SmartDashboard, validators: null, value: false}
+  - Name: Shoot Hanging on Tower
+    Base: Command Group
+    Children: []
+    Properties:
+      Button on SmartDashboard: !!robotbuilder.data.properties.BooleanProperty {default: true,
+        name: Button on SmartDashboard, validators: null, value: false}
   Properties: {}
 Properties:
   Autonomous Command: !!robotbuilder.data.properties.TypeSelectionProperty {default: None,

@@ -13,10 +13,10 @@
 #include "SetShooterAngle.h"
 #include "FrisbeeShoot.h"
 
-#define SHOOTER_SPEED                           3000.0
+#define SHOOTER_SPEED                           SHOOTER_SPEED_BACK_OF_TOWER
 #define SHOOTER_SPEED_TIMEOUT                      2.0
 
-#define SHOOTER_ANGLE                             27.313  // 300.0
+#define SHOOTER_ANGLE                             SHOOTER_ANGLE_BACK_OF_TOWER  // 300.0
 #define SHOOTER_ANGLE_TIMEOUT                      2.0
 
 #define WAIT_FOR_STABILITY                         3.0

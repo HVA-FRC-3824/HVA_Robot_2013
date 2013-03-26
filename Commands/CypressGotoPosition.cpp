@@ -29,40 +29,47 @@ void CypressGotoPosition::Initialize()
 	// Check to see if automated shooter position
 	if (!(DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_ANGLE_ADJUSTMENT_MANUAL)) == false)
 	{
-		if (setShooterAngle == NULL || !setShooterAngle->IsRunning())
+		// if the shooter angle is negative, then do not set
+		if (m_angle >= 0)
 		{
-			// If the command is created delete
-			if(setShooterAngle != NULL)
+			if (setShooterAngle == NULL || !setShooterAngle->IsRunning())
 			{
-				delete(setShooterAngle);
+				// If the command is created delete
+				if(setShooterAngle != NULL)
+				{
+					delete(setShooterAngle);
+				}
+				setShooterAngle = new SetShooterAngle(m_angle);
+				setShooterAngle->Start();
 			}
-			setShooterAngle = new SetShooterAngle(m_angle);
-			setShooterAngle->Start();
-		}
-		else
-		{
-			setShooterAngle->Cancel();
+			else
+			{
+				setShooterAngle->Cancel();
+			}
 		}
 	}
 	
 	// Check to see if automated shooter speed
-	//TODO: What is INPUT_SHOOTER_SPEED_ADJUSTMENT_MANUAL?!?
 	if (!(DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_SPEED_ADJUSTMENT_MANUAL)) == false)
 	{
-		if (setShooterSpeed == NULL || !setShooterSpeed->IsRunning())
+		// if the shooter velocity is negative, then do not set
+		if (m_velocity >= 0)
 		{
-			// If the command is created delete
-			if(setShooterSpeed != NULL)
+			if (setShooterSpeed == NULL || !setShooterSpeed->IsRunning())
 			{
-				delete(setShooterSpeed);
-			}
+				// If the command is created delete
+				if(setShooterSpeed != NULL)
+				{
+					delete(setShooterSpeed);
+				}
 			
-			setShooterSpeed = new SetShooterSpeed(m_velocity, m_isRPM);
-			setShooterSpeed->Start();
-		}
-		else
-		{
-			setShooterSpeed->Cancel();
+				setShooterSpeed = new SetShooterSpeed(m_velocity, m_isRPM);
+				setShooterSpeed->Start();
+			}
+			else
+			{
+				setShooterSpeed->Cancel();
+			}
 		}
 	}
 }

@@ -8,7 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 #include "Teleoperated.h"
-
 Teleoperated::Teleoperated() 
 {
 	// Use requires() here to declare subsystem dependencies
@@ -36,7 +35,6 @@ void Teleoperated::Execute()
    SmartDashboard::PutNumber("Shooter Angle in ADC", Robot::shooterAngleAdjust->potentiometer->PIDGet());
    SmartDashboard::PutNumber("Pickup Pot", Robot::pickup->potentiometer->PIDGet());
    SmartDashboard::PutNumber("Ultra Sonic", Robot::drivetrain->GetFrontDistance());
-
 //   SmartDashboard::PutBoolean("Shooter Switch", Robot::shooterPusher->stopSwitch->Get());
 //   SmartDashboard::PutNumber("Shooter Voltage", Robot::shooterWheel->motor->Get());
 //   SmartDashboard::PutNumber("Pickup Voltage", Robot::pickup->motor->Get());

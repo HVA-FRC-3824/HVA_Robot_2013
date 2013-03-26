@@ -40,13 +40,11 @@ SetShooterSpeed::SetShooterSpeed()
 // Called just before this Command runs the first time
 void SetShooterSpeed::Initialize() 
 {
-	printf("SetShooterSpeed Initialize\n");
-	
 	// determine if the shooter speed should be read from the Pot
 	if (m_SpeedSpecifiedInConstructor == true) // use speed specified
 	{
 		// Voltage or PID control
-		if(m_isRPM == false)
+		if (m_isRPM == false)
 		{
 			// Voltage Mode
 			Robot::shooterWheel->getPIDController()->Disable();
@@ -66,7 +64,7 @@ void SetShooterSpeed::Initialize()
 		m_isRPM = !(DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_RPM_VOLTAGE));
 		
 		// Voltage or PID control
-		if(m_isRPM == false)
+		if (m_isRPM == false)
 		{
 			// Voltage Mode
 			Robot::shooterWheel->getPIDController()->Disable();
@@ -75,18 +73,14 @@ void SetShooterSpeed::Initialize()
 		{
 		   // read the value from the pot
 			m_shooterSpeed = DriverStation::GetInstance()->GetEnhancedIO().GetAnalogIn(ANALOG_SHOOTER_SPEED);
+			
 			// Convert the pot value to speed
 			m_shooterSpeed = m_shooterSpeed * (SHOOTER_SPEED_MAX_VALUE - SHOOTER_SPEED_MIN_VALUE) / 3.3 + SHOOTER_SPEED_MIN_VALUE;
 			
-			
 			if (m_shooterSpeed > SHOOTER_SPEED_MAX_VALUE)
-			{
 				m_shooterSpeed = SHOOTER_SPEED_MAX_VALUE;
-			}
 			if (m_shooterSpeed < SHOOTER_SPEED_MIN_VALUE)
-			{
 				m_shooterSpeed = SHOOTER_SPEED_MIN_VALUE;
-			}
 			
 			// Set the setpoint
 			Robot::shooterWheel->getPIDController()->SetSetpoint(m_shooterSpeed);
@@ -98,7 +92,7 @@ void SetShooterSpeed::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void SetShooterSpeed::Execute() 
 {
-   // determine if the shooter speed should be read from the Pot
+    // determine if the shooter speed should be read from the Pot
 	if (m_SpeedSpecifiedInConstructor == true) // use speed specified
 	{
 		if(m_isRPM == false)
@@ -129,13 +123,9 @@ void SetShooterSpeed::Execute()
 			m_shooterSpeed = m_shooterSpeed * (SHOOTER_SPEED_MAX_VALUE - SHOOTER_SPEED_MIN_VALUE)/3.3 + SHOOTER_SPEED_MIN_VALUE;
 			
 			if (m_shooterSpeed > SHOOTER_SPEED_MAX_VALUE)
-			{
 				m_shooterSpeed = SHOOTER_SPEED_MAX_VALUE;
-			}
 			if (m_shooterSpeed < SHOOTER_SPEED_MIN_VALUE)
-			{
 				m_shooterSpeed = SHOOTER_SPEED_MIN_VALUE;
-			}
 			
 			// Update the setpoint
 			Robot::shooterWheel->getPIDController()->SetSetpoint(m_shooterSpeed);
@@ -145,6 +135,7 @@ void SetShooterSpeed::Execute()
 	{
 		printf("Status is Fatal: True\n");
 	}
+	
 	// <DEBUG>
 //	SmartDashboard::PutNumber("Shooter Speed", m_shooterSpeed);
 //	SmartDashboard::PutBoolean("isRPM", m_isRPM);
@@ -162,7 +153,7 @@ bool SetShooterSpeed::IsFinished()
 	
 	// Case 2: The speed is controlled by pot and mode changes
 	if ((m_SpeedSpecifiedInConstructor == false) && 
-			(m_isRPM != !(DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_RPM_VOLTAGE))))
+		(m_isRPM != !(DriverStation::GetInstance()->GetEnhancedIO().GetDigital(INPUT_SHOOTER_RPM_VOLTAGE))))
 		return true;
 	
 	// Return true if the voltage is set
@@ -177,8 +168,6 @@ void SetShooterSpeed::End()
    // not disabling because we always want the shooter to keep running
 //   SmartDashboard::PutNumber("Shooter Speed", (1.0/Robot::shooterWheel->encoder->GetPeriod())*60.0);
 //   SmartDashboard::PutNumber("Shooter Speed", Robot::shooterWheel->pidEncoder->PIDGet());
-	
-	printf("SetShooterSpeed End\n");
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run
@@ -186,5 +175,4 @@ void SetShooterSpeed::Interrupted()
 {
 	// not disabling because we always want the shooter to keep running
 	// ideally when interrupting it should reset to previous value but is probably overkill
-	printf("SetShooterSpeed Interrupted\n");
 }

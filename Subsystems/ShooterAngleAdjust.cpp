@@ -47,4 +47,3 @@ void ShooterAngleAdjust::PIDWrite(float output)
 {
 	motor->Set(-output);
 }
-
