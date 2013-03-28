@@ -23,7 +23,7 @@
 
 #define PICKUP_POSITION						      (905.0 + FRISBEE_OFFSET)
 #define PICKUP_RELEASE_POSITION					  (285.0 + FRISBEE_OFFSET)
-#define PICKUP_HOME_POSITION	                  ( 60.0 + FRISBEE_OFFSET) 
+#define PICKUP_HOME_POSITION	                  (100.0 + FRISBEE_OFFSET) 
 
 /**
  *

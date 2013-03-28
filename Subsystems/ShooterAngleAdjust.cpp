@@ -39,7 +39,8 @@ PIDController* ShooterAngleAdjust::getPIDController()
    if (PIDcontroller == NULL)
    {
 	  // initialize the PID controller
-	  PIDcontroller = new PIDController(0.03, 0.0, 0.005, potentiometer, this);
+	  //PIDcontroller = new PIDController(0.03, 0.0, 0.005, potentiometer, this);
+	  PIDcontroller = new PIDController(0.012, 0.0, 0.005, potentiometer, this);
    }
    return PIDcontroller;
 }
