@@ -17,18 +17,18 @@
 #include "FrisbeePickup.h"
 #include "ChassisDriveDistanceSidewaysStrainght.h"
 #include "ChassisTurnAngle.h"
+#include "AutonomousRPMShootingwithPickupFirst.h"
+#include "ChassisDrivetoWallStraight.h"
 
 AutonomousRPMShootingwithPickup::AutonomousRPMShootingwithPickup() 
 {
    // set the shooter angle to get below the tower
-   // NOTE: Shooter angle should already be set before match
-   //       using the initialize button on the Joystick (button 7)
-//   AddSequential(new SetShooterAngle(SHOOTER_ANGLE_BACK_OF_TOWER), 3.0);
+   AddSequential(new SetShooterAngle(SHOOTER_ANGLE_BACK_OF_TOWER), 3.0);
 
    //Robot::MatchCount += 1;
    //SmartDashboard::PutNumber("Match Counter", Robot::MatchCount);
-   SmartDashboard::PutNumber("Shot Counter", 0);
-   SmartDashboard::PutNumber("Pickup Counter", 0);
+//   SmartDashboard::PutNumber("Shot Counter", 0);
+//   SmartDashboard::PutNumber("Pickup Counter", 0);
 
    // start the shooter
    AddSequential(new SetShooterSpeed(SHOOTER_SPEED_BACK_OF_TOWER, true), 3.0);
@@ -38,7 +38,7 @@ AutonomousRPMShootingwithPickup::AutonomousRPMShootingwithPickup()
    // Note: Should not have to wait since the Set Shooter Spped command will
    //       not return until the shooter is up to speed
    //AddSequential(new WaitCommand(1.0));
-   AddSequential(new WaitCommand(0.1));
+   AddSequential(new WaitCommand(0.2));
    AddSequential(new FrisbeeShoot());
    AddSequential(new WaitCommand(0.1));
    AddSequential(new FrisbeeShoot());
@@ -48,9 +48,21 @@ AutonomousRPMShootingwithPickup::AutonomousRPMShootingwithPickup()
    // lower the shooter to pickup the Frisbees (basically all the way down)
    AddParallel(new SetShooterAngle(SHOOTER_ANGLE_FOR_PICKUP), 3.0);
 
+   // ensure the ultrasonic range finder indicates a correct position
+   // drive straight to get the Frisbees
+   // ensure the ultrasonic range finder indicates a correct position
    // drive straight to get the first Frisbee
-   AddSequential(new ChassisDriveDistanceStraight(0.3, 0.4), 3.0);
-
+//   if (Robot::drivetrain->GetFrontDistance() > (DRIVE_UNDER_TOWER_DISTANCE + MINIMUM_DRIVE_DISTANCE))
+//   {
+     AddSequential(new ChassisDrivetoWallStraight(DRIVE_UNDER_TOWER_DISTANCE, DRIVE_UNDER_TOWER_POWER), 3.0);
+//      SmartDashboard::PutBoolean("Used Ultrasonic", true);
+//   }
+//   else
+//   {
+//      AddSequential(new ChassisDriveDistanceStraight(DRIVE_UNDER_TOWER_DURATION, DRIVE_UNDER_TOWER_POWER), 3.0);
+//      SmartDashboard::PutBoolean("Used Ultrasonic", false);
+//   }
+   
    // wait to allow the robot to move under the tower
    AddSequential(new WaitCommand(0.1));
    
@@ -58,14 +70,14 @@ AutonomousRPMShootingwithPickup::AutonomousRPMShootingwithPickup()
    AddSequential(new FrisbeePickup());
 
    // turn and drive forward slightly to get the next Frisbee
-   AddSequential(new ChassisTurnAngle(-13.0));
-   AddSequential(new ChassisDriveDistance(0.08, 0.4));
+   AddSequential(new ChassisTurnAngle(TURN_LEFT_ANGLE), 2.0);
+//   AddSequential(new ChassisDriveDistance(0.08, 0.4));
 
    // pick up the Frisbee
    AddSequential(new FrisbeePickup());
 
    // turn back to the goal
-   AddSequential(new ChassisTurnAngle(15.0), 2.0);
+   AddSequential(new ChassisTurnAngle(TURN_RIGHT_ANGLE), 2.0);
    
    // set the shooter angle for under the tower
    AddSequential(new SetShooterAngle(SHOOTER_ANGLE_UNDER_TOWER), 3.0);

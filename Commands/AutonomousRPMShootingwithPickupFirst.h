@@ -13,6 +13,15 @@
 
 #include "Commands/CommandGroup.h"
 
+#define DRIVE_UNDER_TOWER_DISTANCE         62.25
+#define DRIVE_UNDER_TOWER_POWER             0.35
+#define DRIVE_UNDER_TOWER_DURATION          0.4
+#define MINIMUM_DRIVE_DISTANCE              4.0
+#define TURN_LEFT_ANGLE                   -14.0
+#define TURN_RIGHT_ANGLE                   16.0
+#define FIRST_SHOOT_ANGLE_OFFSET           -1.0
+// Note: Power above is for both ultrasonic and time based driving
+
 /**
  *
  *

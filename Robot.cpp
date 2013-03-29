@@ -105,7 +105,8 @@ void Robot::RobotInit()
    chooser->AddObject("2) Shoot from Side to Top Goal", new AutonomousRPMShootMiddleGoalHard());
    //chooser->AddObject("6) Shoot from Side to Middle Goal", new AutonomousRPMShootMiddleGoalSoft());
    //chooser->AddObject("7) Drive Forward and Shoot to Middle Goal", new AutonomousDriveForwardShoot());
-   chooser->AddObject("3) Pickup and Shoot from Center", new AutonomousRPMShootingwithPickupFirst());
+   chooser->AddObject("3) Shoot from Center and then Pickup", new AutonomousRPMShootingwithPickup());
+   chooser->AddObject("4) Pickup First and Shoot from Center", new AutonomousRPMShootingwithPickupFirst());
 //   chooser->AddObject("Shoot Middle Goal Hard with RPM from Centerline", new AutonomousRPMShootMiddleGoalHardtoCenterline());
 //   chooser->AddObject("Shoot from Left", new AutonomousRPMShootfromLeft());
 //   chooser->AddObject("Shoot from Right", new AutonomousRPMShootfromRight());
@@ -141,6 +142,9 @@ void Robot::TeleopInit()
    // continue until interrupted by another command, remove
    // this line or comment it out.
    autonomousCommand->Cancel();
+   
+   // start the compressor
+//   Robot::pump->compressorPump->Start();
    
    // Start the Teleop Command
    teleop->Start();

@@ -20,11 +20,7 @@
 #include "ChassisTurnAngle.h"
 #include "ChassisDrivetoWallStraight.h"
 #include "SetPickupPosition.h"
-
-#define DRIVE_UNDER_TOWER_DISTANCE         62.25
-#define TURN_LEFT_ANGLE                   -14.0
-#define TURN_RIGHT_ANGLE                   16.0
-#define FIRST_SHOOT_ANGLE_OFFSET		   -1.0
+#include "DriveToFrisbee.h"
 
 AutonomousRPMShootingwithPickupFirst::AutonomousRPMShootingwithPickupFirst()
 {
@@ -35,10 +31,19 @@ AutonomousRPMShootingwithPickupFirst::AutonomousRPMShootingwithPickupFirst()
    // start the shooter
    AddParallel(new SetShooterSpeed(SHOOTER_SPEED_BACK_OF_TOWER, true), 3.0);
 
+   // ensure the ultrasonic range finder indicates a correct position
    // drive straight to get the first Frisbee
-   //AddSequential(new ChassisDriveDistanceStraight(0.4, 0.4), 3.0);
-   AddSequential(new ChassisDrivetoWallStraight(DRIVE_UNDER_TOWER_DISTANCE, 0.35));
-
+//   if (Robot::drivetrain->GetFrontDistance() > (DRIVE_UNDER_TOWER_DISTANCE + MINIMUM_DRIVE_DISTANCE))
+//   {
+     AddSequential(new ChassisDrivetoWallStraight(DRIVE_UNDER_TOWER_DISTANCE, DRIVE_UNDER_TOWER_POWER), 3.0);
+//      SmartDashboard::PutBoolean("Used Ultrasonic", true);
+//   }
+//   else
+//   {
+//      AddSequential(new ChassisDriveDistanceStraight(DRIVE_UNDER_TOWER_DURATION, DRIVE_UNDER_TOWER_POWER), 3.0);
+//      SmartDashboard::PutBoolean("Used Ultrasonic", false);
+//   }
+      
    // wait to allow the robot to move under the tower
    AddSequential(new WaitCommand(0.1));
    
@@ -66,7 +71,8 @@ AutonomousRPMShootingwithPickupFirst::AutonomousRPMShootingwithPickupFirst()
    AddParallel(new SetShooterAngle(SHOOTER_ANGLE_FOR_PICKUP), 3.0);
 
    // turn and drive forward slightly to get the next Frisbee
-   AddSequential(new ChassisTurnAngle(TURN_LEFT_ANGLE));
+   AddSequential(new ChassisTurnAngle(TURN_LEFT_ANGLE), 2.0);
+//   AddSequential(new DriveToFrisbee()); //Turn by image processing - requires C# program to run!
    //AddSequential(new ChassisDriveDistance(0.08, 0.3));
 
    // pick up the Frisbee
