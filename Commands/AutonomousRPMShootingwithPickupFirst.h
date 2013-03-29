@@ -15,7 +15,7 @@
 
 #define DRIVE_UNDER_TOWER_DISTANCE         62.25
 #define DRIVE_UNDER_TOWER_POWER             0.4
-#define DRIVE_UNDER_TOWER_DURATION          0.38
+#define DRIVE_UNDER_TOWER_DURATION          0.4
 #define MINIMUM_DRIVE_DISTANCE              4.0
 #define TURN_LEFT_ANGLE                   -14.0
 #define TURN_RIGHT_ANGLE                   16.0
