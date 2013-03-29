@@ -30,6 +30,7 @@
 #include "Commands/ChassisDriveDistanceStraight.h"
 #include "Commands/ChassisDrivetoWall.h"
 #include "Commands/ChassisDrivetoWallStraight.h"
+#include "Commands/ChassisSafeMoveForward.h"
 #include "Commands/ChassisTurnAngle.h"
 #include "Commands/CypressGotoPosition.h"
 #include "Commands/DriveForwared10inches.h"

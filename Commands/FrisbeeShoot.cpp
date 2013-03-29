@@ -12,7 +12,6 @@
 #define PUSHER_TIMEOUT				  1.20
 #define PUSHER_REVERSE_TIME			  0.15
 int FrisbeeShoot::lastShotDataCounter = 0;
-
 FrisbeeShoot::FrisbeeShoot() 
 {
 	// Use requires() here to declare subsystem dependencies

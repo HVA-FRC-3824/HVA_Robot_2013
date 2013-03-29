@@ -19,6 +19,7 @@
 #include "ChassisTurnAngle.h"
 #include "AutonomousRPMShootingwithPickupFirst.h"
 #include "ChassisDrivetoWallStraight.h"
+#include "ChassisSafeMoveForward.h"
 
 AutonomousRPMShootingwithPickup::AutonomousRPMShootingwithPickup() 
 {
@@ -50,18 +51,8 @@ AutonomousRPMShootingwithPickup::AutonomousRPMShootingwithPickup()
 
    // ensure the ultrasonic range finder indicates a correct position
    // drive straight to get the Frisbees
-   // ensure the ultrasonic range finder indicates a correct position
-   // drive straight to get the first Frisbee
-//   if (Robot::drivetrain->GetFrontDistance() > (DRIVE_UNDER_TOWER_DISTANCE + MINIMUM_DRIVE_DISTANCE))
-//   {
-     AddSequential(new ChassisDrivetoWallStraight(DRIVE_UNDER_TOWER_DISTANCE, DRIVE_UNDER_TOWER_POWER), 3.0);
-//      SmartDashboard::PutBoolean("Used Ultrasonic", true);
-//   }
-//   else
-//   {
-//      AddSequential(new ChassisDriveDistanceStraight(DRIVE_UNDER_TOWER_DURATION, DRIVE_UNDER_TOWER_POWER), 3.0);
-//      SmartDashboard::PutBoolean("Used Ultrasonic", false);
-//   }
+   //AddSequential(new ChassisDrivetoWallStraight(DRIVE_UNDER_TOWER_DISTANCE, DRIVE_UNDER_TOWER_POWER), 3.0);
+   AddSequential(new ChassisSafeMoveForward(), 3.0);
    
    // wait to allow the robot to move under the tower
    AddSequential(new WaitCommand(0.1));
