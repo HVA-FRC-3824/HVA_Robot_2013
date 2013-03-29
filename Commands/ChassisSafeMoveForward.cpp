@@ -64,6 +64,7 @@ bool ChassisSafeMoveForward::IsFinished()
 // Called once after isFinished returns true
 void ChassisSafeMoveForward::End() 
 {
+	// Stop the commands if they are running so that the time out for safe move forward will successfully work
 	if(ultasonicDrive->IsRunning())
 	{
 		ultasonicDrive->Cancel();
@@ -72,7 +73,6 @@ void ChassisSafeMoveForward::End()
 	{
 		timeDrive->Cancel();
 	}
-	
 }
 
 // Called when another command which requires one or more of the same
