@@ -47,7 +47,7 @@
 //       recalibrated)
 #define SHOOTER_ANGLE_MAX_VALUE                    50.0    // 850.0  - 45.848
 #define SHOOTER_ANGLE_MIN_VALUE                    10.0    //   0.0  - 17.203
-#define SHOOTER_ANGLE_THRESHOLD                     1.0    // Note: in ADC values
+#define SHOOTER_ANGLE_THRESHOLD                     2.0    // Note: in ADC values
 #define SHOOTER_ANGLE_MAX_PICKUP_VALUE             23.943  //  200.0
 #define SHOOTER_ANGLE_PICKUP_VALUE                 21.584  //  130.0
 /****** SHOOTER SPEED ******/

@@ -57,7 +57,7 @@ AutonomousRPMShootingwithPickup::AutonomousRPMShootingwithPickup()
    //AddSequential(new ChassisSafeMoveForward(), 3.0);
    
    // wait to allow the robot to move under the tower
-   AddSequential(new WaitCommand(0.1));
+   //AddSequential(new WaitCommand(0.1));
    
    // pick up the Frisbee
    AddSequential(new FrisbeePickup());
@@ -66,11 +66,14 @@ AutonomousRPMShootingwithPickup::AutonomousRPMShootingwithPickup()
    AddSequential(new ChassisTurnAngle(TURN_LEFT_ANGLE), 2.0);
 //   AddSequential(new ChassisDriveDistance(0.08, 0.4));
 
+   // Delay
+   //AddSequential(new WaitCommand(0.1));
+   
    // pick up the Frisbee
    AddSequential(new FrisbeePickup());
 
    // turn back to the goal
-   AddSequential(new ChassisTurnAngle(TURN_RIGHT_ANGLE), 2.0);
+   AddParallel(new ChassisTurnAngle(TURN_RIGHT_ANGLE), 2.0);
    
    // set the shooter angle for under the tower
    AddSequential(new SetShooterAngle(SHOOTER_ANGLE_UNDER_TOWER), 3.0);
