@@ -32,6 +32,10 @@ void SetPickupSuction::Initialize()
 	}
 	
 	Robot::pickup->suction->Set(suction);
+	if(suction == false)
+	{
+		Robot::pickup->releaseSuction->Set(true);
+	}
 	
 	// <DEBUG>
 	SmartDashboard::PutNumber("Pickup Suction", suction);
@@ -50,7 +54,10 @@ bool SetPickupSuction::IsFinished()
 // Called once after isFinished returns true
 void SetPickupSuction::End() 
 {
-	
+	if(suction == false)
+	{
+		Robot::pickup->releaseSuction->Set(false);
+	}
 }
 // Called when another command which requires one or more of the same
 // subsystems is scheduled to run

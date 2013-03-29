@@ -1,5 +1,17 @@
 <xml version="1.0">
 <dashboard>
+	<widget field="Load" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="535" y="299"/>
+	</widget>
+	<widget field="Long Shot" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="386" y="362"/>
+	</widget>
+	<widget field="Under Tower" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="373" y="330"/>
+	</widget>
+	<widget field="Drive To Frisbee No Turn" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="535"/>
+	</widget>
 	<widget field="Is ultra used" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="0" y="514"/>
 	</widget>
