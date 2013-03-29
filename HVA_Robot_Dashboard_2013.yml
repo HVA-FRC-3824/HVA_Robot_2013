@@ -1,5 +1,14 @@
 <xml version="1.0">
 <dashboard>
+	<widget field="Is ultra used" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="514"/>
+	</widget>
+	<widget field="Used Ultrasonic" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="0"/>
+	</widget>
+	<widget field="Drive To Frisbee" type="Command" class="edu.wpi.first.smartdashboard.gui.elements.Command">
+		<location x="0" y="480"/>
+	</widget>
 	<widget field="Ultra Sonic" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
 		<location x="5" y="459"/>
 	</widget>

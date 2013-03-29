@@ -52,7 +52,8 @@ AutonomousRPMShootingwithPickup::AutonomousRPMShootingwithPickup()
 
    // ensure the ultrasonic range finder indicates a correct position
    // drive straight to get the Frisbees
-   AddSequential(new ChassisDrivetoWallStraight(DRIVE_UNDER_TOWER_DISTANCE, DRIVE_UNDER_TOWER_POWER), 3.0);
+   //AddSequential(new ChassisDrivetoWallStraight(DRIVE_UNDER_TOWER_DISTANCE, DRIVE_UNDER_TOWER_POWER), 3.0);
+   AddSequential(new ChassisDriveDistanceStraight(DRIVE_UNDER_TOWER_DURATION, DRIVE_UNDER_TOWER_POWER), 3.0);
    //AddSequential(new ChassisSafeMoveForward(), 3.0);
    
    // wait to allow the robot to move under the tower
@@ -89,5 +90,5 @@ AutonomousRPMShootingwithPickup::AutonomousRPMShootingwithPickup()
    AddSequential(new SetShooterAngle(SHOOTER_ANGLE_FOR_PICKUP), 2.0);
    
    // back up from tower
-   AddSequential(new ChassisDriveDistanceStraight(1.0, -0.8), 3.0);
+   // AddSequential(new ChassisDriveDistanceStraight(1.0, -0.8), 3.0);
 }
