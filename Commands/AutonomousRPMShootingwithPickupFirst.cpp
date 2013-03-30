@@ -78,14 +78,18 @@ AutonomousRPMShootingwithPickupFirst::AutonomousRPMShootingwithPickupFirst()
    // turn back to the goal
    AddSequential(new ChassisTurnAngle(TURN_RIGHT_ANGLE), 2.0);
    
+   // Move the arm to the home position
+   AddParallel(new SetPickupPosition(PICKUP_HOME_POSITION), 1.0);
+   
    // shoot the Frisbees
    AddSequential(new WaitCommand(1.2));
    AddSequential(new FrisbeeShoot());
    AddSequential(new WaitCommand(0.1));
    AddSequential(new FrisbeeShoot());
-   
-   // Move the arm to the home position
-   AddParallel(new SetPickupPosition(PICKUP_HOME_POSITION), 1.0);
+   AddSequential(new WaitCommand(0.2));
+   AddSequential(new FrisbeeShoot());
+   AddSequential(new WaitCommand(0.2));
+   AddSequential(new FrisbeeShoot());
    	
    // lower the shooter to allow driving out from under the tower
    AddSequential(new SetShooterAngle(SHOOTER_ANGLE_FOR_PICKUP), 2.0);
