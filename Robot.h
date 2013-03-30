@@ -60,12 +60,12 @@
 /****** CYPRESS POSITION DEFINES ******/
 // front of pyramid
 #define POSITION_1_ANGLE                           40.793  // 700.0
-#define POSITION_1_VELOCITY                      2200.0
+#define POSITION_1_VELOCITY                      2500.0
 #define POSITION_1_VOLTAGE                          0.6
 #define POSITION_1_IS_RPM                          true
 // back of pyramid
-#define POSITION_2_ANGLE                           24.954  // 230.0 
-#define POSITION_2_VELOCITY                      3000.0
+#define POSITION_2_ANGLE                           28.0  // 230.0 
+#define POSITION_2_VELOCITY                      3200.0
 #define POSITION_2_VOLTAGE                          0.62
 #define POSITION_2_IS_RPM                           true
 // under the tower and loading
@@ -84,7 +84,7 @@
 #define POSITION_5_VOLTAGE                          0.6
 #define POSITION_5_IS_RPM                          true
 // shooting when handing on the tower
-#define HANGING_ON_TOWER_ANGLE                     24.5
+#define HANGING_ON_TOWER_ANGLE                     28.5
 #define HANGING_ON_TOWER_VELOCITY                3600.0
 #define HANGING_ON_TOWER_IS_RPM                    true
 /****** OLD CYPRESS POSITION DEFINES ******/

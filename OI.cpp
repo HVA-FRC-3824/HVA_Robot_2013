@@ -75,8 +75,8 @@ OI::OI()
 	joystickSingleShoot->WhenPressed(new FrisbeeShoot());
 	joystickRapidShoot = new JoystickButton(driveJoystick, 11);
 	joystickRapidShoot->WhileHeld(new FrisbeeRapidShoot());
-	shootwhenHangingonTower = new JoystickButton(driveJoystick, 9);
-	shootwhenHangingonTower->WhileHeld(new ShootHangingonTower());
+	shootwhenHangingonTower = new JoystickButton(driveJoystick, 10);
+	shootwhenHangingonTower->WhenPressed(new ShootHangingonTower());
 	setupforMatch = new JoystickButton(driveJoystick, 7);
 	setupforMatch->WhenPressed(new InitializeRobotforMatch());
 	joystickShoot = new JoystickButton(driveJoystick, 1);

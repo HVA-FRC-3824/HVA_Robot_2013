@@ -562,7 +562,7 @@ Children:
           default: '1'
           name: Button
           validators: null
-          value: '9'
+          value: '10'
         Joystick: !!robotbuilder.data.properties.ParentProperty {default: parent,
           name: Joystick, validators: null, value: Drive Joystick}
         When to Run: !!robotbuilder.data.properties.ChoicesProperty
@@ -570,7 +570,7 @@ Children:
           default: whileHeld
           name: When to Run
           validators: null
-          value: whileHeld
+          value: whenPressed
     - Name: Joystick Rapid Shoot
       Base: Joystick Button
       Children: []
