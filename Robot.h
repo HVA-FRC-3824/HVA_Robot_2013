@@ -30,10 +30,9 @@
 #define SHOOTER_ANGLE_SLOPE                        0.0337
 #define SHOOTER_ANGLE_Y_INTERCEPT                  17.203
 /****** BACK/UNDER TOWER ******/
-#define SHOOTER_ANGLE_BACK_OF_TOWER                29.5 // 25.1 // 340.0
-#define SHOOTER_ANGLE_UNDER_TOWER                  30.25 //26.0 // 378.0
-//#define SHOOTER_ANGLE_UNDER_TOWER_SECOND           26.0  // 330.0
-#define SHOOTER_ANGLE_FOR_PICKUP                   21.584  // 130.0
+#define SHOOTER_ANGLE_BACK_OF_TOWER                29.5 
+#define SHOOTER_ANGLE_UNDER_TOWER                  30.25 
+#define SHOOTER_ANGLE_FOR_PICKUP                   21.584
 #define SHOOTER_SPEED_BACK_OF_TOWER              3200.0
 /****** SHOOTER WAIT TIMES ******/
 #define AUTONOMOUS_SHOOT_WAIT1                      0.0

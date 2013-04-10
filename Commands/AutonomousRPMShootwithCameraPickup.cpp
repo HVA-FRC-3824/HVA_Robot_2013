@@ -8,20 +8,9 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef AUTONOMOUS_DRIVE_FORWARD_SHOOT_H
-#define AUTONOMOUS_DRIVE_FORWARD_SHOOT_H
+#include "AutonomousRPMShootwithCameraPickup.h"
 
-#include "Commands/CommandGroup.h"
-
-/**
- *
- *
- * @author ExampleAuthor
- */
-class AutonomousDriveForwardShoot: public CommandGroup
+AutonomousRPMShootwithCameraPickup::AutonomousRPMShootwithCameraPickup()
 {
-public:	
-	AutonomousDriveForwardShoot();
-};
 
-#endif
+}

@@ -19,11 +19,11 @@
 #define PICKUP_MIN_VALUE 		 		             0.0
 #define PICKUP_THRESHOLD 		                     5.0
 
-#define FRISBEE_OFFSET                              -50.0 // 25
+#define FRISBEE_OFFSET                              10.0
 
-#define PICKUP_POSITION						      (945.0 + FRISBEE_OFFSET)
-#define PICKUP_RELEASE_POSITION					  (285.0 + FRISBEE_OFFSET)
-#define PICKUP_HOME_POSITION	                  (100.0 + FRISBEE_OFFSET) 
+#define PICKUP_HOME_POSITION	                  (  0.0 + FRISBEE_OFFSET) 
+#define PICKUP_RELEASE_POSITION					  (175.0 + FRISBEE_OFFSET)
+#define PICKUP_POSITION						      (835.0 + FRISBEE_OFFSET)
 
 /**
  *

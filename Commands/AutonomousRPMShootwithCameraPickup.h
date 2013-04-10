@@ -8,8 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-#ifndef LONG_SHOT_FROM_LEFT_LOADING_STATION_H
-#define LONG_SHOT_FROM_LEFT_LOADING_STATION_H
+#ifndef AUTONOMOUS_RPM_SHOOT_WITH_CAMERA_PICKUP_H
+#define AUTONOMOUS_RPM_SHOOT_WITH_CAMERA_PICKUP_H
 
 #include "Commands/CommandGroup.h"
 
@@ -18,10 +18,10 @@
  *
  * @author ExampleAuthor
  */
-class LongShotfromLeftLoadingStation: public CommandGroup
+class AutonomousRPMShootwithCameraPickup: public CommandGroup 
 {
 public:	
-	LongShotfromLeftLoadingStation();
+	AutonomousRPMShootwithCameraPickup();
 };
 
 #endif

@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #ifndef LONG_SHOT_FROM_RIGHT_LOADING_STATION_H
 #define LONG_SHOT_FROM_RIGHT_LOADING_STATION_H
 
@@ -20,7 +18,8 @@
  *
  * @author ExampleAuthor
  */
-class LongShotfromRightLoadingStation: public CommandGroup {
+class LongShotfromRightLoadingStation: public CommandGroup
+{
 public:	
 	LongShotfromRightLoadingStation();
 };

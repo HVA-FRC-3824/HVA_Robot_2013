@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #include "LongShotfromLeftLoadingStation.h"
 #include "SetShooterAngle.h"
 #include "SetShooterSpeed.h"
@@ -23,11 +21,8 @@
 #define SHOOTER_ANGLE        18.0455  // 25.0
 #define SHOOTER_SPEED      3600.0
 
-LongShotfromLeftLoadingStation::LongShotfromLeftLoadingStation() {
-	// Add Commands here:
-	// e.g. AddSequential(new Command1());
-	//      AddSequential(new Command2());
-	// these will run in order.
+LongShotfromLeftLoadingStation::LongShotfromLeftLoadingStation()
+{
 	AddParallel(new SetShooterAngle(SHOOTER_ANGLE));
 	AddParallel(new SetShooterSpeed(SHOOTER_SPEED, true));
 	AddSequential(new ChassisDriveDistanceStraight(BACK_UP_TIME, BACK_UP_SPEED));
@@ -35,16 +30,4 @@ LongShotfromLeftLoadingStation::LongShotfromLeftLoadingStation() {
 	AddSequential(new FrisbeeShoot()); //TODO: Actually shoot all four frisbees
 	AddSequential(new ChassisTurnAngle(-ROTATE_ANGLE));
 	AddSequential(new ChassisDriveDistanceStraight(-BACK_UP_TIME, BACK_UP_SPEED));
-
-	// To run multiple commands at the same time,
-	// use AddParallel()
-	// e.g. AddParallel(new Command1());
-	//      AddSequential(new Command2());
-	// Command1 and Command2 will run in parallel.
-
-	// A command group will require all of the subsystems that each member
-	// would require.
-	// e.g. if Command1 requires chassis, and Command2 requires arm,
-	// a CommandGroup containing them would require both the chassis and the
-	// arm.
 }

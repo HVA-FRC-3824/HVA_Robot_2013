@@ -27,16 +27,16 @@ void ChassisSafeMoveForward::Initialize()
 	   if (Robot::drivetrain->GetFrontDistance() > (DRIVE_UNDER_TOWER_DISTANCE + MINIMUM_DRIVE_DISTANCE))
 	   {
 		  ultasonicDrive->Start();
-	      SmartDashboard::PutBoolean("Used Ultrasonic", true);
+//	      SmartDashboard::PutBoolean("Used Ultrasonic", true);
 	      isUltraUsed = true;
 	   }
 	   else
 	   {
 		  timeDrive->Start();
-	      SmartDashboard::PutBoolean("Used Ultrasonic", false);
+//	      SmartDashboard::PutBoolean("Used Ultrasonic", false);
 	      isUltraUsed = false;
 	   }
-	   SmartDashboard::PutBoolean("Is ultra used", isUltraUsed);
+//	   SmartDashboard::PutBoolean("Is ultra used", isUltraUsed);
 }
 // Called repeatedly when this Command is scheduled to run
 void ChassisSafeMoveForward::Execute() {

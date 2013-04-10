@@ -26,7 +26,8 @@ void ChassisTurnAngle::Initialize()
 {  
    // set the target turn position
    if (!anglePassed)
-      degreesToTurn = SmartDashboard::GetNumber("Chassis Turn Angle Degrees");
+      //degreesToTurn = SmartDashboard::GetNumber("Chassis Turn Angle Degrees");
+	   degreesToTurn = 10.0;
    
    float goToGyro = (degreesToTurn + Robot::drivetrain->gyro->GetAngle());
 	

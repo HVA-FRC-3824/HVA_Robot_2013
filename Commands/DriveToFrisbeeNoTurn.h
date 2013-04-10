@@ -8,10 +8,8 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
 #ifndef DRIVE_TO_FRISBEE_NO_TURN_H
 #define DRIVE_TO_FRISBEE_NO_TURN_H
-
 
 #include "Commands/Subsystem.h"
 #include "../Robot.h"
@@ -21,14 +19,23 @@
  *
  * @author ExampleAuthor
  */
-class DriveToFrisbeeNoTurn: public Command {
+class DriveToFrisbeeNoTurn:  public Command, public PIDSource, public PIDOutput
+{
+private:
+   bool braking;
+   float drivePower;
+   PIDController *PIDcontroller;
+   Timer *timer;
 public:
-	DriveToFrisbeeNoTurn();
+	DriveToFrisbeeNoTurn(double power);
 	virtual void Initialize();
 	virtual void Execute();
 	virtual bool IsFinished();
 	virtual void End();
 	virtual void Interrupted();
+	
+	void PIDWrite(float output);
+	double PIDGet();
 };
 
 #endif

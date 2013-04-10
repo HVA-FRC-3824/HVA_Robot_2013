@@ -15,6 +15,7 @@
 #include "../Robot.h"
 #include "ChassisTurnAngle.h"
 
+#define PIXEL_TO_DEGREE    0.1  
 /**
  *
  *

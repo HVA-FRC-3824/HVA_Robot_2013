@@ -9,7 +9,7 @@
 // it from being updated in th future.
 #include "FrisbeeAim.h"
 #include <math.h>
-#define PIXELTODEGREE            1 
+#define PIXEL_TO_DEGREE             1 
 #define AIM_PIXEL_THRESHOLD 		3
 FrisbeeAim::FrisbeeAim() : ChassisTurnAngle(0) 
 {
@@ -24,15 +24,16 @@ FrisbeeAim::FrisbeeAim() : ChassisTurnAngle(0)
 		SmartDashboard::GetNumber("Shooter Aim D: "),
 		Robot::drivetrain->gyro->PIDGet(),Robot::drivetrain);
 */
-	SmartDashboard::PutNumber("Pixel to Degree", 0.1);
+	//SmartDashboard::PutNumber("Pixel to Degree", 0.1);
 }
 // Called just before this Command runs the first time
 void FrisbeeAim::Initialize() 
 {
-	SmartDashboard::PutString("Target Type", "target");
+	//SmartDashboard::PutString("Target Type", "target");
 	ChassisTurnAngle::Initialize();
 	
-	pixelToDegree = SmartDashboard::GetNumber("Pixel to Degree");
+//	pixelToDegree = SmartDashboard::GetNumber("Pixel to Degree");
+	pixelToDegree = PIXEL_TO_DEGREE;
 	
 	target = Robot::drivetrain->gyro->GetAngle()+
 				SmartDashboard::GetNumber("Camera Offset") * pixelToDegree;

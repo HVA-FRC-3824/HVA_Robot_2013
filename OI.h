@@ -24,8 +24,8 @@
 #define INPUT_SHOOTER_POSITION_1				         13	//Button
 #define INPUT_SHOOTER_POSITION_2				         12	//Button
 #define INPUT_SHOOTER_POSITION_3				         14	//Button
-#define INPUT_SHOOTER_POSITION_4                   16 //Button
-#define INPUT_SHOOTER_POSITION_5                   15 //Button
+#define INPUT_SHOOTER_POSITION_4                         16 //Button
+#define INPUT_SHOOTER_POSITION_5                         15 //Button
 #define ANALOG_SHOOTER_SPEED						      1	//Pot
 #define ANALOG_SHOOTER_ADJUST						      2	//Pot
 class OI 

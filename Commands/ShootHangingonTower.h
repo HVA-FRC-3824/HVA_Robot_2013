@@ -8,8 +8,6 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in th future.
 
-
-
 #ifndef SHOOT_HANGING_ON_TOWER_H
 #define SHOOT_HANGING_ON_TOWER_H
 
@@ -20,7 +18,8 @@
  *
  * @author ExampleAuthor
  */
-class ShootHangingonTower: public CommandGroup {
+class ShootHangingonTower: public CommandGroup 
+{
 public:	
 	ShootHangingonTower();
 };

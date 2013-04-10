@@ -22,6 +22,7 @@ ChassisDriveDistanceStraight::ChassisDriveDistanceStraight(float duration, float
 	driveDuration = duration;
 	drivePower = power;
 	timer = new Timer();
+	
 }
 // Called just before this Command runs the first time
 void ChassisDriveDistanceStraight::Initialize() 
